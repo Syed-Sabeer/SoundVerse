@@ -1,0 +1,227 @@
+/**=====================
+    3.48 Pricing CSS Start
+==========================**/
+.pricing-simple {
+  box-shadow: 0 0 10px 5px rgba(68, 102, 242, 0.05);
+  margin-bottom: 0 !important;
+
+  .card-body {
+    border-bottom: none;
+    text-align: left;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+
+    h4 {
+      position: relative;
+      margin-bottom: 38px;
+
+      &:before {
+        position: absolute;
+        content: '';
+        @include pixelstrap-size(80px, 1px);
+        margin: 0;
+        left: 0;
+        bottom: -10px;
+        background-color: $light-text;
+
+        [dir="rtl"] & {
+          left: unset;
+          right: 0;
+        }
+      }
+    }
+
+    h5 {
+      font-size: calc(36px + (40 - 36) * ((100vw - 320px) / (1920 - 320)));
+      line-height: 0.9;
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+  }
+}
+
+.pricingtable {
+  text-align: center;
+  padding-block: 20px;
+  border-radius: 10px;
+  box-shadow: $card-hover-box-shadow;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+
+  &:before,
+  &:after {
+    content: "";
+    background-color: var(--theme-default);
+    @include pixelstrap-size(300px, 300px);
+    border-radius: 50%;
+    position: absolute;
+    right: -213px;
+    z-index: -1;
+    opacity: 0.1;
+
+    [dir="rtl"] & {
+      right: unset;
+      left: -213px;
+    }
+  }
+
+}
+
+.pricing-simple {
+  .pricing-content {
+    li {
+      text-align: left;
+      margin-bottom: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
+      text-transform: capitalize;
+      color: $badge-light-color;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      i {
+        padding-right: 8px;
+        color: var(--theme-default);
+      }
+
+      [dir="rtl"] & {
+        text-align: right;
+
+        i {
+          padding-right: unset;
+          padding-left: 8px;
+        }
+      }
+    }
+  }
+}
+
+.pricingtable {
+  &:after {
+    background-color: var(--theme-default);
+    @include pixelstrap-size(300px, 300px);
+    top: auto;
+    bottom: -210px;
+    right: auto;
+    left: -160px;
+    opacity: 0.1;
+
+    [dir="rtl"] & {
+      right: -160px;
+      left: auto;
+    }
+  }
+
+  .title {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .price-value {
+    color: $white;
+    background-color: var(--theme-default);
+    @include pixelstrap-size(130px, 130px);
+    padding: 45px 0 0;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+
+    .duration {
+      margin: 0 0 0 -5px;
+
+      [dir="rtl"] & {
+        margin: 0 -5px 0 0;
+      }
+    }
+
+    .amount {
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 45px;
+      display: inline-block;
+    }
+
+    .currency {
+      vertical-align: top;
+    }
+  }
+
+  .pricing-content {
+    margin: 0 0 25px;
+    display: inline-block;
+
+    li {
+      font-weight: 500;
+      text-align: left;
+      margin: 0 0 20px;
+      position: relative;
+      padding-left: 30px;
+
+      [dir="rtl"] & {
+        text-align: right;
+        padding-left: unset;
+        padding-right: 30px;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+
+      &:before {
+        content: "\f00c";
+        color: var(--theme-default);
+        font-family: $font-awesome;
+        text-align: center;
+        @include pixelstrap-size(20px, 20px);
+        font-weight: 600;
+        border-radius: 50%;
+        position: absolute;
+        top: 1px;
+        left: 0;
+
+        [dir="rtl"] & {
+          left: unset;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 991px) {
+  .pricing-simple {
+    .card-body {
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        margin-bottom: 28px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .pricing-simple {
+    .card-body {
+      h1 {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .pricing-block {
+    >div {
+      flex: 100%;
+    }
+  }
+}
+
+/**=====================
+   3.48 Pricing CSS Ends
+==========================**/

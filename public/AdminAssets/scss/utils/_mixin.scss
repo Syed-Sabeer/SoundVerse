@@ -1,0 +1,301 @@
+/**=====================
+    1.2 Mixin CSS start
+==========================**/
+
+// ****************** Pixelstrap useable mixins start  *************************
+
+@mixin pixelstrap-size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin pixelstrap-flex($display, $justify, $align) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+    @content;
+}
+
+@mixin pixelstrap-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin multi-line-ellipsis($clamp-value, $height, $direction, $overflow-option) {
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: $clamp-value;
+    height: $height;
+    -webkit-box-orient: $direction;
+    overflow: $overflow-option;
+    text-overflow: ellipsis;
+}
+
+// Common square
+@mixin square-box($width, $height, $b-radius, $bg-color) {
+    width: $width;
+    height: $height;
+    border-radius: $b-radius;
+    background-color: $bg-color;
+    @content;
+}
+
+@mixin svg-size($size, $stroke) {
+    width: $size;
+    height: $size;
+    stroke: $stroke;
+}
+
+// Common-first/last child
+@mixin pixelstrap-child($padding-top, $padding-bottom) {
+    &:first-child {
+        padding-top: $padding-top;
+    }
+
+    &:last-child {
+        padding-bottom: $padding-bottom;
+    }
+}
+
+// Common search spacing 
+@mixin pixelstrap-search($width, $padding, $border-radius) {
+    width: $width;
+    padding: $padding;
+    border-radius: $border-radius;
+}
+
+// ****************** Pixelstrap useable mixins end  *************************
+
+// Chats mixin
+@mixin msg-left($image, $width, $height) {
+    background-image: $image;
+    width: $width;
+    height: $height;
+}
+
+// File manager 
+@mixin folder-file($size) {
+    @include pixelstrap-flex(flex, center, center);
+    width: $size;
+    height: $size;
+    min-width: $size;
+    max-width: $size;
+    flex-direction: column;
+    padding: calc(10px + (18 - 10) * ((100vw - 320px) / (1920 - 320)));
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: var(--light2);
+}
+
+@mixin file-icon($border-color, $b-b-color, $b-l-color) {
+    border-color: $border-color;
+    border-bottom-color: $b-b-color;
+    border-left-color: $b-l-color;
+
+    [dir="rtl"] & {
+        border-left-color: unset;
+        border-right-color: $b-l-color;
+    }
+}
+
+// Project list 
+@mixin group-profile {
+
+    &::before {
+        content: unset;
+    }
+
+    li {
+        padding-bottom: 0;
+
+        +li {
+            margin-left: -12px;
+
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: -12px;
+            }
+        }
+
+        img {
+            transition: 0.5s;
+        }
+
+        img,
+        .light-background {
+            &:hover {
+                transform: translateY(-4px) scale(1.02);
+                transition: 0.5s;
+            }
+        }
+    }
+}
+
+@mixin last-padding {
+    .common-space {
+        padding-bottom: 6px;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+
+@mixin pixelstrap-status($dark-only: true) {
+    @if $dark-only {
+
+        .card,
+        .list-box {
+            padding: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+            cursor: pointer;
+            background-color: var(--recent-chart-bg);
+            box-shadow: (0px 9px 20px 0px #2E235E12);
+
+            .header-top {
+                margin-bottom: 12px;
+                flex-wrap: wrap;
+            }
+
+            .project-body {
+                span {
+                    color: rgba($badge-light-color, 80%);
+                    margin-bottom: 8px;
+                    @include multi-line-ellipsis(2, auto, vertical, hidden);
+
+                }
+
+                .progress {
+                    height: 6px;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+
+        &:last-child {
+            .card {
+                margin-bottom: 0;
+            }
+        }
+
+        ul {
+            li {
+                +li {
+                    margin-left: -12px;
+
+                    [dir="rtl"] & {
+                        margin-left: unset;
+                        margin-right: -12px;
+                    }
+                }
+
+                img {
+                    transition: 0.5s;
+                }
+
+                img,
+                .light-background {
+                    &:hover {
+                        transform: translateY(-4px) scale(1.02);
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+
+        .badge {
+            padding: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320))) calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320)));
+            font-size: 12px;
+        }
+
+        .project-body {
+            h6 {
+                @include multi-line-ellipsis(2, auto, vertical, hidden);
+            }
+
+            >img {
+                @include pixelstrap-size(100%, calc(85px + (126 - 85) * (100vw - 320px) / (1920 - 320)));
+                border-radius: 5px;
+                margin-bottom: 15px;
+                object-fit: cover;
+            }
+
+            ul {
+                padding-bottom: calc(12px + (15 - 12) * ((100vw - 320px) / (1920 - 320)));
+            }
+
+            .project-bottom {
+                padding-top: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
+                border-top: 1px solid rgba($badge-light-color, 10%);
+                flex-wrap: wrap;
+                gap: 6px;
+
+                .common-flex {
+                    span {
+                        margin-bottom: 0;
+                        @include pixelstrap-flex(flex, center, center);
+                    }
+
+                    svg {
+                        @media (max-width:767px) {
+                            @include pixelstrap-size(14px, 14px);
+                        }
+                    }
+                }
+
+                span {
+                    background-color: var(--light-bg);
+                    padding: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320))) calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320)));
+                    border-radius: 5px;
+                }
+
+                svg {
+                    @include pixelstrap-size(16px, 16px);
+                    stroke: rgba($badge-light-color, 80%);
+                    vertical-align: text-top;
+                }
+            }
+        }
+    }
+
+    @else {
+
+        .card,
+        .list-box {
+            box-shadow: 0px 9px 20px 0px $dark-card-inbox;
+
+            .project-body {
+                span {
+                    color: rgba($dark-all-font-color, 0.4);
+                }
+
+                .project-bottom {
+                    border-top: 1px solid $dark-card-border;
+
+                    svg {
+                        stroke: $dark-all-font-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Range-slider
+@mixin range-slider($color) {
+    .irs--square {
+        .irs-handle {
+            border: 3px solid $color;
+        }
+
+        .irs-from,
+        .irs-to,
+        .irs-bar {
+            background-color: $color;
+        }
+    }
+}
+
+/**=====================
+    1.2 Mixin CSS end
+==========================**/

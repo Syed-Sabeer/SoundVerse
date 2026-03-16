@@ -1,0 +1,556 @@
+- var page_Title = 'Seller List';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var flatpickr             = true;
+- var custom_sellers        = true;
+- var number_wizard         = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Seller List
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Ecommerce
+                    li.breadcrumb-item.active Seller List
+          // Container-fluid starts
+          .container-fluid
+            .row.seller-wrapper
+                .col-12 
+                    .card 
+                        .card-header.common-space
+                            .common-f-start
+                                span.seller-filter.active(data-filter='all') All
+                                span.seller-filter(data-filter='furniture') Furniture
+                                span.seller-filter(data-filter='professional_service') Professional Services
+                                span.seller-filter(data-filter='security') Security
+                                span.seller-filter(data-filter='travel') Travel
+                                span.seller-filter(data-filter='healthcare') Healthcare
+                            .right-vendor
+                                .input-group.common-searchbox
+                                    span.input-group-text
+                                        i.search-icon.text-gray(data-feather='search')
+                                    input.form-control(type='text' placeholder='Search...')
+                                a.btn.btn-primary(href="#!" data-bs-toggle='modal' data-bs-target='#category-pill-modal')
+                                    i.me-2.fa-solid.fa-plus
+                                    | Add Seller
+                            #category-pill-modal.modal.fade(tabindex='-1' aria-hidden='true')
+                                .modal-dialog.modal-dialog-centered.modal-xl
+                                    .modal-content
+                                        .modal-header
+                                            h5#modaldashboard.modal-title Add Seller
+                                            button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+                                        .modal-body.basic-wizard.important-validation
+                                            #stepper1.stepper-horizontal.custom-scrollbar
+                                                .stepper-one.stepper.step.editing.active
+                                                    .step-circle
+                                                        span 1
+                                                    .step-title Personal Info
+                                                    .step-bar-left
+                                                    .step-bar-right
+                                                .stepper-two.step
+                                                    .step-circle
+                                                        span 2
+                                                    .step-title Company Contact
+                                                    .step-bar-left
+                                                    .step-bar-right
+                                                .stepper-three.step
+                                                    .step-circle
+                                                        span 3
+                                                    .step-title Company Overview
+                                                    .step-bar-left
+                                                    .step-bar-right
+                                                .stepper-four.step
+                                                    .step-circle
+                                                        span 4
+                                                    .step-title Financial Info
+                                                    .step-bar-left
+                                                    .step-bar-right
+                                                .stepper-five.step
+                                                    .step-circle
+                                                        span 5
+                                                    .step-title Finish
+                                                    .step-bar-left
+                                                    .step-bar-right
+                                            #msform
+                                                //- .custom-input used as dark mode 
+                                                form.stepper-one.row.g-3.needs-validation.custom-input(novalidate='')
+                                                    .col-sm-6
+                                                        label.form-label(for='sellerFirstName') Full Name
+                                                        input#sellerFirstName.form-control(type='text' required='' placeholder='Enter your full name')
+                                                    .col-sm-6
+                                                        label.col-sm-12.form-label(for='sellerNumber') Phone
+                                                        input#sellerNumber.form-control(type='number' placeholder='Enter your phone number' required='')      
+                                                    .col-sm-4
+                                                        label.col-sm-12.form-label City
+                                                        select.form-select(aria-label='Default select example') 
+                                                            option(value='1' selected) Ahmedabad
+                                                            option(value='2') Goa
+                                                            option(value='3') Guwahati
+                                                            option(value='4') Hansi
+                                                            option(value='5') Bodhgaya
+                                                            option(value='6') Durgapur
+                                                    .col-sm-4
+                                                        label.form-label State
+                                                        select.form-select(aria-label='Default select example') 
+                                                            option(value='1' selected) Gujarat
+                                                            option(value='2') Goa 
+                                                            option(value='3') Assam
+                                                            option(value='4') Haryana
+                                                            option(value='5') Bihar
+                                                            option(value='6') West Bengal
+                                                    .col-sm-4
+                                                        label.col-sm-12.form-label Country
+                                                        select.form-select(aria-label='Default select example') 
+                                                            option(value='1') France
+                                                            option(value='2') Haiti
+                                                            option(value='3') India
+                                                            option(value='4') Laos
+                                                            option(value='5') Libya
+                                                            option(value='6') Syria
+                                                            option(value='7') China
+                                                            option(value='8') Nepal
+                                                            option(value='9') Australia
+                                                    .col-sm-6
+                                                        label.col-sm-12.form-label(for='sellerMail') Email
+                                                        input#sellerMail.form-control(type='email' placeholder='Enter your email' required='') 
+                                                    .col-sm-6 
+                                                        label.form-label(for='postalCode') Postal Code
+                                                        input#postalCode.form-control(type='text' placeholder='Enter your postal code' required='')
+                                                    
+                                                form.stepper-two.row.g-3.needs-validation.custom-input(novalidate='')
+                                                    .col-sm-6
+                                                        label.form-label(for='formFileDocument') Business Logo
+                                                        input#formFileDocument.form-control(type='file' required='')
+                                                    .col-sm-6 
+                                                        label.form-label(for='companyName') Business Name
+                                                        input#companyName.form-control(type="text" required='' placeholder='Enter your business name here')
+                                                    .col-12
+                                                        label.form-label Business Address
+                                                        textarea.form-control(placeholder='Enter your business address' required='' rows='3')
+                                                        .invalid-feedback
+                                                            | Please enter a message in the textarea.
+                                                    .col-lg-4.col-sm-6
+                                                        label.form-label(for='phoneNumber') Phone Number
+                                                        input#phoneNumber.form-control(type="number" placeholder='Enter your phone number' required='')  
+                                                    .col-lg-4.col-sm-6
+                                                        label.form-label(for='validationServer05') Postal Code
+                                                        input#validationServer05.form-control(type='text' placeholder='Enter your postal code' required='')
+                                                    .col-lg-4
+                                                        label.form-label(for='companyEmail') Business Email
+                                                        input#companyEmail.form-control(type="email" placeholder='Enter your business email' required='')  
+                                                    .col-sm-6
+                                                        label.form-label(for='contactPersonName') Contact Person Name
+                                                        input#contactPersonName.form-control(type="text" placeholder='Enter your contact person name' required='')  
+                                                    .col-sm-6
+                                                        label.form-label(for='contactPersonPhone') Contact Person Phone
+                                                        input#contactPersonPhone.form-control(type="number" placeholder='Enter your contact person phone' required='')  
+                                                form.stepper-three.row.g-3.needs-validation.custom-input(novalidate='')
+                                                    .col-12
+                                                        label.form-label(for='businessDetails') Business Details
+                                                        textarea#businessDetails.form-control(placeholder='Enter your business details' required='' rows='3')
+                                                        .invalid-feedback
+                                                            | Please enter a message in the textarea.    
+                                                    .col-sm-6
+                                                        label.form-label Establishment Date
+                                                        .input-group.flatpicker-calender.product-date
+                                                            input#human-friendly1.form-control(type='date') 
+                                                    .col-sm-6 
+                                                        label.form-label(for='serviceArea') Business Type
+                                                        input#serviceArea.form-control(type="text" placeholder='Enter your business type' required='') 
+                                                    .col-lg-2.col-sm-3
+                                                        label.form-label(for='serviceArea') Insured?
+                                                        .common-flex
+                                                            .form-check
+                                                                input#flexRadioDefault1.form-check-input(type='radio' name='flexRadioDefault')
+                                                                label.form-check-label(for='flexRadioDefault1')
+                                                                    | Yes
+                                                            .form-check
+                                                                input#flexRadioDefault2.form-check-input(type='radio' name='flexRadioDefault' checked='')
+                                                                label.form-check-label(for='flexRadioDefault2')
+                                                                    | No 
+                                                    .col-lg-2.col-sm-3
+                                                        label.form-label(for='serviceArea') Licensed?
+                                                        .common-flex
+                                                            .form-check
+                                                                input#flexRadioDefault3.form-check-input(type='radio' name='flexRadioDefault')
+                                                                label.form-check-label(for='flexRadioDefault3')
+                                                                    | Yes
+                                                            .form-check
+                                                                input#flexRadioDefault4.form-check-input(type='radio' name='flexRadioDefault' checked='')
+                                                                label.form-check-label(for='flexRadioDefault4')
+                                                                    | No 
+                                                    .col-12 
+                                                        label.form-label(for='additionalInfo') Additional Info
+                                                        textarea#additionalInfo.form-control(placeholder='You can write anything...' required='' rows='3')
+                                                        .invalid-feedback
+                                                            | Please enter a message in the textarea. 
+                                                form.stepper-four.row.g-3.needs-validation.custom-input(novalidate='')
+                                                    .col-sm-6
+                                                        label.form-label(for='bankName') Bank Name
+                                                        input#bankName.form-control(type="text" placeholder='Enter your bank name' required='')
+                                                    .col-sm-6 
+                                                        label.form-label(for='cardNumber') Card Number
+                                                        input#cardNumber.form-control(type="number" placeholder='xxxx xxxx xxxx xxxx' required='')
+                                                    .col-xl-4
+                                                        label.form-label(for='expirationDates01') Expiration(MM/YY)
+                                                        input#expirationDates01.form-control(type='number' placeholder='xx/xx' required='')
+                                                    .col-xl-4.col-sm-6
+                                                        label.form-label(for='cvvNumber') CVV Number
+                                                        input#cvvNumber.form-control(type='number' required='')
+                                                    .col-xl-4.col-sm-6
+                                                        label.form-label(for='shiftCode') Shift Code
+                                                        input#shiftCode.form-control(type='text' required='')
+
+                                                form.stepper-five.row.g-3.needs-validation(novalidate='')
+                                                    .col-12.m-0
+                                                    .successful-form
+                                                        img.img-fluid(src="../assets/images/gif/dashboard-8/successful.gif", alt="successful")
+                                                        h5 Congratulations 
+                                                        p Well done! You have successfully completed. 
+                                            .wizard-footer.d-flex.gap-2.justify-content-end
+                                                button#backbtn.btn.button-light-primary(onclick='backStep()')  Back
+                                                button#nextbtn.btn.btn-primary(onclick='nextStep()') Next
+                .col-12
+                    ul.seller-cards 
+                        li.seller-box(data-filter='professional_service') 
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-1')
+                                div
+                                    h5 Gadget Grove
+                                    span.f-light Sabrina Whitney
+                            ul.seller-profits 
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 567
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 45+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $67,980
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                        li.seller-box(data-filter='furniture') 
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-2')
+                                div
+                                    h5 Wonder Finds
+                                    span.f-light Dean Summers
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 689
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 100+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $78,986
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                        li.seller-box(data-filter='furniture')
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-3')
+                                div
+                                    h5 Kilback
+                                    span.f-light Frankie Blair
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 210
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 15+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $99,104
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                        li.seller-box(data-filter='security')
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-4')
+                                div
+                                    h5 Liourt
+                                    span.f-light Jordan Snow
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 586
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 486+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $100,104
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                            
+                        li.seller-box(data-filter='healthcare')
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-5')
+                                div
+                                    h5 Cliinch
+                                    span.f-light Jadiel Roy
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 140
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 30+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $29,450
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                        li.seller-box(data-filter='furniture')
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-6')
+                                div
+                                    h5 Liehook
+                                    span.f-light Marie King
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 150
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 50+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $18,102
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                        li.seller-box(data-filter='travel')
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-7')
+                                div
+                                    h5 Liify
+                                    span.f-light Angela Dalton
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 240
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 10+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $28,109
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                        li.seller-box(data-filter='professional_service')
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-8')
+                                div
+                                    h5 Appzea
+                                    span.f-light Albert Ballard
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 104
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 14+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $15,240
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                        li.seller-box(data-filter='professional_service')
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-9')
+                                div
+                                    h5 Appish
+                                    span.f-light Johan Compton
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 45
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 10+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $12,109
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                        li.seller-box(data-filter='security')
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-10')
+                                div
+                                    h5 Jews
+                                    span.f-light Jakob Clark
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 78
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 26+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $78,578
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                        li.seller-box(data-filter='professional_service')
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-11')
+                                div
+                                    h5 Offspring
+                                    span.f-light Jake Snyder
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 25
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 30+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $28,454
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                        li.seller-box(data-filter='travel')
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-12')
+                                div
+                                    h5 Holoxo
+                                    span.f-light Daniel Schneider
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 58
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 79+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $472,587
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                        li.seller-box(data-filter='furniture')
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-13')
+                                div
+                                    h5 Nomadshol
+                                    span.f-light Silas Barnet
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 47
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 80+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $102,450
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                        li.seller-box(data-filter='professional_service')
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-14')
+                                div
+                                    h5 Olzo
+                                    span.f-light Silas Barnet
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 15
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 14+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $1,0000
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+                        li.seller-box(data-filter='travel')
+                            div
+                                svg
+                                    use(href='../assets/svg/icon-sprite.svg#logo-15')
+                                div
+                                    h5 Doloh
+                                    span.f-light Henry Nguyen
+                            ul.seller-profits
+                                li
+                                    .common-space
+                                        span Total Orders
+                                        span 47
+                                li 
+                                    .common-space
+                                        span Total Products 
+                                        span 59+
+                                li 
+                                    .common-space
+                                        span  Total Earnings
+                                        span $34,789
+                            a(href="seller-details.html").btn.btn-primary.btn-hover-effect View
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

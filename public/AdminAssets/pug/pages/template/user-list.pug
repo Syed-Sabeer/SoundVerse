@@ -1,0 +1,472 @@
+- var page_Title = 'User List';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var scrollbar             = true;
+- var sweetalert2           = true;
+- var trash_popup           = true;
+- var common_check_all      = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | User List
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Users
+                    li.breadcrumb-item.active User List
+          // Container-fluid starts
+          .container-fluid.user-list-wrapper
+            .row
+                .col-12 
+                    .card 
+                        .card-header.card-no-border.text-end
+                            .card-header-right-icon
+                                a(href="add-user.html").btn.btn-primary.f-w-500
+                                    i.fa-solid.fa-plus.pe-2
+                                    | Add User
+                        .card-body.pt-0.px-0
+                            .list-product.user-list-table
+                                .table-responsive.custom-scrollbar
+                                    table#roles-permission.table
+                                        thead 
+                                            tr 
+                                                th
+                                                th 
+                                                    span.c-o-light.f-w-600 Name
+                                                th 
+                                                    span.c-o-light.f-w-600 Email
+                                                th 
+                                                    span.c-o-light.f-w-600 Role
+                                                th 
+                                                    span.c-o-light.f-w-600 Creation Date
+                                                th 
+                                                    span.c-o-light.f-w-600 Status
+                                                th 
+                                                    span.c-o-light.f-w-600 Actions
+                                        tbody 
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Holly Snow
+                                                td  
+                                                    p holly.snow@gmail.com
+                                                td  
+                                                    p Consumer
+                                                td  
+                                                    p 15 Feb 2024,04:20 AM
+                                                td  
+                                                    span.badge.badge-light-success Active
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Amalia Wood
+                                                td  
+                                                    p amalia.wood@gmail.com
+                                                td  
+                                                    p Admin
+                                                td  
+                                                    p 20 Mar 2024,06:12 AM
+                                                td  
+                                                    span.badge.badge-light-success Active
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Noel Fuller
+                                                td  
+                                                    p noel.fuller@gmail.com
+                                                td  
+                                                    p Community Manager
+                                                td  
+                                                    p 05 Apr 2024,08:28 AM
+                                                td  
+                                                    span.badge.badge-light-success Active
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Arjun Duke
+                                                td  
+                                                    p arjun.duke@gmail.com
+                                                td  
+                                                    p Content Editors
+                                                td  
+                                                    p 28 Dec 2024,12:05 PM
+                                                td  
+                                                    span.badge.badge-light-success Active
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Arlo Cox
+                                                td  
+                                                    p arlo.cox@gmail.com
+                                                td  
+                                                    p Registered Users
+                                                td  
+                                                    p 28 Apr 2024,02:35 AM
+                                                td  
+                                                    span.badge.badge-light-warning Pending
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Vivian Gould
+                                                td  
+                                                    p vivian.gould@gmail.com
+                                                td  
+                                                    p Subscribers
+                                                td  
+                                                    p 29 Dec 2024,09:05 PM
+                                                td  
+                                                    span.badge.badge-light-success Active
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Lydia Hart
+                                                td  
+                                                    p lydia.hart@gmail.com
+                                                td  
+                                                    p Translator
+                                                td  
+                                                    p 29 Apr 2024,09:48 AM
+                                                td  
+                                                    span.badge.badge-light-success Active
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Oakley Ali
+                                                td  
+                                                    p oakley.ali@gmail.com
+                                                td  
+                                                    p Unverified Users
+                                                td  
+                                                    p 10 Feb 2024,08:29 AM
+                                                td  
+                                                    span.badge.badge-light-warning Pending
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Elias Romero
+                                                td  
+                                                    p elias.romero@gmail.com
+                                                td  
+                                                    p Vendor
+                                                td  
+                                                    p 15 Feb 2024,04:20 AM
+                                                td  
+                                                    span.badge.badge-light-warning Pending
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Isaias Robles
+                                                td  
+                                                    p isaias.robles@gmail.com
+                                                td  
+                                                    p Admin
+                                                td  
+                                                    p 28 Dec 2024,12:00 AM
+                                                td  
+                                                    span.badge.badge-light-success Active
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Arjun Duke
+                                                td  
+                                                    p arjun.duke@gmail.com
+                                                td  
+                                                    p Community Manager
+                                                td  
+                                                    p 28 Apr 2024,09:45 AM
+                                                td  
+                                                    span.badge.badge-light-warning Pending
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Aden Cline
+                                                td  
+                                                    p aden.cline@gmail.com
+                                                td  
+                                                    p Consumer
+                                                td  
+                                                    p 30 Jan 2024,07:28 AM
+                                                td  
+                                                    span.badge.badge-light-success Active
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Kye Lindsey
+                                                td  
+                                                    p kye.lindsey@gmail.com
+                                                td  
+                                                    p Content Editors
+                                                td  
+                                                    p 25 May 2024,08:45 AM
+                                                td  
+                                                    span.badge.badge-light-success Active
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Jase Barajas
+                                                td  
+                                                    p jase.barajas@gmail.com
+                                                td  
+                                                    p Registered Users
+                                                td  
+                                                    p 27 Dec 2024,02:10 AM
+                                                td  
+                                                    span.badge.badge-light-warning Pending
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Alora Brock
+                                                td  
+                                                    p alora.brock@gmail.com
+                                                td  
+                                                    p Subscribers
+                                                td  
+                                                    p 28 Feb 2024,08:30 AM
+                                                td  
+                                                    span.badge.badge-light-success Active
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Elle Hubbard
+                                                td  
+                                                    p elle.hubbard@gmail.com
+                                                td  
+                                                    p Unverified Users
+                                                td  
+                                                    p 12 Mar 2024,07:28 AM
+                                                td  
+                                                    span.badge.badge-light-success Active
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Rose Garcia
+                                                td  
+                                                    p rose.garcia@gmail.com
+                                                td  
+                                                    p Translator
+                                                td  
+                                                    p 28 Dec 2024,07:30 AM
+                                                td  
+                                                    span.badge.badge-light-warning Pending
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Jay Weber
+                                                td  
+                                                    p jay.weber@gmail.com
+                                                td  
+                                                    p Community Manager
+                                                td  
+                                                    p 03 Feb 2024,02:15 PM
+                                                td  
+                                                    span.badge.badge-light-warning Pending
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Javier Mann
+                                                td  
+                                                    p javier.mann@gmail.com
+                                                td  
+                                                    p Unverified Users
+                                                td  
+                                                    p 16 Sep 2024,04:25 AM
+                                                td  
+                                                    span.badge.badge-light-warning Active
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    a(href="user-profile.html") Jon Pruitt
+                                                td  
+                                                    p jon.pruitt@gmail.com
+                                                td  
+                                                    p Community Manager
+                                                td  
+                                                    p 20 Nov 2024,08:45 PM
+                                                td  
+                                                    span.badge.badge-light-warning Active
+                                                td 
+                                                    .common-align.gap-2.justify-content-start 
+                                                        a.square-white(href="add-user.html")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                                        a.square-white.trash-7(href="#!")
+                                                            svg
+                                                                use(href="../assets/svg/icon-sprite.svg#trash1")
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

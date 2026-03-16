@@ -1,0 +1,1077 @@
+- var page_Title = 'Advance Init';
+- var datatable             = true;
+- var theme_customizer      = true;
+- var tooltip               = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var datatable_advance     = true;
+- var init_datatable        = true;
+- var page_datatable2       = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Advance Init
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Data Tables
+                    li.breadcrumb-item.active Advance Init
+          // Container-fluid starts                   
+          .container-fluid.datatable-advance-wrapper
+            .row
+                // Stock result 
+                .col-sm-12
+                    .card
+                        .card-header.pb-0.card-no-border
+                            h5 Stock Result
+                            p.f-m-light.mt-1
+                                | Data within DataTables can be easily rendered to add graphics or colour to your tables, as demonstrated in the example on this page. These examples make use of columns.render and drawCallback to customise the cells in three ways:
+                            p.f-m-light.mt-1
+                                | 1. the colour of the cell is determine by the relative price of the stock.
+                            p.f-m-light.mt-1 
+                                | 2. a 'sparkline' class is added to the numeric array in the 'last' column.
+                            p.f-m-light.mt-1 
+                                | 3. the jQuery Sparklines plugin is called to turn that array into a line graph.
+                        .card-body
+                            .table-responsive.custom-scrollbar.table-striped
+                                table#stock.display.nowrap(style='width:100%')
+                                    thead
+                                        tr
+                                            th Name
+                                            th Symbol
+                                            th Price
+                                            th Difference
+                                            th Last
+                                    tfoot
+                                        tr
+                                            th Name
+                                            th Symbol
+                                            th Price
+                                            th Difference
+                                            th Last
+                .col-sm-12
+                    .card
+                        .card-header.pb-0.card-no-border
+                            h5 Row Create Callback
+                            p.f-m-light.mt-1 
+                                | For each row that is generated for display, the createdRow function is called once and once only. It is passed the create row node which can then be modified.
+                            p.f-m-light.mt-1
+                                | the 'salary' column Primary and bold by adding a CSS class to the container cell if the salary is greater than $150,000.
+                            p.f-m-light.mt-1
+                                | the 'salary' column danger and bold by adding a CSS class to the container cell if the salary is less than $40,000.
+                        .card-body 
+                            .table-responsive.custom-scrollbar.table-striped
+                                table#row_create.display.callback-table(style='width:100%')
+                                    thead
+                                        tr
+                                            th Employee Name
+                                            th Email
+                                            th Experience
+                                            th Sex
+                                            th Contact No.
+                                            th Salary
+                                    tbody 
+                                        tr
+                                            td Elana Robbert	
+                                            td ElanaRob@gmail.com	
+                                            td 1 Year	
+                                            td Male	
+                                            td +91 9789887777
+                                            td 28,000
+                                        tr
+                                            td Stiphen Deo
+                                            td Stiphen@yahoo.com
+                                            td 6 Month		
+                                            td Female
+                                            td +91 9874563210		
+                                            td 22,000
+                                        tr
+                                            td Genelia Ottre	
+                                            td Genelia@gmail.com
+                                            td 2 Days
+                                            td Male
+                                            td +91 8794562135
+                                            td 24,120
+                                        tr
+                                            td Michael Silva
+                                            td Michael@yahoo.com
+                                            td 3 Year
+                                            td Female
+                                            td +91 1234567891
+                                            td $1,98,500
+                                            
+                                        tr
+                                            td Paul Byrd
+                                            td Paul@gmail.com
+                                            td 2 Day
+                                            td Male
+                                            td +91 3124567894
+                                            td $7,25,000
+                                            
+                                        tr
+                                            td Gloria Little
+                                            td Gloria@yahoo.com
+                                            td 4 Year
+                                            td Male
+                                            td +91 9876541230
+                                            td $2,37,500
+                                            
+                                        tr
+                                            td Bradley Greer
+                                            td Bradley@gmail.com
+                                            td 6 Year
+                                            td Male
+                                            td +91 8794561230
+                                            td $1,32,000
+                                            
+                                        tr
+                                            td Dai Rios
+                                            td Rios@gmail.com
+                                            td 1 Year
+                                            td Male
+                                            td +91 7418529630
+                                            td $2,17,500
+                                            
+                                        tr
+                                            td Jenette Caldwell
+                                            td Jenette@yahoo.com
+                                            td 2 Year
+                                            td Female
+                                            td +91 4569871230
+                                            td $3,45,000
+                                            
+                                        tr
+                                            td Yuri Berry
+                                            td Berry@gmail.com
+                                            td 3 Year
+                                            td Female
+                                            td +91 7894561230
+                                            td $6,75,000
+                                            
+                                        tr
+                                            td Caesar Vance
+                                            td Vance@yahoo.com
+                                            td 1 Year
+                                            td Male
+                                            td +91 8596741230
+                                            td $14,500
+                                            
+                                        tr
+                                            td Doris Wilder
+                                            td Wilder@gmail.com
+                                            td 6 Month
+                                            td Male
+                                            td +91 6541239870
+                                            td $85,600
+                                            
+                                        tr
+                                            td Angelica Ramos
+                                            td Angelica@gmail.com
+                                            td 4 Month
+                                            td Female
+                                            td +91 8745963210
+                                            td $12,00,000
+                                            
+                                        tr
+                                            td Gavin Joyce
+                                            td Gavin@yahoo.com
+                                            td 8 Month
+                                            td Male
+                                            td +91 8596741230
+                                            td $92,575
+                                            
+                                        tr
+                                            td Jennifer Chang
+                                            td Jennifer@yahoo.com
+                                            td 1 Year
+                                            td Female
+                                            td +91 7412589630
+                                            td $3,57,650
+                                            
+                                        tr
+                                            td Brenden Wagner
+                                            td Brenden@gmail.com
+                                            td 2 Year
+                                            td Female
+                                            td +91 6589742301
+                                            td $2,06,850
+                                            
+                                        tr
+                                            td Fiona Green
+                                            td Fiona@yahoo.com
+                                            td 3 Month
+                                            td Female
+                                            td +91 6985321470
+                                            td $8,50,000
+                                            
+                                        tr
+                                            td Shou Itou
+                                            td Shou@gmail.com
+                                            td 2 Year
+                                            td Female
+                                            td +91 3256897414
+                                            td $1,63,000
+                                            
+                                        tr
+                                            td Michelle House
+                                            td Michelle@gmail.com
+                                            td 1 Year
+                                            td Male
+                                            td +91 8745961235
+                                            td $95,400
+                                            
+                                        tr
+                                            td Suki Burks
+                                            td Burks@gmail.com
+                                            td 3 Year
+                                            td Female
+                                            td +91 4785961230
+                                            td $1,14,500
+                                            
+                                        tr
+                                            td Prescott Bartlett
+                                            td Prescott@gmail.com
+                                            td 8 Year
+                                            td Male
+                                            td +91 4578961231
+                                            td $1,45,000
+                                            
+                                        tr
+                                            td Gavin Cortez
+                                            td Gavin@gmail.com
+                                            td 9 Year
+                                            td Male
+                                            td +91 748521369
+                                            td $2,35,500
+                                    tfoot
+                                        tr
+                                            th Employee Name
+                                            th Email
+                                            th Experience
+                                            th Sex
+                                            th Contact No.
+                                            th Salary
+                
+                .col-sm-12
+                    .card
+                        .card-header.pb-0.card-no-border
+                            h5 Footer callback
+                            p.f-m-light.mt-1 
+                                | With the use of the header and footer callback manipulation functions provided by DataTables 
+                                code headerCallback 
+                                | option and 
+                                code footerCallback 
+                                | option, it is possible to perform some powerful and useful data manipulation functions, such as summarizing data in the table.
+                        .card-body 
+                            .table-responsive.custom-scrollbar
+                                table#footer-callback-table.display.foot-callback-table
+                                    thead
+                                        tr
+                                            th First name
+                                            th Last name
+                                            th Position
+                                            th Office
+                                            th Salary
+                                    tbody
+                                        tr
+                                            td Tiger
+                                            td Nixon
+                                            td System Architect
+                                            td Edinburgh
+                                            td $320,800
+                                        tr
+                                            td Garrett
+                                            td Winters
+                                            td Accountant
+                                            td Tokyo
+                                            td $170,750
+                                        tr
+                                            td Ashton
+                                            td Cox
+                                            td Junior Technical Author
+                                            td San Francisco
+                                            td $86,000
+                                        tr
+                                            td Cedric
+                                            td Kelly
+                                            td Senior Javascript Developer
+                                            td Edinburgh
+                                            td $433,060
+                                        tr
+                                            td Airi
+                                            td Satou
+                                            td Accountant
+                                            td Tokyo
+                                            td $162,700
+                                        tr
+                                            td Brielle
+                                            td Williamson
+                                            td Integration Specialist
+                                            td New York
+                                            td $372,000
+                                        tr
+                                            td Herrod
+                                            td Chandler
+                                            td Sales Assistant
+                                            td San Francisco
+                                            td $137,500
+                                        tr
+                                            td Rhona
+                                            td Davidson
+                                            td Integration Specialist
+                                            td Tokyo
+                                            td $327,900
+                                        tr
+                                            td Colleen
+                                            td Hurst
+                                            td Javascript Developer
+                                            td San Francisco
+                                            td $205,500
+                                        tr
+                                            td Sonya
+                                            td Frost
+                                            td Software Engineer
+                                            td Edinburgh
+                                            td $103,600
+                                        tr
+                                            td Jena
+                                            td Gaines
+                                            td Office Manager
+                                            td London
+                                            td $90,560
+                                        tr
+                                            td Quinn
+                                            td Flynn
+                                            td Support Lead
+                                            td Edinburgh
+                                            td $342,000
+                                        tr
+                                            td Charde
+                                            td Marshall
+                                            td Regional Director
+                                            td San Francisco
+                                            td $470,600
+                                        tr
+                                            td Haley
+                                            td Kennedy
+                                            td Senior Marketing Designer
+                                            td London
+                                            td $313,500
+                                        tr
+                                            td Tatyana
+                                            td Fitzpatrick
+                                            td Regional Director
+                                            td London
+                                            td $385,750
+                                        tr
+                                            td Michael
+                                            td Silva
+                                            td Marketing Designer
+                                            td London
+                                            td $198,500
+                                        tr
+                                            td Paul
+                                            td Byrd
+                                            td Chief Financial Officer (CFO)
+                                            td New York
+                                            td $725,000
+                                        tr
+                                            td Gloria
+                                            td Little
+                                            td Systems Administrator
+                                            td New York
+                                            td $237,500
+                                        tr
+                                            td Bradley
+                                            td Greer
+                                            td Software Engineer
+                                            td London
+                                            td $132,000
+                                        tr
+                                            td Dai
+                                            td Rios
+                                            td Personnel Lead
+                                            td Edinburgh
+                                            td $217,500
+                                        tr
+                                            td Jenette
+                                            td Caldwell
+                                            td Development Lead
+                                            td New York
+                                            td $345,000
+                                        tr
+                                            td Yuri
+                                            td Berry
+                                            td Chief Marketing Officer (CMO)
+                                            td New York
+                                            td $675,000
+                                        tr
+                                            td Caesar
+                                            td Vance
+                                            td Pre-Sales Support
+                                            td New York
+                                            td $106,450
+                                        tr
+                                            td Doris
+                                            td Wilder
+                                            td Sales Assistant
+                                            td Sydney
+                                            td $85,600
+                                        tr
+                                            td Angelica
+                                            td Ramos
+                                            td Chief Executive Officer (CEO)
+                                            td London
+                                            td $1,200,000
+                                        tr
+                                            td Gavin
+                                            td Joyce
+                                            td Developer
+                                            td Edinburgh
+                                            td $92,575
+                                        tr
+                                            td Jennifer
+                                            td Chang
+                                            td Regional Director
+                                            td Singapore
+                                            td $357,650
+                                        tr
+                                            td Brenden
+                                            td Wagner
+                                            td Software Engineer
+                                            td San Francisco
+                                            td $206,850
+                                        tr
+                                            td Fiona
+                                            td Green
+                                            td Chief Operating Officer (COO)
+                                            td San Francisco
+                                            td $850,000
+                                        tr
+                                            td Shou
+                                            td Itou
+                                            td Regional Marketing
+                                            td Tokyo
+                                            td $163,000
+                                        tr
+                                            td Michelle
+                                            td House
+                                            td Integration Specialist
+                                            td Sydney
+                                            td $95,400
+                                        tr
+                                            td Suki
+                                            td Burks
+                                            td Developer
+                                            td London
+                                            td $114,500
+                                        tr
+                                            td Prescott
+                                            td Bartlett
+                                            td Technical Author
+                                            td London
+                                            td $145,000
+                                        tr
+                                            td Gavin
+                                            td Cortez
+                                            td Team Leader
+                                            td San Francisco
+                                            td $235,500
+                                        tr
+                                            td Martena
+                                            td Mccray
+                                            td Post-Sales support
+                                            td Edinburgh
+                                            td $324,050
+                                        tr
+                                            td Unity
+                                            td Butler
+                                            td Marketing Designer
+                                            td San Francisco
+                                            td $85,675
+                                        tr
+                                            td Howard
+                                            td Hatfield
+                                            td Office Manager
+                                            td San Francisco
+                                            td $164,500
+                                        tr
+                                            td Hope
+                                            td Fuentes
+                                            td Secretary
+                                            td San Francisco
+                                            td $109,850
+                                        tr
+                                            td Vivian
+                                            td Harrell
+                                            td Financial Controller
+                                            td San Francisco
+                                            td $452,500
+                                        tr
+                                            td Timothy
+                                            td Mooney
+                                            td Office Manager
+                                            td London
+                                            td $136,200
+                                        tr
+                                            td Jackson
+                                            td Bradshaw
+                                            td Director
+                                            td New York
+                                            td $645,750
+                                        tr
+                                            td Olivia
+                                            td Liang
+                                            td Support Engineer
+                                            td Singapore
+                                            td $234,500
+                                        tr
+                                            td Bruno
+                                            td Nash
+                                            td Software Engineer
+                                            td London
+                                            td $163,500
+                                        tr
+                                            td Sakura
+                                            td Yamamoto
+                                            td Support Engineer
+                                            td Tokyo
+                                            td $139,575
+                                        tr
+                                            td Thor
+                                            td Walton
+                                            td Developer
+                                            td New York
+                                            td $98,540
+                                        tr
+                                            td Finn
+                                            td Camacho
+                                            td Support Engineer
+                                            td San Francisco
+                                            td $87,500
+                                        tr
+                                            td Serge
+                                            td Baldwin
+                                            td Data Coordinator
+                                            td Singapore
+                                            td $138,575
+                                        tr
+                                            td Zenaida
+                                            td Frank
+                                            td Software Engineer
+                                            td New York
+                                            td $125,250
+                                        tr
+                                            td Zorita
+                                            td Serrano
+                                            td Software Engineer
+                                            td San Francisco
+                                            td $115,000
+                                        tr
+                                            td Jennifer
+                                            td Acosta
+                                            td Junior Javascript Developer
+                                            td Edinburgh
+                                            td $75,650
+                                        tr
+                                            td Cara
+                                            td Stevens
+                                            td Sales Assistant
+                                            td New York
+                                            td $145,600
+                                        tr
+                                            td Hermione
+                                            td Butler
+                                            td Regional Director
+                                            td London
+                                            td $356,250
+                                        tr
+                                            td Lael
+                                            td Greer
+                                            td Systems Administrator
+                                            td London
+                                            td $103,500
+                                        tr
+                                            td Jonas
+                                            td Alexander
+                                            td Developer
+                                            td San Francisco
+                                            td $86,500
+                                        tr
+                                            td Shad
+                                            td Decker
+                                            td Regional Director
+                                            td Edinburgh
+                                            td $183,000
+                                        tr
+                                            td Michael
+                                            td Bruce
+                                            td Javascript Developer
+                                            td Singapore
+                                            td $183,000
+                                        tr
+                                            td Donna
+                                            td Snider
+                                            td Customer Support
+                                            td New York
+                                            td $112,000
+                                    tfoot
+                                        tr
+                                            th(colspan='4')
+                                            th.txt-primary
+
+
+                .col-sm-12
+                    .card
+                        .card-header.pb-0.card-no-border
+                            h5 Row Grouping
+                            p.f-m-light.mt-1 
+                                | In the example below the 'group' is the office location, which is based on the information in the third column (which is set to hidden). The grouping indicator is added by the
+                                code  drawCallback 
+                                | Option function , which will parse through the rows which are displayed, and enter a grouping TR element where a new group is found.A 
+                                code click 
+                                | event handler is added for the grouping rows to allow the grouping order to be restored as well as ordering by any other column.
+                        .card-body 
+                            .table-responsive.custom-scrollbar
+                                table#row-grouping-table.display.row-group-table
+                                    thead
+                                        tr
+                                            th Name
+                                            th Position
+                                            th Office
+                                            th Age
+                                            th Start date
+                                            th Salary
+                                    tbody
+                                        tr
+                                            td Tiger Nixon
+                                            td System Architect
+                                            td Edinburgh
+                                            td 61
+                                            td 2011-04-25
+                                            td $320,800
+                                        tr
+                                            td Garrett Winters
+                                            td Accountant
+                                            td Tokyo
+                                            td 63
+                                            td 2011-07-25
+                                            td $170,750
+                                        tr
+                                            td Ashton Cox
+                                            td Junior Technical Author
+                                            td San Francisco
+                                            td 66
+                                            td 2009-01-12
+                                            td $86,000
+                                        tr
+                                            td Cedric Kelly
+                                            td Senior Javascript Developer
+                                            td Edinburgh
+                                            td 22
+                                            td 2012-03-29
+                                            td $433,060
+                                        tr
+                                            td Airi Satou
+                                            td Accountant
+                                            td Tokyo
+                                            td 33
+                                            td 2008-11-28
+                                            td $162,700
+                                        tr
+                                            td Brielle Williamson
+                                            td Integration Specialist
+                                            td New York
+                                            td 61
+                                            td 2012-12-02
+                                            td $372,000
+                                        tr
+                                            td Herrod Chandler
+                                            td Sales Assistant
+                                            td San Francisco
+                                            td 59
+                                            td 2012-08-06
+                                            td $137,500
+                                        tr
+                                            td Rhona Davidson
+                                            td Integration Specialist
+                                            td Tokyo
+                                            td 55
+                                            td 2010-10-14
+                                            td $327,900
+                                        tr
+                                            td Colleen Hurst
+                                            td Javascript Developer
+                                            td San Francisco
+                                            td 39
+                                            td 2009-09-15
+                                            td $205,500
+                                        tr
+                                            td Sonya Frost
+                                            td Software Engineer
+                                            td Edinburgh
+                                            td 23
+                                            td 2008-12-13
+                                            td $103,600
+                                        tr
+                                            td Jena Gaines
+                                            td Office Manager
+                                            td London
+                                            td 30
+                                            td 2008-12-19
+                                            td $90,560
+                                        tr
+                                            td Quinn Flynn
+                                            td Support Lead
+                                            td Edinburgh
+                                            td 22
+                                            td 2013-03-03
+                                            td $342,000
+                                        tr
+                                            td Charde Marshall
+                                            td Regional Director
+                                            td San Francisco
+                                            td 36
+                                            td 2008-10-16
+                                            td $470,600
+                                        tr
+                                            td Haley Kennedy
+                                            td Senior Marketing Designer
+                                            td London
+                                            td 43
+                                            td 2012-12-18
+                                            td $313,500
+                                        tr
+                                            td Tatyana Fitzpatrick
+                                            td Regional Director
+                                            td London
+                                            td 19
+                                            td 2010-03-17
+                                            td $385,750
+                                        tr
+                                            td Michael Silva
+                                            td Marketing Designer
+                                            td London
+                                            td 66
+                                            td 2012-11-27
+                                            td $198,500
+                                        tr
+                                            td Paul Byrd
+                                            td Chief Financial Officer (CFO)
+                                            td New York
+                                            td 64
+                                            td 2010-06-09
+                                            td $725,000
+                                        tr
+                                            td Gloria Little
+                                            td Systems Administrator
+                                            td New York
+                                            td 59
+                                            td 2009-04-10
+                                            td $237,500
+                                        tr
+                                            td Bradley Greer
+                                            td Software Engineer
+                                            td London
+                                            td 41
+                                            td 2012-10-13
+                                            td $132,000
+                                        tr
+                                            td Dai Rios
+                                            td Personnel Lead
+                                            td Edinburgh
+                                            td 35
+                                            td 2012-09-26
+                                            td $217,500
+                                        tr
+                                            td Jenette Caldwell
+                                            td Development Lead
+                                            td New York
+                                            td 30
+                                            td 2011-09-03
+                                            td $345,000
+                                        tr
+                                            td Yuri Berry
+                                            td Chief Marketing Officer (CMO)
+                                            td New York
+                                            td 40
+                                            td 2009-06-25
+                                            td $675,000
+                                        tr
+                                            td Caesar Vance
+                                            td Pre-Sales Support
+                                            td New York
+                                            td 21
+                                            td 2011-12-12
+                                            td $106,450
+                                        tr
+                                            td Doris Wilder
+                                            td Sales Assistant
+                                            td Sydney
+                                            td 23
+                                            td 2010-09-20
+                                            td $85,600
+                                        tr
+                                            td Angelica Ramos
+                                            td Chief Executive Officer (CEO)
+                                            td London
+                                            td 47
+                                            td 2009-10-09
+                                            td $1,200,000
+                                        tr
+                                            td Gavin Joyce
+                                            td Developer
+                                            td Edinburgh
+                                            td 42
+                                            td 2010-12-22
+                                            td $92,575
+                                        tr
+                                            td Jennifer Chang
+                                            td Regional Director
+                                            td Singapore
+                                            td 28
+                                            td 2010-11-14
+                                            td $357,650
+                                        tr
+                                            td Brenden Wagner
+                                            td Software Engineer
+                                            td San Francisco
+                                            td 28
+                                            td 2011-06-07
+                                            td $206,850
+                                        tr
+                                            td Fiona Green
+                                            td Chief Operating Officer (COO)
+                                            td San Francisco
+                                            td 48
+                                            td 2010-03-11
+                                            td $850,000
+                                        tr
+                                            td Shou Itou
+                                            td Regional Marketing
+                                            td Tokyo
+                                            td 20
+                                            td 2011-08-14
+                                            td $163,000
+                                        tr
+                                            td Michelle House
+                                            td Integration Specialist
+                                            td Sydney
+                                            td 37
+                                            td 2011-06-02
+                                            td $95,400
+                                        tr
+                                            td Suki Burks
+                                            td Developer
+                                            td London
+                                            td 53
+                                            td 2009-10-22
+                                            td $114,500
+                                        tr
+                                            td Prescott Bartlett
+                                            td Technical Author
+                                            td London
+                                            td 27
+                                            td 2011-05-07
+                                            td $145,000
+                                        tr
+                                            td Gavin Cortez
+                                            td Team Leader
+                                            td San Francisco
+                                            td 22
+                                            td 2008-10-26
+                                            td $235,500
+                                        tr
+                                            td Martena Mccray
+                                            td Post-Sales support
+                                            td Edinburgh
+                                            td 46
+                                            td 2011-03-09
+                                            td $324,050
+                                        tr
+                                            td Unity Butler
+                                            td Marketing Designer
+                                            td San Francisco
+                                            td 47
+                                            td 2009-12-09
+                                            td $85,675
+                                        tr
+                                            td Howard Hatfield
+                                            td Office Manager
+                                            td San Francisco
+                                            td 51
+                                            td 2008-12-16
+                                            td $164,500
+                                        tr
+                                            td Hope Fuentes
+                                            td Secretary
+                                            td San Francisco
+                                            td 41
+                                            td 2010-02-12
+                                            td $109,850
+                                        tr
+                                            td Vivian Harrell
+                                            td Financial Controller
+                                            td San Francisco
+                                            td 62
+                                            td 2009-02-14
+                                            td $452,500
+                                        tr
+                                            td Timothy Mooney
+                                            td Office Manager
+                                            td London
+                                            td 37
+                                            td 2008-12-11
+                                            td $136,200
+                                        tr
+                                            td Jackson Bradshaw
+                                            td Director
+                                            td New York
+                                            td 65
+                                            td 2008-09-26
+                                            td $645,750
+                                        tr
+                                            td Olivia Liang
+                                            td Support Engineer
+                                            td Singapore
+                                            td 64
+                                            td 2011-02-03
+                                            td $234,500
+                                        tr
+                                            td Bruno Nash
+                                            td Software Engineer
+                                            td London
+                                            td 38
+                                            td 2011-05-03
+                                            td $163,500
+                                        tr
+                                            td Sakura Yamamoto
+                                            td Support Engineer
+                                            td Tokyo
+                                            td 37
+                                            td 2009-08-19
+                                            td $139,575
+                                        tr
+                                            td Thor Walton
+                                            td Developer
+                                            td New York
+                                            td 61
+                                            td 2013-08-11
+                                            td $98,540
+                                        tr
+                                            td Finn Camacho
+                                            td Support Engineer
+                                            td San Francisco
+                                            td 47
+                                            td 2009-07-07
+                                            td $87,500
+                                        tr
+                                            td Serge Baldwin
+                                            td Data Coordinator
+                                            td Singapore
+                                            td 64
+                                            td 2012-04-09
+                                            td $138,575
+                                        tr
+                                            td Zenaida Frank
+                                            td Software Engineer
+                                            td New York
+                                            td 63
+                                            td 2010-01-04
+                                            td $125,250
+                                        tr
+                                            td Zorita Serrano
+                                            td Software Engineer
+                                            td San Francisco
+                                            td 56
+                                            td 2012-06-01
+                                            td $115,000
+                                        tr
+                                            td Jennifer Acosta
+                                            td Junior Javascript Developer
+                                            td Edinburgh
+                                            td 43
+                                            td 2013-02-01
+                                            td $75,650
+                                        tr
+                                            td Cara Stevens
+                                            td Sales Assistant
+                                            td New York
+                                            td 46
+                                            td 2011-12-06
+                                            td $145,600
+                                        tr
+                                            td Hermione Butler
+                                            td Regional Director
+                                            td London
+                                            td 47
+                                            td 2011-03-21
+                                            td $356,250
+                                        tr
+                                            td Lael Greer
+                                            td Systems Administrator
+                                            td London
+                                            td 21
+                                            td 2009-02-27
+                                            td $103,500
+                                        tr
+                                            td Jonas Alexander
+                                            td Developer
+                                            td San Francisco
+                                            td 30
+                                            td 2010-07-14
+                                            td $86,500
+                                        tr
+                                            td Shad Decker
+                                            td Regional Director
+                                            td Edinburgh
+                                            td 51
+                                            td 2008-11-13
+                                            td $183,000
+                                        tr
+                                            td Michael Bruce
+                                            td Javascript Developer
+                                            td Singapore
+                                            td 29
+                                            td 2011-06-27
+                                            td $183,000
+                                        tr
+                                            td Donna Snider
+                                            td Customer Support
+                                            td New York
+                                            td 27
+                                            td 2011-01-25
+                                            td $112,000
+                                    tfoot
+                                        tr
+                                            th Name
+                                            th Position
+                                            th Office
+                                            th Age
+                                            th Start date
+                                            th Salary
+
+
+            // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

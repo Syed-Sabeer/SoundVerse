@@ -1,0 +1,303 @@
+- var page_Title = 'Breadcrumb';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var prism                 = true;
+- var clipboard             = true;
+- var customcard            = true;
+- var height_equal          = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Breadcrumb
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Bonus Ui
+                    li.breadcrumb-item.active Breadcrumb
+          // Container-fluid starts
+          .container-fluid
+            .row
+              // Basic Breadcrumb
+              .col-sm-6
+                .card.height-equal
+                  .card-header
+                    h5 Default Breadcrumbs
+                    p.f-m-light.mt-1
+                      | Use 
+                      code  breadcrumb
+                      |  class to set breadcrumb.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    nav.breadcrumb
+                      a.breadcrumb-item(href='#!') Home
+                      span.breadcrumb-item.active Ui Kits
+                    nav.breadcrumb.m-0
+                      a.breadcrumb-item(href='#!') Home
+                      a.breadcrumb-item(href='#!') Ui Kits
+                      span.breadcrumb-item.active Alert
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#default-breadcrumbs', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#default-breadcrumbs
+                          |&lt;div class="card-body"&gt;
+                          |  &lt;nav class="breadcrumb"&gt;
+                          |    &lt;a class="breadcrumb-item" href="javascript:void(0)"&gt;Home&lt;/a&gt;
+                          |    &lt;span class="breadcrumb-item active"&gt;Ui Kits&lt;/span&gt;
+                          |  &lt;/nav&gt;
+                          |  &lt;nav class="breadcrumb m-0"&gt;
+                          |    &lt;a class="breadcrumb-item" href="javascript:void(0)"&gt;Home&lt;/a&gt;
+                          |    &lt;a class="breadcrumb-item" href="javascript:void(0)"&gt;Ui Kits&lt;/a&gt;
+                          |    &lt;span class="breadcrumb-item active"&gt;Alert&lt;/span&gt;&lt;/nav&gt;
+                          |&lt;/div&gt;
+              // default breadcrumb ends
+              // Dividers Breadcrumbs
+              .col-sm-6
+                .card.height-equal
+                  .card-header
+                    h5 Divider Breadcrumbs
+                    p.f-m-light.mt-1
+                      | Use 
+                      code breadcrumb-icon
+                      |  class to set divider breadcrumb with icons.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card                  
+                  .card-body
+                    nav.breadcrumb.breadcrumb-icon
+                      a.breadcrumb-item(href='#!') Home
+                      span.breadcrumb-item.active Ui Kits
+                    nav.breadcrumb.breadcrumb-icon.m-0
+                      a.breadcrumb-item(href='#!') Home
+                      a.breadcrumb-item(href='#!') Ui Kits
+                      span.breadcrumb-item.active Progress
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#divider-breadcrumbs', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#divider-breadcrumbs
+                          |&lt;div class="card-body"&gt;
+                          |  &lt;nav class="breadcrumb breadcrumb-icon"&gt;
+                          |    &lt;a class="breadcrumb-item" href="javascript:void(0)"&gt;Home&lt;/a&gt;
+                          |    &lt;span class="breadcrumb-item active"&gt;Ui Kits&lt;/span&gt;
+                          |  &lt;/nav&gt;
+                          |  &lt;nav class="breadcrumb breadcrumb-icon m-0"&gt;
+                          |    &lt;a class="breadcrumb-item" href="javascript:void(0)"&gt;Home&lt;/a&gt;
+                          |    &lt;a class="breadcrumb-item" href="javascript:void(0)"&gt;Ui Kits&lt;/a&gt;
+                          |    &lt;span class="breadcrumb-item active"&gt;Progress&lt;/span&gt;
+                          |  &lt;/nav&gt;
+                          |&lt;/div&gt;
+              // Icons breadcrumb start
+              .col-sm-6
+                .card.height-equal
+                  .card-header
+                    h5 With Icons Breadcrumbs
+                    p.f-m-light.mt-1
+                      | Use
+                      code  breadcrumb
+                      |  class, to set breadcrumb with icons.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card                  
+                  .card-body
+                    ol.breadcrumb.bg-white.p-l-0
+                      li.breadcrumb-item
+                        a(href='#!')
+                          i.fa-solid.fa-house
+                      li.breadcrumb-item.active Bonus Ui
+                    ol.breadcrumb.bg-white.m-b-0.p-b-0.p-l-0
+                      li.breadcrumb-item
+                        a(href='#!')
+                          i.fa-solid.fa-house
+                      li.breadcrumb-item Bonus Ui
+                      li.breadcrumb-item.active Breadcrumb
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#icon-breadcrumbs', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#icon-breadcrumbs
+                          |&lt;div class="card-body"&gt;
+                          |  &lt;ol class="breadcrumb bg-white p-l-0"&gt;
+                          |    &lt;li class="breadcrumb-item"&gt;
+                          |      &lt;a href="javascript:void(0)"&gt;
+                          |      &lt;i class="fa-solid fa-house"&gt;&lt;/i&gt;&lt;/a&gt;
+                          |    &lt;/li&gt;
+                          |    &lt;li class="breadcrumb-item active"&gt;Bonus Ui&lt;/li&gt;
+                          |  &lt;/ol&gt;
+                          |  &lt;ol class="breadcrumb bg-white m-b-0 p-b-0 p-l-0"&gt;
+                          |    &lt;li class="breadcrumb-item"&gt;
+                          |      &lt;a href="javascript:void(0)"&gt;
+                          |      &lt;i class="fa-solid fa-house"&gt;&lt;/i&gt;&lt;/a&gt;
+                          |    &lt;/li&gt;
+                          |    &lt;li class="breadcrumb-item"&gt;Bonus Ui&lt;/li&gt;
+                          |    &lt;li class="breadcrumb-item active"&gt;Breadcrumb&lt;/li&gt;
+                          |  &lt;/ol&gt;
+                          |&lt;/div&gt;
+              // Nav breadcrumb start
+              .col-sm-6
+                .card.height-equal
+                  .card-header
+                    h5 Variation of Breadcrumb
+                    p.f-m-light.mt-1
+                      | Using the 
+                      code breadcrumb 
+                      | class to any icon sets, you can set variations of the breadcrumb.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card                  
+                  .card-body.breadcrumb-space
+                    nav.breadcrumb.breadcrumb-no-divider.mb-0.gap-2
+                      a.breadcrumb-item.mb-1.mb-xl-0(href='#!') Home ->
+                      a.breadcrumb-item.ps-0.mb-1.mb-xl-0(href='#!') Tables ->
+                      a.breadcrumb-item.ps-0.mb-1.mb-xl-0(href='#!') Bootstrap Tables ->
+                      span.breadcrumb-item.active.ps-0 Basic Tables
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#variation-breadcrumbs', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#variation-breadcrumbs
+                          |&lt;div class="card-body breadcrumb-space"&gt;
+                          |  &lt;nav class="breadcrumb breadcrumb-no-divider mb-0 gap-2"&gt;
+                          |    &lt;a class="breadcrumb-item mb-1 mb-xl-0" href="javascript:void(0)"&gt;Home->&lt;/a&gt;
+                          |    &lt;a class="breadcrumb-item ps-0 mb-1 mb-xl-0" href="javascript:void(0)"&gt;Tables->&lt;/a&gt;
+                          |    &lt;a class="breadcrumb-item ps-0 mb-1 mb-xl-0" href="javascript:void(0)"&gt;Bootstrap Tables ->&lt;/a&gt;
+                          |    &lt;span class="breadcrumb-item active ps-0"&gt;Basic Tables&lt;/span&gt;
+                          |  &lt;/nav&gt;
+                          |&lt;/div&gt;
+              // Nav breadcrumb ends
+              // colored navigation start
+              .col-sm-12
+                .card
+                  .card-header
+                    h5 Colored Breadcrumbs
+                    p.f-m-light.mt-1
+                      | You can set background colors like 
+                      code [bg-*] 
+                      | and set breadcrumb using the
+                      code  breadcrumb class
+                      |.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card                  
+                  .card-body
+                    ol.breadcrumb.breadcrumb-colored.m-b-30.bg-info
+                      li.breadcrumb-item
+                        a.fw-bold(href='#!') Home
+                      li.breadcrumb-item
+                        a.fw-bold(href='#!') Bonus Ui
+                      li.breadcrumb-item.active.fw-bold Breadcrumb
+                    ol.breadcrumb.breadcrumb-colored.m-b-30.bg-warning
+                      li.breadcrumb-item
+                        a.fw-bold(href='#!') Home
+                      li.breadcrumb-item
+                        a.fw-bold(href='#!') Icons
+                      li.breadcrumb-item.active.fw-bold Flag-icon
+                    ol.breadcrumb.breadcrumb-colored.m-0.bg-danger
+                      li.breadcrumb-item
+                        a.fw-bold(href='#!') Home
+                      li.breadcrumb-item
+                        a.fw-bold(href='#!') Gallery
+                      li.breadcrumb-item.active.fw-bold Gallery-grid                  
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#color-breadcrumbs', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#color-breadcrumbs
+                          |&lt;div class="card-body"&gt;
+                          |  &lt;ol class="breadcrumb breadcrumb-colored m-b-30 bg-info"&gt;
+                          |    &lt;li class="breadcrumb-item"&gt;&lt;a class="fw-bold" href="javascript:void(0)"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                          |    &lt;li class="breadcrumb-item"&gt;&lt;a class="fw-bold" href="javascript:void(0)"&gt;Bonus Ui&lt;/a&gt;&lt;/li&gt;
+                          |    &lt;li class="breadcrumb-item active fw-bold"&gt;Breadcrumb&lt;/li&gt;
+                          |  &lt;/ol&gt;
+                          |  &lt;ol class="breadcrumb breadcrumb-colored m-b-30 bg-warning"&gt;
+                          |    &lt;li class="breadcrumb-item"&gt;&lt;a class="fw-bold" href="javascript:void(0)"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                          |    &lt;li class="breadcrumb-item"&gt;&lt;a class="fw-bold" href="javascript:void(0)"&gt;Icons&lt;/a&gt;&lt;/li&gt;
+                          |    &lt;li class="breadcrumb-item active fw-bold"&gt;Flag-icon&lt;/li&gt;
+                          |  &lt;/ol&gt;
+                          |  &lt;ol class="breadcrumb breadcrumb-colored m-0 bg-danger"&gt;
+                          |    &lt;li class="breadcrumb-item"&gt;&lt;a class="fw-bold" href="javascript:void(0)"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                          |    &lt;li class="breadcrumb-item"&gt;&lt;a class="fw-bold" href="javascript:void(0)"&gt;Gallery&lt;/a&gt;&lt;/li&gt;
+                          |    &lt;li class="breadcrumb-item active fw-bold"&gt;Gallery-grid&lt;/li&gt;
+                          |  &lt;/ol&gt;
+                          |&lt;/div&gt;
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

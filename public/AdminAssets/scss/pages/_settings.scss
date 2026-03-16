@@ -1,0 +1,173 @@
+/**=====================
+   3.64 Settings CSS Start
+==========================**/
+.main-setting {
+    .nav-pills {
+        gap: 18px;
+
+        .nav-link {
+            padding: 12px 16px;
+            background-color: rgba($gray-60, 0.3);
+            color: $theme-body-font-color;
+            @include pixelstrap-flex(flex, flex-start, center);
+            gap: 8px;
+
+            &.active {
+                svg {
+                    stroke: $white;
+                }
+            }
+
+            svg {
+                @include pixelstrap-size(20px, 20px);
+                fill: $transparent-color;
+                stroke: rgba($badge-light-color, 0.8);
+
+                [dir="rtl"] & {
+                    transform: scaleX(-1);
+                }
+            }
+
+            @media (max-width:575px) {
+                margin-bottom: 12px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        @media (max-width:991px) {
+            gap: 12px;
+            flex-wrap: nowrap;
+            overflow: auto;
+            position: relative;
+
+            .nav-link {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .panel-body {
+        .row {
+            margin-bottom: 1rem;
+
+            @media (max-width:575px) {
+                margin-bottom: 0.8rem;
+            }
+        }
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: $badge-light-color;
+    }
+
+    .form-control,
+    .form-select {
+        font-size: 14px;
+        color: var(--body-font-color);
+        background-color: $auth-bg-color;
+    }
+
+    .bootstrap-select {
+        .dropdown-toggle {
+            border-color: $light-gray !important;
+        }
+
+        .dropdown-menu {
+            .inner {
+                max-height: 200px;
+            }
+        }
+    }
+
+    .input-group {
+        .input-group-text {
+            background-color: rgba($lighter-white, 0.7);
+
+            i {
+                font-weight: 400;
+            }
+        }
+    }
+
+    .form-check {
+        &.form-switch {
+            @include pixelstrap-flex(flex, flex-start, center);
+            gap: 14px;
+            padding: 0;
+            margin: 0;
+
+            .form-check-input {
+                margin: 0;
+                @include pixelstrap-size(40px, 22px);
+            }
+
+            p {
+                @include pixelstrap-flex(flex, center, center);
+                gap: 6px;
+
+                svg {
+                    min-width: 15px;
+                    min-height: 15px;
+                    @include pixelstrap-size(15px, 15px);
+                }
+            }
+        }
+    }
+
+    .helper-text {
+        p {
+            font-size: 13px;
+        }
+    }
+
+    .tab-content {
+        @media (min-width:992px) {
+            border-left: 1px dashed $gray-60;
+            padding-left: 18px;
+            height: 100%;
+
+            [dir="rtl"] & {
+                border-left: unset;
+                border-right: 1px dashed $gray-60;
+                padding-left: unset;
+                padding-right: 18px;
+            }
+
+            .advance-options {
+                .tab-content {
+                    border: unset;
+                }
+            }
+        }
+
+        .advance-options {
+            @media (max-width:575px) {
+                .nav-tabs {
+                    margin-bottom: 18px;
+
+                    .nav-item {
+                        .nav-link {
+                            padding-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .row {
+            margin-bottom: 1.5rem;
+
+            @media (max-width:575px) {
+                margin-bottom: 1.2rem;
+            }
+        }
+    }
+}
+
+/**=====================
+   3.64 Settings CSS Start
+==========================**/

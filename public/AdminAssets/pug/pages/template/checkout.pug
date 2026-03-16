@@ -1,0 +1,363 @@
+- var page_Title = 'Checkout';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var custom_sellers        = true;
+- var number_wizard         = true;
+- var bs_select             = true;
+- var form_validation_custom = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body.checkout
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Checkout
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Ecommerce
+                    li.breadcrumb-item.active Checkout
+          // Container-fluid starts
+          .container-fluid
+            .row.shipping-form
+              .col-xl-8
+                .card.checkout-cart
+                  .card-body.basic-wizard.important-validation
+                    #stepper1.stepper-horizontal.custom-scrollbar
+                      .stepper-one.stepper.step.editing.active
+                        .step-circle
+                          span 1
+                        .step-title Information
+                        .step-bar-left
+                        .step-bar-right
+                      .stepper-two.step
+                        .step-circle
+                          span 2
+                        .step-title Shipping
+                        .step-bar-left
+                        .step-bar-right
+                      .stepper-three.step
+                        .step-circle
+                          span 3
+                        .step-title Payment
+                        .step-bar-left
+                        .step-bar-right
+                      .stepper-four.step
+                        .step-circle
+                          span 4
+                        .step-title Completed
+                        .step-bar-left
+                        .step-bar-right
+                    #msform.shipping-content
+                      //- .custom-input used as dark mode 
+                      form.stepper-one.row.g-3.needs-validation.shipping-wizard(novalidate='')
+                        .row.g-3.custom-input
+                          .col-sm-6
+                            label.form-label(for='customName') Full Name
+                            input#customName.form-control(type='text' placeholder="Enter full name")
+                          .col-sm-6
+                            label.form-label(for='customContact') Contact Number
+                            input#customContact.form-control(type='number' placeholder='Enter number')
+                          .col-sm-12
+                            label.form-label(for='customEmail') Email
+                            input#customEmail.form-control(type='email' placeholder='pixelstrap@example.com')
+                          .col-12 
+                              label.form-label(for='currentAddress1') Current Address 
+                              textarea#currentAddress1.form-control(rows='3' placeholder="Enter your current address")
+                          .col-12 
+                            label.form-label(for='otherNotes1') Other Notes
+                            textarea#otherNotes1.form-control(rows='3' placeholder='Enter your queries...')
+                          .col-md-4
+                            label.form-label(for='customSelectCountry') Country
+                            select#customSelectCountry.form-select
+                              option(selected='' disabled='' value='1') Select country
+                              option(value='1') Africa 
+                              option(value='2') India
+                              option(value='3') Indonesia 
+                              option(value='4') Netherlands
+                              option(value='5') U.K 
+                              option(value='6') U.S
+                          .col-md-4.col-sm-6 
+                            label.form-label(for='customstate') State
+                            input#customstate.form-control(type='text' placeholder='Enter state')
+                          .col-md-4.col-sm-6
+                            label.form-label(for='customPostalCode') Postal Code
+                            input#customPostalCode.form-control(type='text' placeholder="Enter postal code")
+                      form.stepper-two.row.g-3.needs-validation.shipping-wizard(novalidate='')
+                        .col-xxl-5.col-md-6.box-col-6
+                          .shipping-title
+                            h6 Delivery Address
+                            button.btn.btn-primary(type='button', data-bs-toggle='modal', data-bs-target='#exampleModalgetbootstrap', data-whatever='@getbootstrap') 
+                              i.fa-solid.fa-square-plus.f-20
+                          .row.g-3.mt-0.flex-column
+                            .col-12
+                              .card-wrapper.border.rounded-3.h-100.light-card
+                                div.collect-address
+                                  .d-flex.gap-2.align-items-center
+                                    .form-check.radio.radio-primary
+                                      input#shipping-choose1.form-check-input(type='radio' name='radio1' value='option1' checked='')
+                                      label.form-check-label.mb-0(for='shipping-choose1')
+                                        | Blakely Roy
+                                  .card-icon
+                                      i.fa-solid.fa-pencil
+                                      i.fa-solid.fa-trash-can
+                                      span.badge.badge-primary Home
+                                .shipping-address
+                                  span 
+                                    strong Address: 
+                                    | 2211 Fruitville Rd, Sarasota, Florida, US 
+                                  span 
+                                    strong Pincode: 
+                                    | 34237
+                                  span 
+                                    strong Contact: 
+                                    | +1 3215643789
+                            .col-12
+                              .card-wrapper.border.rounded-3.h-100.light-card
+                                div.collect-address
+                                  .d-flex.gap-2.align-items-center
+                                    .form-check.radio.radio-primary
+                                      input#shipping-choose2.form-check-input(type='radio' name='radio1' value='option1' checked='')
+                                      label.form-check-label.mb-0(for='shipping-choose2')
+                                        | Lia Dyer
+                                  .card-icon
+                                      i.fa-solid.fa-pencil
+                                      i.fa-solid.fa-trash-can
+                                      span.badge.badge-primary Office
+                                .shipping-address
+                                  span 
+                                    strong Address: 
+                                    | 1531 E 23rd St S, Independence, Mississippi, US 
+                                  span 
+                                    strong Pincode: 
+                                    | 64055
+                                  span 
+                                    strong Contact: 
+                                    | +1 252450089
+                        .col-xxl-7.col-md-6.box-col-6
+                          h6 Delivery Options
+                          .row.shipping-method.g-3.mt-0.flex-column
+                            .col-12
+                              .card-wrapper.border.rounded-3.h-100.light-card
+                                .form-check.radio.radio-primary
+                                  input#shipping-choose3.form-check-input(type='radio' name='radio2' value='option1' checked='')
+                                  label.form-check-label.mb-0(for='shipping-choose3')
+                                    | Standard Delivery - Free
+                                p Estimated 5-7 days shipping
+                            .col-12
+                              .card-wrapper.border.rounded-3.h-100.light-card
+                                .form-check.radio.radio-primary
+                                  input#shipping-choose4.form-check-input(type='radio' name='radio2' value='option1' checked='')
+                                  label.form-check-label.mb-0(for='shipping-choose4')
+                                    | Express Delivery - $30
+                                P Estimated 1-2 days shipping
+                            .col-12
+                              .card-wrapper.border.rounded-3.h-100.light-card
+                                .form-check.radio.radio-primary
+                                  input#shipping-choose6.form-check-input(type='radio' name='radio2' value='option1' checked='')
+                                  label.form-check-label.mb-0(for='shipping-choose6')
+                                    | Future Delivery
+                                input.form-control.future-date(type='date')
+                                
+
+                      form.stepper-three.row.g-3.needs-validation.shipping-wizard(novalidate='')
+                        .payment-info-wrapper
+                          .row.shipping-method.g-3
+                            .col-12
+                              .card-wrapper.border.rounded-3.light-card
+                                div
+                                  .form-check.radio.radio-primary
+                                    input#shipping-choose9.form-check-input(type='radio' name='radio3' value='option1' checked='')
+                                    label.form-check-label.mb-0.f-w-500(for='shipping-choose9')
+                                      | Paypal
+                                  p You will be taken to the paypal website to finish your transaction safely
+                                div 
+                                  img(src="../assets/images/checkout/paypal.png", alt="paypal")
+                            .col-12
+                              .card-wrapper.border.rounded-3.pay-info.light-card
+                                div
+                                  div
+                                    .form-check.radio.radio-primary
+                                      input#shipping-choose8.form-check-input(type='radio' name='radio3' value='option1')
+                                      label.form-check-label.mb-0.f-w-500(for='shipping-choose8')
+                                        | Credit Card
+                                    P Transferring money securely through your bank account. Mastercard, Visa, Discover, and Stripe are all accepted
+                                  div 
+                                    img(src="../assets/images/forms/credit-card.png", alt="card")
+                                .row.g-3
+                                  .col-md-12 
+                                    label.form-label(for='selectCardHolderName') Card Holder
+                                    input#selectCardHolderName.form-control(type="text" placeholder='Enter card holder name')
+                                  .col-12
+                                    label.form-label(for='selectCardNumber') Card Number
+                                    input#selectCardNumber.form-control(type='number' placeholder='xxxx xxxx xxxx xxxx')
+                                  .col-sm-6
+                                    label.form-label(for='selectExpiration') Expiration(MM/YY)
+                                    input#selectExpiration.form-control(type='number' placeholder='xx/xx')
+                                  .col-sm-6
+                                    label.form-label(for='selectCvv') CVV
+                                    input#selectCvv.form-control(type='number')
+                                  .col-12 
+                                    label.form-label(for='uploadDocumentation') Upload Documentation
+                                    input#uploadDocumentation.form-control(type='file' aria-label='file example')
+                                  .col-12
+                                    .form-check
+                                      input#invalidCheck01.form-check-input.checkbox-primary(type='checkbox' value='')
+                                      label.form-check-label(for='invalidCheck01')
+                                        | All the above information is correct
+                            .col-12
+                              .card-wrapper.border.rounded-3.light-card
+                                div
+                                  .form-check.radio.radio-primary
+                                    input#shipping-choose7.form-check-input(type='radio' name='radio3' value='option1')
+                                    label.form-check-label.mb-0.f-w-500(for='shipping-choose7')
+                                      | Cash On Delivery
+                                  p After your order is delivered, make a cash payment
+                                div 
+                                  img(src="../assets/images/forms/delivery.png", alt="delivery")
+                      form.stepper-four.row.g-3.needs-validation.shipping-wizard(novalidate='')
+                        .order-confirm
+                          img(src="../assets/images/gif/dashboard-8/successful.gif", alt="popper")
+                          div
+                            h5 Order Placed Successfully
+                            p.mb-0 A confirmation email with your order details has been sent to you.
+                          
+                    .wizard-footer.d-flex.gap-2.justify-content-end.mt-3
+                      button#backbtn.btn.button-light-primary(onclick='backStep()')  Back
+                      button#nextbtn.btn.btn-primary(onclick='nextStep()') Next
+                    
+                    //- Shipping Address Popup
+                    #exampleModalgetbootstrap.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalgetbootstrap', aria-hidden='true')
+                      .modal-dialog.modal-dialog-centered.modal-lg
+                        .modal-content.custom-input
+                          .modal-header
+                            h5 Add Address
+                            button.btn-close.py-0(type='button', data-bs-dismiss='modal', aria-label='Close')
+                          .modal-body
+                            form.row.g-3.needs-validation(novalidate='')
+                              .col-12
+                                label.form-label(for='validationCustomName') Name
+                                input#validationCustomName.form-control(type='text' placeholder='Enter name' required='')
+                                .invalid-feedback
+                                  | Please enter your name
+                                .valid-feedback
+                                  | Looks good!
+                              .col-12
+                                label.form-label(for='validationAddress-a') Current Address
+                                textarea#validationAddress-a.form-control(rows='3' placeholder='Enter your address' required='')
+                                .invalid-feedback
+                                  | Please enter current address
+                                .valid-feedback
+                                  | Looks good!
+                              .col-sm-6
+                                label.form-label(for='validationCustomCountry1') Country
+                                select#validationCustomCountry1.selectpicker(aria-label='Default select example' data-live-search='true' required size='5')
+                                  option(value='1') India
+                                  option(value='2' selected) United States
+                                  option(value='3') Australia
+                                  option(value='4') Canada
+                                  option(value='5') Bavaria
+                                .invalid-feedback
+                                  | Please select your country
+                                .valid-feedback
+                                  | Looks good!
+                              .col-sm-6
+                                label.form-label(for='validationCustomState1')  State
+                                select#validationCustomState1.selectpicker(aria-label='Default select example' data-live-search='true' required size='5')
+                                  option(value='11') Andhra Pradesh
+                                  option(value='12' selected) California
+                                  option(value='13') Queensland
+                                  option(value='14') Ontario
+                                  option(value='15') Germany
+                                .invalid-feedback
+                                  | Please select your state
+                                .valid-feedback
+                                  | Looks good!
+                              .col-sm-6
+                                label.form-label(for='validationCity') City
+                                input#validationCity.form-control(type='text' placeholder='Enter city' required='')
+                                .invalid-feedback
+                                  | Please enter your city
+                                .valid-feedback
+                                  | Looks good!
+                              .col-sm-6
+                                label.form-label(for='validationPostalCode') Postal Code
+                                input#validationPostalCode.form-control(type='text' placeholder='Enter postal code' required='')
+                                .invalid-feedback
+                                  | Please enter your postal code
+                                .valid-feedback
+                                  | Looks good!
+                              .col-12
+                                label.international-num(for='contact') Contact Number
+                                input#contact.form-control(type='number', placeholder='Enter your contact number' required='')
+                                .invalid-feedback
+                                  | Please enter your contact number
+                                .valid-feedback
+                                  | Looks good!
+                              .col-12
+                                .modal-footer.gap-2
+                                  button.btn.button-light-primary.m-0(type='button', data-bs-dismiss='modal') Cancel
+                                  button.btn.btn-primary.m-0(type='submit') Submit
+              .col-xl-4
+                .card
+                  .card-header
+                    h5 Order Details
+                  .card-body
+                    ul.summery-contain
+                      li 
+                        img.img-fluid(src="../assets/images/dashboard-8/shop-categories/headphone.png", alt="headphone")
+                        h6 Lightweight Headphones
+                          span X 1
+                        h6.price $85.00
+                      li 
+                        img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/24.png", alt="watch")
+                        h6 Smart Watch
+                          span X 1
+                        h6.price $140.00
+                      li 
+                        img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/14.png", alt="shoes")
+                        h6 Men's Shoes
+                          span X 2
+                        h6.price $150.00
+                      li 
+                        img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/16.png", alt="handbag")
+                        h6 Leather Handbag
+                          span X 1
+                        h6.price $250.00
+                    ul.summary-total
+                      li 
+                        h6 Subtotal
+                        h6.price $625.00
+                      li 
+                        h6 Shipping
+                        h6.price $14.00
+                      li 
+                        h6 Tax
+                        h6.price $18.00
+                      li 
+                        h6 Coupon Code
+                        h6.price $-30.00
+                      li.list-total 
+                        h6 Total 
+                        h6.price $627.00
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

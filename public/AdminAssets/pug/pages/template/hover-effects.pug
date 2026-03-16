@@ -1,0 +1,547 @@
+- var page_Title = 'Hover Effects';
+- var theme_customizer      = true;
+- var photo_swipe           = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Hover Effects
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Gallery
+                    li.breadcrumb-item.active  Hover Effects
+          // Container-fluid starts
+          .container-fluid.gallery-hover
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 1
+                  .card-body
+                    #aniimated-thumbnials.row.my-gallery.gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-1(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/08.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/08.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-1(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/09.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/09.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-1(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/010.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/010.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-1(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/011.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/011.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 2
+                  .card-body
+                    #aniimated-thumbnials1.row.my-gallery.gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-2(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/017.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/017.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-2(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/018.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/018.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-2(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/019.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/019.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-2(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/020.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/020.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 3
+                  .card-body
+                    #aniimated-thumbnials2.row.gallery.my-gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-3(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/021.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/021.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-3(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/022.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/022.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-3(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/023.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/023.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-3(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/024.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/024.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 4
+                  .card-body
+                    #aniimated-thumbnials3.row.gallery.my-gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-4(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/025.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/025.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-4(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/026.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/026.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-4(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/027.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/027.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-4(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/028.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/028.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 5
+                  .card-body
+                    #aniimated-thumbnials4.row.gallery.my-gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-5(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/029.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/029.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-5(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/030.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/030.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-5(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/031.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/031.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-5(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/032.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/032.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 6
+                  .card-body
+                    #aniimated-thumbnials5.row.gallery.my-gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-6(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/033.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/033.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-6(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/034.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/034.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-6(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/035.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/035.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-6(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/036.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/036.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 7
+                  .card-body
+                    #aniimated-thumbnials6.row.gallery.my-gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-7(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/037.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/037.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-7(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/038.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/038.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-7(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/039.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/039.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-7(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/040.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/040.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 8
+                  .card-body
+                    #aniimated-thumbnials7.row.gallery.my-gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-8(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/041.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/041.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-8(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/042.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/042.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-8(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/043.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/043.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-8(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/044.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/044.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 9
+                  .card-body
+                    #aniimated-thumbnials8.row.gallery.my-gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-9(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/045.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/045.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-9(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/046.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/046.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-9(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/047.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/047.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-9(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/048.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/048.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 10
+                  .card-body
+                    #aniimated-thumbnials9.row.gallery.my-gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-10(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/049.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/049.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-10(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/050.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/050.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-10(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/051.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/051.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-10(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/052.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/052.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 11
+                  .card-body
+                    #aniimated-thumbnials10.row.gallery.my-gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-11(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/053.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/053.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-11(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/054.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/054.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-11(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/055.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/055.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-11(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/056.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/056.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 12
+                  .card-body
+                    #aniimated-thumbnials11.row.gallery.my-gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-12(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/057.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/057.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-12(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/058.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/058.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-12(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/059.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/059.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-12(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/060.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/060.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 13
+                  .card-body
+                    #aniimated-thumbnials12.row.gallery.my-gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-13(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/061.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/061.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-13(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/062.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/062.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-13(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/063.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/063.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-13(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/064.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/064.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 14
+                  .card-body
+                    #aniimated-thumbnials13.row.gallery.my-gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-14(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/065.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/065.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-14(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/066.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/066.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-14(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/067.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/067.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-14(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/068.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/068.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 15
+                  .card-body
+                    #aniimated-thumbnials14.row.gallery.my-gallery(itemscope='')
+                      figure.col-md-3.col-6.img-hover.hover-15(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/069.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/069.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  1
+                      figure.col-md-3.col-6.img-hover.hover-15(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/070.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/070.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  2
+                      figure.col-md-3.col-6.img-hover.hover-15(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/071.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/071.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  3
+                      figure.col-md-3.col-6.img-hover.hover-15(itemprop='associatedMedia', itemscope='')
+                        a(href='../assets/images/big-lightgallry/072.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/072.jpg', itemprop='thumbnail', alt='Image description')
+                        figcaption(itemprop='caption description') Image caption  4
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5
+                      | Hover Effect 16
+                  .card-body
+                    #aniimated-thumbnials15.row.gallery.my-gallery(itemscope='')
+                      figure.col-xxl-3.col-xl-4.col-md-6.box-col-4.img-hover(itemprop='associatedMedia', itemscope='')
+                        a.hover-16(href='../assets/images/big-lightgallry/073.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/073.jpg', itemprop='thumbnail', alt='Image description')
+                          .overlay-hover
+                            .overlay-content
+                              h5 Minute of DevOps
+                              p Fast updates and pointers for optimizing the processes in your development and operational teams.
+                              .common-align.gap-2
+                                .btn.btn-primary Submit 
+                                .btn.btn-warning Close
+                      figure.col-xxl-3.col-xl-4.col-md-6.box-col-4.img-hover(itemprop='associatedMedia', itemscope='')
+                        a.hover-16(href='../assets/images/big-lightgallry/074.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/074.jpg', itemprop='thumbnail', alt='Image description')
+                          .overlay-hover.common-f-start
+                            .overlay-content
+                              h5 Security Highlight
+                              p highlighting essential tools and security procedures to protect your digital assets.
+                              .common-align.gap-2
+                                .btn.btn-primary Done
+                                .btn.btn-danger Cancel
+                      figure.col-xxl-3.col-xl-4.col-md-6.box-col-4.img-hover(itemprop='associatedMedia', itemscope='')
+                        a.hover-16(href='../assets/images/big-lightgallry/075.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/075.jpg', itemprop='thumbnail', alt='Image description')
+                          .overlay-hover.common-align.align-items-start
+                            .overlay-content
+                              h5 Code Bursts
+                              p Crucial code snippets and advice to improve your projects and speed up the coding process.
+                              .common-f-start.gap-2
+                                .btn.btn-success Apply
+                                .btn.btn-dark Reset
+                      figure.col-xxl-3.col-xl-4.col-md-6.box-col-4.img-hover(itemprop='associatedMedia', itemscope='')
+                        a.hover-16(href='../assets/images/big-lightgallry/076.jpg', itemprop='contentUrl', data-size='1600x950')
+                          div
+                            img(src='../assets/images/lightgallry/076.jpg', itemprop='thumbnail', alt='Image description')
+                          .overlay-hover.common-align.align-items-end
+                            .overlay-content
+                              h5 Summary of Data
+                              p Concise advice and insights on big data trends, analytics, and data science.
+                              .common-align.gap-2
+                                .btn.btn-info Open
+                                .btn.btn-danger Close
+            // Root element of PhotoSwipe. Must have class pswp.
+            .pswp(tabindex='-1', role='dialog', aria-hidden='true')
+              //
+                Background of PhotoSwipe.
+                It's a separate element, as animating opacity is faster than rgba().
+              .pswp__bg
+              // Slides wrapper with overflow:hidden.
+              .pswp__scroll-wrap
+                // Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory.
+                // don't modify these 3 pswp__item elements, data is added later on.
+                .pswp__container
+                  .pswp__item
+                  .pswp__item
+                  .pswp__item
+                // Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed.
+                .pswp__ui.pswp__ui--hidden
+                  .pswp__top-bar
+                    // Controls are self-explanatory. Order can be changed.
+                    .pswp__counter
+                    button.pswp__button.pswp__button--close(title='Close (Esc)')
+                    button.pswp__button.pswp__button--share(title='Share')
+                    button.pswp__button.pswp__button--fs(title='Toggle fullscreen')
+                    button.pswp__button.pswp__button--zoom(title='Zoom in/out')
+                    // Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR
+                    // element will get class pswp__preloader--active when preloader is running
+                    .pswp__preloader
+                      .pswp__preloader__icn
+                        .pswp__preloader__cut
+                          .pswp__preloader__donut
+                  .pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+                    .pswp__share-tooltip
+                  button.pswp__button.pswp__button--arrow--left(title='Previous (arrow left)')
+                  button.pswp__button.pswp__button--arrow--right(title='Next (arrow right)')
+                  .pswp__caption
+                    .pswp__caption__center
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

@@ -1,0 +1,547 @@
+- var page_Title = 'Order History';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var flatpickr             = true;
+- var custom_flatpickr      = true;
+- var trash                 = true;
+- var tooltip               = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Order History
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Ecommerce
+                    li.breadcrumb-item.active  Order History
+          // Container-fluid starts
+          .container-fluid.common-order-history
+            .row
+              .col-12
+                .card
+                  .card-body
+                    .row.g-3.custom-input
+                      //- From date 
+                      .col-xl.col-md-6 
+                        label.form-label(for='datetime-local') From: 
+                        .input-group.flatpicker-calender
+                          input#datetime-local.form-control(placeholder='dd/mm/yyyy')
+                      //- To date 
+                      .col-xl.col-md-6 
+                        label.form-label(for='datetime-local3') To: 
+                        .input-group.flatpicker-calender
+                          input#datetime-local3.form-control(placeholder='dd/mm/yyyy')
+                      //- Payment status
+                      .col-xl.col-md-6
+                        label.form-label Payment Status
+                        select.form-select
+                          option(selected='') Completed
+                          option(value='1') Pending
+                          option(value='2') Failed
+                      //- Payment Methods
+                      .col-xl.col-md-6
+                        label.form-label Payment Methods
+                        select.form-select
+                          option(selected='') Paypal
+                          option(value='1') COD
+                          option(value='2') Bank transfer
+                          option(value='3') Credit card
+                      .col.d-flex.justify-content-start.align-items-center.m-t-40
+                        a.btn.btn-primary.f-w-500(href="#!") Submit
+              .col-sm-12
+                .card.heading-space
+                  .card-header.card-no-border
+                    .header-top
+                      h5 New Orders
+                  .card-body.pt-0.px-0
+                    .row 
+                      .col-12
+                        .order-history-wrapper
+                          .recent-table.table-responsive.custom-scrollbar
+                            table#order-history-table.table
+                              thead 
+                                tr 
+                                  th
+                                  th 
+                                    span.f-light.f-w-600 Order Number
+                                  th 
+                                    span.f-light.f-w-600 Order Date
+                                  th 
+                                    span.f-light.f-w-600 Customer Name
+                                  th 
+                                    span.f-light.f-w-600 Total Amount
+                                  th 
+                                    span.f-light.f-w-600 Payment Status
+                                  th 
+                                    span.f-light.f-w-600 Payment Method
+                                  th 
+                                    span.f-light.f-w-600 Action
+                              tbody 
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") #1245
+                                  td 
+                                    p.c-o-light 02 Feb 2024 03:21:PM
+                                  td 
+                                    p.c-o-light Zakai Ramos
+                                  td 
+                                    p.c-o-light $120.45  
+                                  td 
+                                    span.badge.badge-light-danger Failed 
+                                  td 
+                                    p.c-o-light COD
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1244
+                                  td 
+                                    p.c-o-light 12 Mar 2024 04:05:AM
+                                  td 
+                                    p.c-o-light Daxton Norris
+                                  td 
+                                    p.c-o-light $478.14 
+                                  td 
+                                    span.badge.badge-light-warning Pending
+                                  td 
+                                    p.c-o-light Paypal
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1246
+                                  td 
+                                    p.c-o-light 10 Jun 2024 02:10:AM
+                                  td 
+                                    p.c-o-light Sophia Kirby
+                                  td 
+                                    p.c-o-light $897.00 
+                                  td 
+                                    span.badge.badge-light-success Completed
+                                  td 
+                                    p.c-o-light Bank Transfer
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1248
+                                  td 
+                                    p.c-o-light 28 Feb 2024 11:50:PM
+                                  td 
+                                    p.c-o-light Rylan Norton
+                                  td 
+                                    p.c-o-light $200.40
+                                  td 
+                                    span.badge.badge-light-success Completed
+                                  td 
+                                    p.c-o-light Credit Card
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1247
+                                  td 
+                                    p.c-o-light 01 Jan 2024 07:30:PM
+                                  td 
+                                    p.c-o-light Curtis Robertson
+                                  td 
+                                    p.c-o-light $304.12
+                                  td 
+                                    span.badge.badge-light-danger Failed
+                                  td 
+                                    p.c-o-light Bank Transfer
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1249
+                                  td 
+                                    p.c-o-light 03 Dec 2024 05:15:PM
+                                  td 
+                                    p.c-o-light Emir David
+                                  td 
+                                    p.c-o-light $140.50
+                                  td 
+                                    span.badge.badge-light-success Completed
+                                  td 
+                                    p.c-o-light COD
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1250
+                                  td 
+                                    p.c-o-light 09 Mar 2024 03:05:AM
+                                  td 
+                                    p.c-o-light Kai Jacobs
+                                  td 
+                                    p.c-o-light $450.70
+                                  td 
+                                    span.badge.badge-light-success Completed
+                                  td 
+                                    p.c-o-light Credit Card
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1251
+                                  td 
+                                    p.c-o-light 13 Apr 2024 04:28:AM
+                                  td 
+                                    p.c-o-light Aron Hester
+                                  td 
+                                    p.c-o-light $400.05
+                                  td 
+                                    span.badge.badge-light-warning Pending
+                                  td 
+                                    p.c-o-light Paypal
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1252
+                                  td 
+                                    p.c-o-light 18 May 2024 06:00:PM
+                                  td 
+                                    p.c-o-light Jaime Ellis
+                                  td 
+                                    p.c-o-light $250.00
+                                  td 
+                                    span.badge.badge-light-warning Pending
+                                  td 
+                                    p.c-o-light Credit Card
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1253
+                                  td 
+                                    p.c-o-light 20 Aug 2024 07:10:PM
+                                  td 
+                                    p.c-o-light Hector Torres
+                                  td 
+                                    p.c-o-light $145.30
+                                  td 
+                                    span.badge.badge-light-success Completed
+                                  td 
+                                    p.c-o-light COD
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1254
+                                  td 
+                                    p.c-o-light 16 Sep 2024 12:10:PM
+                                  td 
+                                    p.c-o-light Saige Lucero
+                                  td 
+                                    p.c-o-light $170.00
+                                  td 
+                                    span.badge.badge-light-success Completed
+                                  td 
+                                    p.c-o-light Credit Card
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1255
+                                  td 
+                                    p.c-o-light 17 Oct 2024 10:40:PM
+                                  td 
+                                    p.c-o-light Remi Nelson
+                                  td 
+                                    p.c-o-light $300.50
+                                  td 
+                                    span.badge.badge-light-danger Failed
+                                  td 
+                                    p.c-o-light Bank Transfer
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1256
+                                  td 
+                                    p.c-o-light 22 Nov 2024 09:05:PM
+                                  td 
+                                    p.c-o-light Ayla Tucker
+                                  td 
+                                    p.c-o-light $900.14
+                                  td 
+                                    span.badge.badge-light-warning Pending
+                                  td 
+                                    p.c-o-light Paypal
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1257
+                                  td 
+                                    p.c-o-light 26 Jan 2024 08:15:AM
+                                  td 
+                                    p.c-o-light Aniya Davila
+                                  td 
+                                    p.c-o-light $870.00
+                                  td 
+                                    span.badge.badge-light-success Completed
+                                  td 
+                                    p.c-o-light Credit Card
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1302
+                                  td 
+                                    p.c-o-light 01 Jan 2024 10:25:AM
+                                  td 
+                                    p.c-o-light Camden Klein
+                                  td 
+                                    p.c-o-light $50.14
+                                  td 
+                                    span.badge.badge-light-warning Pending
+                                  td 
+                                    p.c-o-light COD
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1306
+                                  td 
+                                    p.c-o-light 12 Mar 2024 01:35:AM
+                                  td 
+                                    p.c-o-light Ezra Gentry
+                                  td 
+                                    p.c-o-light $74.00
+                                  td 
+                                    span.badge.badge-light-danger Failed
+                                  td 
+                                    p.c-o-light Credit Card
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1310
+                                  td 
+                                    p.c-o-light 20 Apr 2024 07:00:AM
+                                  td 
+                                    p.c-o-light Jax Pierce
+                                  td 
+                                    p.c-o-light $74.70
+                                  td 
+                                    span.badge.badge-light-success Completed
+                                  td 
+                                    p.c-o-light COD
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1314
+                                  td 
+                                    p.c-o-light 22 Dec 2024 09:45:AM
+                                  td 
+                                    p.c-o-light Yara Walsh
+                                  td 
+                                    p.c-o-light $45.34
+                                  td 
+                                    span.badge.badge-light-warning Pending
+                                  td 
+                                    p.c-o-light Paypal
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1380
+                                  td 
+                                    p.c-o-light 31 May 2024 10:40:PM
+                                  td 
+                                    p.c-o-light Fox Roth
+                                  td 
+                                    p.c-o-light $48.40
+                                  td 
+                                    span.badge.badge-light-success Completed
+                                  td 
+                                    p.c-o-light Bank Transfer
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="order-details.html") #1399
+                                  td 
+                                    p.c-o-light 17 Apr 2024 08:50:PM
+                                  td 
+                                    p.c-o-light Selah Bush
+                                  td 
+                                    p.c-o-light $78.48
+                                  td 
+                                    span.badge.badge-light-danger Failed
+                                  td 
+                                    p.c-o-light Credit Card
+                                  td 
+                                    .common-align.gap-2.justify-content-start 
+                                      a.square-white(href="order-details.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='View')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#fill-view")
+                                      a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete')
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

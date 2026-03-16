@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="SingWithMe Records Ltd" />
+    <meta name="description" content="SingWithMe Records Ltd" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>SingWithMe Records Ltd.</title>
+
+    <!-- FavIcon Link -->
+    <link rel="icon" href="assets/images/favicon.png" type="image/gif" sizes="36x36">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS Link -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Swiper Slider CSS Link -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+
+    <!-- Wow Animation CSS Link -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.min.css">
+
+    <!-- Main Style CSS Link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Start of Background Animation -->
+    <div id="vantajs-bg"></div>
+    <!-- End of Background Animation -->
+
+    <div class="overlay-body">
+
+        <!-- Start of Page Loader-->
+        <div class="page-loader">
+            <img src="assets/images/singWithMe/logo-trans.png" alt="">
+        </div>
+        <!-- End of Page Loader-->
+
+        <!-- Start of Header -->
+        <!-- Navbar will be inserted here -->
+        <div id="navbar-container"></div>
+        <script>
+            // Load navbar
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                });
+        </script>
+        <!-- End of Header -->
+
+        <!-- Start of InnerBanner -->
+        <section class="inner-banner contact-banner">
+            <div class="contact_child">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="h1-title wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                User Portal Dashboard
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of InnerBanner -->
+        <!-- modal form content -->
+
+
+        <section class="parent_modalForm">
+            <!-- Main page content -->
+            <div class="main-content d-none">
+                <h1 class="main-title">Welcome to SingWithMe</h1>
+                <p class="main-subtitle">Discover amazing music experiences and start your journey today</p>
+            </div>
+
+            <!-- Modal Overlay -->
+            <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+                <div class="modal-particles">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+
+                <div class="modal-container" onclick="event.stopPropagation()">
+                    <button class="close-btn" onclick="closeModal()">&times;</button>
+
+                    <div class="left-panel">
+                        <div class="logo">SINGWITHME</div>
+                        <div class="tagline">Start your 30-day free trial now</div>
+                        <div class="platform-icons">
+                            <div class="icon"><lord-icon src="https://cdn.lordicon.com/zsixeihu.json" trigger="loop"
+                                    delay="2000"
+                                    colors="primary:#110a5c,secondary:#e5d1fa,tertiary:#e5d1fa,quaternary:#c69cf4"
+                                    style="width:250px;height:250px">
+                                </lord-icon></div>
+                            <div class="icon"><lord-icon src="https://cdn.lordicon.com/wtrpyxpe.json" trigger="loop"
+                                    colors="primary:#320a5c,secondary:#c69cf4,tertiary:#a866ee,quaternary:#c69cf4"
+                                    style="width:250px;height:250px">
+                                </lord-icon></div>
+                            <div class="icon"><lord-icon src="https://cdn.lordicon.com/brkvhuny.json" trigger="loop"
+                                    colors="primary:#110a5c,secondary:#e5d1fa,tertiary:#110a5c,quaternary:#c69cf4"
+                                    style="width:250px;height:250px">
+                                </lord-icon></div>
+                            <div class="icon"><lord-icon src="https://cdn.lordicon.com/hqkfqrrm.json" trigger="loop"
+                                    delay="2000" colors="primary:#320a5c,secondary:#c69cf4,tertiary:#e5d1fa"
+                                    style="width:250px;height:250px">
+                                </lord-icon></div>
+                            <div class="icon"><lord-icon src="https://cdn.lordicon.com/ylmvxcix.json" trigger="loop"
+                                    colors="primary:#110a5c,secondary:#e5d1fa,tertiary:#e5d1fa,quaternary:#c69cf4,quinary:#e5d1fa"
+                                    style="width:250px;height:250px">
+                                </lord-icon></div>
+                            <div class="icon"><lord-icon src="https://cdn.lordicon.com/ngukaiic.json" trigger="loop"
+                                    delay="2000"
+                                    colors="primary:#320a5c,secondary:#c69cf4,tertiary:#320a5c,quaternary:#320a5c"
+                                    style="width:250px;height:250px">
+                                </lord-icon></div>
+                        </div>
+                    </div>
+
+                    <div class="right-panel">
+                        <div class="form-header">
+                            <div class="form-title">Create an account</div>
+                            <div class="form-subtitle">Already have an account? <a href="#"
+                                    onclick="switchToLogin()">Log in</a>
+                            </div>
+                        </div>
+
+                        <form id="authForm">
+                            <div class="form-group">
+                                <input type="email" class="form-input" placeholder="Email Address" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" class="form-input" placeholder="Password" required>
+                            </div>
+
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="checkbox" id="newsletter">
+                                <label class="checkbox-label" for="newsletter">
+                                    Keep me up to date with music industry news and promotions
+                                </label>
+                            </div>
+
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="checkbox" id="terms" required>
+                                <label class="checkbox-label" for="terms">
+                                    I have read and agree to SingWithMe's <a href="#">terms of service</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="submit-btn" id="submitBtn">Sign Up</button>
+                        </form>
+
+                        <div class="divider">
+                            <span>OR</span>
+                        </div>
+
+                        <button class="google-btn">
+                            <div class="google-icon"></div>
+                            Continue with Google
+                        </button>
+
+                        <div class="privacy-text">
+                            Protected by reCAPTCHA and subject to the Google Privacy Policy and Terms of Service.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- modal form content -->
+        <section class="user-portal py-5">
+            <div class="container">
+                <!-- Welcome Section -->
+                <section class="welcome-section">
+                    <h1 class="welcome-title">Welcome back, John!
+                        <div class="user-Lord">
+                            <lord-icon src="https://cdn.lordicon.com/zsixeihu.json" trigger="loop" delay="2000"
+                                colors="primary:#110a5c,secondary:#e5d1fa,tertiary:#e5d1fa,quaternary:#c69cf4">
+                            </lord-icon>
+                        </div>
+                    </h1>
+                    <p class="welcome-subtitle">Ready to discover new music and manage your collections? Here's your
+                        music journey overview.</p>
+                    <button class="open-popup-btn" onclick="openModal()">Login & Unlock Features</button>
+
+                    <div class="stats-grid pt-4">
+                        <div class="stat-card">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Playlists Created</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">157</div>
+                            <div class="stat-label">Favorite Songs</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">23h</div>
+                            <div class="stat-label">Hours Listened</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">45</div>
+                            <div class="stat-label">Artists Followed</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Subscription Plans Section -->
+                <section class="section" id="subscription">
+                    <h2 class="section-title">
+                        <div class="user-Lord">
+                            <lord-icon src="https://cdn.lordicon.com/usbdkqwm.json" trigger="loop" delay="2000"
+                                colors="primary:#320a5c,secondary:#e5d1fa,tertiary:#e5d1fa,quaternary:#c69cf4">
+                            </lord-icon>
+                        </div> Subscription <span class="text-white" style="margin-left: -15px;">Plans</span>
+                    </h2>
+                    <p>Choose the perfect plan for your music journey. Upgrade anytime!</p>
+
+                    <div class="plans-grid">
+                        <div class="plan-card">
+                            <h3 class="plan-name">Free</h3>
+                            <div class="plan-price">£0</div>
+                            <div class="plan-period">forever</div>
+                            <ul class="plan-features">
+                                <li>Limited music streaming</li>
+                                <li>Ads between songs</li>
+                                <li>Basic playlist creation</li>
+                                <li>Mobile app access</li>
+                                <li>Community features</li>
+                            </ul>
+                            <button class="plan-button secondary">Current Plan</button>
+                        </div>
+
+                        <div class="plan-card popular">
+                            <h3 class="plan-name">Premium</h3>
+                            <div class="plan-price">£9.99</div>
+                            <div class="plan-period">per month</div>
+                            <ul class="plan-features">
+                                <li>Unlimited music streaming</li>
+                                <li>No advertisements</li>
+                                <li>Offline downloads</li>
+                                <li>High-quality audio</li>
+                                <li>Unlimited playlists</li>
+                                <li>Exclusive content</li>
+                                <li>Priority support</li>
+                            </ul>
+                            <button class="plan-button primary" onclick="upgradeSubscription('premium')">Upgrade
+                                Now</button>
+                        </div>
+
+                        <div class="plan-card">
+                            <h3 class="plan-name">Family</h3>
+                            <div class="plan-price">£14.99</div>
+                            <div class="plan-period">per month</div>
+                            <ul class="plan-features">
+                                <li>Up to 6 family members</li>
+                                <li>All Premium features</li>
+                                <li>Individual profiles</li>
+                                <li>Parental controls</li>
+                                <li>Shared family playlists</li>
+                                <li>Mix for family</li>
+                            </ul>
+                            <button class="plan-button primary" onclick="upgradeSubscription('family')">Choose
+                                Family</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Playlists Section -->
+                <section class="section" id="playlists">
+                    <h2 class="section-title">
+                        <div class="user-Lord"><lord-icon src="https://cdn.lordicon.com/wrjtqsvf.json" trigger="loop"
+                                delay="2000"
+                                colors="primary:#320a5c,secondary:#e5d1fa,tertiary:#c69cf4,quaternary:#320a5c">
+                            </lord-icon></div> <span class="text-white" style="margin-right: -15px;">My</span> Playlists
+                    </h2>
+                    <p>Organize your favorite tracks into custom playlists</p>
+
+                    <button class="create-playlist-btn" onclick="createNewPlaylist()">
+                        + Create New Playlist
+                    </button>
+
+                    <section class="playlist_section">
+                        <div class="bg-particles"></div>
+
+                        <div class="container">
+                            <div class="playlists-grid">
+                                <div class="playlist-card">
+                                    <div class="loading-overlay">
+                                        <div class="spinner"></div>
+                                    </div>
+                                    <div class="playlist-cover">
+                                        <div class="playlist-icon"></div>
+                                    </div>
+                                    <div class="playlist-info">
+                                        <div class="playlist-title">Liked Songs</div>
+                                        <div class="playlist-stats">157 songs • 8h 23m</div>
+                                        <div class="playlist-actions">
+                                            <button class="btn btn-primary">▶ Play</button>
+                                            <button class="btn btn-secondary">🔀 Shuffle</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="playlist-card playlist-card_2">
+                                    <div class="loading-overlay">
+                                        <div class="spinner"></div>
+                                    </div>
+                                    <div class="playlist-cover">
+                                        <div class="playlist-icon"></div>
+                                    </div>
+                                    <div class="playlist-info">
+                                        <div class="playlist-title">Workout Beats</div>
+                                        <div class="playlist-stats">45 songs • 2h 31m</div>
+                                        <div class="playlist-actions">
+                                            <button class="btn btn-primary">▶ Play</button>
+                                            <button class="btn btn-secondary">✏️ Edit</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="playlist-card playlist-card_3">
+                                    <div class="loading-overlay">
+                                        <div class="spinner"></div>
+                                    </div>
+                                    <div class="playlist-cover">
+                                        <div class="playlist-icon"></div>
+                                    </div>
+                                    <div class="playlist-info">
+                                        <div class="playlist-title">Chill Vibes</div>
+                                        <div class="playlist-stats">32 songs • 1h 47m</div>
+                                        <div class="playlist-actions">
+                                            <button class="btn btn-primary">▶ Play</button>
+                                            <button class="btn btn-secondary">📤 Share</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="playlist-card playlist-card_4">
+                                    <div class="loading-overlay">
+                                        <div class="spinner"></div>
+                                    </div>
+                                    <div class="playlist-cover">
+                                        <div class="playlist-icon"></div>
+                                    </div>
+                                    <div class="playlist-info">
+                                        <div class="playlist-title">Road Trip Mix</div>
+                                        <div class="playlist-stats">67 songs • 4h 12m</div>
+                                        <div class="playlist-actions">
+                                            <button class="btn btn-primary">▶ Play</button>
+                                            <button class="btn btn-secondary">❤️ Like</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="playlist-card playlist-card_5">
+                                    <div class="loading-overlay">
+                                        <div class="spinner"></div>
+                                    </div>
+                                    <div class="playlist-cover">
+                                        <div class="playlist-icon"></div>
+                                    </div>
+                                    <div class="playlist-info">
+                                        <div class="playlist-title">Party Time</div>
+                                        <div class="playlist-stats">89 songs • 5h 55m</div>
+                                        <div class="playlist-actions">
+                                            <button class="btn btn-primary">▶ Play</button>
+                                            <button class="btn btn-secondary">🔀 Shuffle</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="playlist-card playlist-card_6">
+                                    <div class="loading-overlay">
+                                        <div class="spinner"></div>
+                                    </div>
+                                    <div class="playlist-cover">
+                                        <div class="playlist-icon"></div>
+                                    </div>
+                                    <div class="playlist-info">
+                                        <div class="playlist-title">Focus Flow</div>
+                                        <div class="playlist-stats">24 songs • 1h 38m</div>
+                                        <div class="playlist-actions">
+                                            <button class="btn btn-primary">▶ Play</button>
+                                            <button class="btn btn-secondary">➕ Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </section>
+                </section>
+
+                <!-- Favorites Collection Section -->
+            </div>
+        </section>
+
+        <section class="song_list">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-icon"><lord-icon src="https://cdn.lordicon.com/wtrpyxpe.json" trigger="loop"
+                            colors="primary:#320a5c,secondary:#c69cf4,tertiary:#a866ee,quaternary:#c69cf4"
+                            style="width:250px;height:250px">
+                        </lord-icon></div>
+                    <div>
+                        <h1 class="section-title">Favorite Collection</h1>
+                        <p class="section-subtitle">Your curated music collections</p>
+                    </div>
+                    <button class="create-playlist-btn" onclick="createPlaylist()">+ Create New</button>
+                </div>
+
+                <div class="playlists-grid">
+                    <div class="playlist-card">
+                        <div class="playlist-header">
+                            <div class="playlist-icon"><img src="/assets/images/singWithMe/hot_hits.png" alt="">
+                            </div>
+                            <div class="playlist-info">
+                                <h3>Hot Hits 2024</h3>
+                                <div class="playlist-meta">45 songs • 2h 34m • Updated today</div>
+                            </div>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="action-btn" onclick="playPlaylist('hot-hits')">▶ Play</button>
+                            <button class="action-btn" onclick="shufflePlaylist('hot-hits')">🔀 Shuffle</button>
+                            <button class="action-btn" onclick="editPlaylist('hot-hits')">✏ Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-header">
+                            <div class="playlist-icon">
+                                <img src="/assets/images/singWithMe/Chill-Nights.jpg" alt="">
+                            </div>
+                            <div class="playlist-info">
+                                <h3>Chill Nights</h3>
+                                <div class="playlist-meta">28 songs • 1h 52m • Private</div>
+                            </div>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="action-btn" onclick="playPlaylist('chill-nights')">▶ Play</button>
+                            <button class="action-btn" onclick="shufflePlaylist('chill-nights')">🔀 Shuffle</button>
+                            <button class="action-btn" onclick="editPlaylist('chill-nights')">✏ Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-header">
+                            <div class="playlist-icon">
+                                <img src="/assets/images/singWithMe/Workout-Energy.png" alt="">
+                            </div>
+                            <div class="playlist-info">
+                                <h3>Workout Energy</h3>
+                                <div class="playlist-meta">67 songs • 4h 12m • Public</div>
+                            </div>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="action-btn" onclick="playPlaylist('workout')">▶ Play</button>
+                            <button class="action-btn" onclick="shufflePlaylist('workout')">🔀 Shuffle</button>
+                            <button class="action-btn" onclick="editPlaylist('workout')">✏ Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-header">
+                            <div class="playlist-icon">
+                                <img src="/assets/images/singWithMe/Rock-Classics.png" alt="">
+                            </div>
+                            <div class="playlist-info">
+                                <h3>Rock Classics</h3>
+                                <div class="playlist-meta">89 songs • 6h 7m • Collaborative</div>
+                            </div>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="action-btn" onclick="playPlaylist('rock-classics')">▶ Play</button>
+                            <button class="action-btn" onclick="shufflePlaylist('rock-classics')">🔀 Shuffle</button>
+                            <button class="action-btn" onclick="editPlaylist('rock-classics')">✏ Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-header">
+                            <div class="playlist-icon">
+                                <img src="/assets/images/singWithMe/love-songs.jpg" alt="segs-songs">
+                            </div>
+                            <div class="playlist-info">
+                                <h3>Love Songs</h3>
+                                <div class="playlist-meta">23 songs • 1h 18m • Private</div>
+                            </div>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="action-btn" onclick="playPlaylist('love-songs')">▶ Play</button>
+                            <button class="action-btn" onclick="shufflePlaylist('love-songs')">🔀 Shuffle</button>
+                            <button class="action-btn" onclick="editPlaylist('love-songs')">✏ Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-header">
+                            <div class="playlist-icon">
+                                <img src="/assets/images/singWithMe/Piano-Instrumentals.png" alt="">
+                            </div>
+                            <div class="playlist-info">
+                                <h3>Piano Instrumentals</h3>
+                                <div class="playlist-meta">34 songs • 2h 45m • Public</div>
+                            </div>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="action-btn" onclick="playPlaylist('piano')">▶ Play</button>
+                            <button class="action-btn" onclick="shufflePlaylist('piano')">🔀 Shuffle</button>
+                            <button class="action-btn" onclick="editPlaylist('piano')">✏ Edit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-playlists">
+                    <h3>Quick Actions</h3>
+                    <div class="quick-playlist-list">
+                        <div class="quick-playlist-item" onclick="createSmartPlaylist('discover')">🔍 Discover Weekly
+                        </div>
+                        <div class="quick-playlist-item" onclick="createSmartPlaylist('recently-played')">⏰ Recently
+                            Played</div>
+                        <div class="quick-playlist-item" onclick="createSmartPlaylist('liked')">❤️ Liked Songs</div>
+                        <div class="quick-playlist-item" onclick="createSmartPlaylist('recommended')">✨ Recommended
+                        </div>
+                        <div class="quick-playlist-item" onclick="createSmartPlaylist('trending')">📈 Trending</div>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Total Playlists</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">286</div>
+                        <div class="stat-label">Total Songs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">18h</div>
+                        <div class="stat-label">Total Duration</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1.2K</div>
+                        <div class="stat-label">Total Plays</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- newsletter section -->
+
+        <section class="news_letter py-5">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Stay <span class="un_Span">Connected</span></h1>
+                <p class="section-subtitle">Join our community and never miss an update. Get the latest news, exclusive
+                    content, and special offers delivered straight to your inbox.</p>
+            </div>
+
+            <div class="newsletter_parent">
+                <!-- Newsletter Section -->
+                <div class="newsletter-section">
+                    <h2 class="newsletter-title">
+                        <div class="newsletter-icon">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/xovdoewm.json"
+                                trigger="loop"
+                                delay="1500"
+                                state="in-reveal"
+                                colors="primary:#1b1091,secondary:#a866ee">
+                            </lord-icon>
+                    </div>
+                        Newsletter
+                    </h2>
+                    <p class="newsletter-description">
+                        Subscribe to our weekly newsletter and be the first to know about new features, industry
+                        insights, and exclusive content tailored just for you.
+                    </p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="input-group">
+                            <input type="email" class="email-input" placeholder="Enter your email address" required
+                                id="emailInput">
+                            <button type="submit" class="subscribe-btn">
+                                Subscribe
+                            </button>
+                        </div>
+                        <div class="success-message" id="successMessage">
+                            🎉 Thank you for subscribing! Check your email to confirm your subscription.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- newsletter section -->
+<!-- Start of Footer -->
+        <footer class="site-footer pt-5">
+            <div class="follow-us">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="title">
+                                <h2 class="h2-title wow fadeup-animation" data-wow-duration="0.8s"
+                                    data-wow-delay="0.2s">follow us</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="follow-us-row">
+                        <ul>
+                            <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                <a href="javascript:void(0);" title="Facebook">
+                                    <span class="big-text">Fb</span>
+                                    <span class="small-text">Facebook</span>
+                                </a>
+                            </li>
+                            <!-- <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <a href="javascript:void(0);" title="Spotify">
+                                    <span class="big-text">Sp</span>
+                                    <span class="small-text">Spotify</span>
+                                </a>
+                            </li> -->
+                            <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                <a href="javascript:void(0);" title="Instagram">
+                                    <span class="big-text">In</span>
+                                    <span class="small-text">Instagram</span>
+                                </a>
+                            </li>
+                            <!-- <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                <a href="javascript:void(0);" title="Youtube">
+                                    <span class="big-text">Yt</span>
+                                    <span class="small-text">Youtube</span>
+                                </a>
+                            </li> -->
+
+                            <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                <a href="javascript:void(0);" title="Twitter">
+                                    <span class="big-text">Tw</span>
+                                    <span class="small-text">Twitter</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row align-items-center ">
+                        <div class="col-lg-6 text-left ">
+                            <div class="footer-logo">
+                                <a href="index.html" title="SingWithMe Records Ltd.">
+                                    <img src="assets/images/singWithMe/logo-trans.png" alt="" width="100px">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-right ">
+                            <span class="copyright-text ">© 2025 All Rights Reserved By | Designed By <a
+                                    href="https://thevisionbrands.com/" target="_blank" title="Vision Brands ">The
+                                    Vision Brands</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+        <!-- Jquery JS Link -->
+        <script src="assets/js/jquery-3.5.1.min.js"></script>
+
+        <!-- Fluid Simulation JS Link -->
+        <!-- <script src="../../cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="../../cdn.jsdelivr.net/npm/vanta%40latest/dist/vanta.halo.min.js"></script> -->
+
+        <!-- Bootstrap JS Link -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+
+        <!-- Swiper Slider JS Link -->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!-- font awesome JS Link -->
+        <script src="assets/js/font-awesome.min.js"></script>
+
+        <!-- Wow Animation JS Link -->
+        <script src="assets/js/wow.min.js"></script>
+
+        <!-- Custom JS Link -->
+        <script src="assets/js/custom.js"></script>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <script>
+            function toggleFaq(element) {
+                const faqItem = element.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't already active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            }
+
+            // Add some interactive animations
+            document.addEventListener('DOMContentLoaded', function () {
+                const faqQuestions = document.querySelectorAll('.faq-question');
+
+                faqQuestions.forEach(question => {
+                    question.addEventListener('mouseenter', function () {
+                        this.style.transform = 'translateX(10px)';
+                    });
+
+                    question.addEventListener('mouseleave', function () {
+                        this.style.transform = 'translateX(0)';
+                    });
+                });
+            });
+        </script>
+        <script>
+            // Create animated background particles
+            function createParticles() {
+                const particlesContainer = document.querySelector('.bg-particles');
+                const particleCount = 50;
+
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+
+                    // Random positioning
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = Math.random() * 100 + '%';
+
+                    // Random animation delay and duration
+                    particle.style.animationDelay = Math.random() * 6 + 's';
+                    particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+
+                    particlesContainer.appendChild(particle);
+                }
+            }
+
+            // Add loading overlay functionality
+            function addLoadingEffect() {
+                const playButtons = document.querySelectorAll('.btn-primary');
+                const cards = document.querySelectorAll('.playlist-card');
+
+                playButtons.forEach((btn, index) => {
+                    btn.addEventListener('click', () => {
+                        const overlay = cards[index].querySelector('.loading-overlay');
+                        overlay.classList.add('active');
+
+                        // Simulate loading
+                        setTimeout(() => {
+                            overlay.classList.remove('active');
+                        }, 2000);
+                    });
+                });
+            }
+
+            // Floating player functionality
+            function setupFloatingPlayer() {
+                const playPauseBtn = document.querySelector('.play-pause-btn');
+                let isPlaying = true;
+
+                playPauseBtn.addEventListener('click', () => {
+                    if (isPlaying) {
+                        playPauseBtn.textContent = '▶️';
+                        isPlaying = false;
+                    } else {
+                        playPauseBtn.textContent = '⏸️';
+                        isPlaying = true;
+                    }
+                });
+            }
+
+            // Add click ripple effect
+            function addRippleEffect() {
+                const buttons = document.querySelectorAll('.btn');
+
+                buttons.forEach(button => {
+                    button.addEventListener('click', function (e) {
+                        let ripple = document.createElement('span');
+                        let rect = this.getBoundingClientRect();
+                        let size = Math.max(rect.width, rect.height);
+
+                        ripple.style.width = ripple.style.height = size + 'px';
+                        ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                        ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                        ripple.classList.add('ripple');
+
+                        this.appendChild(ripple);
+
+                        setTimeout(() => {
+                            ripple.remove();
+                        }, 600);
+                    });
+                });
+            }
+
+            // Add hover sound effect simulation
+            function addHoverEffects() {
+                const cards = document.querySelectorAll('.playlist-card');
+
+                cards.forEach(card => {
+                    card.addEventListener('mouseenter', () => {
+                        // Add subtle scale animation on hover
+                        card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transition = 'all 0.4s ease-out';
+                    });
+                });
+            }
+
+            // Initialize all features
+            document.addEventListener('DOMContentLoaded', () => {
+                createParticles();
+                addLoadingEffect();
+                setupFloatingPlayer();
+                addRippleEffect();
+                addHoverEffects();
+            });
+
+            // Add CSS for ripple effect
+            const style = document.createElement('style');
+            style.textContent = `
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.4);
+                transform: scale(0);
+                animation: ripple-animation 0.6s linear;
+                pointer-events: none;
+            }
+
+            @keyframes ripple-animation {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+            document.head.appendChild(style);
+        </script>
+        <script>
+            let isLoginMode = false;
+
+            // Modal functions
+            function openModal() {
+                const overlay = document.getElementById('modalOverlay');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+                // Reset animations
+                resetAnimations();
+            }
+
+            function closeModal() {
+                const overlay = document.getElementById('modalOverlay');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Restore background scrolling
+            }
+
+            function closeModalOnOverlay(event) {
+                if (event.target === event.currentTarget) {
+                    closeModal();
+                }
+            }
+
+            // Close modal on Escape key
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') {
+                    closeModal();
+                }
+            });
+
+            function resetAnimations() {
+                // Reset form animations when modal opens
+                const animatedElements = document.querySelectorAll('.form-title, .form-subtitle, .form-group, .submit-btn, .divider, .google-btn, .privacy-text');
+                animatedElements.forEach(element => {
+                    element.style.animation = 'none';
+                    element.offsetHeight; // Trigger reflow
+                    element.style.animation = null;
+                });
+            }
+
+            function switchToLogin() {
+                isLoginMode = !isLoginMode;
+                const formTitle = document.querySelector('.form-title');
+                const formSubtitle = document.querySelector('.form-subtitle');
+                const submitBtn = document.getElementById('submitBtn');
+                const checkboxGroups = document.querySelectorAll('.checkbox-group');
+
+                if (isLoginMode) {
+                    formTitle.textContent = 'Welcome back';
+                    formSubtitle.innerHTML = 'Don\'t have an account? <a href="#" onclick="switchToLogin()">Sign up</a>';
+                    submitBtn.textContent = 'Log In';
+                    checkboxGroups.forEach(group => group.style.display = 'none');
+                } else {
+                    formTitle.textContent = 'Create an account';
+                    formSubtitle.innerHTML = 'Already have an account? <a href="#" onclick="switchToLogin()">Log in</a>';
+                    submitBtn.textContent = 'Sign Up';
+                    checkboxGroups.forEach(group => group.style.display = 'flex');
+                }
+
+                // Add animation to form change
+                const rightPanel = document.querySelector('.right-panel');
+                rightPanel.style.animation = 'none';
+                rightPanel.offsetHeight; // Trigger reflow
+                rightPanel.style.animation = 'fadeInUp 0.5s ease-out';
+            }
+
+            // Add form submission handling
+            document.getElementById('authForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const submitBtn = document.getElementById('submitBtn');
+                const originalText = submitBtn.textContent;
+
+                // Animate button
+                submitBtn.style.transform = 'scale(0.98)';
+                submitBtn.textContent = isLoginMode ? 'Logging in...' : 'Signing up...';
+                submitBtn.disabled = true;
+
+                // Simulate API call
+                setTimeout(() => {
+                    submitBtn.style.transform = 'scale(1)';
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+
+                    // Show success and close modal
+                    alert(isLoginMode ? 'Login successful!' : 'Account created successfully!');
+                    closeModal();
+                }, 2000);
+            });
+
+            // Add input animation effects
+            document.querySelectorAll('.form-input').forEach(input => {
+                input.addEventListener('focus', function () {
+                    this.parentElement.style.transform = 'scale(1.02)';
+                });
+
+                input.addEventListener('blur', function () {
+                    this.parentElement.style.transform = 'scale(1)';
+                });
+            });
+
+            // Add floating animation to icons on hover
+            document.querySelectorAll('.icon').forEach(icon => {
+                icon.addEventListener('mouseenter', function () {
+                    this.style.animationPlayState = 'paused';
+                });
+
+                icon.addEventListener('mouseleave', function () {
+                    this.style.animationPlayState = 'running';
+                });
+            });
+        </script>
+</body>
+
+
+<!-- Mirrored from html.geekcodelab.com/spiffyplay/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jun 2025 12:54:56 GMT -->
+
+</html>

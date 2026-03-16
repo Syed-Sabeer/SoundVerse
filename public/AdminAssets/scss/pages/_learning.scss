@@ -1,0 +1,131 @@
+/**=====================
+     3.41 Learning CSS start
+==========================**/
+.learning-header {
+  margin-bottom: 10px;
+}
+
+.categories {
+  padding: 20px 0;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  .learning-header {
+    padding-left: 15px;
+  }
+
+  ul {
+    li {
+      padding: 8px 15px;
+
+      a {
+        color: $theme-body-font-color;
+      }
+
+      &:hover {
+        background-color: $light-color;
+      }
+
+      @media (max-width:1199px) {
+        padding: 6px 15px;
+      }
+    }
+  }
+}
+
+.upcoming-course {
+  .d-flex {
+    +.d-flex {
+      margin-top: 20px;
+
+      @media (max-width:1199px) {
+        margin-top: 16px;
+      }
+    }
+  }
+}
+
+.job-accordion {
+  margin-bottom: 0;
+}
+
+.learning-filter {
+  .md-sidebar {
+    .card-body {
+      .job-filter {
+        .form-control {
+          padding-right: 35px;
+
+          [dir="rtl"] & {
+            padding-right: 12px;
+            padding-left: 35px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) and (min-width: 1200px) {
+  .learning-comment {
+    margin-left: -14px !important;
+    float: left !important;
+
+    [dir="rtl"] & {
+      margin-right: -14px !important;
+      margin-left: unset !important;
+      float: right !important;
+
+    }
+  }
+
+  .blog-box {
+    .blog-details {
+      .blog-social {
+        li {
+          &:first-child {
+            padding-right: 8px;
+          }
+
+          +li {
+            padding-left: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .categories {
+    padding: 20px 0;
+  }
+
+  .upcoming-course {
+    .d-flex {
+      +.d-flex {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .categories {
+    padding: 15px 0;
+  }
+
+  .upcoming-course {
+    .d-flex {
+      +.d-flex {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+/**=====================
+     3.41 Learning CSS end
+==========================**/

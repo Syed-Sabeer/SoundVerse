@@ -1,0 +1,100 @@
+/**=====================
+   2.33 Tree CSS Start
+==========================**/
+
+.sortable-handler {
+	ul {
+		li {
+			i {
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.grid-box-wrapper {
+	@include pixelstrap-flex(flex, space-between, center);
+	flex-wrap: wrap;
+
+	@media (max-width:1500px) {
+		justify-content: flex-start;
+	}
+
+	@media (max-width:992px) {
+		justify-content: center;
+	}
+}
+
+.grid-box {
+	padding: 8px;
+	@include pixelstrap-size(100px, 100px);
+	border-radius: 10px;
+	display: grid;
+	place-items: center;
+}
+
+.draggable-filter {
+	ul {
+		li {
+			img {
+				@include pixelstrap-size(37px, 37px);
+
+			}
+		}
+	}
+}
+
+.stackable-list {
+	.list-group {
+		padding: 11px 16px;
+
+		.list-group-item {
+			padding: 11px 16px;
+
+			@media (max-width:575px) {
+				padding: 11px 8px;
+			}
+
+			i {
+				color: $warning-color;
+			}
+		}
+	}
+}
+
+.nested-1 {
+	background-color: rgba($primary-color, 0.03);
+}
+
+.nested-2 {
+	background-color: rgba($primary-color, 0.05);
+}
+
+.nested-3 {
+	background-color: rgba($primary-color, 0.07);
+}
+
+.nested-4 {
+	background-color: rgba($primary-color, 0.09);
+}
+
+.swap-wrapper {
+	.list-group {
+		padding: 11px 16px;
+
+		.list-group-item {
+			@media (max-width:575px) {
+				padding: 11px 4px;
+			}
+		}
+
+		img {
+			height: 16px;
+			width: auto;
+		}
+	}
+}
+
+/**=====================
+   2.33 Tree CSS Ends
+==========================**/

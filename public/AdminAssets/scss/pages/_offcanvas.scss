@@ -1,0 +1,45 @@
+  /**=====================
+     3.46. Offcanvas CSS Start
+==========================**/
+  .main-offcanvas-wrapper {
+      .card-body {
+          [class*="offcanvas-"] {
+              .offcanvas-body {
+
+                  .form-select,
+                  .form-control {
+                      font-size: 13px;
+                      color: $badge-light-color;
+                  }
+
+                  .form-label {
+                      color: $theme-font-color;
+                  }
+              }
+          }
+      }
+  }
+
+  .common-offcanvas {
+      .offcanvas {
+          position: fixed;
+          background-color: var(--white);
+          z-index: 1045;
+
+          &.offcanvas-start {
+              &.show {
+                  box-shadow: 8px 0 8px -2px rgba($dark-gray, 0.1);
+              }
+          }
+
+          .offcanvas-body {
+              svg {
+                  color: var(--body-font-color);
+              }
+          }
+      }
+  }
+
+  /**=====================
+    3.46. Offcanvas CSS Ends
+==========================**/

@@ -1,0 +1,102 @@
+/**=====================
+  2.23 Print CSS Start
+==========================**/
+@media print {
+
+  .sidebar-wrapper,
+  .page-header {
+    display: none;
+  }
+
+  .page-body {
+    margin: 0 !important;
+  }
+
+  .customizer-links {
+    display: none !important;
+  }
+
+  .page-wrapper {
+    .page-title {
+      visibility: hidden;
+    }
+
+    .page-body-wrapper {
+      .page-title {
+        display: none;
+      }
+    }
+
+    &.compact-wrapper {
+      .page-body-wrapper {
+        .page-body {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  table.fixedHeader-floating {
+    display: none;
+  }
+
+  // Invoice-1
+  .main-invoice-1 {
+    .table-wrapper {
+      width: 100%;
+
+      .print-btn {
+        span {
+          display: none;
+        }
+      }
+    }
+
+    .banner-image {
+      width: 100%;
+    }
+
+  }
+
+  // Tasks
+  .main-tasks {
+    .email-body {
+      .tab-content {
+        .card-header {
+          a {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  // letter-box
+  .mail-body-wrapper {
+    margin-top: 20px;
+
+    .user-mail-wrapper {
+      width: 100%;
+
+      .send-btn {
+        display: none;
+      }
+    }
+  }
+
+  .email-left-aside {
+    display: none;
+  }
+
+  .footer {
+    display: none;
+  }
+
+  .print-btn {
+    display: none;
+  }
+}
+
+/**=====================
+  2.23 Print CSS Ends
+==========================**/

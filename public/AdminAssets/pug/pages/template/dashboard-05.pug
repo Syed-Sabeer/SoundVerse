@@ -1,0 +1,610 @@
+- var page_Title = 'Social Dashboard'
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var apex                  = true;
+- var page_vector_map1      = true;
+- var counter               = true;
+- var dashboard_5           = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Social
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Dashboard
+                    li.breadcrumb-item.active Social
+          // Container-fluid starts
+          .container-fluid.dashboard-5
+            .row
+              .col-12.od-xl-1 
+                .row 
+                  .col.s-xxl-3.box-col-4
+                    .card.social-widget.widget-hover
+                      .card-body
+                        .d-flex.align-items-center.justify-content-between
+                          div.d-flex.align-items-center.gap-2
+                            .social-icons
+                              img(src="../assets/images/dashboard-5/social/1.png", alt="facebook icon")
+                            span Facebook
+                          span.font-success.f-12.d-xxl-block +22.9%
+                        .social-content
+                          div 
+                            h5.mb-1.counter(data-target='12098') 0
+                            span.f-light Likes
+                          .social-chart
+                            #radial-facebook
+                  .col.s-xxl-3.box-col-4
+                    .card.social-widget.widget-hover
+                      .card-body
+                        .d-flex.align-items-center.justify-content-between
+                          div.d-flex.align-items-center.gap-2
+                            .social-icons
+                              img(src="../assets/images/dashboard-5/social/2.png", alt="instagram icon")
+                            span Instagram
+                          span.font-danger.f-12.d-xxl-block -27.4%
+                        .social-content
+                          div 
+                            h5.mb-1.counter(data-target='15080') 0
+                            span.f-light Followers
+                          .social-chart
+                            #radial-instagram
+                  .col.s-xxl-3.box-col-4
+                    .card.social-widget.widget-hover
+                      .card-body
+                        .d-flex.align-items-center.justify-content-between
+                          div.d-flex.align-items-center.gap-2
+                            .social-icons
+                              img(src="../assets/images/dashboard-5/social/3.png", alt="twitter icon")
+                            span X (Twitter)
+                          span.font-success.f-12.d-xxl-block +76.10%
+                        .social-content
+                          div 
+                            h5.mb-1.counter(data-target='12564') 0
+                            span.f-light Followers
+                          .social-chart
+                            #radial-twitter
+                  .col.s-xxl-3.box-col-4
+                    .card.social-widget.widget-hover
+                      .card-body
+                        .d-flex.align-items-center.justify-content-between
+                          div.d-flex.align-items-center.gap-2
+                            .social-icons
+                              img(src="../assets/images/dashboard-5/social/4.png", alt="twitter icon")
+                            span Youtube
+                          span.font-success.f-12.d-xxl-block +62.08%
+                        .social-content
+                          div 
+                            h5.mb-1.counter(data-target='85967') 0
+                            span.f-light Followers
+                          .social-chart
+                            #radial-youtube
+                  .col.s-xxl-3.box-col-4
+                    .card.social-widget.widget-hover
+                      .card-body
+                        .d-flex.align-items-center.justify-content-between
+                          div.d-flex.align-items-center.gap-2
+                            .social-icons
+                              img(src="../assets/images/dashboard-5/social/5.png", alt="twitter icon")
+                            span LinkedIn
+                          span.font-danger.f-12.d-xxl-block -14.09%
+                        .social-content
+                          div 
+                            h5.mb-1.counter(data-target='15005') 0
+                            span.f-light Followers
+                          .social-chart
+                            #radial-linkedin
+                  .col.s-xxl-3.box-col-4
+                    .card.social-widget.widget-hover
+                      .card-body
+                        .d-flex.align-items-center.justify-content-between
+                          div.d-flex.align-items-center.gap-2
+                            .social-icons
+                              img(src="../assets/images/dashboard-5/social/6.png", alt="twitter icon")
+                            span Pinterest
+                          span.font-success.f-12.d-xxl-block +95.10%
+                        .social-content
+                          div 
+                            h5.mb-1.counter(data-target='20015') 0
+                            span.f-light Followers
+                          .social-chart
+                            #radial-pinterest
+              .col-xxl-3.col-xl-4.col-md-5.od-xl-2.box-col-4
+                .card.mobile-app-card.social-empower
+                  .card-header.card-no-border.pb-0 
+                    h4.mb-1 
+                      | Empowering Growth:  
+                    h6.c-o-light.f-w-400.mb-4 Social Insights for Achievement
+                    a(href="social-app.html").purchase-btn.btn.btn-primary.btn-hover-effect.f-w-500 Try Now
+                  .card-body.p-0.text-end
+                    img.wavy(src="../assets/images/dashboard-5/wave.png", alt="")
+                    img(src="../assets/images/dashboard-5/mobile-img.png", alt="")
+              .col-xxl-6.col-xl-4.od-xl-4.box-col-4
+                .card 
+                  .card-header.card-no-border
+                    .header-top
+                      h5.m-0 Instagram Subscribers
+                        span.f-14.f-w-500.ms-1.f-light
+                          | (75% activity growth)
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#subscribeButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='subscribeButton')
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') Maximum
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') 30 Days
+                            a.dropdown-item(href='#!') Yesterday 
+                            a.dropdown-item(href='#!') Last month
+                  .card-body.pt-0
+                    .subscriber-chart-container
+                      #subscriber-chart 
+              .col-xxl-3.col-xl-4.col-md-7.od-xl-3.box-col-4
+                .card.follower-wrap
+                  .card-header.card-no-border.pb-2
+                    h5.mb-1 Facebook Campaign
+                    div.d-inline-block.badge.badge-light-success.rounded-pill Active
+                  .card-body.pt-0.papernote-wrap
+                    span.c-o-light Here's a brief overview of the data typically associated with a Facebook campaign.
+                    ul.campaign-list 
+                      li 
+                        .campaign-box 
+                          h5.mb-1.counter(data-target='1897') 0
+                          span.f-light Followers today
+                      li 
+                        .campaign-box 
+                          h5.mb-1.counter(data-target='50000') 0
+                          span.f-light Followers goals
+                    .customers
+                      ul 
+                        li.d-inline-block
+                          img.img-40.rounded-circle(src="../assets/images/dashboard/user/1.jpg", alt="user")
+                        li.d-inline-block
+                          img.img-40.rounded-circle(src="../assets/images/dashboard/user/6.jpg", alt="user")
+                        li.d-inline-block
+                          img.img-40.rounded-circle(src="../assets/images/dashboard/user/7.jpg", alt="user")
+                        li.d-inline-block
+                          img.img-40.rounded-circle(src="../assets/images/dashboard/user/3.jpg", alt="user")
+                        li.d-inline-block
+                          img.img-40.rounded-circle(src="../assets/images/dashboard/user/8.jpg", alt="user")
+                        li.d-inline-block
+                          .light-card
+                            span.f-w-500 +5
+              .col-xxl-8.col-xl-7.od-xl-5.box-col-7
+                .card.heading-space 
+                  .card-header.card-no-border
+                    .header-top
+                      h5.m-0 All Campaigns
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#campaignDropdown.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='campaignDropdown')
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') Yesterday 
+                            a.dropdown-item(href='#!') Last month
+                  .card-body.pt-0.px-0.campaign-table
+                    .recent-table.table-responsive.currency-table.custom-scrollbar 
+                      table.table#campaigns-table 
+                        thead 
+                          tr 
+                            th AD Platform
+                            th Campaign
+                            th GEO
+                            th Profitability
+                            th Impressions
+                            th Status
+                            th Create
+                        tbody 
+                          tr 
+                            td.border-icon.facebook
+                              div
+                                .social-circle
+                                  i.fa-brands.fa-facebook-f
+                            td Jane Cooper
+                            td UK
+                            td
+                              .change-currency
+                                i.font-success.me-1(data-feather="trending-up")
+                                | 45.6%
+                            td $9,786
+                            td 
+                              button.btn.badge-light-primary Active
+                            td
+                              button.plus-btn + 
+                          tr 
+                            td.border-icon.instagram
+                              div
+                                .social-circle
+                                  i.fa-brands.fa-instagram
+                            td Floyd Miles
+                            td DE
+                            td
+                              .change-currency
+                                i.font-danger.me-1(data-feather="trending-down")
+                                | 12.3%
+                            td $19,7098
+                            td 
+                              button.btn.badge-light-primary Active
+                            td
+                              button.plus-btn + 
+                          tr 
+                            td.border-icon.pinterest
+                              div
+                                .social-circle
+                                  i.fa-brands.fa-pinterest
+                            td Guy Hawkins
+                            td ES
+                            td
+                              .change-currency
+                                i.font-success.me-1(data-feather="trending-up")
+                                | 65.6%
+                            td $90,986
+                            td 
+                              button.btn.badge-light-primary Active
+                            td
+                              button.plus-btn + 
+                          tr 
+                            td.border-icon.twitter
+                              div
+                                .social-circle
+                                  i.fa-brands.fa-x-twitter
+                            td 	Travis Wright
+                            td ES
+                            td
+                              .change-currency
+                                i.font-danger.me-1(data-feather="trending-down")
+                                | 35.6%
+                            td $23,654
+                            td 
+                              button.btn.badge-light-light.disabled Inactive
+                            td
+                              button.plus-btn + 
+                          tr 
+                            td.border-icon.you-tube
+                              div
+                                .social-circle
+                                  i.fa-brands.fa-youtube
+                            td Mark Green
+                            td UK
+                            td
+                              .change-currency
+                                i.font-success.me-1(data-feather="trending-up")
+                                | 45.6%
+                            td $12,796
+                            td 
+                              button(type="button").btn.badge-light-light.disabled Inactive
+                            td
+                              button(type="button").plus-btn +
+                          tr 
+                            td.border-icon.linked-in
+                              div
+                                .social-circle
+                                  i.fa-brands.fa-linkedin-in
+                            td Eleanor Pena
+                            td UK
+                            td
+                              .change-currency
+                                i.font-success.me-1(data-feather="trending-up")
+                                | 48.6%
+                            td $12,796
+                            td 
+                              button(type="button").btn.badge-light-light.disabled Inactive
+                            td
+                              button(type="button").plus-btn +
+
+
+                          tr 
+                            td.border-icon.facebook
+                              div
+                                .social-circle
+                                  i.fa-brands.fa-facebook-f
+                            td Caryl Kauth
+                            td DE
+                            td
+                              .change-currency
+                                i.font-success.me-1(data-feather="trending-up")
+                                | 25.4%
+                            td $22,458
+                            td 
+                              button.btn.badge-light-primary Active
+                            td
+                              button.plus-btn + 
+                          tr 
+                            td.border-icon.instagram
+                              div
+                                .social-circle
+                                  i.fa-brands.fa-instagram
+                            td Chloe Wilson
+                            td ES
+                            td
+                              .change-currency
+                                i.font-danger.me-1(data-feather="trending-down")
+                                | 26.8%
+                            td $29,4567
+                            td 
+                              button.btn.badge-light-primary Active
+                            td
+                              button.plus-btn + 
+                          tr 
+                            td.border-icon.pinterest
+                              div
+                                .social-circle
+                                  i.fa-brands.fa-pinterest
+                            td Olivia Gor
+                            td UK
+                            td
+                              .change-currency
+                                i.font-danger.me-1(data-feather="trending-down")
+                                | 09.8%
+                            td $18,1814
+                            td 
+                              button.btn.badge-light-primary Active
+                            td
+                              button.plus-btn + 
+                          tr 
+                            td.border-icon.twitter
+                              div
+                                .social-circle
+                                  i.fa-brands.fa-x-twitter
+                            td 	Robert Fox
+                            td ES
+                            td
+                              .change-currency
+                                i.font-success.me-1(data-feather="trending-up")
+                                | 22.6%
+                            td $24,333
+                            td 
+                              button.btn.badge-light-primary Active
+                            td
+                              button.plus-btn + 
+              .col-xxl-4.col-xl-5.od-xl-6.box-col-5
+                .row.social-clicks 
+                  .col-sm-6
+                    .card.overflow-hidden.analytics-tread-card.widget-hover
+                      .card-header.card-no-border
+                        .header-top
+                          h2.mb-1
+                            span.counter(data-target='76') 0
+                            | %
+                          .card-header-right-icon
+                            .dropdown.icon-dropdown
+                              button#clickDropdown.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='clickDropdown')
+                                a.dropdown-item(href='#') This Month
+                                a.dropdown-item(href='#') Previous Month
+                                a.dropdown-item(href='#') Last 3 Months
+                                a.dropdown-item(href='#') Last 6 Months
+                        .common-align.justify-content-start
+                          span.me-1 Photo Clicks
+                          span.common-align.gap-1.justify-content-start
+                            i.txt-danger.i.icon-arrow-down.fw-bold
+                            span.txt-danger.f-w-500.f-12 -2.7%
+                      .card-body.pt-0.px-0 
+                          .photo-click-wrapper
+                              #photo-click1
+                  .col-sm-6
+                    .card.overflow-hidden.analytics-tread-card.widget-hover
+                      .card-header.card-no-border
+                        .header-top
+                          h2.mb-1
+                            span.counter(data-target='86') 0
+                            | %
+                          .card-header-right-icon
+                            .dropdown.icon-dropdown
+                              button#clickDropdown1.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='clickDropdown1')
+                                a.dropdown-item(href='#') This Month
+                                a.dropdown-item(href='#') Previous Month
+                                a.dropdown-item(href='#') Last 3 Months
+                                a.dropdown-item(href='#') Last 6 Months
+                        .common-align.justify-content-start
+                          span.me-1 Link Clicks
+                          span.common-align.gap-1.justify-content-start
+                            i.txt-success.i.icon-arrow-up.fw-bold
+                            span.txt-success.f-w-500.f-12 +9.4%
+                      .card-body.pt-0.px-0 
+                          .photo-click-wrapper
+                              #link-click1
+                  .col-sm-6
+                    .card.overflow-hidden.analytics-tread-card.widget-hover
+                      .card-header.card-no-border
+                        .header-top
+                          h2.mb-1
+                            span.counter(data-target='95') 0
+                            | %
+                          .card-header-right-icon
+                            .dropdown.icon-dropdown
+                              button#followerDropdown.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='followerDropdown')
+                                a.dropdown-item(href='#') This Month
+                                a.dropdown-item(href='#') Previous Month
+                                a.dropdown-item(href='#') Last 3 Months
+                                a.dropdown-item(href='#') Last 6 Months
+                        .common-align.justify-content-start
+                          span.me-1 Followers
+                          span.common-align.gap-1.justify-content-start
+                            i.txt-success.i.icon-arrow-up.fw-bold
+                            span.txt-success.f-w-500.f-12 +6.8%
+                      .card-body.pt-0.px-0 
+                          .photo-click-wrapper
+                              #follower-click
+                  .col-sm-6
+                    .card.overflow-hidden.analytics-tread-card.widget-hover
+                      .card-header.card-no-border
+                        .header-top
+                          h2.mb-1
+                            span.counter(data-target='82') 0
+                            | %
+                          .card-header-right-icon
+                            .dropdown.icon-dropdown
+                              button#engagementDropdown.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='engagementDropdown')
+                                a.dropdown-item(href='#') This Month
+                                a.dropdown-item(href='#') Previous Month
+                                a.dropdown-item(href='#') Last 3 Months
+                                a.dropdown-item(href='#') Last 6 Months
+                        .common-align.justify-content-start
+                          span.me-1 Link Engagements
+                          span.common-align.gap-1.justify-content-start
+                            i.txt-danger.i.icon-arrow-down.fw-bold
+                            span.txt-danger.f-w-500.f-12 -3.2%
+                      .card-body.pt-0.px-0 
+                          .photo-click-wrapper
+                              #engagement-link
+              .col-md-7.od-xl-7
+                .card.sales-report
+                  .card-header.card-no-border
+                    .header-top 
+                      h5 Social Analytics
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#salesButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='salesButton')
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') Tomorrow
+                            a.dropdown-item(href='#!') Yesterday
+                  .card-body.pt-0.analytics-data
+                    ul.balance-data 
+                      li
+                        span.circle.bg-primary
+                        span.c-light.ms-1 Followers
+                      li
+                        span.circle.bg-secondary 
+                        span.c-light.ms-1 Comments
+                      li
+                        span.circle.bg-success
+                        span.c-light.ms-1 Likes
+                    .social-tabs
+                      .nav.nav-pills.custom-scrollbar(id="social-pills-tab" role="tablist")
+                        a.active(href ="#!" id="v-pills-youtube-tab" data-bs-toggle="pill" data-bs-target="#v-pills-youtube" role="tab" aria-controls="v-pills-youtube" aria-selected="true").social-box.bg-7-danger
+                          .frame-image
+                            .outline-10-danger
+                              .bg-10-danger
+                                i.fa-brands.fa-youtube.youtube-color.m-0.f-14
+                          span Youtube
+                        a(id="v-pills-facebook-tab" href="#!" data-bs-toggle="pill" data-bs-target="#v-pills-facebook" role="tab" aria-controls="v-pills-facebook" aria-selected="false").social-box.bg-7-primary
+                          .frame-image
+                            .outline-10-primary
+                              .bg-10-primary
+                                i.fa-brands.fa-facebook-f.bg-primary.text-light.m-0
+                          span Facebook
+                        a(id="v-pills-instagram-tab" href="#!" data-bs-toggle="pill" data-bs-target="#v-pills-instagram" role="tab" aria-controls="v-pills-instagram" aria-selected="false").social-box.bg-7-warning
+                          .frame-image
+                            .outline-10-warning
+                              .bg-10-warning
+                                i.fa-brands.fa-instagram.m-0.text-light.instagram-color
+                          span Instagram  
+                        a(id="v-pills-linkedin-tab" href="#!" data-bs-toggle="pill" data-bs-target="#v-pills-linkedin" role="tab" aria-controls="v-pills-linkedin" aria-selected="false").social-box.bg-7-info
+                          .frame-image
+                            .outline-10-info
+                              .bg-10-info
+                                i.fa-brands.fa-linkedin-in.bg-info.text-light.m-0
+                          span Linkedin
+                        a(id="v-pills-twitter-tab" href="#!" data-bs-toggle="pill" data-bs-target="#v-pills-twitter" role="tab" aria-controls="v-pills-twitter" aria-selected="false").social-box.bg-7-secondary
+                          .frame-image
+                            .outline-10-secondary
+                              .bg-10-secondary
+                                i.fa-brands.fa-x-twitter.bg-dark.text-light.m-0
+                          span X (Twitter)
+                      .tab-content(id="social-pills-tabContent") 
+                        div.tab-pane.fade.show.active(id="v-pills-youtube" role="tabpanel")
+                          div
+                            #youtube-analysis
+                        div.tab-pane.fade(id="v-pills-facebook" role="tabpanel")
+                          div
+                            #facebook-analysis
+                        div.tab-pane.fade(id="v-pills-instagram" role="tabpanel")
+                          div
+                            #instagram-analysis
+                        div.tab-pane.fade(id="v-pills-linkedin" role="tabpanel")
+                          div
+                            #linked-analysis
+                        div.tab-pane.fade(id="v-pills-twitter" role="tabpanel")
+                          div
+                            #twitter-analysis
+              .col-md-5.od-xl-8
+                .card 
+                  .card-header.card-no-border
+                    .header-top
+                      h5.m-0 Top Followers By Country
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#countryDropdown.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='countryDropdown')
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') Maximum
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') 30 Days
+                            a.dropdown-item(href='#!') Yesterday 
+                            a.dropdown-item(href='#!') Last month
+                  .card-body.pt-0
+                    .follower-country.mt-1
+                      #countryMap
+                    .row.top-country.gx-lg-5.gy-4 
+                      .col-sm-6
+                        .common-space
+                          div
+                            img(src="../assets/images/dashboard-5/flags/1.png", alt="flag")
+                            p.mb-0.f-w-500 Germany
+                          span.c-o-light.counter(data-target='865') 0
+                        .progress
+                          .progress-bar.bg-primary.rounded-pill(role='progressbar', style='width: 40%', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100') 
+                      .col-sm-6
+                        .common-space
+                          div
+                            img(src="../assets/images/dashboard-5/flags/2.png", alt="flag")
+                            p.mb-0.f-w-500 USA
+                          span.c-o-light.counter(data-target='542') 0
+                        .progress
+                          .progress-bar.bg-primary.rounded-pill(role='progressbar', style='width: 30%', aria-valuenow='30', aria-valuemin='0', aria-valuemax='100')  
+                      .col-sm-6
+                        .common-space
+                          div
+                            img(src="../assets/images/dashboard-5/flags/3.png", alt="flag")
+                            p.mb-0.f-w-500 India
+                          span.c-o-light.counter(data-target='951') 0
+                        .progress
+                          .progress-bar.bg-primary.rounded-pill(role='progressbar', style='width: 60%', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100') 
+                      .col-sm-6
+                        .common-space
+                          div
+                            img(src="../assets/images/dashboard-5/flags/4.png", alt="flag")
+                            p.mb-0.f-w-500 Australia
+                          span.c-o-light.counter(data-target='751') 0
+                        .progress
+                          .progress-bar.bg-primary.rounded-pill(role='progressbar', style='width: 20%', aria-valuenow='20', aria-valuemin='0', aria-valuemax='100') 
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

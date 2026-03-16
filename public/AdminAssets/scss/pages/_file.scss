@@ -1,0 +1,212 @@
+/**=====================
+   3.28 File CSS
+==========================**/
+
+.file-sidebar,
+.file-content {
+    .card {
+
+        .card-body,
+        .card-header {
+            padding: 20px !important;
+        }
+    }
+
+    hr {
+        border-top-color: var(--recent-dashed-border);
+    }
+}
+
+.file-sidebar {
+    ul {
+        li {
+            &+li {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+
+        &.btn-light {
+            &:hover {
+                color: var(--theme-default) !important;
+
+                svg {
+                    stroke: var(--theme-default);
+                }
+            }
+        }
+
+        svg {
+            width: 15px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+    }
+}
+
+.file-manager {
+    >h6 {
+        opacity: 0.6;
+        font-weight: 400 !important;
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .files {
+
+        h6 {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+    }
+
+    p {
+        opacity: 0.9;
+        font-size: 12px;
+    }
+}
+
+.files,
+.folder {
+    h6 {
+        opacity: 0.9;
+        font-weight: 500 !important;
+        font-size: 14px;
+    }
+}
+
+.file-content {
+
+    .form-inline {
+        border: 1px solid #f4f4f4;
+        border-radius: 5px;
+        padding: 0 20px;
+
+        i {
+            padding-right: 10px;
+            color: $dark-gray;
+            line-height: 3;
+        }
+
+        input {
+            &::-webkit-input-placeholder {
+                color: $dark-gray;
+            }
+
+            &:focus {
+                outline: none !important;
+            }
+        }
+    }
+
+    .search-form {
+        input {
+            padding: 5px 10px 5px 70px;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            &:before {
+                left: 82px;
+                top: 37px;
+            }
+
+            &:after {
+                top: 39px;
+                left: 53px;
+            }
+        }
+    }
+
+    .btn {
+        svg {
+            height: 15px;
+            margin-right: 2px;
+            vertical-align: middle;
+        }
+    }
+
+    h5 {
+        font-weight: 500;
+    }
+
+    .folder {
+        .folder-box {
+            border: 1px solid #f1f1f1;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: #f6f7fb;
+            width: calc(25% - 15px);
+            display: inline-block;
+
+            $show-numbers: true;
+
+            @if $show-numbers {
+                @for $i from 1 through 15 {
+                    &:nth-child(#{$i}) {
+                        animation-fill-mode: both;
+                        animation: fadeIncustom .5s linear #{$i}00000ms;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .file-content .folder .folder-box .d-flex {
+        display: block;
+
+        .flex-grow-1 {
+            margin-left: 0 !important;
+            margin-top: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .file-content .files {
+        margin-bottom: -10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .file-content {
+        .folder {
+            margin-bottom: -10px;
+
+            .folder-box {
+                width: calc(50% - 15px);
+                margin-bottom: 10px;
+                margin-right: 8px;
+            }
+        }
+
+        .d-flex {
+            display: block !important;
+            text-align: center !important;
+
+            .flex-grow-1 {
+                margin-top: 18px !important;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+
+    .file-content .folder .folder-box,
+    .file-content .files .file-box {
+        width: calc(100%);
+    }
+}
+
+/**=====================
+    3.28 File CSS
+==========================**/

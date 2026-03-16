@@ -1,0 +1,619 @@
+- var page_Title = 'Category';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var scrollbar             = true;
+- var header_slider         = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var validation_modal      = true;
+- var editors               = true;
+- var sweetalert2           = true;
+- var trash_popup           = true;
+- var custom_category       = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3 
+                    | Category
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Ecommerce
+                    li.breadcrumb-item.active Category
+          // Container-fluid starts
+          .container-fluid.e-category
+            .row 
+              .col-12
+                .card
+                  .card-body
+                    .row.g-3
+                      //- Parent category
+                      .col-md
+                        label.form-label Parent Category
+                        select.form-select(aria-label='Select parent category')
+                          option(selected='') T-shirts
+                          option(value='1') Purse
+                          option(value='2') Cameras
+                          option(value='3') Shoes 
+                          option(value='4') Handbags
+                          option(value='5') Sleepers
+                          option(value='6') Watches
+                        .invalid-feedback 
+                          | Please choose a parent category.
+                        .valid-feedback
+                            | Looks good!
+                      //- Category Type
+                      .col-md
+                        label.form-label Category Type
+                        select.form-select(aria-label='Select parent category')
+                          option(selected='') Electronic
+                          option(value='1') Accessories
+                          option(value='2') Footwear
+                          option(value='3') Clothing
+                          option(value='4') Furniture
+                        .invalid-feedback 
+                          | Please choose a category type.
+                        .valid-feedback
+                            | Looks good!
+                      //- Category Status
+                      .col-md
+                        label.form-label Category Status
+                        select.form-select(aria-label='Select parent category')
+                          option(selected='') Active
+                          option(value='2') Inactive
+                        .invalid-feedback 
+                          | Please choose a category status.
+                        .valid-feedback
+                            | Looks good!
+                      .col.d-flex.justify-content-start.align-items-center.m-t-40
+                        a.btn.btn-primary.f-w-500(href="#!") Submit
+              .col-sm-12 
+                .card
+                  .card-header.card-no-border.text-end
+                    .card-header-right-icon
+                      a.btn.btn-primary.f-w-500(href="#!" data-bs-toggle='modal' data-bs-target='#dashboard8')
+                        i.fa-solid.fa-plus.pe-2
+                        | Add Category
+                      //-  Modal
+                      #dashboard8.modal.fade(tabindex='-1' aria-labelledby='dashboard8' aria-hidden='true')
+                        .modal-dialog.modal-dialog-centered.modal-lg
+                            .modal-content.category-popup
+                                .modal-header
+                                    h5#modaldashboard.modal-title Add Categories
+                                    button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+                                .modal-body.p-0.custom-input
+                                    .text-start
+                                      .p-20
+                                        form.row.g-3.needs-validation(novalidate='')
+                                          .col-md-6
+                                            label.form-label(for='validationCategoryName') Category Name
+                                              span.txt-danger *
+                                            input#validationCategoryName.form-control(type='text' placeholder='Enter your category name' required='')
+                                            .invalid-feedback 
+                                              | Please enter a category name.
+                                            .valid-feedback
+                                              | Looks good!
+                                          .col-md-6
+                                            label.form-label(for='validationSlug') Slug
+                                              span.txt-danger *
+                                            input#validationSlug.form-control(type='text' placeholder='Enter slug' required='')
+                                            .invalid-feedback 
+                                              | Please enter a slug name.
+                                            .valid-feedback
+                                              | Looks good!
+                                          .col-md-12
+                                            label.form-label Parent Category
+                                              span.txt-danger *
+                                            select.form-select(aria-label='Select parent category')
+                                              option(selected='') T-shirts
+                                              option(value='1') Purse
+                                              option(value='2') Cameras
+                                              option(value='3') Shoes 
+                                              option(value='4') Handbags
+                                              option(value='5') Sleepers
+                                              option(value='6') Watches
+                                            .invalid-feedback 
+                                              | Please choose a parent category.
+                                            .valid-feedback
+                                                | Looks good!
+                                          .col-md-6
+                                            label.form-label Category Type
+                                              span.txt-danger *
+                                            select.form-select(aria-label='Select category type')
+                                              option(selected='') Electronic
+                                              option(value='1') Accessories
+                                              option(value='2') Footwear
+                                              option(value='3') Clothing
+                                              option(value='4') Furniture
+                                            .invalid-feedback 
+                                              | Please choose a category type.
+                                            .valid-feedback
+                                                | Looks good!
+                                          .col-md-6
+                                            label.form-label Category Status
+                                              span.txt-danger *
+                                            select.form-select(aria-label='Select category status')
+                                              option(selected='') Active
+                                              option(value='1') Inactive
+                                            .invalid-feedback 
+                                              | Please choose a category status.
+                                            .valid-feedback
+                                                | Looks good!
+                                          .col-md-12
+                                            label.form-label Category Description
+                                            .toolbar-box
+                                              #toolbar9
+                                                button.ql-bold Bold 
+                                                button.ql-italic Italic 
+                                                button.ql-underline underline
+                                                button.ql-strike Strike 
+                                                button.ql-list(value="ordered") List 
+                                                button.ql-list(value="bullet") 
+                                                button.ql-indent(value="-1") 
+                                                button.ql-indent(value="+1")
+                                                button.ql-link
+                                              #editor9
+                                            .valid-feedback
+                                              | Looks good!
+                                          .col-12
+                                            .main-divider
+                                              .divider-body
+                                                h6 SEO Tags
+                                          .col-lg-6
+                                            label.form-label(for='validationMetaTitle') Meta Title
+                                              span.txt-danger *
+                                            input#validationMetaTitle.form-control(type='text' placeholder='Enter meta title' required='')
+                                            .invalid-feedback 
+                                              | Please enter a meta title.
+                                            .valid-feedback
+                                              | Looks good!
+                                          .col-lg-6
+                                            label.form-label(for='validationKeyword') Meta Keywords
+                                              span.txt-danger *
+                                              span.c-o-light &nbsp;(In comma separated)
+                                            input#validationKeyword.form-control(type='text' placeholder='Enter meta keywords' required='')
+                                            .invalid-feedback 
+                                              | Please enter a meta keywords(In comma separated).
+                                            .valid-feedback
+                                              | Looks good!
+                                          .col-md-12
+                                            label.form-label Meta Description
+                                            .toolbar-box
+                                              #toolbar10
+                                                button.ql-bold Bold 
+                                                button.ql-italic Italic 
+                                                button.ql-underline underline
+                                                button.ql-strike Strike 
+                                                button.ql-list(value="ordered") List 
+                                                button.ql-list(value="bullet") 
+                                                button.ql-indent(value="-1") 
+                                                button.ql-indent(value="+1")
+                                                button.ql-link
+                                              #editor10
+                                            .invalid-feedback 
+                                              | Please enter a meta description
+                                            .valid-feedback
+                                              | Looks good!
+                                          .col-md-12.d-flex.justify-content-end
+                                            button.btn.btn-primary(type='submit') Create +
+                  .card-body.px-0.pt-0
+                    .list-product.list-category
+                      .recent-table.table-responsive.custom-scrollbar
+                        table#project-status.table
+                          thead 
+                            tr 
+                              th
+                              th 
+                                span.c-o-light.f-w-600 Category
+                              th 
+                                span.c-o-light.f-w-600 Description
+                              th 
+                                span.c-o-light.f-w-600 Category Type
+                              th 
+                                span.c-o-light.f-w-600 Action
+
+                          tbody 
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/1.png", alt="t-shirt")
+                                  p Polo T-shirt
+                              td 
+                                p.f-light Special Price get at flat ₹229
+                              td  
+                                span.badge.badge-light-primary Clothing
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/category/1.png", alt="shoes")
+                                  p Shoes
+                              td 
+                                p.f-light Up to ₹300, on orders of ₹1750 and above T & C
+                              td  
+                                  span.badge.badge-light-primary Footwear
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/category/2.png", alt="hand bags")
+                                  p Handbags
+                              td 
+                                p.f-light Passed 30+ quality checks performed by experts for comfort & design
+                              td  
+                                span.badge.badge-light-secondary Accessories
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-2/product/1.png", alt="chairs")
+                                  p Arm chair
+                              td 
+                                p.f-light Popular seating options for a variety of events are armchairs
+                              td  
+                                span.badge.badge-light-warning Furniture
+                              td 
+                                .common-align.gap-2.justify-content-start
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/category/3.png", alt="toys")
+                                  p Toys
+                              td 
+                                p.f-light Assembling Shape Educational Toys (Multicolor)
+                              td  
+                                span.badge.badge-light-success Electronic
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/category/4.png", alt="slipper")
+                                  p Slipper
+                              td 
+                                p.f-light Easy to wear and comfortable slip on slippers
+                              td  
+                                span.badge.badge-light-primary Footwear
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/shop-categories/camera.png", alt="smart camera")
+                                  p Smart camera
+                              td 
+                                p.f-light Control your camera with your voice.
+                              td  
+                                span.badge.badge-light-success Electronic
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/2.png", alt="t-shirt")
+                                  p Half sleeves T-shirt
+                              td 
+                                p.f-light Special Price get at flat ₹100
+                              td  
+                                span.badge.badge-light-primary Clothing
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/product-categories/watch.png", alt="watch")
+                                  p Watches
+                              td 
+                                p.f-light Experience luxury and precision with our meticulously crafted timepieces
+                              td  
+                                span.badge.badge-light-success Electronic
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/14.png", alt="t-shirt")
+                                  p T-Shirts
+                              td 
+                                p.f-light Special Price Get at flat ₹300
+                              td  
+                                span.badge.badge-light-primary Clothing
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/shop-categories/mouse.png", alt="mouse")
+                                  p Green wireless mouse
+                              td 
+                                p.f-light Go cordless and eco-friendly with this sleek mouse
+                              td  
+                                  span.badge.badge-light-success Electric
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/product-categories/dvd.png", alt="dvd")
+                                  p DVD
+                              td 
+                                p.f-light High-quality DVD for a great viewing experience
+                              td  
+                                span.badge.badge-light-success Electronic
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/product-categories/ipad.png", alt="slipper")
+                                  p MacBook Air 13.3-inch
+                              td 
+                                p.f-light Students, take your learning anywhere with the macBook air
+                              td  
+                                span.badge.badge-light-primary Electric
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/accessories/07.png", alt="washing machine")
+                                  p Wool washing machine
+                              td 
+                                p.f-light Our powerful washers make it simple to have clean clothes
+                              td  
+                                span.badge.badge-light-success Electronic
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/email-template/3.png", alt="chair")
+                                  p Accent Chair
+                              td 
+                                p.f-light A luxurious touch is added with a comfy accent chair
+                              td  
+                                span.badge.badge-light-warning Furniture
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/12.png", alt="t-shirt")
+                                  p T-Shirts
+                              td 
+                                p.f-light Special Price get at flat ₹229
+                              td  
+                                span.badge.badge-light-primary Clothing
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/shop-categories/speaker.png", alt="speaker")
+                                  p Wireless Speaker
+                              td 
+                                p.f-light Elevate your music listening experience
+                              td  
+                                  span.badge.badge-light-success Electric
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/product-categories/wireless-headphone.png", alt="ear buds")
+                                  p Wireless ear buds
+                              td 
+                                p.f-light Premium sound, effortless listening
+                              td  
+                                span.badge.badge-light-success Electric
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/product-categories/phone.png", alt="phone")
+                                  p Apple iphone 13 pro
+                              td 
+                                p.f-light Highlights the powerful processor
+                              td  
+                                span.badge.badge-light-success Electric
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/11.png", alt="t-shirt")
+                                  p Solid T-shirt
+                              td 
+                                p.f-light Special Price get at flat ₹999
+                              td  
+                                span.badge.badge-light-primary Clothing
+                              td 
+                                .common-align.gap-2.justify-content-start 
+                                  a.square-white(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                  a.square-white.trash-3(href="#!")
+                                    svg
+                                      use(href="../assets/svg/icon-sprite.svg#trash1")
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

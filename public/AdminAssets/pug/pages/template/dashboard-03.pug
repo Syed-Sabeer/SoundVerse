@@ -1,0 +1,500 @@
+- var page_Title = 'Online Course Dashboard';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var apexmoment            = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var counter               = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var scrollbar             = true;
+- var apex                  = true;
+- var flatpickr             = true;
+- var dashboard_3           = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Online course
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Dashboard
+                    li.breadcrumb-item.active Online course
+          // Container-fluid starts
+          .container-fluid.dashboard-3
+            .row
+              .col-xxl-5.col-ed-6.col-xl-8.box-col-7
+                .row
+                  .col-sm-12
+                    .card.o-hidden.welcome-card             
+                      .card-body
+                        h4.mb-3.mt-1.f-w-500.mb-0.f-22 Hello Walter
+                          span 
+                            img(src="../assets/images/dashboard-3/hand.svg", alt="hand vector")
+                        p Learn something new every day with world's best courses.Free online courses available.
+                      img.welcome-img(src="../assets/images/dashboard-3/widget.svg", alt="search image") 
+                  .col-sm-6
+                    .card.course-box 
+                      .card-body 
+                        .course-widget 
+                          .course-icon 
+                            svg.fill-icon
+                              use(href='../assets/svg/icon-sprite.svg#course-1')
+                          div 
+                            h4.mb-0 
+                              span.counter(data-target='100') 0
+                              | +
+                            span.f-light Completed Courses
+                            a.btn.btn-light(href="course-list-view.html").f-light View Course
+                              span.ms-2 
+                                svg.fill-icon.f-light
+                                  use(href='../assets/svg/icon-sprite.svg#arrowright')
+                      ul.square-group
+                        li.square-1.warning
+                        li.square-1.primary
+                        li.square-2.warning1
+                        li.square-3.danger
+                        li.square-4.light
+                        li.square-5.warning
+                        li.square-6.success
+                        li.square-7.success
+                  .col-sm-6
+                    .card.course-box 
+                      .card-body 
+                        .course-widget 
+                          .course-icon.warning 
+                            svg.fill-icon
+                              use(href='../assets/svg/icon-sprite.svg#course-2')
+                          div 
+                            h4.mb-0 
+                              span.counter(data-target='80') 0
+                              | +
+                            span.f-light In Progress Courses
+                            a.btn.btn-light(href="course-list-view.html").f-light View Course
+                              span.ms-2 
+                                svg.fill-icon.f-light
+                                  use(href='../assets/svg/icon-sprite.svg#arrowright')
+                      ul.square-group
+                        li.square-1.warning
+                        li.square-1.primary
+                        li.square-2.warning1
+                        li.square-3.danger
+                        li.square-4.light
+                        li.square-5.warning
+                        li.square-6.success
+                        li.square-7.success
+              .col-xxl-2.col-ed-3.col-xl-4.col-sm-6.box-col-5
+                .card.get-card
+                  .card-header.card-no-border
+                    h5 Today Progress
+                    span.f-14.f-w-500.f-light Your Daily Goal Almost Done!
+                  .card-body.pt-0
+                    .progress-chart-wrap
+                      #progresschart
+              .col-xl-2.col-ed-3.d-xxl-block.d-sm-none.box-col-none
+                .card.get-card.overflow-hidden 
+                  .card-header.card-no-border
+                    h5 Do You Want to Get
+                    span.f-14.f-w-500.f-light Better Results?
+                    a.btn.btn-primary.btn-hover-effect(href="course-details.html") More Details
+                      span.ms-1 
+                        svg.fill-icon
+                          use(href='../assets/svg/icon-sprite.svg#arrowright')
+                  .card-body.pt-0
+                    .get-image.text-center 
+                      img.img-fluid(src="../assets/images/dashboard-3/better.png", alt="laptop with men vector")
+              .col-xxl-3.col-ed-5.col-xl-5.col-sm-6.box-col-5
+                .card.default-inline-calender 
+                  .card-body
+                    .input-group.main-inline-calender
+                      input#inline-calender1.form-control(type='date')
+              .col-xxl-5.col-ed-7.col-xl-7.box-col-7
+                .card 
+                  .card-header.card-no-border
+                    .header-top
+                      h5.m-0 Learning Overview
+                        span.f-14.f-w-500.ms-1.f-light
+                          | (75% activity growth)
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#learningButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='learningButton')
+                            a.dropdown-item(href='#') This Month
+                            a.dropdown-item(href='#') Previous Month
+                            a.dropdown-item(href='#') Last 3 Months
+                            a.dropdown-item(href='#') Last 6 Months
+                  .card-body.pt-0 
+                    .learning-wrap 
+                      #learning-chart
+              .col-xxl-4.col-ed-7.col-xl-7.col-md-6.box-col-7 
+                .card
+                  .card-header.card-no-border
+                    .header-top  
+                      h5 Activity Hours
+                      .dropdown.icon-dropdown
+                        button#activitydropdown.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                          i.icon-more-alt
+                        .dropdown-menu.dropdown-menu-end(aria-labelledby='activitydropdown')
+                          a.dropdown-item(href='#') Today
+                          a.dropdown-item(href='#') Yesterday
+                          a.dropdown-item(href='#') This week
+                  .card-body.pt-0
+                    .row.m-0.overall-card
+                      .col-xl-8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                        .chart-right
+                          .row
+                            .col-xl-12
+                              .card-body.p-0
+                                .activity-wrap
+                                  #activity-chart
+                      .col-xl-4.p-0
+                        .row.g-sm-3.g-2.mt-0
+                          .col-xl-12.col-md-6.col-sm-4
+                            .light-card.balance-card
+                              div 
+                                span.f-light Time Spent
+                                h6.mt-1.mb-0 30
+                          .col-xl-12.col-md-6.col-sm-4
+                            .light-card.balance-card.activity-details
+                              div 
+                                span.f-light Course Subscribe
+                                h6.mt-1.mb-0 45
+                          .col-xl-12.col-md-6.col-sm-4
+                            .light-card.balance-card
+                              div 
+                                span.f-light Exams Passed
+                                h6.mt-1.mb-0 12
+              .col-xxl-3.col-ed-5.col-xl-5.col-md-6.box-col-5
+                .card
+                  .card-header.card-no-border
+                    .header-top  
+                      h5 Upcoming Courses
+                      .dropdown.icon-dropdown
+                        button#upcomingdropdown.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                          i.icon-more-alt
+                        .dropdown-menu.dropdown-menu-end(aria-labelledby='upcomingdropdown')
+                          a.dropdown-item(href='#') Today
+                          a.dropdown-item(href='#') Yesterday
+                          a.dropdown-item(href='#') This week 
+                  .card-body.pt-0
+                    .upcoming-event-wrap
+                      #upcomingchart
+              .col-md-6
+                .card
+                  .card-header.card-no-border
+                    .header-top
+                      h5 Top Mentors
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#topMentor.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='topMentor')
+                            a.dropdown-item(href='#!') This Month
+                            a.dropdown-item(href='#!') Previous Month
+                            a.dropdown-item(href='#!') Last 3 Months
+                            a.dropdown-item(href='#!') Last 6 Months
+                  .card-body.px-0.pt-0.t-top-mentor
+                    .table-responsive.custom-scrollbar
+                      table.table#t-top-mentor 
+                        thead 
+                          tr
+                            th 
+                            th Mentor Name
+                            th Expertise
+                            th Courses
+                            th Experience
+                        tbody 
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/6.jpg',alt='user')
+                                a(href="course-list-view.html").f-w-500 Kathrin Ney
+                            td Data Science
+                            td 550
+                            td 10 Year
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/3.jpg',alt='user')
+                                a(href="course-list-view.html").f-w-500 Mili Pais
+                            td UI/UX Designer
+                            td 210
+                            td 06 Year
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/4.jpg',alt='user')
+                                a(href="course-list-view.html").f-w-500 Robert Fox
+                            td English Literature
+                            td 920
+                            td 15 Year
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/2.jpg',alt='user')
+                                a(href="course-list-view.html").f-w-500 Caleb Riv
+                            td Web Designer
+                            td 110
+                            td 12 Year
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/1.jpg',alt='user')
+                                a(href="course-list-view.html").f-w-500 Caryl Kauth
+                            td JS Developer
+                            td 120
+                            td 10 Year
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/5.jpg',alt='user')
+                                a(href="course-list-view.html").f-w-500 Eriko Fonsa
+                            td Painter
+                            td 360
+                            td 06 Year
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/13.jpg',alt='user')
+                                a(href="course-list-view.html").f-w-500 Olivia Gor
+                            td Mathematics
+                            td 221
+                            td 08 Year
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/10.jpg',alt='user')
+                                a(href="course-list-view.html").f-w-500 Emily Park
+                            td Painter
+                            td 859
+                            td 03 Year
+              .col-md-6
+                .card
+                  .card-header.card-no-border
+                    .header-top
+                      h5 Completed Course
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#courses.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='courses')
+                            a.dropdown-item(href='#!') This Month
+                            a.dropdown-item(href='#!') Previous Month
+                            a.dropdown-item(href='#!') Last 3 Months
+                            a.dropdown-item(href='#!') Last 6 Months
+                  .card-body.px-0.pt-0.completed-course-table
+                    .table-responsive.custom-scrollbar
+                      table.table#completed-course-table 
+                        thead 
+                          tr
+                            th  
+                            th Student Name
+                            th Course Name
+                            th Completion Date
+                            th Mentor Name
+                        tbody 
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid(src='../assets/images/dashboard/user/7.jpg',alt='user')
+                                a(href="course-details.html").f-w-500 Cody Fisher
+                            td Python
+                            td Oct 25, 2024
+                            td Wade Warren
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid(src='../assets/images/dashboard/user/12.jpg',alt='user')
+                                a(href="course-details.html").f-w-500 Alexis Taylor
+                            td Analysis
+                            td May 20, 2024
+                            td Dylan Sullivan
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid(src='../assets/images/user/10.jpg',alt='user')
+                                a(href="course-details.html").f-w-500 Jenny Wilson
+                            td Development
+                            td Apr 28, 2024
+                            td Guy Hawkins
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid(src='../assets/images/dashboard/user/2.jpg',alt='user')
+                                a(href="course-details.html").f-w-500 Lily Ramirez
+                            td Marketing
+                            td Mar 13, 2024
+                            td Ethan Brooks
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid(src='../assets/images/dashboard/user/11.jpg',alt='user')
+                                a(href="course-details.html").f-w-500 Andrew Price
+                            td Developer
+                            td Feb 12, 2024
+                            td Nathan Cooper
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid(src='../assets/images/user/6.jpg',alt='user')
+                                a(href="course-details.html").f-w-500 Luke Mitchell
+                            td Mathematics
+                            td Apr 12, 2024
+                            td Owen Davis
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid(src='../assets/images/user/3.png',alt='user')
+                                a(href="course-details.html").f-w-500 Caleb Rivera
+                            td Architect
+                            td May 09, 2024
+                            td Zoey Jenkins
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid(src='../assets/images/user/14.png',alt='user')
+                                a(href="course-details.html").f-w-500 Chloe Wilson
+                            td Writer
+                            td May 04, 2024
+                            td Alexis Taylor
+
+              .col-xxl-5.col-ed-12.box-col-12 
+                .card.course-card 
+                  .card-header.card-no-border
+                    .header-top
+                      h5.m-0 My Course
+                      .card-header-right-icon
+                        a(href="course-list-view.html" target="_blank").link-only View All
+                          i(data-feather="arrow-right")
+                  .card-body.pt-0
+                    .course-main-card
+                      .course-wrapper 
+                        .course-icon-box
+                          .icon-wrap
+                            img(src="../assets/images/dashboard-3/course/1.svg", alt="clock vector") 
+                          img.arrow-bg(src="../assets/images/dashboard-3/course/back-arrow/1.png", alt="sqaure border arrow")
+                        h6.f-14 Management
+                      .course-wrapper
+                        .course-icon-box
+                          .icon-wrap
+                            img(src="../assets/images/dashboard-3/course/2.svg", alt="web development vector") 
+                          img.arrow-bg(src="../assets/images/dashboard-3/course/back-arrow/2.png", alt="sqaure border arrow")
+                        h6.f-14 Web Devlopment
+                      .course-wrapper
+                        .course-icon-box
+                          .icon-wrap
+                            img(src="../assets/images/dashboard-3/course/3.svg", alt="business vector") 
+                          img.arrow-bg(src="../assets/images/dashboard-3/course/back-arrow/1.png", alt="sqaure border arrow")
+                        h6.f-14 Business Analytics
+                      .course-wrapper
+                        .course-icon-box
+                          .icon-wrap
+                            img(src="../assets/images/dashboard-3/course/4.svg", alt="marketing vector") 
+                          img.arrow-bg(src="../assets/images/dashboard-3/course/back-arrow/3.png", alt="sqaure border arrow")
+                        h6.f-14 Marketing
+              .col-xxl-4.col-ed-6.col-md-7.box-col-7
+                .card.schedule-card
+                  .card-header.card-no-border
+                    .header-top
+                      h5.m-0 Upcoming Schedule
+                      .card-header-right-icon
+                        a(href="course-list-view.html").btn.btn-light-primary + Create
+                  .card-body.pt-0 
+                    ul.schedule-list 
+                      li.primary
+                        img(src="../assets/images/dashboard/user/4.jpg", alt="profile")
+                        div 
+                          h6.mb-1 Web Design
+                          ul
+                            li.f-light
+                              svg.fill-icon.f-light
+                                use(href='../assets/svg/icon-sprite.svg#bag')
+                              span March 3, 2024
+                            li.f-light
+                              svg.fill-icon.f-success
+                                use(href='../assets/svg/icon-sprite.svg#clock')
+                              span  09.00 - 12.00 AM
+                      li.warning
+                        img(src="../assets/images/dashboard/user/2.jpg", alt="profile")
+                        div 
+                          h6.mb-1 UI/UX Design
+                          ul
+                            li.f-light
+                              svg.fill-icon.f-light
+                                use(href='../assets/svg/icon-sprite.svg#bag')
+                              span April 10, 2024
+                            li.f-light
+                              svg.fill-icon.f-success
+                                use(href='../assets/svg/icon-sprite.svg#clock')
+                              span  11.00 - 1.00 PM
+              .col-xxl-3.col-ed-6.col-md-5.box-col-5
+                .card
+                  .card-header.card-no-border
+                    .header-top
+                      h5.m-0 Active Courses
+                      .card-header-right-icon
+                        a(href="course-list-view.html" target="_blank").link-only View All
+                          i(data-feather="arrow-right")
+                  .card-body.pt-0 
+                    ul.lessons-lists 
+                      li 
+                        img(src="../assets/images/dashboard-3/lessons/1.png", alt="ux icon")
+                        div 
+                          h6.f-14.f-w-400.mb-0 UI/UX 
+                          span.f-light Web design
+                        .lesson-wrap.ms-auto 
+                          #lessonChart1 
+                      li 
+                        img(src="../assets/images/dashboard-3/lessons/2.png", alt="vue icon")
+                        div 
+                          h6.f-14.f-w-400.mb-0 Vue 3
+                          span.f-light JS Framework
+                        .lesson-wrap.ms-auto 
+                          #lessonChart2
+                      li 
+                        img(src="../assets/images/dashboard-3/lessons/3.png", alt="bootstrap icon")
+                        div 
+                          h6.f-14.f-w-400.mb-0 Bootstrap 5
+                          span.f-light Framework
+                        .lesson-wrap.ms-auto 
+                          #lessonChart3
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

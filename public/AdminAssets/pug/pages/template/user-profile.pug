@@ -1,0 +1,551 @@
+- var page_Title = 'User Profile';
+- var theme_customizer      = true;
+- var counter1              = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var tooltip               = true;
+- var header_slider         = true;
+- var avatar_change         = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | User Profile
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Users
+                    li.breadcrumb-item.active User Profile
+          // Container-fluid starts
+          .container-fluid
+            .user-profile
+              .row
+                // user profile first-style start
+                .col-sm-12
+                  .card.hovercard.text-center.common-user-image
+                    .cardheader
+                      .user-image
+                        .avatar
+                          .common-align
+                            div
+                              img#output(src='../assets/images/dashboard-11/user/12.jpg' alt='Profile Image')
+                              input(type='file' accept='image/*' onchange='loadFile(event)')
+                              .icon-wrapper#cancelButton
+                                i.icofont.icofont-error
+                              .icon-wrapper
+                                i.icofont.icofont-pencil-alt-5
+                            .user-designation
+                              a(target='_blank', href='') William C. Jennings
+                              .desc Designer
+                          .follow
+                            div
+                              .follow-num.counter(data-target='258690') 0
+                              span Follower
+                            div
+                              .follow-num.counter(data-target='659887') 0
+                              span Following
+                // user profile first-style end
+                .col-12
+                  .card.user-bio 
+                    .card-body
+                      .row.g-3
+                        .col-12
+                          .ttl-info.text-start
+                            h6 
+                              i.fa-solid.fa-user-tie.pe-2
+                              | Bio
+                            span.mb-sm-3 Over five years of experience creating visually attractive and user-friendly websites has given me a passion for creating unique and creative websites. skilled in fusing cutting-edge online technologies with beautiful design concepts to create amazing user experiences. robust history in front-end development, UI/UX, and graphic design. highly skilled at solving problems, has a keen eye for detail, and can collaborate with others in a hectic setting.
+                        .col-lg-3.col-md-4.col-sm-6
+                          .ttl-info.text-start
+                            h6
+                              i.fa-solid.fa-envelope.pe-2
+                              | Email
+                            span william@jourrapide.com
+                        .col-lg-3.col-md-4.col-sm-6
+                          .ttl-info.text-start
+                            h6
+                              i.fa-solid.fa-calendar-days.pe-2
+                              | Birthday Date
+                            span 02 January 2000
+                        .col-lg-3.col-md-4.col-sm-6
+                          .ttl-info.text-start
+                            h6
+                              i.fa-solid.fa-phone.pe-2
+                              | Contact Us
+                            span India +91 123-456-7890
+                        .col-lg-3.col-md-4.col-sm-6
+                          .ttl-info.text-start.pb-0
+                            h6
+                              i.fa-solid.fa-location-arrow.pe-2
+                              | Location
+                            span B69 Libby Street Beverly Hills
+                        .col-12
+                          .common-flex.justify-content-center
+                            .social-media(data-intro='This is your social details')
+                              ul.list-inline
+                                li.list-inline-item(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Facebook')
+                                  a(href='https://www.facebook.com/' target="_blank")
+                                    i.fa-brands.fa-facebook-f
+                                li.list-inline-item(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Google+')
+                                  a(href='https://accounts.google.com/' target="_blank")
+                                    i.fa-brands.fa-google-plus-g
+                                li.list-inline-item(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='X (Twitter)')
+                                  a(href='https://twitter.com/' target="_blank")
+                                    i.fa-brands.fa-x-twitter
+                                li.list-inline-item(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Instagram')
+                                  a(href='https://www.instagram.com/' target="_blank")
+                                    i.fa-brands.fa-instagram
+                                li.list-inline-item(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='RSS')
+                                  a(href='https://rss.app/' target="_blank")
+                                    i.fa-solid.fa-share-nodes
+                // user profile menu start
+                .col-12 
+                  .row.scope-bottom-wrapper.user-profile-wrapper
+                    .col-xxl-3.user-xl-25.col-xl-4.box-col-4
+                      .card 
+                        .card-body
+                          ul.sidebar-left-icons#add-product-pills-tab.nav.nav-pills(role='tablist')
+                            li.nav-item 
+                              a#target-project-tab.nav-link.active(data-bs-toggle='pill' href='#target-project' role='tab' aria-controls='target-project' aria-selected='false')  
+                                  .nav-rounded
+                                    .product-icons
+                                      i.fa-solid.fa-timeline
+                                  .product-tab-content
+                                      h6 Recent Activity
+                            li.nav-item 
+                              a#budget-project-tab.nav-link(data-bs-toggle='pill' href='#budget-project' role='tab' aria-controls='budget-project' aria-selected='false')  
+                                  .nav-rounded
+                                    .product-icons
+                                      i.fa-solid.fa-list-check
+                                  .product-tab-content
+                                      h6 Tasks
+                            li.nav-item
+                              a#team-project-tab.nav-link(data-bs-toggle='pill' href='#team-project' role='tab' aria-controls='team-project' aria-selected='false')  
+                                  .nav-rounded
+                                    .product-icons
+                                      i.fa-regular.fa-bell
+                                  .product-tab-content
+                                      h6 Notifications
+                            li.nav-item
+                              a#attachment-tab.nav-link(data-bs-toggle='pill' href='#attachment' role='tab' aria-controls='attachment' aria-selected='false')  
+                                  .nav-rounded
+                                    .product-icons
+                                      i.fa-solid.fa-gears
+                                  .product-tab-content
+                                      h6 Settings
+                    .col-xxl-9.user-xl-75.col-xl-8.box-col-8e
+                      .row 
+                        .col-12 
+                          //- Profile
+                          #add-product-pills-tabContent.tab-content
+                            #target-project.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='target-project-tab')
+                              .notification
+                                .card
+                                  .card-header
+                                    h5 Recent Activity
+                                  .card-body.dark-timeline
+                                    ul 
+                                      li.d-flex
+                                        .activity-dot-primary
+                                        .w-100.ms-3
+                                          p.d-flex.justify-content-between.mb-2
+                                            span.date-content.light-background 12th Feb, 2024 
+                                            span Today
+                                          h6 Freelance Project Discussion
+                                            span.dot-notification
+                                          span.c-o-light worked hard with the client to make sure the design reflects their objectives and brand identity.
+                                          span.c-o-light Optimised the website for quicker loads by implementing a responsive layout.
+                                      li.d-flex
+                                        .activity-dot-warning
+                                        .w-100.ms-3
+                                          p.d-flex.justify-content-between.mb-2
+                                            span.date-content.light-background 12th Feb, 2024 
+                                            span 02:00 PM
+                                          h6 Brand Collaboration
+                                            span.dot-notification
+                                          span.c-o-light improved the user experience by using a sleek, contemporary style that matches the brand's urban, smart look.
+                                          span.c-o-light Multimedia components, including infographic and films, were used to improve user interaction and communicate the campaign's impact.
+                                          .recent-images  
+                                            ul 
+                                              li 
+                                                .recent-img-wrap
+                                                  img(src="../assets/images/dashboard-2/order/sub-product/4.png", alt="chair")
+                                              li 
+                                                .recent-img-wrap
+                                                  img(src="../assets/images/dashboard-2/order/sub-product/8.png", alt="neckless")
+                                              li 
+                                                .recent-img-wrap
+                                                  img(src="../assets/images/dashboard-2/order/sub-product/11.png", alt="slipper")
+                                              li 
+                                                .recent-img-wrap
+                                                  img(src="../assets/images/dashboard-2/order/sub-product/7.png", alt="earings")
+                                              li 
+                                                .recent-img-wrap
+                                                  img(src="../assets/images/dashboard-2/order/sub-product/3.png", alt="men t-shirt")
+                                              li 
+                                                .recent-img-wrap
+                                                  img(src="../assets/images/dashboard-2/order/sub-product/9.png", alt="men shorts")
+                                      li.d-flex
+                                        .activity-dot-primary
+                                        .w-100.ms-3
+                                          p.d-flex.justify-content-between.mb-2
+                                            span.date-content.light-background 08th Feb, 2024 
+                                            span 5 days ago
+                                          h6 Review of Project and Milestones
+                                            span.dot-notification
+                                          span.c-o-light Having the objective of developing an aesthetically attractive and intuitive e-commerce platform for "Multikart and Fastkart."
+                                          span.c-o-light This entails being aware of the target market, the brand's goal, and the particular features that the website must have.
+                                      li.d-flex
+                                        .activity-dot-warning
+                                        .w-100.ms-3
+                                          p.d-flex.justify-content-between.mb-2
+                                            span.date-content.light-background 05th Feb, 2024 
+                                            span 8 days ago
+                                          h6 Wireframing Designs
+                                            span.dot-notification
+                                          span.c-o-light.mb-1 Any type of group project could have a central idea. Transfer information using the theme so that members of your team can comprehend it.
+                                          .project-teammate
+                                            ul.common-f-start
+                                              li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Wilson')
+                                                  img.common-circle(src="../assets/images/dashboard-11/user/11.jpg", alt="user")
+                                              li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Richard Taylor')
+                                                  img.common-circle(src="../assets/images/dashboard-11/user/9.jpg", alt="user")
+                                              li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Manuel Gilmore') 
+                                                  .common-circle.bg-lighter-secondary M
+                                              li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jessica Anderson')
+                                                  img.common-circle(src="../assets/images/dashboard-11/user/3.jpg", alt="user")
+                                              li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='9+ More')
+                                                  .common-circle.bg-lighter-primary 9+
+                            //- Tasks
+                            #budget-project.tab-pane.fade(role='tabpanel' aria-labelledby='budget-project-tab')
+                              .card
+                                .card-header
+                                  h5 Tasks
+                                .card-body.projects-wrapper
+                                  .row.g-4
+                                    .col-xxl-4.col-md-6.box-col-6.xl-50
+                                      .progress-project-box
+                                        .list-box.title-line-primary
+                                            .header-top
+                                                span.badge.badge-light-primary Pending
+                                                p.mb-0.c-o-light 
+                                                  svg.me-2 
+                                                    use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                                  | 06 Nov, 2024
+                                            .project-body
+                                              .common-f-start
+                                                  img.img-fluid(src="../assets/images/project/list/1.png", alt="dashboard")
+                                                  div
+                                                    h6 CRM Dashboard
+                                                    span Create a brand logo design for a mofi admin.
+                                              .common-space
+                                                p.mb-0.c-o-light Tasks
+                                                span 40%
+                                              .progress
+                                                .progress-bar.bg-primary(style='width: 40%')
+                                    .col-xxl-4.col-md-6.box-col-6.xl-50
+                                      .progress-project-box
+                                        .list-box.title-line-success
+                                            .header-top
+                                                span.badge.badge-light-success Completed
+                                                p.mb-0.c-o-light 
+                                                  svg.me-2 
+                                                    use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                                  | 10 Mar, 2024
+                                                
+                                            .project-body
+                                              .common-f-start
+                                                  img.img-fluid(src="../assets/images/project/list/2.png", alt="application")
+                                                  div
+                                                    h6 Chat Application
+                                                    span Create a chat application for business messaging needs.
+                                              .common-space
+                                                p.mb-0.c-o-light Tasks
+                                                span 100%
+                                              .progress
+                                                .progress-bar.bg-success(style='width: 100%')
+                                    .col-xxl-4.col-md-6.box-col-6.xl-50
+                                      .progress-project-box
+                                        .list-box.title-line-primary
+                                            .header-top
+                                                span.badge.badge-light-primary Pending
+                                                p.mb-0.c-o-light 
+                                                  svg.me-2 
+                                                    use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                                  | 08 Nov, 2024
+                                            .project-body
+                                              .common-f-start
+                                                  img.img-fluid(src="../assets/images/project/list/8.png", alt="e-commerce web")
+                                                  div
+                                                    h6 E-commerce Web
+                                                    span E-commerce is focusing on optimizing.
+                                              .common-space
+                                                p.mb-0.c-o-light Tasks
+                                                span 25%
+                                              .progress
+                                                .progress-bar.bg-primary(style='width: 25%')
+                                    .col-xxl-4.col-md-6.box-col-6.xl-50
+                                      .progress-project-box
+                                        .list-box.title-line-success
+                                            .header-top
+                                                span.badge.badge-light-success Completed
+                                                p.mb-0.c-o-light 
+                                                  svg.me-2 
+                                                    use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                                  | 03 Sep, 2024
+                                            .project-body
+                                              .common-f-start
+                                                  img.img-fluid(src="../assets/images/project/list/11.png", alt="application")
+                                                  div
+                                                    h6 Nursery App
+                                                    span Correspondence and monitor your child's development.
+                                              .common-space
+                                                p.mb-0.c-o-light Tasks
+                                                span 100%
+                                              .progress
+                                                .progress-bar.bg-success(style='width: 100%')
+                                    .col-xxl-4.col-md-6.box-col-6.xl-50
+                                      .progress-project-box
+                                        .list-box.title-line-warning
+                                            .header-top
+                                                span.badge.badge-light-warning In Progress
+                                                p.mb-0.c-o-light 
+                                                  svg.me-2 
+                                                    use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                                  | 28 Nov, 2024
+                                            .project-body
+                                              .common-f-start
+                                                  img.img-fluid(src="../assets/images/project/list/12.png", alt="landing page")
+                                                  div
+                                                    h6 Fish Mobile App
+                                                    span Real-time tracking, and fishing advice.
+                                              .common-space
+                                                p.mb-0.c-o-light Tasks
+                                                span 87%
+                                              .progress
+                                                .progress-bar.bg-warning(style='width: 87%')
+                                    .col-xxl-4.col-md-6.box-col-6.xl-50
+                                      .progress-project-box
+                                        .list-box.title-line-success
+                                            .header-top
+                                                span.badge.badge-light-success Completed
+                                                p.mb-0.c-o-light 
+                                                  svg.me-2 
+                                                    use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                                  | 28 Jan, 2024
+                                            .project-body
+                                              .common-f-start
+                                                  img.img-fluid(src="../assets/images/project/list/10.png", alt="application")
+                                                  div
+                                                    h6 Sales Management 
+                                                    span Precise objectives and deliver exceptional performance
+                                              .common-space
+                                                p.mb-0.c-o-light Tasks
+                                                span 100%
+                                              .progress
+                                                .progress-bar.bg-success(style='width: 100%')
+                                    .col-xxl-4.col-md-6.box-col-6.xl-50
+                                      .progress-project-box
+                                        .list-box.title-line-warning
+                                            .header-top
+                                                span.badge.badge-light-warning In Progress
+                                                p.mb-0.c-o-light 
+                                                  svg.me-2 
+                                                    use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                                  | 02 Feb, 2024
+                                            .project-body
+                                              .common-f-start
+                                                  img.img-fluid(src="../assets/images/project/list/9.png", alt="landing page")
+                                                  div
+                                                    h6 NFT Website
+                                                    span Explore our NFT marketplace to find digital assets.
+                                              .common-space
+                                                p.mb-0.c-o-light Tasks
+                                                span 75%
+                                              .progress
+                                                .progress-bar.bg-warning(style='width: 75%')    
+                                    .col-xxl-4.col-md-6.box-col-6.xl-50
+                                      .progress-project-box
+                                        .list-box.title-line-success
+                                            .header-top
+                                                span.badge.badge-light-success Completed
+                                                p.mb-0.c-o-light 
+                                                  svg.me-2 
+                                                    use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                                  | 27 Oct, 2024
+                                            .project-body
+                                              .common-f-start
+                                                  img.img-fluid(src="../assets/images/project/list/7.png", alt="application")
+                                                  div
+                                                    h6 Grocery App
+                                                    span smooth purchasing journey and effective delivery options.
+                                              .common-space
+                                                p.mb-0.c-o-light Tasks
+                                                span 100%
+                                              .progress
+                                                .progress-bar.bg-success(style='width: 100%')
+                                    .col-xxl-4.col-md-6.box-col-6.xl-50
+                                      .progress-project-box
+                                        .list-box.title-line-primary
+                                            .header-top
+                                                span.badge.badge-light-primary Pending
+                                                p.mb-0.c-o-light 
+                                                  svg.me-2 
+                                                    use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                                  | 14 May, 2024
+                                            .project-body
+                                              .common-f-start
+                                                  img.img-fluid(src="../assets/images/project/list/6.png", alt="project")
+                                                  div
+                                                    h6 Sales Project
+                                                    span Create a chat application for business messaging needs.
+                                              .common-space
+                                                p.mb-0.c-o-light Tasks
+                                                span 30%
+                                              .progress
+                                                .progress-bar.bg-primary(style='width: 30%')
+                            //- Notifications
+                            #team-project.tab-pane.fade(role='tabpanel' aria-labelledby='team-project-tab')
+                              .card
+                                .card-header
+                                  h5 Notifications
+                                .card-body
+                                  .user-notifications
+                                    h6 Today 
+                                    ul 
+                                      li
+                                        div 
+                                          img.img-fluid(src="../assets/images/dashboard-11/user/12.jpg", alt="user")
+                                          div
+                                            p Weekly check-in session arranged
+                                              span.ps-2 2h ago
+                                            span August 30, 2024 at 10:00 AM has been set aside for the weekly check-in meeting.
+                                      li
+                                        div 
+                                          img.img-fluid(src="../assets/images/dashboard-11/user/1.jpg", alt="user")
+                                          div
+                                            p Finishing the wireframing phase
+                                              span.ps-2 5h ago
+                                            span High-fidelity mockups will be created by the design team.
+                                      li
+                                        div 
+                                          img.img-fluid(src="../assets/images/dashboard-11/user/5.jpg", alt="user")
+                                          div
+                                            p Customer input received
+                                              span.ps-2 10h ago
+                                            span Before august 25, 2024, the design team will deliver updated mockups.
+                                    h6 Yesterday
+                                    ul 
+                                      li
+                                        div 
+                                          img.img-fluid(src="../assets/images/dashboard-11/user/2.jpg", alt="user")
+                                          div
+                                            p Scheduled usability testing
+                                              span.ps-2 Yesterday
+                                            span We will collect user input and fix any problems found during the testing process.
+                                      li
+                                        div 
+                                          img.img-fluid(src="../assets/images/dashboard-11/user/4.jpg", alt="user")
+                                          div
+                                            p Meeting for the final client review
+                                              span.ps-2 Yesterday
+                                            span Reviewing the finished website and making any final tweaks before its official debut is the aim of the meeting.
+                                    h6 18 Feb
+                                    ul
+                                      li
+                                        div 
+                                          img.img-fluid(src="../assets/images/dashboard-11/user/7.jpg", alt="user")
+                                          div
+                                            p Confirmed date of website launch
+                                              span.ps-2 18 Feb
+                                            span Plans are in place to guarantee a successful and seamless launch.Keep checking back for further information.
+                            //- Settings
+                            #attachment.tab-pane.fade(role='tabpanel' aria-labelledby='attachment-tab')
+                              .card
+                                .card-header
+                                  h5 Settings
+                                .card-body.setting-wrapper
+                                  .row.g-md-3.g-2
+                                    .col-md-3
+                                      label.form-label.mb-0 Reminders
+                                    .col-sm-9
+                                      .form-check.form-switch.form-check-inline
+                                        input.form-check-input.switch-primary.check-size(type='checkbox' role='switch' checked='')
+                                        p
+                                          i(data-feather="info")
+                                          | To stay on top of crucial tasks and deadlines, set up alerts and notifications.
+                                  .row.g-md-3.g-2
+                                    .col-md-3
+                                      label.form-label.mb-0 Select Language
+                                    .col-sm-9
+                                      select.form-select
+                                        option(selected='') Select your language
+                                        option(value='1') English
+                                        option(value='2') French
+                                        option(value='3') Gujarati
+                                        option(value='4') Hindi
+                                        option(value='5') Japanese
+                                        option(value='6') Marathi
+                                        option(value='7') Russian
+                                  .row.g-md-3.g-2
+                                    .col-md-3
+                                      label.form-label.mb-0 Recent Activity 
+                                    .col-md-9
+                                      .form-check.form-switch.form-check-inline
+                                        input.form-check-input.switch-primary.check-size(type='checkbox' role='switch')
+                                        p
+                                          i(data-feather="info")
+                                          | See a history of your most recent platform interactions and actions.
+                                  .row.g-md-3.g-2
+                                    .col-md-3
+                                      label.form-label.mb-0 Two-factor Authentications
+                                    .col-md-9
+                                      .form-check.form-switch.form-check-inline
+                                        input.form-check-input.switch-primary.check-size(type='checkbox' role='switch' checked='')
+                                        p
+                                          i(data-feather="info")
+                                          | By enabling an extra step of verification during login, you can improve account security.
+                                  .row.g-md-3.g-2
+                                    .col-md-3
+                                      label.form-label.mb-0 Post Notifications
+                                    .col-md-9
+                                      .form-check.form-switch.form-check-inline
+                                        input.form-check-input.switch-primary.check-size(type='checkbox' role='switch' checked='')
+                                        p
+                                          i(data-feather="info")
+                                          | Control and personalise the platform's alerts for new content and updates.
+                                  .row.g-md-3.g-2
+                                    .col-md-3
+                                      label.form-label.mb-0 Remove Accounts
+                                    .col-md-9
+                                      .form-check.form-switch.form-check-inline
+                                        input.form-check-input.switch-primary.check-size(type='checkbox' role='switch' checked='')
+                                        p
+                                          i(data-feather="info")
+                                          | Permanently remove your account and all related information from the platform.
+                                      .common-flex.mt-3
+                                        a.btn.button-light-danger.disabled(href='#!' role='button') Disable Account
+                                        a.btn.btn-danger(href='#!' role='button') Delete Account
+
+                // user profile menu end
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

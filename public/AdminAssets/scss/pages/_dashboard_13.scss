@@ -1,0 +1,661 @@
+/**=====================
+    3.66 Dashboard_13 Start
+==========================**/
+.dashboard-13 {
+    .widget-13 {
+        background-image: url('../images/dashboard-12/light-bg.png');
+        background-position: top;
+        background-size: cover;
+
+        .stat-content {
+            @include pixelstrap-flex(flex, flex-start, center);
+            gap: 10px;
+            margin-bottom: 20px;
+
+            .stat-square {
+                width: calc(45px + (58 - 45) * ((100vw - 320px) / (1920 - 320)));
+                height: calc(45px + (58 - 45) * ((100vw - 320px) / (1920 - 320)));
+                border-radius: 5px;
+                @include pixelstrap-flex(flex, center, center);
+
+                svg {
+                    width: calc(24px + (30 - 24) * ((100vw - 320px) / (1920 - 320)));
+                    height: calc(24px + (30 - 24) * ((100vw - 320px) / (1920 - 320)));
+                    transition: 0.5s;
+                }
+            }
+
+            p {
+                @media (max-width:1410px) and (min-width:576px) {
+                    @include pixelstrap-ellipsis;
+                    width: 145px;
+                }
+            }
+
+            @media (max-width:1399px) and (min-width:1200px) {
+                p {
+                    width: 95px;
+                }
+
+                h4 {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .card-body {
+            .common-align {
+                svg {
+                    @include pixelstrap-size(18px, 16px);
+                    vertical-align: middle;
+                }
+
+                span {
+                    font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+                    @media (max-width:1599px) {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .progress {
+                width: 60%;
+                height: 12px;
+
+                @media (min-width:1400px) {
+                    height: calc(10px + (12 - 10) * ((100vw - 1400px) / (1920 - 1400)));
+                }
+
+                @media (max-width:1399px) {
+                    width: 48%;
+                    height: 10px;
+                }
+
+                .progress-bar-striped {
+                    background-image: linear-gradient(45deg, rgba(231, 252, 255, 1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.8) 50%, rgba(231, 252, 255, 1) 75%, transparent 75%, transparent);
+                }
+            }
+        }
+
+        &:hover {
+            .stat-square {
+                svg {
+                    transform: scale(1.1);
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+
+    .shipment-tracking-table {
+        .recent-table {
+            div.dt-container {
+                .dt-layout-row {
+                    .dt-layout-cell {
+                        .dt-search {
+                            @media (max-width:1299px) and (min-width:1200px) {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .dt-info {
+                        @media (max-width:1499px) and (min-width:1200px) {
+                            display: none;
+                        }
+
+                        @media (max-width:710px) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            table {
+
+                thead,
+                tbody {
+                    tr {
+
+                        th,
+                        td {
+                            min-width: auto;
+
+                            a {
+                                color: var(--body-font-color);
+                                font-weight: 500;
+                            }
+
+                            &:first-child {
+                                padding-left: 20px;
+                            }
+
+                            &:last-child {
+                                padding-right: 20px;
+                            }
+
+                            @media (max-width:1767px) and (min-width:1200px) {
+                                &:nth-child(4) {
+                                    display: none;
+                                }
+                            }
+
+                            @media (max-width:1628px) and (min-width:1200px) {
+                                &:nth-child(3) {
+                                    display: none;
+                                }
+                            }
+
+                            @media (max-width:1477px) and (min-width:1200px) {
+                                &:nth-child(6) {
+                                    display: none;
+                                }
+                            }
+
+                            @media (max-width:1399px) {
+                                &:nth-child(6) {
+                                    min-width: 145px;
+                                }
+
+                                &:nth-child(7) {
+                                    min-width: 66px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .shipping-details {
+
+        .common-space {
+            padding: 14px 49px;
+            background-color: var(--light2);
+            border-radius: 6px;
+            gap: 10px;
+
+            p {
+                margin-bottom: 0;
+                font-weight: 500;
+
+                @media (min-width:1400px) {
+                    font-size: calc(16px + (18 - 16) * ((100vw - 1400px) / (1920 - 1400)));
+                }
+
+                span {
+                    font-weight: 400;
+                }
+            }
+
+            @media (max-width:1762px) and (min-width:1200px) {
+                padding: 14px 30px;
+            }
+
+            @media (max-width:1631px)and (min-width:1200px) {
+                display: block;
+                padding: 8px 18px;
+            }
+
+            @media (max-width:901px) {
+                padding: 14px 18px;
+            }
+
+        }
+
+        .simple-timeline {
+            margin-top: 23px;
+
+            ul {
+                position: relative;
+
+                li {
+
+                    .dots {
+                        @include pixelstrap-size(16px, 16px);
+                        position: relative;
+                        border-radius: 100%;
+                        border: 3px solid $white;
+                        box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.19);
+                    }
+
+                    .shipment-details {
+                        display: flex;
+                        gap: 23px;
+                        z-index: 0;
+                        position: relative;
+
+                        .line {
+                            position: absolute;
+                            top: 0;
+                            left: 7px;
+                            height: 100%;
+                            width: 1px;
+                            z-index: -1;
+
+                            [dir="rtl"] & {
+                                left: unset;
+                                right: 7px;
+                            }
+                        }
+
+                        p {
+                            margin: 0;
+
+                            &:first-child {
+                                margin-top: -3px;
+                            }
+
+                            &:last-child {
+                                padding-bottom: 23px;
+                                margin-bottom: 20px;
+                                border-bottom: 1px solid rgba(82, 82, 108, 0.1);
+
+                                @media (max-width:1633px) and (min-width:1632px) {
+                                    padding-bottom: 16px;
+                                    margin-bottom: 14px;
+                                }
+
+                                @media (max-width:1631px) {
+                                    padding-bottom: 13px;
+                                    margin-bottom: 11px;
+                                }
+                            }
+                        }
+
+                        >div:last-child {
+                            width: calc(100% - 23px - 16px);
+                        }
+                    }
+
+                    &:last-child {
+                        >div p:last-child {
+                            padding-bottom: 0;
+                            margin-bottom: 0;
+                            border-bottom: unset;
+                        }
+
+                        .shipment-details {
+                            .line {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    @media (max-width:1399px) and (min-width:1200px) {
+                        .shipment-details {
+                            p {
+                                &:last-child {
+                                    @include multi-line-ellipsis(2, 53px, vertical, hidden);
+                                }
+                            }
+                        }
+
+                        &:last-child {
+                            >div p:last-child {
+                                text-overflow: unset;
+                                height: unset;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sales-order {
+        h3 {
+            font-size: 30px;
+            font-weight: 500;
+
+            @media (max-width:1399px) {
+                font-size: 22px;
+            }
+        }
+
+        .common-space {
+            span {
+                @media (max-width:1385px) {
+                    &:first-child {
+                        @include pixelstrap-ellipsis;
+                        width: 60%;
+                    }
+                }
+            }
+
+            &:last-child {
+                padding-top: 10px;
+            }
+
+            .total-sale {
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+
+        .progress {
+            width: 68%;
+            height: 23px;
+            border-radius: 0;
+
+            @media (min-width:1400px) {
+                width: calc(56% + (68 - 56) * ((100vw - 1400px) / (1920 - 1400)));
+            }
+
+            @media (max-width:1399px) {
+                width: 50%;
+                height: 18px;
+            }
+        }
+    }
+
+    .delivery-chart {
+        .balance-data {
+            top: 20px;
+            right: 60px;
+
+            [dir="rtl"] & {
+                right: unset;
+                left: 60px;
+            }
+
+            @media (max-width:1690px) {
+                position: relative;
+                inset: 0;
+                display: flex;
+                gap: 14px;
+                flex-wrap: wrap;
+            }
+        }
+    }
+
+    .vehicle-table {
+        .recent-table {
+            div.dt-container {
+                .dt-layout-row {
+                    .dt-layout-cell {
+                        .dt-search {
+                            @media (max-width:1260px) and (min-width:992px) {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .dt-info {
+                        @media (max-width:1430px) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            table {
+
+                thead,
+                tbody {
+                    tr {
+
+                        th,
+                        td {
+                            min-width: auto;
+
+                            a {
+                                color: var(--body-font-color);
+                            }
+
+                            &:first-child {
+                                padding-left: 20px;
+                            }
+
+                            &:last-child {
+                                padding-right: 20px;
+                            }
+
+                            img {
+                                height: 37px;
+
+                                @media (max-width:1425px) and (min-width:1200px) {
+                                    display: none;
+                                }
+                            }
+
+                            @media (max-width:1667px)and (min-width:1200px) {
+                                &:nth-child(6) {
+                                    display: none;
+                                }
+                            }
+
+                            @media (max-width:1364px)and (min-width:1200px) {
+                                &:last-child {
+                                    display: none;
+                                }
+
+                                &:nth-child(5) {
+                                    padding-right: 20px;
+                                }
+                            }
+
+                            @media (max-width:1211px) and (min-width:1200px) {
+                                &:nth-child(3) {
+                                    display: none;
+                                }
+                            }
+
+                            @media (max-width:1199px) {
+                                &:nth-child(2) {
+                                    min-width: 72px;
+                                }
+
+                                &:nth-child(3) {
+                                    min-width: 65px;
+                                }
+
+                                &:nth-child(4) {
+                                    min-width: 150px;
+                                }
+
+                                &:nth-child(5) {
+                                    min-width: 95px;
+                                }
+
+                                &:nth-child(6) {
+                                    min-width: 104px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .country-option {
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+
+            li {
+                background-color: var(--light2);
+                padding: 9px 28px;
+
+                span {
+                    @include pixelstrap-size(10px, 10px);
+                    border-radius: 2px;
+                    margin-right: 14px;
+
+                    [dir="rtl"] & {
+                        margin-right: unset;
+                        margin-left: 14px;
+                    }
+
+                    @media (max-width:767px) and (min-width:576px) {
+                        margin-right: 10px;
+
+                        [dir="rtl"] & {
+                            margin-right: unset;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+                @media (max-width:1610px) and (min-width:1200px) {
+                    padding: 6px 18px;
+                }
+            }
+        }
+
+        @media (max-width:1289px) and (min-width:768px) {
+            .c-xl-40 {
+                border: unset;
+            }
+
+            ul {
+                flex-direction: unset;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width:1230px) and (min-width:768px) {
+            ul {
+                gap: 10px;
+
+                li {
+                    padding: 6px 14px;
+
+                    span {
+                        margin-right: 8px;
+
+                        [dir="rtl"] & {
+                            margin-left: 8px;
+                            margin-right: unset;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width:991px) {
+            ul {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .common-stat-option {
+        margin: -82px -6px -58px 0;
+
+        @media (max-width:1630px) {
+            margin: -85px -6px -58px 0;
+        }
+
+        @media (max-width:1630px) and (min-width:1366px) {
+            margin: -85px -6px -58px 0;
+        }
+
+        @media (max-width:1365px) and (min-width:1200px) {
+            margin: -89px -6px -58px 0;
+        }
+
+        @media (max-width:1199px) {
+            margin: -96px -6px -54px 0;
+        }
+
+        &.client-chart {
+            @media (max-width:424px) {
+                margin: -96px -6px -82px 0;
+            }
+        }
+    }
+
+    .delivered-stat-option {
+        margin: -85px -6px -58px 0;
+
+        @media (max-width:1599px) and (min-width:1200px) {
+            margin: -97px -6px -58px 0;
+        }
+
+        @media (max-width:1199px) {
+            margin: -65px -6px -16px 0;
+        }
+    }
+
+    .sales-order-chart {
+        margin-top: 14px;
+        margin-left: -10px;
+
+        [dir="rtl"] & {
+            margin-left: unset;
+            margin-right: -10px;
+        }
+    }
+
+    .delivery-duration-chart {
+        margin-left: -38px;
+
+        @media (max-width:575px) and (min-width:333px) {
+            margin: 0 -20px -20px -20px;
+        }
+
+        @media (max-width:332px) {
+            margin: 0 0 -40px -20px;
+        }
+    }
+
+    .fleet-status-chart {
+        .apexcharts-legend {
+            gap: 8px;
+        }
+
+        @media (max-width:1399px) and (min-width:1200px) {
+            margin-top: 48px;
+        }
+    }
+
+    .profitable-country-chart {
+        margin-left: -16px;
+        border-right: 1px solid var(--chart-progress-light);
+        height: 100%;
+        padding-right: 10px;
+        margin-right: -8px;
+
+        [dir="rtl"] & {
+            margin-left: -8px;
+            margin-right: -16px;
+            padding-left: 10px;
+            border-left: 1px solid var(--chart-progress-light);
+            border-right: unset;
+
+            @media (max-width:1289px) and (min-width:992px) {
+                border: unset;
+            }
+        }
+
+        @media (max-width:1289px) and (min-width:992px) {
+            border: unset;
+        }
+
+        @media (max-width:575px) {
+            border: unset;
+        }
+    }
+
+    @media (max-width:1660px) and (min-width:1290px) {
+        .c-xl-60 {
+            max-width: 60%;
+            flex: 0 0 60%;
+        }
+
+        .c-xl-40 {
+            max-width: 40%;
+            flex: 0 0 40%;
+        }
+    }
+}
+
+/**=====================
+    3.66 Dashboard_13 Start
+==========================**/

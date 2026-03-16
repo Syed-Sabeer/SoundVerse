@@ -1,0 +1,288 @@
+- var page_Title = 'Subscribed User';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var datatable_extension   = true;
+- var tooltip               = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Subscribed User
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Pages
+                    li.breadcrumb-item.active  Subscribed User
+          // Container-fluid starts
+          .container-fluid.subscribed-user
+            .row
+              .col-sm-12
+                .card
+                  .card-header.card-no-border
+                    .header-top
+                      h5 Newsletter Subscribed
+                  .card-body.pt-0.px-0
+                    .row 
+                      .col-12
+                        .subscribed-user-wrapper
+                          .recent-table.table-responsive.custom-scrollbar
+                            table#subscribed-user-wrapper.table
+                              thead 
+                                tr 
+                                  th
+                                  th 
+                                    span.c-o-light.f-w-600 Email ID
+                                  th 
+                                    span.c-o-light.f-w-600 Subscription Date
+                                  th 
+                                    span.c-o-light.f-w-600 Status
+                                  th 
+                                    span.c-o-light.f-w-600 Action
+                              tbody 
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") keegan@gmail.com
+                                  td 
+                                    p.c-o-light 02 Feb 2024 03:21:45 AM
+                                  td 
+                                    span.badge.badge-light-success Subscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") creed@gmail.com
+                                  td 
+                                    p.c-o-light 11 Mar 2024 02:23:12 PM
+                                  td 
+                                    span.badge.badge-light-danger Unsubscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") kelly@gmail.com
+                                  td 
+                                    p.c-o-light 08 Apr 2024 05:25:30 PM
+                                  td 
+                                    span.badge.badge-light-success Subscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") zyaire@gmail.com
+                                  td 
+                                    p.c-o-light 24 Jan 2023 02:05:02 PM
+                                  td 
+                                    span.badge.badge-light-success Subscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") elyse@gmail.com
+                                  td 
+                                    p.c-o-light 18 Dec 2024 08:12:26 AM
+                                  td 
+                                    span.badge.badge-light-danger Unsubscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") bianca@gmail.com
+                                  td 
+                                    p.c-o-light 28 Jan 2024 12:04:19 PM
+                                  td 
+                                    span.badge.badge-light-danger Unsubscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") delilah@gmail.com
+                                  td 
+                                    p.c-o-light 22 Nov 2024 03:22:20 AM
+                                  td 
+                                    span.badge.badge-light-success Subscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") damir@gmail.com
+                                  td 
+                                    p.c-o-light 25 Jan 2024 08:12:18 PM
+                                  td 
+                                    span.badge.badge-light-danger Unsubscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") ruby@gmail.com
+                                  td 
+                                    p.c-o-light 18 Dec 2024 12:23:20 PM
+                                  td 
+                                    span.badge.badge-light-success Subscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") olivia@gmail.com
+                                  td 
+                                    p.c-o-light 22 Mar 2024 07:12:30 AM
+                                  td 
+                                    span.badge.badge-light-success Subscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") casey@gmail.com
+                                  td 
+                                    p.c-o-light 09 Aug 2022 05:00:00 AM
+                                  td 
+                                    span.badge.badge-light-success Subscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") heath@gmail.com
+                                  td 
+                                    p.c-o-light 12 Dec 2021 11:10:00 AM
+                                  td 
+                                    span.badge.badge-light-danger Unsubscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") jason@gmail.com
+                                  td 
+                                    p.c-o-light 10 Sep 2023 06:13:25 PM
+                                  td 
+                                    span.badge.badge-light-success Subscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") adley@gmail.com
+                                  td 
+                                    p.c-o-light 15 Sep 2020 01:30:00 AM
+                                  td 
+                                    span.badge.badge-light-success Subscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") janelle@gmail.com
+                                  td 
+                                    p.c-o-light 20 Jan 2021 06:35:00 PM
+                                  td 
+                                    span.badge.badge-light-danger Unsubscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") eliana@gmail.com
+                                  td 
+                                    p.c-o-light 28 Mar 2024 09:15:23 AM
+                                  td 
+                                    span.badge.badge-light-success Subscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") westin@gmail.com
+                                  td 
+                                    p.c-o-light 12 May 2023 11:22:00 PM
+                                  td 
+                                    span.badge.badge-light-danger Unsubscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") adan@gmail.com
+                                  td 
+                                    p.c-o-light 18 Dec 2024 09:15:59 AM
+                                  td 
+                                    span.badge.badge-light-danger Unsubscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") maria@gmail.com
+                                  td 
+                                    p.c-o-light 20 Jun 2022 11:10:20 PM
+                                  td 
+                                    span.badge.badge-light-success Subscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate 
+                                tr.inbox-data
+                                  td
+                                  td 
+                                    a(href="#!") baylee@gmail.com
+                                  td 
+                                    p.c-o-light 22 Apr 2024 07:16:28 AM
+                                  td 
+                                    span.badge.badge-light-danger Unsubscribe
+                                  td 
+                                    a.square-white(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Change Status')
+                                      i.fa-solid.fa-arrows-rotate
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

@@ -1,0 +1,21 @@
+- var page_Title = 'Error 404';
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/taptop
+        // page-wrapper Start
+        #pageWrapper.page-wrapper.compact-wrapper
+          // error-404 start
+          .error-wrapper
+            .container
+              svg 
+                use(href='../assets/svg/icon-sprite.svg#error-404')
+              .col-md-8.offset-md-2
+                h3 We Could not Find This Page
+                p.sub-content
+                  | You may not be able to find the page you are searching for, or it may have been relocated or renamed.
+              div
+                a.btn.btn-primary.btn-lg(href='index.html') BACK TO HOME PAGE
+          // error-404 end      
+        include ../../components/footer-files

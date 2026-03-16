@@ -1,0 +1,282 @@
+/**=====================
+    2.1 According CSS start
+==========================**/
+.default-according {
+    .avatar-showcase {
+        margin-bottom: 0;
+    }
+
+    .card {
+        margin-bottom: 0;
+        box-shadow: none;
+
+        &+.card {
+            margin-top: $according-card-top-margin;
+        }
+
+        .btn-link {
+            font-weight: $according-btn-weight;
+            color: $theme-body-font-color;
+            text-decoration: none;
+        }
+
+        .btn-link {
+
+            &:focus,
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .card-header {
+            padding: $according-card-header-padding;
+            border: $card-border-color;
+
+            i {
+                position: absolute;
+                left: 18px;
+                font-size: 20px;
+                top: 20px;
+            }
+
+            h5 {
+                margin-top: 2px;
+            }
+        }
+
+        .card-body {
+            border: $card-border-color;
+            border-top: none;
+        }
+    }
+}
+
+.default-according.style-1 {
+    button {
+        width: 100%;
+        text-align: left;
+
+        &:before {
+            right: 20px;
+            position: absolute;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            font-size: 20px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+
+            @media (max-width: 575px) {
+                right: 15px;
+            }
+        }
+
+        &[aria-expanded="true"] {
+            &:before {
+                content: $according-close-icon;
+                font-family: $according-card-header-icon;
+            }
+        }
+
+        &[aria-expanded="false"] {
+            &:before {
+                content: $according-open-icon;
+                font-family: $according-card-header-icon;
+            }
+        }
+    }
+}
+
+.accordion-button {
+    .svg-color {
+        position: absolute;
+        right: 20px;
+
+        [dir="rtl"] & {
+            left: 20px;
+            right: unset;
+        }
+
+        &::after {
+            content: '';
+            background-image: unset;
+        }
+    }
+
+    svg {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    &:not(.collapsed) {
+        background-color: unset;
+        box-shadow: none;
+
+        svg {
+            transform: rotate(-180deg);
+        }
+
+        &::after {
+            background-image: unset;
+        }
+    }
+
+    &::after {
+        background-image: unset;
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    &::after {
+        content: unset;
+    }
+}
+
+$accordion-light-name: primary,
+    secondary,
+    success,
+    warning,
+    info,
+    light,
+    danger,
+    dark;
+
+$accordion-light-color: $primary-color,
+    $secondary-color,
+    $success-color,
+    $warning-color,
+    $info-color,
+    $light-color,
+    $danger-color,
+    $dark-color;
+
+@each $var in $accordion-light-name {
+    $i: index($accordion-light-name, $var);
+
+    .accordion-button {
+        &.accordion-light-#{$var} {
+            &:not(.collapsed) {
+                background-color: rgba(nth($accordion-light-color, $i), 0.1);
+            }
+
+            &:active,
+            &.active {
+                background-color: rgba(nth($accordion-light-color, $i), 0.1);
+                color: $black;
+            }
+        }
+    }
+
+    .multi-collapse {
+        &.show {
+            .collapse-wrapper {
+                &.accordion-light-#{$var} {
+                    background-color: rgba(nth($accordion-light-color, $i), 0.1) !important;
+                    color: var(--body-font-color);
+                }
+            }
+        }
+    }
+}
+
+.accordion-item {
+    .accordion-button {
+        .svg-wrapper {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+
+.accordion-wrapper {
+    &.accordion-item {
+        background-color: transparent !important;
+
+        .accordion-button {
+            background-color: transparent !important;
+            border-bottom: 1px solid var(--recent-border);
+
+            &.collapsed {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &:active {
+        border: 1px solid $primary-color;
+        border-top: 1px solid $primary-color !important;
+    }
+}
+
+.accordion-border {
+    .accordion-item {
+        border: 0;
+    }
+}
+
+.icons-accordion {
+    .accordion-item {
+        &:last-child {
+            .accordion-body {
+                padding-bottom: 0 !important;
+            }
+        }
+
+        .accordion-button {
+            &:not(.collapsed) {
+                svg {
+                    &:first-child {
+                        transform: unset;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.accordions-content {
+    li {
+        color: $dark-color;
+    }
+}
+
+.collapse-accordion {
+    .btn-dark {
+        &.collapse {
+            border-radius: 15px;
+            color: $white;
+        }
+    }
+}
+
+.main-accordion {
+    .accordion {
+        &:not(.accordion-flush) {
+            .accordion-item {
+                border-color: var(--view-border-marker) !important;
+            }
+        }
+
+        &.accordion-flush {
+            .accordion-item {
+                border-color: var(--recent-dashed-border);
+            }
+        }
+
+        .accordion-item {
+            .accordion-button {
+                padding-right: 50px;
+
+                [dir="rtl"] & {
+                    padding-right: 20px;
+                    padding-left: 50px;
+                }
+            }
+        }
+    }
+}
+
+/**=====================
+    2.1 According CSS Ends
+==========================**/

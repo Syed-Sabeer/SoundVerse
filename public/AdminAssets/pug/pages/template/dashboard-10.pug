@@ -1,0 +1,597 @@
+- var page_Title = 'Analytics Dashboard';
+- var theme_customizer      = true;
+- var apex                  = true;
+- var apexmoment            = true;
+- var dashboard_10          = true;
+- var page_vector_map1      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var header_slider         = true;
+- var animate               = true;
+- var counter               = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Analytics
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Dashboard
+                    li.breadcrumb-item.active Analytics
+          // Container-fluid starts
+          .container-fluid.dashboard-10
+            .row
+                .col-xxl-5.col-xl-4.col-md-6.ord-md-i.box-col-4 
+                    .card.visits-wrapper
+                        .card-header.card-no-border
+                            .header-top 
+                                h5 All Visits
+                                .card-header-right-icon
+                                    .dropdown.custom-dropdown
+                                        button.btn.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                            | Year
+                                        ul.dropdown-menu
+                                            li
+                                                a.dropdown-item(href='#!') Day
+                                            li
+                                                a.dropdown-item(href='#!') Month
+                                            li
+                                                a.dropdown-item(href='#!') Year
+                        .card-body.pt-0
+                            .common-flex
+                                h6 3.2%
+                                .d-flex 
+                                    p ( 
+                                        span.txt-success.f-w-500.me-1 +6.7%
+                                        | vs last week)
+                            .common-m-chart
+                                #visit-chart
+                .col-xxl-3.col-xl-4.col-md-6.ord-md-ii.box-col-4
+                    .card
+                        .card-header.card-no-border
+                            .header-top
+                                h5 Referrals by Visits
+                                .card-header-right-icon
+                                    .dropdown.icon-dropdown
+                                        button#referralVisitOption.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                            i.icon-more-alt
+                                        .dropdown-menu.dropdown-menu-end(aria-labelledby='referralVisitOption')
+                                            a.dropdown-item(href='#!') This Month
+                                            a.dropdown-item(href='#!') Previous Month
+                                            a.dropdown-item(href='#!') Last 3 Months
+                                            a.dropdown-item(href='#!') Last 6 Months
+                        .card-body.px-0.pt-0.treading-product
+                            .recent-table.table-responsive.custom-scrollbar.referral-visit
+                                table.table 
+                                    thead 
+                                        tr 
+                                            th Social Network
+                                            th Conversion Rate
+                                            th Visits
+                                    tbody 
+                                        tr 
+                                            td
+                                                .referral-wrapper
+                                                    div
+                                                        div.bg-dark-primary    
+                                                            .social-wrapper
+                                                                svg.stroke-icon
+                                                                    use(href='../assets/svg/icon-sprite.svg#s-facebook')   
+                                                        span.f-w-500 Facebook
+                                            td 
+                                                button.btn.button-light-success.f-w-500.txt-success 3.2%
+                                            td.f-w-500 10,000
+                                        tr 
+                                            td
+                                                .referral-wrapper
+                                                    div 
+                                                        div.border-warning
+                                                            .social-wrapper.bg-light-warning
+                                                                svg.stroke-icon
+                                                                    use(href='../assets/svg/icon-sprite.svg#s-instagram')
+                                                    span.f-w-500 Instagram
+                                                    
+                                            td 
+                                                button.btn.button-light-warning.f-w-500.txt-warning 2.8%
+                                            td.f-w-500 5,000
+                                        tr 
+                                            td
+                                                .referral-wrapper
+                                                    div 
+                                                        div.border-secondary
+                                                            .social-wrapper.bg-light-secondary
+                                                                svg.stroke-icon
+                                                                    use(href='../assets/svg/icon-sprite.svg#s-pinterest')
+                                                    span.f-w-500 Pinterest
+                                                    
+                                            td 
+                                                button.btn.button-light-info.f-w-500.txt-info 4.0%
+                                            td.f-w-500 7,500
+                                        tr 
+                                            td
+                                                .referral-wrapper
+                                                    div 
+                                                        div.border-info 
+                                                            .social-wrapper.bg-light-info
+                                                                svg.stroke-icon
+                                                                    use(href='../assets/svg/icon-sprite.svg#s-twitter')
+                                                    span.f-w-500 Twitter
+                                                        
+                                            td 
+                                                button.btn.button-light-danger.f-w-500.txt-danger 3.8%
+                                            td.f-w-500 3,000
+                .col-xl-4.col-sm-6.ord-md-vii.box-col-4
+                    .card
+                        .card-header.card-no-border
+                            .header-top
+                                h5 Sessions by Countries
+                                .card-header-right-icon
+                                    .dropdown.icon-dropdown
+                                        button#stockReport.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                            i.icon-more-alt
+                                        .dropdown-menu.dropdown-menu-end(aria-labelledby='stockReport')
+                                            a.dropdown-item(href='#!') This Month
+                                            a.dropdown-item(href='#!') Previous Month
+                                            a.dropdown-item(href='#!') Last 3 Months
+                                            a.dropdown-item(href='#!') Last 6 Months          
+                        .card-body.pt-0
+                            .common-m-chart
+                                #country-chart
+                .col-xl-6.ord-md-iii
+                    .card.mb-3.o-hidden 
+                        .card-body.analytics-widget
+                            .row.g-md-4.g-2
+                                .col-sm-3
+                                    img.img-fluid(src='../assets/images/dashboard-10/1.svg' alt='Analytics Chart')
+                                .col-sm-9
+                                    h5.card-title Website Analytics Process & Management 
+                                    p.card-text.c-o-light
+                                        | Website analytics is the process of analyzing and interpreting data related to website traffic, user behavior, and engagement to optimize.
+                                    a(href="pricing.html").purchase-btn.btn.btn-primary.btn-hover-effect.f-w-500  Upgrade Plan
+                .col-xl-6.ord-md-iv
+                    .row
+                        .col-sm-6 
+                            .card.overflow-hidden.analytics-tread-card
+                                .card-header.card-no-border
+                                    .header-top
+                                        div
+                                            span.c-o-light.mb-1 Total Users
+                                            .common-align
+                                                h5.mb-1 8630k
+                                                span.common-align.gap-1.justify-content-start
+                                                    i.txt-success(data-feather="trending-up")
+                                                    span.txt-success.f-w-500 +50%
+                                        div
+                                            .analytics-tread.bg-light-primary
+                                                svg.fill-primary
+                                                    use(href='../assets/svg/icon-sprite.svg#analytics-user')
+                                .card-body.pt-0 
+                                    .user-analytics-wrapper
+                                        #user-analytics
+                        .col-sm-6
+                            .card.overflow-hidden.analytics-tread-card
+                                .card-header.card-no-border
+                                    .header-top
+                                        div
+                                            span.c-o-light.mb-1 Page Views
+                                            .common-align
+                                                h5.mb-1 54390k
+                                                span.common-align.gap-1.justify-content-start
+                                                    i.txt-danger(data-feather="trending-down")
+                                                    span.txt-danger.f-w-500 -20%
+                                        div
+                                            .analytics-tread.bg-light-secondary
+                                                svg.fill-secondary
+                                                    use(href='../assets/svg/icon-sprite.svg#analytics-view')
+                                .card-body.p-0
+                                    .analytics-view-wrapper
+                                        #page-view-chart
+                .col-xl-6.ord-md-viii
+                    .card.heading-space 
+                        .card-header.card-no-border
+                            .header-top 
+                                h5 Page Analytics
+                                .card-header-right-icon
+                                    .dropdown.custom-dropdown
+                                        button.btn.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                            | Year
+                                        ul.dropdown-menu
+                                            li
+                                                a.dropdown-item(href='#!') Day
+                                            li
+                                                a.dropdown-item(href='#!') Month
+                                            li
+                                                a.dropdown-item(href='#!') Year
+
+                        .card-body.px-0.pt-0.page-analytics-table
+                            .recent-table.table-responsive.custom-scrollbar
+                                table.table#page-analytics-table 
+                                    thead 
+                                        tr
+                                            th 
+                                            th Page Name
+                                            th Page Views
+                                            th Bounce Rate
+                                            th Click Rate
+                                            th Devices
+                                    tbody 
+                                        tr
+                                            td 
+                                            td.f-w-500 /home
+                                            td
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 96,860
+
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-down")
+                                                    | 30%
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-down")
+                                                    | 1.7%
+                                            td Mobile
+                                        tr
+                                            td 
+                                            td.f-w-500 /product
+                                            td 
+                                                .change-currency
+                                                    i.me-1.font-danger(data-feather="trending-down")
+                                                    | 20,759
+
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 90%
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 6.9%
+                                            td Desktop
+                                        tr
+                                            td 
+                                            td.f-w-500 /blog
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 46,159
+
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-danger(data-feather="trending-down")
+                                                    | 16%
+                                            td 
+                                                .change-currency
+                                                    i.me-1.font-danger(data-feather="trending-down")
+                                                    | 2.4%
+                                            td Desktop
+                                        tr
+                                            td 
+                                            td.f-w-500 /aboutus
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 84,252
+
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 70%
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 6.7%
+                                            td Mobile
+                                        tr
+                                            td 
+                                            td.f-w-500 /contactus
+                                            td 
+                                                .change-currency
+                                                    i.me-1.font-danger(data-feather="trending-down")
+                                                    | 26,780
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 60%
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 8.3%
+                                            td Desktop
+                                        tr
+                                            td 
+                                            td.f-w-500 /users
+                                            td 
+                                                .change-currency
+                                                    i.me-1.font-up(data-feather="trending-up")
+                                                    | 52,452
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 54%
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 8.6%
+                                            td Tablet
+                                        tr
+                                            td 
+                                            td.f-w-500 /faq
+                                            td 
+                                                .change-currency
+                                                    i.me-1.font-danger(data-feather="trending-down")
+                                                    | 75,568
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-danger(data-feather="trending-down")
+                                                    | 20%
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-danger(data-feather="trending-down")
+                                                    | 3.3%
+                                            td Desktop
+                                        tr
+                                            td 
+                                            td.f-w-500 /chat
+                                            td 
+                                                .change-currency
+                                                    i.me-1.font-danger(data-feather="trending-down")
+                                                    | 45,586
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 75%
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 9.3%
+                                            td Tablet
+                                        tr
+                                            td 
+                                            td.f-w-500 /charts
+                                            td 
+                                                .change-currency
+                                                    i.me-1.font-danger(data-feather="trending-up")
+                                                    | 65,258
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 69%
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 4.2%
+                                            td Mobile
+                                        tr
+                                            td 
+                                            td.f-w-500 /tasks
+                                            td 
+                                                .change-currency
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 69,777
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 86%
+                                            td 
+                                                .change-currency 
+                                                    i.me-1.font-success(data-feather="trending-up")
+                                                    | 9.1%
+                                            td Desktop
+                .col-xl-6.ord-md-v 
+                    .row
+                        .col-sm-6 
+                            .card.analytics-tread-card
+                                .card-header.card-no-border
+                                    .header-top
+                                        div
+                                            span.c-o-light.mb-1 Sessions
+                                            .common-align
+                                                h5.mb-1 921,35k
+                                                span.common-align.gap-1.justify-content-start
+                                                    i.txt-danger(data-feather="trending-down")
+                                                    span.txt-danger.f-w-500 -15%
+                                        div
+                                            .analytics-tread.bg-light-success
+                                                svg.fill-success
+                                                    use(href='../assets/svg/icon-sprite.svg#analytics-session')
+                                .card-body.pt-0
+                                    .session-progress
+                                        .progress.sm-progress-bar.overflow-visible
+                                            .progress-bar-animated.small-progressbar.bg-success.rounded-pill(role='progressbar', style='width: 75%', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100')
+                                                span.progress-label 7.5
+                                                span.animate-circle
+                                                    
+                        .col-sm-6
+                            .card.overflow-hidden.analytics-tread-card
+                                .card-header.card-no-border
+                                    .header-top
+                                        div
+                                            span.c-o-light.mb-1 Bounce Rate
+                                            .common-align
+                                                h5.mb-1 95.45%
+                                                span.common-align.gap-1.justify-content-start
+                                                    i.txt-success(data-feather="trending-up")
+                                                    span.txt-success.f-w-500 +85%
+                                        div
+                                            .analytics-tread.bg-light-danger
+                                                svg.fill-danger
+                                                    use(href='../assets/svg/icon-sprite.svg#analytics-rate')
+                                .card-body.p-0
+                                    .bounce-rate-wrapper
+                                        #bounce-rate-chart
+                        .col-sm-6
+                            .card.overflow-hidden.analytics-tread-card
+                                .card-header.card-no-border
+                                    .header-top
+                                        div
+                                            span.c-o-light.mb-1 Average Visit Duration
+                                            .common-align.justify-content-start
+                                                h5.mb-1 789,10k
+                                                span.common-align.gap-1.justify-content-start
+                                                    i.txt-success(data-feather="trending-up")
+                                                    span.txt-success.f-w-500 +80%
+                                        div
+                                            .analytics-tread.bg-light-warning
+                                                svg.fill-warning
+                                                    use(href='../assets/svg/icon-sprite.svg#analytics-duration')
+                                .card-body.p-0
+                                    .visit-duration-wrapper
+                                        #visit-duration    
+                        .col-sm-6
+                            .card.analytics-tread-card.retention-progress
+                                .card-header.card-no-border
+                                    .header-top
+                                        div
+                                            span.c-o-light.mb-1 User Retention
+                                            .common-align
+                                                h5.mb-1 845,48k
+                                                span.common-align.gap-1.justify-content-start
+                                                    i.txt-danger(data-feather="trending-down")
+                                                    span.txt-danger.f-w-500 -22%
+                                        div
+                                            .analytics-tread.bg-light-info
+                                                svg.fill-info
+                                                    use(href='../assets/svg/icon-sprite.svg#analytics-retention')
+                                .card-body
+                                    .progress
+                                        .progress-bar-animated.bg-info.progress-bar-striped(role='progressbar', style='width: 70%', aria-valuenow='70', aria-valuemin='0', aria-valuemax='100')
+                .col-xl-4.col-md-6.ord-md-ix 
+                    .card 
+                        .card-header.card-no-border
+                            .header-top 
+                                h5 Live Users
+                                .card-header-right-icon
+                                    .dropdown.icon-dropdown
+                                        button#customerButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                            i.icon-more-alt
+                                        .dropdown-menu.dropdown-menu-end(aria-labelledby='customerButton')
+                                            a.dropdown-item(href='#!') Today
+                                            a.dropdown-item(href='#!') Tomorrow
+                                            a.dropdown-item(href='#!') Yesterday
+                        .card-body.live-user-wrapper.pt-0
+                            .user-data
+                                h5 8,630k
+                                span.font-success 
+                                    i.me-1.font-success.f-w-500(data-feather="trending-up") 
+                                    span.f-w-500.font-success +50%&nbsp;
+                            .live-user-map
+                                #map
+                .col-xl-5.col-md-6.ord-md-x.box-col-4 
+                    .card
+                        .card-header.card-no-border
+                            .header-top 
+                                h5 Sessions by Device
+                                .card-header-right-icon
+                                    .dropdown.custom-dropdown
+                                        button.btn.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                            | Year
+                                        ul.dropdown-menu
+                                            li
+                                                a.dropdown-item(href='#!') Day
+                                            li
+                                                a.dropdown-item(href='#!') Month
+                                            li
+                                                a.dropdown-item(href='#!') Year
+                        .card-body.main-session-devices.pt-0
+                            .row.justify-content-center.align-items-center.gap-sm-0.gap-4 
+                                .col-sm-6.box-col-none
+                                    .common-align
+                                        div
+                                            .common-space
+                                                p Desktop
+                                                span 5,250 / 80%
+                                            .progress
+                                                .progress-bar.bg-primary(role='progressbar', style='width: 80%', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100')  
+                                        div
+                                            .common-space
+                                                p Mobile
+                                                span 260 / 35%
+                                            .progress
+                                                .progress-bar.bg-success(role='progressbar', style='width: 35%', aria-valuenow='35', aria-valuemin='0', aria-valuemax='100') 
+                                        div
+                                            .common-space
+                                                p Tablet
+                                                span 2,158 / 50%
+                                            .progress
+                                                .progress-bar.bg-warning(role='progressbar', style='width: 50%', aria-valuenow='50', aria-valuemin='0', aria-valuemax='100')   
+                                .col-sm-6.box-col-12
+                                   #session-chart 
+                .col-xl-3.col-sm-6.ord-md-vi.box-col-4 
+                    .card
+                        .card-header.card-no-border
+                            .header-top
+                                h5 Session by Browser
+                                .card-header-right-icon
+                                    .dropdown.icon-dropdown
+                                        button#sessionOption.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                            i.icon-more-alt
+                                        .dropdown-menu.dropdown-menu-end(aria-labelledby='sessionOption')
+                                            a.dropdown-item(href='#!') This Month
+                                            a.dropdown-item(href='#!') Previous Month
+                                            a.dropdown-item(href='#!') Last 3 Months
+                                            a.dropdown-item(href='#!') Last 6 Months
+                        .card-body.px-0.pt-0.session-browser-table
+                            .recent-table.table-responsive.custom-scrollbar
+                                table.table 
+                                    thead 
+                                        tr 
+                                            th Browser
+                                            th.text-end Sessions
+                                    tbody 
+                                        tr 
+                                            td
+                                                .common-flex.align-items-center
+                                                    img.img-fluid.rounded-circle(src='../assets/images/dashboard-10/browsers/chrome.svg',alt='browsers')
+                                                    a(href="#!").session-name Chrome
+                                            td.text-end 848,604
+                                        tr 
+                                            td
+                                                .common-flex.align-items-center
+                                                    img.img-fluid.rounded-circle(src='../assets/images/dashboard-10/browsers/safari.svg',alt='browsers')
+                                                    a(href="#!").session-name Safari
+                                            td.text-end 514,850
+                                        tr 
+                                            td
+                                                .common-flex.align-items-center
+                                                    img.img-fluid.rounded-circle(src='../assets/images/dashboard-10/browsers/firefox.svg',alt='browsers')
+                                                    a(href="#!").session-name Firefox
+                                            td.text-end 15,750
+                                        tr 
+                                            td
+                                                .common-flex.align-items-center
+                                                    img.img-fluid.rounded-circle(src='../assets/images/dashboard-10/browsers/edge.svg',alt='browsers')
+                                                    a(href="#!").session-name Edge
+                                            td.text-end 8,952
+                                        tr 
+                                            td
+                                                .common-flex.align-items-center
+                                                    img.img-fluid.rounded-circle(src='../assets/images/dashboard-10/browsers/opera.svg',alt='browsers')
+                                                    a(href="#!").session-name Opera
+                                            td.text-end 5,950              
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

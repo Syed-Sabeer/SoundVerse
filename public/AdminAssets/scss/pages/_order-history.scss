@@ -1,0 +1,454 @@
+/**=====================
+    3.45 Order-history CSS start
+==========================**/
+.common-order-history {
+    .flatpicker-calender {
+        .form-control {
+            font-size: 14px;
+            color: $badge-light-color;
+        }
+    }
+
+    .order-history-wrapper {
+        position: relative;
+
+        .recent-table {
+            div.dt-container {
+                .dt-layout-row {
+                    &:last-child {
+                        @media (max-width:1399px) {
+                            flex-direction: column;
+                        }
+                    }
+
+                    .dt-layout-cell {
+                        .dt-search {
+                            top: -40px;
+                            right: -50px;
+
+                            @media (max-width:1399px) {
+                                position: relative;
+                                top: 4px;
+                                left: 20px;
+                                margin-bottom: 20px;
+                                width: 90%;
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .dt-length {
+                        top: -45px;
+                        left: 20px;
+                    }
+                }
+            }
+
+            table {
+
+                thead,
+                tbody {
+                    tr {
+
+                        th,
+                        td {
+                            min-width: auto;
+                            color: var(--body-font-color);
+
+                            &:first-child {
+                                padding-left: 20px;
+                            }
+
+                            &:last-child {
+                                padding-right: 20px;
+                            }
+
+                            .badge {
+                                padding: 6px 12px;
+                            }
+
+                            a {
+                                font-weight: 500;
+                            }
+
+                            @media (max-width:1415px) and (min-width:1261px) {
+                                &:nth-child(4) {
+                                    display: none;
+                                }
+                            }
+
+                            @media (max-width:1260px) {
+                                &:nth-child(2) {
+                                    min-width: 104px;
+                                }
+
+                                &:nth-child(3) {
+                                    min-width: 180px;
+                                }
+
+                                &:nth-child(4) {
+                                    min-width: 140px;
+                                }
+
+                                &:nth-child(5) {
+                                    min-width: 122px;
+                                }
+
+                                &:nth-child(6) {
+                                    min-width: 140px;
+                                }
+
+                                &:nth-child(7) {
+                                    min-width: 148px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                tbody {
+                    .square-white {
+                        @include square-box(34px, 34px, 2px, $white);
+                        @include pixelstrap-flex(flex, center, center);
+                        box-shadow: 0px 0px 28px 6px rgba(235, 235, 235, 0.4);
+
+                        svg {
+                            fill: rgba($badge-light-color, 0.8);
+                            @include pixelstrap-size(16px, 16px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .form-select {
+        font-size: 14.5px;
+        color: rgba($badge-light-color, 0.8);
+    }
+}
+
+// Order details
+.track-order-details {
+    h6 {
+        position: relative;
+    }
+
+    #order-status-timeline {
+        .status-bar {
+            background-color: var(--recent-dashed-border);
+            @include pixelstrap-size(calc(100% - 20%), 3px);
+            position: absolute;
+            top: 18px;
+            transform: translateX(-50%);
+            left: 50%;
+
+            [dir="rtl"] & {
+                left: unset;
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            @media (max-width:1399px) {
+                top: 13px;
+            }
+
+            @media (max-width:575px) {
+                transform: translateX(-50%) rotate(90deg);
+                left: calc(50% - 68px);
+                width: 220px;
+                top: 50%;
+
+                [dir="rtl"] & {
+                    left: unset;
+                    right: calc(50% - 68px);
+                    transform: translateX(50%) rotate(-90deg);
+                }
+            }
+
+            @media (max-width:400px) {
+                left: 14px;
+
+                [dir="rtl"] & {
+                    left: unset;
+                    right: 14px;
+                }
+            }
+
+            &.progress {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    background-color: var(--theme-default);
+                    height: 100%;
+                }
+
+                &.step-one {
+                    &:after {
+                        width: 0%;
+                    }
+                }
+
+                &.step-two {
+                    &:after {
+                        width: 25%;
+                    }
+                }
+
+                &.step-three {
+                    &:after {
+                        width: 50%;
+                    }
+                }
+
+                &.step-four {
+                    &:after {
+                        width: 75%;
+                    }
+                }
+
+                &.step-five {
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .main-status-line {
+            ul {
+                position: relative;
+                display: flex;
+
+                @media (max-width:575px) {
+                    overflow: auto;
+                    width: 100%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    li {
+                        width: 25%;
+                    }
+                }
+
+                @media (max-width:400px) {
+                    align-items: unset;
+                }
+
+                li {
+                    text-align: center;
+                    width: 22%;
+
+                    @media (max-width:575px) {
+                        text-align: unset;
+                        align-items: center;
+                        display: flex;
+                        width: 165px;
+
+                        +li {
+                            margin-top: 21px;
+                        }
+                    }
+
+                    @media (max-width:400px) {
+                        width: 100%;
+                    }
+
+                    .order-process {
+                        @include pixelstrap-flex(flex, center, center);
+                        margin: 0 auto;
+                        @include pixelstrap-size(38px, 38px);
+                        font-size: 16px;
+                        border-radius: 50%;
+                        color: var(--recent-dashed-border);
+                        border: 1px solid var(--recent-dashed-border);
+                        background-color: var(--white);
+
+                        &.active {
+                            border-color: var(--theme-default);
+                            background-color: var(--theme-default);
+                            color: $white;
+
+                            svg {
+                                stroke: $white;
+                            }
+                        }
+
+                        @media (max-width:1399px) {
+                            @include pixelstrap-size(28px, 28px);
+                            font-size: 14px;
+                        }
+
+                        svg {
+                            @include pixelstrap-size(30px, 30px);
+                            stroke: $badge-light-color;
+                        }
+
+                        span {
+                            line-height: 0;
+                        }
+                    }
+
+                    h6 {
+                        margin: 10px 0 0;
+                        color: $badge-light-color;
+                        @include multi-line-ellipsis(2, auto, vertical, hidden);
+
+                        @media (max-width:1399px) {
+                            font-size: 14px;
+                            @include pixelstrap-ellipsis;
+                            display: block;
+                        }
+
+                        @media (max-width:575px) {
+                            width: calc(100% - 28px - 8px);
+                            margin: 0 0 0 8px;
+
+                            [dir="rtl"] & {
+                                margin: 0 8px 0 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.summary-header {
+    flex-wrap: wrap;
+}
+
+// Order details table
+.order-details-product {
+    table {
+        thead {
+            th {
+                padding-top: 0;
+                font-size: 16px;
+            }
+        }
+
+        tbody {
+            tr {
+                &:last-child {
+                    td {
+                        border-bottom: unset;
+                        padding-bottom: 0;
+                    }
+                }
+
+                td {
+                    &:last-child {
+                        font-weight: 500;
+                        color: $dark-color;
+                    }
+                }
+            }
+
+            ul {
+                li {
+                    >p {
+                        margin-bottom: 0;
+                        display: inline-block;
+                    }
+
+                    .common-dot {
+                        @include pixelstrap-size(5px, 5px);
+                        border-radius: 50%;
+                        background-color: rgba($badge-light-color, 0.8);
+                        margin: 1px 6px 1px 6px;
+                    }
+
+                    &:last-child {
+
+                        p,
+                        span {
+                            color: $badge-light-color;
+                        }
+                    }
+                }
+            }
+
+
+            .light-product-box {
+                min-width: calc(74px + (100 - 74) * ((100vw - 320px) / (1920 - 320)));
+                @include pixelstrap-size(calc(74px + (100 - 74) * ((100vw - 320px) / (1920 - 320))), calc(65px + (90 - 65) * ((100vw - 320px) / (1920 - 320))));
+                border-radius: 3px;
+                background-color: var(--chart-progress-light);
+                @include pixelstrap-flex(flex, center, center);
+
+                img {
+                    height: calc(40px + (62 - 40) * ((100vw - 320px) / (1920 - 320)));
+                }
+            }
+        }
+
+        thead,
+        tbody {
+            tr {
+
+                th,
+                td {
+                    @media (max-width:1199px) {
+                        &:nth-child(2) {
+                            min-width: 220px;
+                        }
+                    }
+
+                    a {
+                        color: var(--body-font-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tracking-total {
+    li {
+        @include pixelstrap-flex(flex, space-between, center);
+        padding-bottom: 12px;
+        gap: 8px;
+
+        &:nth-child(3) {
+            padding-bottom: 0;
+        }
+
+        &:last-child {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba($badge-light-color, 0.1);
+            padding-bottom: 0;
+        }
+
+        h6,
+        span {
+            color: $badge-light-color;
+            font-weight: 400;
+        }
+    }
+}
+
+.customer-details {
+    li {
+        padding-bottom: 14px;
+        @include pixelstrap-child(0, 0);
+    }
+
+    h6 {
+        font-weight: 400;
+        color: $theme-font-color;
+        margin-bottom: 3px;
+    }
+
+    span {
+        color: $font-gray-color;
+        line-height: 1.5;
+    }
+}
+
+/**=====================
+    3.45 Order-history CSS End
+==========================**/

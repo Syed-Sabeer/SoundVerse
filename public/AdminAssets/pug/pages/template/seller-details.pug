@@ -1,0 +1,1271 @@
+- var page_Title = 'Seller-details';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var animate               = true;
+- var apex                  = true;
+- var seller_detail         = true;
+- var editors               = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var tooltip               = true;
+- var sweetalert2           = true;
+- var trash_popup           = true;
+- var counter               = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Seller Details
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Ecommerce
+                    li.breadcrumb-item.active Seller Details
+          // Container-fluid starts
+          .container-fluid.seller-details-wrapper
+            .row
+              .col-12.ord-xxl-2.box-ord-2
+                .row
+                  .col-xxl-3.col-sm-6
+                    .card.widget-11.widget-hover
+                      .card-body
+                        .common-align.justify-content-start
+                          .analytics-tread.bg-light-secondary
+                            svg.fill-primary
+                              use(href='../assets/svg/icon-sprite.svg#c-revenue')
+                          div 
+                            span.c-o-light Total Revenue
+                            h4
+                              | $
+                              span.counter(data-target='5678000') 0
+                  .col-xxl-3.col-sm-6
+                    .card.widget-11.widget-hover
+                      .card-body
+                        .common-align.justify-content-start
+                          .analytics-tread.bg-light-primary
+                            svg.fill-primary
+                              use(href='../assets/svg/icon-sprite.svg#new-order')
+                          div 
+                            span.c-o-light Total Orders
+                            h4
+                              span.counter(data-target='890') 0
+                  .col-xxl-3.col-sm-6
+                    .card.widget-11.widget-hover
+                      .card-body
+                        .common-align.justify-content-start
+                          .analytics-tread.bg-light-warning
+                            svg.stroke-warning
+                              use(href='../assets/svg/icon-sprite.svg#stroke-board')
+                          div 
+                            span.c-o-light Total Stores
+                            h4
+                              span.counter(data-target='285') 0
+                  .col-xxl-3.col-sm-6
+                    .card.widget-11.widget-hover
+                      .card-body
+                        .common-align.justify-content-start
+                          .analytics-tread.bg-light-success
+                            svg.fill-success
+                              use(href='../assets/svg/icon-sprite.svg#analytics-user')
+                          div 
+                            span.c-o-light Total Users
+                            h4
+                              span.counter(data-target='2000') 0
+              .col-xl-9.xl-100.ord-xxl-3.box-ord-3.box-col-12
+                .row 
+                  .col-12
+                    //- Seller charts
+                    .card.sales-report
+                      .card-header.card-no-border
+                        .header-top 
+                          h5 Sales Overview
+                          .card-header-right-icon
+                            .dropdown.icon-dropdown
+                              button#salesButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='salesButton')
+                                a.dropdown-item(href='#!') Today
+                                a.dropdown-item(href='#!') Tomorrow
+                                a.dropdown-item(href='#!') Yesterday
+                      .card-body.pt-0
+                        .social-tabs
+                          .nav.nav-pills.custom-scrollbar(id="social-pills-tab" role="tablist")
+                            a.active(href ="#!" id="v-pills-youtube-tab" data-bs-toggle="pill" data-bs-target="#v-pills-youtube" role="tab" aria-controls="v-pills-youtube" aria-selected="true").social-box.bg-7-warning
+                              .frame-image
+                                .outline-20-warning
+                                  .bg-20-warning
+                                    svg 
+                                      use(href='../assets/svg/icon-sprite.svg#fill-earning')
+                              span Earnings
+                            a(id="v-pills-facebook-tab" href="#!" data-bs-toggle="pill" data-bs-target="#v-pills-facebook" role="tab" aria-controls="v-pills-facebook" aria-selected="false").social-box.bg-7-success
+                              .frame-image
+                                .outline-20-success
+                                  .bg-20-success
+                                    svg 
+                                      use(href='../assets/svg/icon-sprite.svg#fill-orders')
+                              span Orders
+                            a(id="v-pills-instagram-tab" href="#!" data-bs-toggle="pill" data-bs-target="#v-pills-instagram" role="tab" aria-controls="v-pills-instagram" aria-selected="false").social-box.bg-7-primary
+                              .frame-image
+                                .outline-20-primary
+                                  .bg-20-primary
+                                    svg 
+                                      use(href='../assets/svg/icon-sprite.svg#fill-product')
+                              span Products
+                          .tab-content(id="social-pills-tabContent") 
+                            div.tab-pane.fade.show.active(id="v-pills-youtube" role="tabpanel")
+                              div
+                                #seller-earning
+                            div.tab-pane.fade(id="v-pills-facebook" role="tabpanel")
+                              div
+                                #seller-orders
+                            div.tab-pane.fade(id="v-pills-instagram" role="tabpanel")
+                              div
+                                #seller-products
+                  .col-12 
+                    .card.heading-space
+                      .card-header.card-no-border.text-end
+                        .header-top 
+                          h5 Top Selling Products
+                      .card-body.px-0.pt-0
+                        .list-product.vendor-selling-table
+                          .recent-table.table-responsive.custom-scrollbar
+                            table#vendor-selling-product.table
+                              thead 
+                                tr 
+                                  th
+                                  th 
+                                    span.c-o-light.f-w-600 Product
+                                  th 
+                                    span.c-o-light.f-w-600 Category
+                                  th 
+                                    span.c-o-light.f-w-600 Price
+                                  th 
+                                    span.c-o-light.f-w-600 Orders
+                                  th 
+                                    span.c-o-light.f-w-600 Stock
+                                  th 
+                                    span.c-o-light.f-w-600 Total Amount
+                              tbody 
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/dashboard-8/product-categories/laptop.png", alt="laptop")
+                                      p Apple desktop 2024
+                                  td 
+                                    p.c-o-light Laptops
+                                  td 
+                                    p.c-o-light $587.25
+                                  td 
+                                    p.c-o-light 35
+                                  td 
+                                    p.c-o-light 50
+                                  td 
+                                    p.c-o-light $29362.5
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/email-template/3.png", alt="chair")
+                                      p Arm Chair
+                                  td 
+                                    p.c-o-light Furniture
+                                  td 
+                                    p.c-o-light $1000.00
+                                  td 
+                                    p.c-o-light 25
+                                  td 
+                                    p.c-o-light 125
+                                  td 
+                                    p.c-o-light $25000.00
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/product/accessories/01.png", alt="mixer")
+                                      p Bajaj Grinder Jar
+                                  td 
+                                    p.c-o-light Electric
+                                  td 
+                                    p.c-o-light $194.48
+                                  td 
+                                    p.c-o-light 99
+                                  td 
+                                    p.c-o-light 400
+                                  td 
+                                    p.c-o-light $19253.52
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/product/accessories/02.png", alt="headphone")
+                                      p Golden Headphone
+                                  td 
+                                    p.c-o-light Electric
+                                  td 
+                                    p.c-o-light $777.69
+                                  td 
+                                    p.c-o-light 20
+                                  td 
+                                    p.c-o-light 140
+                                  td 
+                                    p.c-o-light $15553.80
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/product/accessories/03.png", alt="beauty blender")
+                                      p Beauty Blender
+                                  td 
+                                    p.c-o-light Make-up
+                                  td 
+                                    p.c-o-light $999.00
+                                  td 
+                                    p.c-o-light 10
+                                  td 
+                                    p.c-o-light 25
+                                  td 
+                                    p.c-o-light $4995.00
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/product/accessories/06.png", alt="study lamp")
+                                      p Study lamp
+                                  td 
+                                    p.c-o-light Electric
+                                  td 
+                                    p.c-o-light $100.10
+                                  td 
+                                    p.c-o-light 1
+                                  td 
+                                    p.c-o-light 10
+                                  td 
+                                    p.c-o-light $100.10
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/product/accessories/07.png", alt="washing machine")
+                                      p Wool washing machine
+                                  td 
+                                    p.c-o-light Electric
+                                  td 
+                                    p.c-o-light $554.99
+                                  td 
+                                    p.c-o-light 2
+                                  td 
+                                    p.c-o-light 28
+                                  td 
+                                    p.c-o-light $1109.98
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/product/accessories/08.png", alt="projector")
+                                      p Projector
+                                  td 
+                                    p.c-o-light Electric
+                                  td 
+                                    p.c-o-light $597.05
+                                  td 
+                                    p.c-o-light 1
+                                  td 
+                                    p.c-o-light 50
+                                  td 
+                                    p.c-o-light $597.05
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/dashboard-8/product-categories/mouse.png", alt="mouse")
+                                      p M185 compact wireless mouse
+                                  td 
+                                    p.c-o-light Electric
+                                  td 
+                                    p.c-o-light $22.00
+                                  td 
+                                    p.c-o-light 2
+                                  td 
+                                    p.c-o-light 100
+                                  td 
+                                    p.c-o-light $44.00
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/dashboard-8/product-categories/dvd.png", alt="dvd")
+                                      p DVD
+                                  td 
+                                    p.c-o-light Electric
+                                  td 
+                                    p.c-o-light $485.45
+                                  td 
+                                    p.c-o-light 1
+                                  td 
+                                    p.c-o-light 100
+                                  td 
+                                    p.c-o-light $485.45
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/dashboard-8/product-categories/speaker.png", alt="speaker")
+                                      p Speakers
+                                  td 
+                                    p.c-o-light Electric
+                                  td 
+                                    p.c-o-light $245.45
+                                  td 
+                                    p.c-o-light 1
+                                  td 
+                                    p.c-o-light 50
+                                  td 
+                                    p.c-o-light $245.45
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/dashboard-8/product-categories/watch.png", alt="watch")
+                                      p Smart watch
+                                  td 
+                                    p.c-o-light Electric
+                                  td 
+                                    p.c-o-light $478.48
+                                  td 
+                                    p.c-o-light 1
+                                  td 
+                                    p.c-o-light 120
+                                  td 
+                                    p.c-o-light $478.48
+                  .col-12 
+                    .card.heading-space
+                      .card-header.card-no-border.text-end
+                        .header-top 
+                          h5 Recent Orders
+                      .card-body.px-0.pt-0
+                        .list-product.seller-order-table
+                          .recent-table.table-responsive.custom-scrollbar
+                            table#seller-recent-order.table
+                              thead 
+                                tr 
+                                  th
+                                  th 
+                                    span.c-o-light.f-w-600 Order Number
+                                  th 
+                                    span.c-o-light.f-w-600 Date
+                                  th 
+                                    span.c-o-light.f-w-600 Customers
+                                  th 
+                                    span.c-o-light.f-w-600 Amount
+                                  th 
+                                    span.c-o-light.f-w-600 Payment
+                                  th 
+                                    span.c-o-light.f-w-600 Action
+                              tbody 
+                                tr.product-removes
+                                  td
+                                  td.c-o-light
+                                    a(href="order-details.html") #100589
+                                  td 
+                                    p.c-o-light 24 Jan, 2024
+                                  td 
+                                    .common-flex.align-items-center
+                                      img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/12.jpg',alt='user')
+                                      a(href="#!") Lorenzo Wright
+                                  td 
+                                    p.c-o-light $258.25
+                                  td 
+                                    span.badge.badge-light-success Completed
+                                  td 
+                                    a.square-white(href="order-details.html") 
+                                      i.fa-solid.fa-eye
+                                tr.product-removes
+                                  td
+                                  td.c-o-light
+                                    a(href="order-details.html") #100478
+                                  td
+                                    p.c-o-light 02 Feb, 2024
+                                  td 
+                                    .common-flex.align-items-center
+                                      img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/11.jpg',alt='user')
+                                      a(href="#!") Cecilia Hart
+                                  td 
+                                    p.c-o-light $478.21
+                                  td 
+                                    span.badge.badge-light-warning Pending
+                                  td 
+                                    a.square-white(href="order-details.html")
+                                      i.fa-solid.fa-eye
+                                tr.product-removes
+                                  td
+                                  td.c-o-light
+                                    a(href="order-details.html") #100347
+                                  td
+                                    p.c-o-light 09 Mar, 2024
+                                  td 
+                                    .common-flex.align-items-center
+                                      img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/13.jpg',alt='user')
+                                      a(href="#!") Eliezer Zuniga
+                                  td 
+                                    p.c-o-light $147.59
+                                  td 
+                                    span.badge.badge-light-secondary Shipped
+                                  td 
+                                    a.square-white(href="order-details.html")
+                                      i.fa-solid.fa-eye
+                                tr.product-removes
+                                  td
+                                  td.c-o-light
+                                    a(href="order-details.html") #100148
+                                  td
+                                    p.c-o-light 10 Apr, 2024
+                                  td 
+                                    .common-flex.align-items-center
+                                      img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/1.jpg',alt='user')
+                                      a(href="#!") Elliana Beltran
+                                  td 
+                                    p.c-o-light $100.24
+                                  td 
+                                    span.badge.badge-light-success Completed
+                                  td 
+                                    a.square-white(href="order-details.html")
+                                      i.fa-solid.fa-eye
+                                tr.product-removes
+                                  td
+                                  td.c-o-light
+                                    a(href="order-details.html") #148007
+                                  td
+                                    p.c-o-light 26 Feb, 2024
+                                  td 
+                                    .common-flex.align-items-center
+                                      img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/4.jpg',alt='user')
+                                      a(href="#!") Malik Dorsey
+                                  td 
+                                    p.c-o-light $140.25
+                                  td 
+                                    span.badge.badge-light-warning Pending
+                                  td 
+                                    a.square-white(href="order-details.html")
+                                      i.fa-solid.fa-eye
+                                tr.product-removes
+                                  td
+                                  td.c-o-light
+                                    a(href="order-details.html") #100589
+                                  td
+                                    p.c-o-light 24 Jan, 2024
+                                  td 
+                                    .common-flex.align-items-center
+                                      img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/7.jpg',alt='user')
+                                      a(href="#!") Blake Hogan
+                                  td 
+                                    p.c-o-light $140.45
+                                  td 
+                                    span.badge.badge-light-secondary Shipped
+                                  td 
+                                    a.square-white(href="order-details.html")
+                                      i.fa-solid.fa-eye
+                                tr.product-removes
+                                  td
+                                  td.c-o-light
+                                    a(href="order-details.html") #100687
+                                  td
+                                    p.c-o-light 03 Nov, 2024
+                                  td 
+                                    .common-flex.align-items-center
+                                      img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/3.jpg',alt='user')
+                                      a(href="#!") Finn Tapia
+                                  td 
+                                    p.c-o-light $78.41
+                                  td 
+                                    span.badge.badge-light-success Completed
+                                  td 
+                                    a.square-white(href="order-details.html")
+                                      i.fa-solid.fa-eye
+                                tr.product-removes
+                                  td
+                                  td.c-o-light
+                                    a(href="order-details.html") #100980
+                                  td
+                                    p.c-o-light 10 Dec, 2024
+                                  td 
+                                    .common-flex.align-items-center
+                                      img.img-fluid.rounded-circle(src='../assets/images/dashboard-9/user/1.png',alt='user')
+                                      a(href="#!") Grady Ochoa
+                                  td 
+                                    p.c-o-light $147.45
+                                  td 
+                                    span.badge.badge-light-warning Pending
+                                  td 
+                                    a.square-white(href="order-details.html")
+                                      i.fa-solid.fa-eye
+                                tr.product-removes
+                                  td
+                                  td.c-o-light
+                                    a(href="order-details.html") #107748
+                                  td
+                                    p.c-o-light 20 Oct, 2024
+                                  td 
+                                    .common-flex.align-items-center
+                                      img.img-fluid.rounded-circle(src='../assets/images/dashboard-9/user/2.png',alt='user')
+                                      a(href="#!") Jesus Andrews
+                                  td 
+                                    p.c-o-light $478.58
+                                  td 
+                                    span.badge.badge-light-secondary Shipped
+                                  td 
+                                    a.square-white(href="order-details.html")
+                                      i.fa-solid.fa-eye
+                                tr.product-removes
+                                  td
+                                  td.c-o-light
+                                    a(href="order-details.html") #100147
+                                  td
+                                    p.c-o-light 25 Sep, 2024
+                                  td 
+                                    .common-flex.align-items-center
+                                      img.img-fluid.rounded-circle(src='../assets/images/dashboard-9/user/4.png',alt='user')
+                                      a(href="#!") Neil Wells
+                                  td 
+                                    p.c-o-light $78.56
+                                  td 
+                                    span.badge.badge-light-success Completed
+                                  td 
+                                    a.square-white(href="order-details.html")
+                                      i.fa-solid.fa-eye
+                  .col-12 
+                    .card.heading-space
+                      .card-header.card-no-border.text-end
+                        .header-top 
+                          h5 All Products
+                          .card-header-right-icon
+                            a.btn.btn-light-primary.f-w-500(href="add-products.html")
+                              i.fa-solid.fa-plus.pe-2
+                              | Add Products
+                      .card-body.px-0.pt-0
+                        .list-product.seller-details-table
+                          .recent-table.table-responsive.custom-scrollbar
+                            table#seller-product-details.table
+                              thead 
+                                tr 
+                                  th
+                                  th 
+                                    span.c-o-light.f-w-600 Product Name
+                                  th 
+                                    span.c-o-light.f-w-600 Category
+                                  th 
+                                    span.c-o-light.f-w-600 Price
+                                  th 
+                                    span.c-o-light.f-w-600 Status
+                                  th 
+                                    span.c-o-light.f-w-600 Rating
+                                  th 
+                                    span.c-o-light.f-w-600 Action
+
+                              tbody 
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/dashboard-8/product-categories/laptop.png", alt="laptop")
+                                      p Apple desktop 2024
+                                  td  
+                                    p.c-o-light Laptops
+                                  td 
+                                    p.c-o-light $478.45
+                                  td 
+                                    span.badge.badge-light-secondary Sold Out
+                                  td 
+                                    .rating
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-regular.fa-star.txt-warning
+                                  td 
+                                    .product-action
+                                      a.square-white(href="add-products.html") 
+                                        svg     
+                                          use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                      a.square-white.trash-3(href="#!") 
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/dashboard-8/product-categories/phone.png", alt="phone")
+                                      p Apple iphone 14 pro
+                                  td  
+                                    p.c-o-light Electric   
+                                  td 
+                                    p.c-o-light $1000.00
+                                  td 
+                                    span.badge.badge-light-primary In Stock
+                                  td 
+                                    .rating
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-regular.fa-star.txt-warning
+                                      i.fa-regular.fa-star.txt-warning
+                                  td 
+                                    .product-action
+                                      a.square-white(href="add-products.html") 
+                                        svg     
+                                          use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                      a.square-white.trash-3(href="#!") 
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/dashboard-8/product-categories/headphone.png", alt="headphones")
+                                      p Wireless Headphones 
+                                  td  
+                                    p.c-o-light Electric
+                                  td 
+                                    p.c-o-light $1000.00
+                                  td 
+                                    .badge.badge-light-primary In Stock
+                                  td 
+                                    .rating
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                  td 
+                                    .product-action
+                                      a.square-white(href="add-products.html") 
+                                        svg     
+                                          use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                      a.square-white.trash-3(href="#!") 
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/dashboard-8/product-categories/wireless-headphone.png", alt="wireless headphone")
+                                      p Wireless ear buds
+                                  td  
+                                    p.c-o-light Electric        
+                                  td 
+                                    p.c-o-light $150.00
+                                  td 
+                                    span.badge.badge-light-secondary Sold Out
+                                  td 
+                                    .rating
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-regular.fa-star.txt-warning
+                                  td 
+                                    .product-action
+                                      a.square-white(href="add-products.html") 
+                                        svg     
+                                          use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                      a.square-white.trash-3(href="#!") 
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/dashboard-2/product/1.png", alt="chair")
+                                      p Wood chair
+                                  td  
+                                    p.c-o-light Furniture         
+                                  td 
+                                    p.c-o-light $9999.00
+                                  td 
+                                    span.badge.badge-light-secondary Sold Out
+                                  td 
+                                    .rating
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                  td 
+                                    .product-action
+                                      a.square-white(href="add-products.html") 
+                                        svg     
+                                          use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                      a.square-white.trash-3(href="#!") 
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/email-template/3.png", alt="chairs")
+                                      p Arm Chair
+                                  td  
+                                    p.c-o-light Furniture       
+                                  td 
+                                    p.c-o-light $1000.00
+                                  td 
+                                    span.badge.badge-light-secondary Sold Out
+                                  td 
+                                    .rating
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                  td 
+                                    .product-action
+                                      a.square-white(href="add-products.html") 
+                                        svg     
+                                          use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                      a.square-white.trash-3(href="#!") 
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/dashboard-8/product-categories/ipad.png", alt="mac laptop")
+                                      p MacBook Air 13.3-inch
+                                  td  
+                                    p.c-o-light Laptops         
+                                  td 
+                                    p.c-o-light $4500.00
+                                  td 
+                                    span.badge.badge-light-secondary Sold Out
+                                  td 
+                                    .rating
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-regular.fa-star.txt-warning
+                                  td 
+                                    .product-action
+                                      a.square-white(href="add-products.html") 
+                                        svg     
+                                          use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                      a.square-white.trash-3(href="#!") 
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/dashboard-8/product-categories/mouse.png", alt="mouse")
+                                      p M185 compact wireless mouse
+                                  td  
+                                    p.c-o-light Electric
+                                  td 
+                                    p.c-o-light $587.45
+                                  td 
+                                    span.badge.badge-light-secondary Sold Out
+                                  td 
+                                    .rating
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-regular.fa-star.txt-warning
+                                      i.fa-regular.fa-star.txt-warning
+                                      i.fa-regular.fa-star.txt-warning
+                                  td 
+                                    .product-action
+                                      a.square-white(href="add-products.html") 
+                                        svg     
+                                          use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                      a.square-white.trash-3(href="#!") 
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/other-images/cart-img.jpg", alt="chairs")
+                                      p Accent chair
+                                  td  
+                                    p.c-o-light Furniture 
+                                  td 
+                                    p.c-o-light $7889.47
+                                  td 
+                                    .badge.badge-light-primary In Stock
+                                  td 
+                                    .rating
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                  td 
+                                    .product-action
+                                      a.square-white(href="add-products.html") 
+                                        svg     
+                                          use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                      a.square-white.trash-3(href="#!") 
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/dashboard-8/product-categories/watch.png", alt="watch")
+                                      p Smart watch
+                                  td  
+                                    p.c-o-light Electric         
+                                  td 
+                                    p.c-o-light $250.02
+                                  td 
+                                    span.badge.badge-light-secondary Sold Out
+                                  td 
+                                    .rating
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                  td 
+                                    .product-action
+                                      a.square-white(href="add-products.html") 
+                                        svg     
+                                          use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                      a.square-white.trash-3(href="#!") 
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/product/accessories/03.png", alt="beauty blender")
+                                      p Beauty Blender
+                                  td  
+                                    p.c-o-light Make-up
+                                  td 
+                                    p.c-o-light $780.50
+                                  td 
+                                    span.badge.badge-light-primary In Stock
+                                  td 
+                                    .rating
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                  td 
+                                    .product-action
+                                      a.square-white(href="add-products.html") 
+                                        svg     
+                                          use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                      a.square-white.trash-3(href="#!") 
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+                                tr.product-removes
+                                  td
+                                  td 
+                                    .product-names
+                                      .light-product-box
+                                        img.img-fluid(src="../assets/images/product/accessories/06.png", alt="study lamp")
+                                      p Study lamp
+                                  td  
+                                    p.c-o-light Electric
+                                  td 
+                                    p.c-o-light $485.00
+                                  td 
+                                    span.badge.badge-light-primary In Stock
+                                  td 
+                                    .rating
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                      i.fa-solid.fa-star.txt-warning
+                                  td 
+                                    .product-action
+                                      a.square-white(href="add-products.html") 
+                                        svg     
+                                          use(href="../assets/svg/icon-sprite.svg#edit-content")
+                                      a.square-white.trash-3(href="#!") 
+                                        svg
+                                          use(href="../assets/svg/icon-sprite.svg#trash1")
+              .col-xl-3.ord-xxl-1.box-ord-1
+                .row.review-box 
+                  .col-12
+                    .md-sidebar
+                      a.btn.btn-primary.md-sidebar-toggle(href='#!') seller profile
+                      .md-sidebar-aside.job-left-aside.custom-scrollbar
+                        .email-left-aside
+                          .card
+                            .card-body
+                              #accordionPanelsStayOpenExample.accordion.seller-profile
+                                .accordion-item
+                                  .accordion-header
+                                    button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#panelsStayOpen-collapseOne' aria-expanded='true' aria-controls='panelsStayOpen-collapseOne')
+                                      | Seller Details
+                                  #panelsStayOpen-collapseOne.accordion-collapse.collapse.show
+                                    .accordion-body
+                                      .common-f-start
+                                        svg
+                                          use(href='../assets/svg/icon-sprite.svg#logo-1')
+                                        div
+                                          h5 Gadget Grove
+                                          span.c-o-light Journee McDaniel
+                                      ul.seller-details
+                                        li 
+                                          div
+                                            i.fa-solid.fa-location-dot
+                                            h6 Location 
+                                          span Germany
+                                        li
+                                          div
+                                            i.fa-solid.fa-phone
+                                            h6 Phone Number 
+                                          span +49 30901820
+                                        li
+                                          div
+                                            i.fa-solid.fa-envelope
+                                            h6 Email
+                                          span Crewwilcox@gmail.com
+                                        li
+                                          div
+                                            i.fa-solid.fa-square-up-right
+                                            h6 URL
+                                          a(href="https://www.pixelstrap.com" target='_blank') https://www.pixelstrap.com
+                                .accordion-item
+                                  .accordion-header
+                                    button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#panelsStayOpen-collapseFour' aria-expanded='false' aria-controls='panelsStayOpen-collapseFour')
+                                      | Seller Ratings
+                                  #panelsStayOpen-collapseFour.accordion-collapse.collapse.show
+                                    .accordion-body
+                                      .row.product-rating-box
+                                        .col-12 
+                                          .common-space.mb-3
+                                            h5.main-product-rating 4.5/5
+                                              i.fa-solid.fa-star
+                                            h6.ms-3.c-o-light (58)
+                                        .col-12
+                                          .rating-box
+                                            ul
+                                              li
+                                                .rating-list
+                                                  h6 5
+                                                    i.fa-solid.fa-star
+                                                  .progress
+                                                    .progress-bar(role='progressbar' style='width: 85%')
+                                              li
+                                                .rating-list
+                                                  h6 4
+                                                    i.fa-solid.fa-star
+                                                  .progress
+                                                    .progress-bar(role='progressbar' style='width: 50%')
+                                              li
+                                                .rating-list
+                                                  h6 3
+                                                    i.fa-solid.fa-star
+                                                  .progress
+                                                    .progress-bar(role='progressbar' style='width: 43%')
+                                              li
+                                                .rating-list
+                                                  h6 2
+                                                    i.fa-solid.fa-star
+                                                  .progress
+                                                    .progress-bar(role='progressbar' style='width: 32%')
+                                              li
+                                                .rating-list
+                                                  h6 1 
+                                                    i.fa-solid.fa-star
+                                                  .progress
+                                                    .progress-bar(role='progressbar' style='width: 18%')
+                                .accordion-item
+                                  .accordion-header
+                                    button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#panelsStayOpen-collapseTwo' aria-expanded='false' aria-controls='panelsStayOpen-collapseTwo')
+                                      | Notifications
+                                  #panelsStayOpen-collapseTwo.accordion-collapse.collapse.show
+                                    .accordion-body
+                                      .notification-wrapper
+                                        .form-check.checkbox.checkbox-primary.mb-0
+                                          input#checkbox-primary-1.form-check-input(type='checkbox', checked='')
+                                          label.form-check-label(for='checkbox-primary-1') Receive notification for new orders.
+                                        .form-check.checkbox.checkbox-primary.mb-0
+                                          input#checkbox-primary-2.form-check-input(type='checkbox')
+                                          label.form-check-label(for='checkbox-primary-2') Receive notification for returns.
+                                        .form-check.checkbox.checkbox-primary.mb-0
+                                          input#checkbox-primary-3.form-check-input(type='checkbox') 
+                                          label.form-check-label(for='checkbox-primary-3') Receive notification for customer reviews.
+                                        .form-check.checkbox.checkbox-primary.mb-0
+                                          input#checkbox-primary-4.form-check-input(type='checkbox') 
+                                          label.form-check-label(for='checkbox-primary-4') Receive notification for product reviews.
+                                      p.f-w-500 Receive Notification On&colon;
+                                      ul.checkbox-wrapper
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='whatsApp')
+                                          input#checkbox-icon.form-check-input.checkbox-shadow(type='checkbox' checked='')
+                                          label.form-check-label(for='checkbox-icon')
+                                            i.fa-brands.fa-whatsapp
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='SMS')
+                                          input#checkbox-icon1.form-check-input.checkbox-shadow(type='checkbox')
+                                          label.form-check-label(for='checkbox-icon1')
+                                            i.fa-regular.fa-comments
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='E-mail')
+                                          input#checkbox-icon2.form-check-input.checkbox-shadow(type='checkbox' checked='')
+                                          label.form-check-label(for='checkbox-icon2')
+                                            i.fa-regular.fa-envelope
+                                .accordion-item
+                                  .accordion-header
+                                    button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#panelsStayOpen-collapseThree' aria-expanded='false' aria-controls='panelsStayOpen-collapseThree')
+                                      | Policies
+                                  #panelsStayOpen-collapseThree.accordion-collapse.collapse.show
+                                    .accordion-body
+                                      ul.policies-wrapper
+                                        li 
+                                          label.form-label Return and Refund Policy
+                                          .toolbar-box
+                                            #toolbar11
+                                              span.ql-formats
+                                                select.ql-size
+                                                  option(value='small') Small
+                                                  option(selected='') Normal
+                                                  option(value='large') Large
+                                                  option(value='huge') Huge
+                                              span.ql-formats
+                                                button.ql-bold Bold
+                                                button.ql-italic Italic
+                                                button.ql-underline Underline
+                                              span.ql-formats
+                                                button.ql-header(value='1')
+                                                button.ql-header(value='2')
+                                              span.ql-formats
+                                                button.ql-list(value='ordered') List
+                                                button.ql-list(value='bullet') Bullet
+                                                button.ql-indent(value='-1')
+                                                button.ql-indent(value='+1')
+                                              span.ql-formats
+                                                button.ql-link Link
+                                                button.ql-image Image
+                                                button.ql-video Video
+                                                select.ql-color
+                                                select.ql-background
+                                              // Add more options here
+                                              span.ql-formats
+                                                button.ql-blockquote Blockquote
+                                                button.ql-code-block
+                                              span.ql-formats
+                                                button.ql-align(value='')
+                                                button.ql-align(value='center')
+                                                button.ql-align(value='right')
+                                                button.ql-align(value='justify')
+                                            #editor11.quill-paragraph
+                                              p Within 
+                                                strong 30 days 
+                                                | of delivery, most new, unopened items can be 
+                                                em returned 
+                                                | for a complete refund.  There could be some exclusions. 
+                                                a(href="#!") Read more
+                                        li 
+                                          label.form-label Shipping Policy
+                                          .toolbar-box
+                                            #toolbar12
+                                              span.ql-formats
+                                                select.ql-size
+                                                  option(value='small') Small
+                                                  option(selected='') Normal
+                                                  option(value='large') Large
+                                                  option(value='huge') Huge
+                                              span.ql-formats
+                                                button.ql-bold Bold
+                                                button.ql-italic Italic
+                                                button.ql-underline Underline
+                                              span.ql-formats
+                                                button.ql-header(value='1')
+                                                button.ql-header(value='2')
+                                              span.ql-formats
+                                                button.ql-list(value='ordered') List
+                                                button.ql-list(value='bullet') Bullet
+                                                button.ql-indent(value='-1')
+                                                button.ql-indent(value='+1')
+                                              span.ql-formats
+                                                button.ql-link Link
+                                                button.ql-image Image
+                                                button.ql-video Video
+                                                select.ql-color
+                                                select.ql-background
+                                              // Add more options here
+                                              span.ql-formats
+                                                button.ql-blockquote Blockquote
+                                                button.ql-code-block
+                                              span.ql-formats
+                                                button.ql-align(value='')
+                                                button.ql-align(value='center')
+                                                button.ql-align(value='right')
+                                                button.ql-align(value='justify')
+                                            #editor12.quill-paragraph
+                                              p The destination and customs processing can affect how long an international delivery takes. 
+                                                a(href="#!") Read more
+                                        li 
+                                          label.form-label Contact &amp; Support
+                                          .toolbar-box
+                                            #toolbar13
+                                              span.ql-formats
+                                                select.ql-size
+                                                  option(value='small') Small
+                                                  option(selected='') Normal
+                                                  option(value='large') Large
+                                                  option(value='huge') Huge
+                                              span.ql-formats
+                                                button.ql-bold Bold
+                                                button.ql-italic Italic
+                                                button.ql-underline Underline
+                                              span.ql-formats
+                                                button.ql-header(value='1')
+                                                button.ql-header(value='2')
+                                              span.ql-formats
+                                                button.ql-list(value='ordered') List
+                                                button.ql-list(value='bullet') Bullet
+                                                button.ql-indent(value='-1')
+                                                button.ql-indent(value='+1')
+                                              span.ql-formats
+                                                button.ql-link Link
+                                                button.ql-image Image
+                                                button.ql-video Video
+                                                select.ql-color
+                                                select.ql-background
+                                              // Add more options here
+                                              span.ql-formats
+                                                button.ql-blockquote Blockquote
+                                                button.ql-code-block
+                                              span.ql-formats
+                                                button.ql-align(value='')
+                                                button.ql-align(value='center')
+                                                button.ql-align(value='right')
+                                                button.ql-align(value='justify')
+                                            #editor13.quill-paragraph
+                                              p Please feel free to use our secure message system to contact us with any queries or concerns. 
+                                                a(href="#!") Read more
+                                      button.btn.btn-primary Update 
+                                .accordion-item
+                                  .accordion-header
+                                    button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#panelsStayOpen-collapseFive' aria-expanded='false' aria-controls='panelsStayOpen-collapseFive')
+                                      | Product Rating &amp; Reviews
+                                  #panelsStayOpen-collapseFive.accordion-collapse.collapse.show
+                                    .accordion-body.product-reviews
+                                      .review-people
+                                        ul.review-list.custom-scrollbar
+                                          li
+                                            .people-box
+                                              img.img-fluid(src='../assets/images/dashboard-11/user/1.jpg' alt='')
+                                              .people-comment
+                                                .people-name
+                                                  a.name(href='#!') Scarlet
+                                                  .date-time
+                                                    h6.text-content
+                                                      | Arm Chair
+                                                    .product-rating
+                                                      .common-flex
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-solid.fa-star.fill
+                                            p
+                                              | The Arm Chair is ideal for extended TV viewing or reading sessions since it is both wonderfully comfy and elegant. Its contemporary style and robust construction go really well with my living room. Even if it's a little hefty to manoeuver, the overall comfort and craftsmanship make it an excellent buy.
+                                          li
+                                            .people-box
+                                              img.img-fluid(src='../assets/images/dashboard-11/user/2.jpg' alt='')
+                                              .people-comment
+                                                .people-name
+                                                  a.name(href='#!') Arya 
+                                                  .date-time
+                                                    h6.text-content
+                                                      | Beauty Blender
+                                                    .product-rating
+                                                      .common-flex
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-regular.fa-star.txt-warning
+                                            p
+                                              | When it comes to applying makeup flawlessly, the Beauty Blender is revolutionary. Its naturally airbrushed appearance is achieved by its soft, bouncy texture, which integrates foundation effortlessly. It is a staple in many consumers' beauty routines due to its longevity and simplicity of usage.
+                                          li
+                                            .people-box
+                                              img.img-fluid(src='../assets/images/dashboard-11/user/3.jpg' alt='')
+                                              .people-comment
+                                                .people-name
+                                                  a.name(href='#!') Kyro
+                                                  .date-time
+                                                    h6.text-content
+                                                      | Study lamp
+                                                    .product-rating
+                                                      .common-flex
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-regular.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+                                            p
+                                              | The Study Lamp is excellent! It has adjustable, bright lighting that is ideal for studying and reading late into the night. Its elegant and utilitarian form blends in perfectly with any workstation.
+                                          li
+                                            .people-box
+                                              img.img-fluid(src='../assets/images/dashboard-11/user/8.jpg' alt='')
+                                              .people-comment
+                                                .people-name
+                                                  a.name(href='#!') Izabella
+                                                  .date-time
+                                                    h6.text-content
+                                                      | Smart watch
+                                                    .product-rating
+                                                      .common-flex
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-solid.fa-star.fill
+                                                        i.fa-regular.fa-star.txt-warning
+                                            p
+                                              | For keeping track of fitness and remaining connected while on the go, the Smart Watch is a great partner. It is a pleasure to use thanks to its simple interface and elegant appearance.
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

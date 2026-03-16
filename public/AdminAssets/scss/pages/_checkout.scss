@@ -1,0 +1,252 @@
+/**=====================
+   3.7 Checkout CSS start
+==========================**/
+.shipping-form {
+	.checkout-cart {
+		.basic-wizard {
+			.shipping-wizard {
+				.form-select {
+					border-color: var(--bs-border-color);
+					color: var(--chart-text-color);
+					font-size: 14px;
+				}
+
+				.collect-address {
+					.form-check-label {
+						font-size: 15px;
+						font-weight: 500;
+						line-height: normal;
+					}
+				}
+
+				.card-wrapper {
+					cursor: pointer;
+					gap: 8px;
+
+					.collect-address {
+						.card-icon {
+							i {
+								display: none;
+								transition: all .3s ease-in-out;
+							}
+						}
+					}
+
+					&:hover {
+						.collect-address {
+							.card-icon {
+								i {
+									display: block;
+									transition: all .3s ease-in-out;
+
+									@media (max-width:1399px) {
+										font-size: 14px;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.shipping-address {
+					span {
+						color: var(--chart-text-color);
+
+						strong {
+							font-weight: 500;
+							padding-right: 5px;
+							color: $theme-font-color;
+
+							[dir="rtl"] & {
+								padding-right: unset;
+								padding-left: 5px;
+							}
+						}
+					}
+				}
+
+				.order-confirm {
+					@include pixelstrap-flex(flex, center, center);
+					text-align: start;
+					background-color: var(--light-background);
+					padding: 12px;
+					border-radius: 6px;
+					gap: 12px;
+
+					img {
+						height: 60px;
+					}
+
+					@media (max-width:575px) {
+						display: block;
+						text-align: center;
+
+						img {
+							height: 40px;
+							margin-bottom: 8px;
+						}
+					}
+				}
+			}
+
+			.wizard-footer {
+				.btn {
+					&:disabled {
+						border-color: $transparent-color;
+					}
+				}
+			}
+		}
+	}
+
+	.shipping-content {
+		.order-confirm {
+			img {
+				height: 96px;
+			}
+		}
+	}
+
+	.shipping-method {
+		.future-date {
+			margin-top: 6px;
+			color: var(--chart-text-color);
+			font-size: 14px;
+		}
+
+		.card-wrapper {
+			&.pay-info {
+				.row {
+					flex-direction: row;
+				}
+			}
+		}
+	}
+
+	.modal-content {
+		.modal-body {
+			.bootstrap-select {
+				.dropdown-toggle {
+					border-color: var(--bs-border-color) !important;
+				}
+			}
+		}
+	}
+}
+
+.summery-contain {
+	border-bottom: 1px solid $light-widget-border;
+	padding-bottom: 20px;
+
+	li {
+		@include pixelstrap-flex(flex, flex-start, center);
+		padding: 8px 0;
+		border-bottom: 1px dashed var(--chart-dashed-border);
+		gap: 14px;
+		@include pixelstrap-child(0, 0);
+
+		@media (max-width:1399px) {
+			gap: 10px;
+		}
+
+		img {
+			object-fit: contain;
+			@include pixelstrap-size(60px, 60px);
+
+			@media (max-width:1399px) and (min-width:576px) {
+				@include pixelstrap-size(45px, 45px);
+			}
+
+			@media (max-width:575px) {
+				@include pixelstrap-size(35px, 35px);
+			}
+		}
+
+		h6 {
+			font-size: 14px;
+			font-weight: 400;
+			letter-spacing: 1.2px;
+			color: $badge-light-color;
+			line-height: 1.5;
+
+			span {
+				font-weight: 500;
+				padding-left: 6px;
+
+				[dir="rtl"] & {
+					padding-left: unset;
+					padding-right: 6px;
+				}
+			}
+
+			@media (max-width:1399px) {
+				&:not(.price) {
+					@include multi-line-ellipsis(1, auto, vertical, hidden);
+				}
+			}
+		}
+
+		.price {
+			margin-left: auto;
+
+			[dir="rtl"] & {
+				margin-left: unset;
+				margin-right: auto;
+			}
+		}
+
+		&:last-child {
+			border-bottom: unset;
+		}
+	}
+}
+
+.summary-total {
+	padding-top: 5px;
+
+	li {
+		padding-top: 12px;
+		@include pixelstrap-flex(flex, center, center);
+
+		h6 {
+			font-weight: 400;
+			color: $theme-font-color;
+		}
+
+		.price {
+			margin-left: auto;
+			font-weight: 400;
+			color: $theme-font-color;
+
+			[dir="rtl"] & {
+				margin-left: unset;
+				margin-right: auto;
+			}
+		}
+
+		&:nth-child(4) {
+			padding-block: 20px;
+			font-weight: 600;
+
+			h6 {
+				color: var(--theme-default);
+				font-weight: 500;
+			}
+		}
+
+		&:last-child {
+			border-top: 1px solid $light-widget-border;
+			padding-top: 12px;
+
+			h6 {
+				font-size: 20px;
+				font-weight: 500;
+				color: var(--body-font-color);
+			}
+		}
+	}
+}
+
+/**=====================
+   3.7 Checkout CSS ends
+==========================**/

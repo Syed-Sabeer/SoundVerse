@@ -1,0 +1,190 @@
+- var page_Title = 'Sales Return';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var bs_select             = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var datatable_extension   = true;
+- var validation_modal      = true;
+- var flatpickr             = true;
+- var moment_picker         = true;
+- var custom_flatpickr      = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Sales Return
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Reports
+                    li.breadcrumb-item.active Sales Return
+          // Container-fluid starts
+          .container-fluid.sale-return-wrapper
+            .row 
+                .col-12 
+                    .card 
+                        .card-body.px-0.pt-0
+                            .top-body
+                                .row.common-f-start.g-sm-3.g-2
+                                    .col-auto
+                                        label.form-label Select Dates
+                                    .col-auto
+                                        #reportrange.range-dropdown
+                                            span
+                            .sale-return-report
+                                .recent-table.table-responsive.custom-scrollbar
+                                    table#sale-return-report-table.table
+                                        thead 
+                                            tr 
+                                                th
+                                                th 
+                                                    span.c-o-light.f-w-600 Month
+                                                th 
+                                                    span.c-o-light.f-w-600 Total Items
+                                                th 
+                                                    span.c-o-light.f-w-600 Ordered
+                                                th 
+                                                    span.c-o-light.f-w-600 Returned
+                                                th 
+                                                    span.c-o-light.f-w-600 Reason of Return
+                                                th 
+                                                    span.c-o-light.f-w-600 Total Replace
+                                                th 
+                                                    span.c-o-light.f-w-600 Total Return
+                                        tbody 
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td January
+                                                td 5
+                                                td 200
+                                                td 10
+                                                td Damaged Package
+                                                td 10
+                                                td $520
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td February
+                                                td 10
+                                                td 100
+                                                td 50
+                                                td Defective Item
+                                                td 7
+                                                td $480
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td March
+                                                td 9
+                                                td 200
+                                                td 9
+                                                td Received the wrong item
+                                                td 25
+                                                td $800
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td April
+                                                td 17
+                                                td 300
+                                                td 8
+                                                td Item Arrived Late
+                                                td 1
+                                                td $250
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td May
+                                                td 28
+                                                td 260
+                                                td 9
+                                                td Damaged Package
+                                                td 1
+                                                td $890
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td June
+                                                td 35
+                                                td 100
+                                                td 5
+                                                td Received the wrong item
+                                                td 3
+                                                td $900
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td July
+                                                td 28
+                                                td 45
+                                                td 2
+                                                td Repeat Order
+                                                td 3
+                                                td $400
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td August
+                                                td 400
+                                                td 100
+                                                td 20
+                                                td Item Arrived Late
+                                                td 3
+                                                td $400
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td September
+                                                td 45
+                                                td 26
+                                                td 14
+                                                td Damaged Package
+                                                td 6
+                                                td $900
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td October
+                                                td 8
+                                                td 14
+                                                td 1
+                                                td Received the wrong item
+                                                td 2
+                                                td $450
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td November
+                                                td 28
+                                                td 25
+                                                td 9
+                                                td Damaged Package
+                                                td 1
+                                                td $705
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td December
+                                                td 15
+                                                td 18
+                                                td 5
+                                                td Damaged Package
+                                                td 8
+                                                td $250
+
+            
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

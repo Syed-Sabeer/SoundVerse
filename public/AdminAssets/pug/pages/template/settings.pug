@@ -1,0 +1,465 @@
+- var page_Title = 'Settings';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var bs_select             = true;
+- var editors               = true;
+- var bootstrap_multiselect = true;
+- var custom_setting        = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Settings
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Ecommerce
+                    li.breadcrumb-item.active Settings
+          // Container-fluid starts
+          .container-fluid.main-setting 
+            .row
+                .col-12 
+                    .card 
+                        .card-header
+                            h5 E-commerce Settings
+                        .card-body
+                            .row.g-lg-3.g-4
+                                .col-lg-3.col-12
+                                    #ver-pills-tab.nav.flex-lg-column.nav-pills.nav-primary(role='tablist' aria-orientation='vertical')
+                                        a#ver-pills-general-tab.nav-link.active(data-bs-toggle='pill' href='#ver-pills-general') 
+                                            svg.stroke-icon 
+                                                use(href='../assets/svg/icon-sprite.svg#general-setting')
+                                            | General
+                                        a#ver-pills-activation-tab.nav-link(data-bs-toggle='pill' href='#ver-pills-activation') 
+                                            svg.stroke-icon 
+                                                use(href='../assets/svg/icon-sprite.svg#activation-setting')
+                                            | Activation
+                                        a#ver-pills-point-tab.nav-link(data-bs-toggle='pill' href='#ver-pills-point') 
+                                            svg.stroke-icon 
+                                                use(href='../assets/svg/icon-sprite.svg#wallet-point')
+                                            | Wallet Points 
+                                        a#ver-pills-seller-tab.nav-link(data-bs-toggle='pill' href='#ver-pills-seller') 
+                                            svg.stroke-icon 
+                                                use(href='../assets/svg/icon-sprite.svg#seller-commission')
+                                            | Seller Commissions
+                                        a#ver-pills-refund-tab.nav-link(data-bs-toggle='pill' href='#ver-pills-refund') 
+                                            svg.stroke-icon 
+                                                use(href='../assets/svg/icon-sprite.svg#setting-refund')
+                                            | Refund
+                                        a#ver-pills-delivery-tab.nav-link(data-bs-toggle='pill' href='#ver-pills-delivery') 
+                                            svg.stroke-icon 
+                                                use(href='../assets/svg/icon-sprite.svg#complete-deliver')
+                                            | Delivery
+                                        a#ver-pills-payment-tab.nav-link(data-bs-toggle='pill' href='#ver-pills-payment') 
+                                            svg.stroke-icon 
+                                                use(href='../assets/svg/icon-sprite.svg#setting-payment')
+                                            | Payment Method
+                                        a#ver-pills-analytics-tab.nav-link(data-bs-toggle='pill' href='#ver-pills-analytics') 
+                                            svg.stroke-icon 
+                                                use(href='../assets/svg/icon-sprite.svg#setting-analytics')
+                                            | Analytics
+                                .col-lg-9.col-12
+                                    #ver-pills-tabContent.tab-content
+                                        #ver-pills-general.tab-pane.fade.show.active
+                                            .row
+                                                label.col-md-3.form-label Meta Title
+                                                .col-md-9 
+                                                    input.form-control(type='text' placeholder='Enter meta title' required='')
+                                            .row
+                                                label.col-md-3.form-label Meta Description
+                                                .col-md-9 
+                                                    .toolbar-box
+                                                      #toolbar14
+                                                        button.ql-bold Bold 
+                                                        button.ql-italic Italic 
+                                                        button.ql-underline underline
+                                                        button.ql-strike Strike 
+                                                        button.ql-list(value="ordered") List 
+                                                        button.ql-list(value="bullet") 
+                                                        button.ql-indent(value="-1") 
+                                                        button.ql-indent(value="+1")
+                                                        button.ql-link
+                                                      #editor14
+                                            .row
+                                                label.col-md-3.form-label Currency 
+                                                .col-md-9 
+                                                    select.form-select
+                                                        option(value='usd' selected='') USD
+                                                        option(value='inr') INR
+                                                        option(value='gbp') GBP
+                                                        option(value='eur') EUR
+                                            .row.mb-3
+                                                label.col-md-3.form-label Timezone
+                                                .col-md-9 
+                                                    select.selectpicker(data-live-search='true')
+                                                        option(value='1' selected) UTC
+                                                        option(value='2') Abidjan
+                                                        option(value='3') Accra
+                                                        option(value='4') Bamako
+                                                        option(value='5') Bangui
+                                                        option(value='6') Banjul 
+                                                        option(value='7') Cairo
+                                                        option(value='8') Ceuta
+                                                        option(value='9') Douala
+                                                        option(value='10') Juba
+                                                        option(value='11') Kigali
+                                                        option(value='12') Lome
+                                                        option(value='13') Tripoli
+                                                        option(value='14') Adak
+                                                        option(value='15') Salta 
+                                                        option(value='16') Tucuman
+                                                        option(value='17') Aruba
+                                                        option(value='18') Bahia
+                                                        option(value='19') Boise
+                                                        option(value='20') Cancun 
+                                                        option(value='21') Denver
+                                                        option(value='22') Grenada
+                                                        option(value='23') Knox
+                                                        option(value='24') Vevay
+                                                        option(value='25') Lima
+                                                        option(value='26') Samara
+                                            .row
+                                                label.col-md-3.form-label Min Order Amount
+                                                .col-md-9 
+                                                    .input-group
+                                                        span#minOrder.input-group-text
+                                                            i.fa-solid.fa-dollar-sign
+                                                        input.form-control(type='number' value="0" placeholder='Enter min order amount')
+                                                    .helper-text 
+                                                        p.fst-italic.c-o-light *Please enter the minimum amount required for an order to be processed.
+                                            .row
+                                                label.col-md-3.form-label Min Order Free Shipping
+                                                .col-md-9 
+                                                    .input-group
+                                                        span#minOrderShipping.input-group-text
+                                                            i.fa-solid.fa-dollar-sign
+                                                        input.form-control(type='number' value="55" placeholder='Enter min order free shipping')
+                                                    .helper-text 
+                                                        p.fst-italic.c-o-light *Please enter the minimum order amount for free shipping.
+   
+                                        #ver-pills-activation.tab-pane.fade
+                                            .row
+                                                .col-md-3
+                                                    label.form-label.mb-0 Multivendor
+                                                .col-md-9
+                                                    .form-check.form-switch.form-check-inline
+                                                        input.form-check-input.switch-primary.check-size(type='checkbox' role='switch' checked='')
+                                                        p
+                                                            i(data-feather="info")
+                                                            | *Enable or disable external vendors access to our online store.
+                                            .row
+                                                .col-md-3
+                                                    label.form-label.mb-0 Enable Wallet
+                                                .col-md-9
+                                                    .form-check.form-switch.form-check-inline
+                                                        input.form-check-input.switch-primary.check-size(type='checkbox' role='switch' checked='')
+                                                        p
+                                                            i(data-feather="info")
+                                                            | *Enable the use of wallet balance for payment during checkout.
+                                            
+                                            .row
+                                                .col-md-3
+                                                    label.form-label.mb-0 Enable Point
+                                                .col-md-9
+                                                    .form-check.form-switch.form-check-inline
+                                                        input.form-check-input.switch-primary.check-size(type='checkbox' role='switch' checked='')
+                                                        p
+                                                            i(data-feather="info")
+                                                            | *Enable the use of points for payment during checkout.
+                                            .row
+                                                .col-md-3
+                                                    label.form-label.mb-0 Coupon Enable
+                                                .col-md-9
+                                                    .form-check.form-switch.form-check-inline
+                                                        input.form-check-input.switch-primary.check-size(type='checkbox' role='switch' checked='')
+                                                        p
+                                                            i(data-feather="info")
+                                                            | *Allow customers to use coupons for payment at checkout.
+                                            .row
+                                                .col-md-3
+                                                    label.form-label.mb-0 Hide Stock Product
+                                                .col-md-9
+                                                    .form-check.form-switch.form-check-inline
+                                                        input.form-check-input.switch-primary.check-size(type='checkbox' role='switch')
+                                                        p
+                                                            i(data-feather="info")
+                                                            | *Decide whether to show product stock or not.
+                                        #ver-pills-point.tab-pane.fade
+                                            .row
+                                                label.col-md-3.form-label Signup Points
+                                                .col-md-9 
+                                                    .input-group
+                                                        span#minPerOrder.input-group-text 
+                                                            i.fa-regular.fa-gem
+                                                        input.form-control(type='number' value="150" placeholder='Enter signup points')
+                                                    .helper-text 
+                                                        p.fst-italic.c-o-light *Provide points to new users as a signup incentive.
+                                            .row
+                                                label.col-md-3.form-label Min Per Order Amount
+                                                .col-md-9 
+                                                    .input-group
+                                                        span#collectPointOrder.input-group-text 
+                                                            i.fa-solid.fa-dollar-sign
+                                                        input.form-control(type='number' value="100" placeholder='Enter min per order amount')
+                                                    .helper-text 
+                                                        p.fst-italic.c-o-light *Collect points when orders meet or exceed the minimum value.
+                                            .row
+                                                label.col-md-3.form-label Point Currency Ratio
+                                                .col-md-9 
+                                                    input.form-control(type='number' value="30" placeholder='Enter point current ratio')
+                                                    .helper-text 
+                                                        p.fst-italic.c-o-light *Determine the conversion factor from points to currency.
+                                            .row
+                                                label.col-md-3.form-label Reward Per Order Point
+                                                .col-md-9 
+                                                    input.form-control(type='number' value="10" placeholder='Enter reward per order point')
+                                                    .helper-text 
+                                                        p.fst-italic.c-o-light *Earn reward points based on each orders value.
+                                                            br
+                                                            |(Rewards Points = (Total Order Amount / Min Per Order Amount) * Reward Per Order Point)
+
+                                        #ver-pills-seller.tab-pane.fade
+                                            .row
+                                                .col-3
+                                                    label.form-label.mb-0 Status
+                                                .col-9
+                                                    .form-check.form-switch.form-check-inline
+                                                        input.form-check-input.switch-primary.check-size(type='checkbox' role='switch')
+                                            .row
+                                                .col-md-3
+                                                    label.form-label.mb-0 Min Withdraw Amount
+                                                .col-md-9
+                                                    .input-group
+                                                        span#commissionRate.input-group-text
+                                                            i.fa-solid.fa-dollar-sign
+                                                        input.form-control(type='number' placeholder='Enter min withdraw amount')
+                                                    .helper-text 
+                                                        p.fst-italic.c-o-light *Payout Minimum for Sellers: Specify the min amount sellers can request for withdrawal.
+                                            .row
+                                                .col-md-3
+                                                    label.form-label.mb-0 Commission Rate
+                                                .col-md-9
+                                                    .input-group
+                                                        input.form-control(type='number' placeholder='Enter default commission rate')
+                                                        span#categoryCommission.input-group-text %
+                                                    .helper-text 
+                                                        p.fst-italic.c-o-light *Set the rate at which admin receives a commission from seller earnings.
+                                            .row.g-lg-3.g-0
+                                                .col-md-3
+                                                    label.form-label.mb-0 Category Based Commission
+                                                .col-md-9
+                                                    .input-group
+                                                        .form-check.form-switch.form-check-inline
+                                                            input.form-check-input.switch-primary.check-size(type='checkbox' role='switch')
+                                                        .helper-text
+                                                            p.fst-italic.c-o-light *Enable the functionality to apply commissions based on product categories. To configure, navigate to the Product Category module and set the respective commission rates.
+
+
+                                        #ver-pills-refund.tab-pane.fade
+                                            .row
+                                                .col-3
+                                                        label.form-label.mb-0 Status
+                                                .col-9
+                                                    .form-check.form-switch.form-check-inline
+                                                        input.form-check-input.switch-primary.check-size(type='checkbox' role='switch')
+                                            .row
+                                                label.col-md-3.form-label Refundable Days
+                                                .col-md-9 
+                                                    input.form-control(type='number' placeholder='Enter refundable days')
+                                                    .helper-text
+                                                        p.fst-italic.c-o-light *Define the period within which users can initiate refund requests for delivered items If left blank, this functionality will be disabled.
+
+                                        #ver-pills-delivery.tab-pane.fade
+                                            .row
+                                                label.col-md-3.form-label Title
+                                                .col-md-9 
+                                                    input.form-control(type='text' value="Standard Delivery" placeholder='Enter title')
+                                            .row
+                                                label.col-md-3.form-label Description
+                                                .col-md-9 
+                                                    input.form-control(type='text' value="Approx 2 to 5 Days" placeholder='Enter description')
+                                            .row 
+                                                .col-md-3.col-sm-4.col-auto
+                                                    label.form-label.mb-0 Same Day Delivery
+                                                .col-md-9.col-sm-8.col-auto
+                                                    .form-check.form-switch.form-check-inline
+                                                        input.form-check-input.switch-primary.check-size(type='checkbox' role='switch' checked='')
+                                            .row 
+                                                .col-12
+                                                    .row
+                                                        label.col-md-3.form-label Title
+                                                        .col-md-9 
+                                                            input.form-control(type='text' value="Express Delivery" placeholder='Enter title')
+                                                    .row
+                                                        label.col-md-3.form-label Description
+                                                        .col-md-9 
+                                                            input.form-control(type='text' value="Schedule" placeholder='Enter description')
+                                                    .row
+                                                        label.col-md-3.form-label Default Delivery
+                                                        .col-md-9 
+                                                            .panel.panel-default
+                                                                .panel-body
+                                                                    #delivery_fields
+                                                                    .row.g-2
+                                                                        .col-sm-6
+                                                                            input#baseItemName.form-control(type='text' name='baseItemName[]' value='Morning' placeholder='Enter title')
+                                                                        .col-sm-6
+                                                                            input#basePrice.form-control(type='text' name='basePrice[]' value='8.00 AM - 12.00 AM' placeholder='Enter description')
+                                                                        .col-12 
+                                                                            .input-group-btn
+                                                                                button.btn.btn-success(type='button' onclick='delivery_fields();')
+                                                                                    span.fa-solid.fa-plus.me-1(aria-hidden='true')
+                                                                                    | Add
+                                                                        .clear
+
+                                        #ver-pills-payment.tab-pane.fade
+                                            .advance-options
+                                                ul#advance-option-tab.nav.nav-tabs.border-tab(role='tablist')
+                                                    li.nav-item
+                                                        a#paypal-option-tab.nav-link.active(data-bs-toggle='tab' href='#paypal-option')
+                                                            | Paypal
+                                                    li.nav-item
+                                                        a#razorpay-option-tab.nav-link(data-bs-toggle='tab' href='#razorpay-option')
+                                                            | Razorpay
+                                                    li.nav-item
+                                                        a#mollie-option-tab.nav-link(data-bs-toggle='tab' href='#mollie-option')
+                                                            | Mollie
+                                                    li.nav-item
+                                                        a#cod-option-tab.nav-link(data-bs-toggle='tab' href='#cod-option')
+                                                            | COD
+                                                    li.nav-item
+                                                        a#stripe-option-tab.nav-link(data-bs-toggle='tab' href='#stripe-option')
+                                                            | Stripe
+                                                #advance-option-tabContent.tab-content
+                                                    #paypal-option.tab-pane.fade.show.active
+                                                        .row
+                                                            .col-md-3.col-auto
+                                                                label.form-label.mb-0 Status
+                                                            .col-md-9.col-auto
+                                                                .form-check.form-switch.form-check-inline
+                                                                    input.form-check-input.switch-primary.check-size(type='checkbox' role='switch')
+                                                        .row
+                                                            .col-md-3.col-auto
+                                                                label.form-label.mb-0 Sandbox Mode
+                                                            .col-md-9.col-auto
+                                                                .form-check.form-switch.form-check-inline
+                                                                    input.form-check-input.switch-primary.check-size(type='checkbox' role='switch')
+                                                        .row
+                                                            label.col-md-3.form-label Client ID
+                                                            .col-md-9 
+                                                                input.form-control(type='text' placeholder='Enter client Id')
+                                                        .row
+                                                            label.col-md-3.form-label Secret
+                                                            .col-md-9 
+                                                                input.form-control(type='text' placeholder='Enter secret')
+
+                                                    #razorpay-option.tab-pane.fade
+                                                        .row
+                                                            .col-md-3.col-auto
+                                                                label.form-label.mb-0 Status
+                                                            .col-md-9.col-auto
+                                                                .form-check.form-switch.form-check-inline
+                                                                    input.form-check-input.switch-primary.check-size(type='checkbox' role='switch')
+                                                        .row
+                                                            label.col-md-3.form-label Key 
+                                                            .col-md-9 
+                                                                input.form-control(type='text' placeholder='Enter key')
+                                                        .row
+                                                            label.col-md-3.form-label Secret
+                                                            .col-md-9 
+                                                                input.form-control(type='text' placeholder='Enter secret')
+                                                    #mollie-option.tab-pane.fade
+                                                        .row
+                                                            .col-md-3.col-auto
+                                                                label.form-label.mb-0 Status
+                                                            .col-md-9.col-auto
+                                                                .form-check.form-switch.form-check-inline
+                                                                    input.form-check-input.switch-primary.check-size(type='checkbox' role='switch')
+                                                        .row
+                                                            label.col-md-3.form-label Key 
+                                                            .col-md-9 
+                                                                input.form-control(type='text' placeholder='Enter key')
+                                                        .row
+                                                            label.col-md-3.form-label Secret
+                                                            .col-md-9 
+                                                                input.form-control(type='text' placeholder='Enter secret')
+                                                    #cod-option.tab-pane.fade
+                                                        .row
+                                                            .col-md-3.col-auto
+                                                                label.form-label.mb-0 Status
+                                                            .col-md-9.col-auto
+                                                                .form-check.form-switch.form-check-inline
+                                                                    input.form-check-input.switch-primary.check-size(type='checkbox' role='switch')
+                                                    #stripe-option.tab-pane.fade
+                                                        .row
+                                                            .col-md-3.col-auto
+                                                                label.form-label.mb-0 Status
+                                                            .col-md-9.col-auto
+                                                                .form-check.form-switch.form-check-inline
+                                                                    input.form-check-input.switch-primary.check-size(type='checkbox' role='switch')
+                                                        .row
+                                                            label.col-md-3.form-label Key 
+                                                            .col-md-9 
+                                                                input.form-control(type='text' placeholder='Enter key')
+                                                        .row
+                                                            label.col-md-3.form-label Secret
+                                                            .col-md-9 
+                                                                input.form-control(type='text' placeholder='Enter secret')
+                                        #ver-pills-analytics.tab-pane.fade
+                                            .advance-options
+                                                ul#analytics-option-tab.nav.nav-tabs.border-tab(role='tablist')
+                                                    li.nav-item
+                                                        a#facebookPixel-option-tab.nav-link.active(data-bs-toggle='tab' href='#facebookPixel-option')
+                                                            | Facebook Pixel
+                                                    li.nav-item
+                                                        a#googleAnalysis-option-tab.nav-link(data-bs-toggle='tab' href='#googleAnalysis-option')
+                                                            | Google Analytics
+                                                #analytics-option-tabContent.tab-content
+                                                    #facebookPixel-option.tab-pane.fade.show.active
+                                                        .row
+                                                            .col-md-3.col-auto
+                                                                label.form-label.mb-0 Status
+                                                            .col-md-9.col-auto
+                                                                .form-check.form-switch.form-check-inline
+                                                                    input.form-check-input.switch-primary.check-size(type='checkbox' role='switch' checked='')
+                                                        .row
+                                                            label.col-md-3.form-label Pixel Id
+                                                            .col-md-9 
+                                                                input.form-control(type='number' value="5899947538419005" placeholder='Enter pixel id')
+                                                    #googleAnalysis-option.tab-pane.fade
+                                                        .row
+                                                            .col-md-3.col-auto
+                                                                label.form-label.mb-0 Status
+                                                            .col-md-9.col-auto
+                                                                .form-check.form-switch.form-check-inline
+                                                                    input.form-check-input.switch-primary.check-size(type='checkbox' role='switch')
+                                                        .row
+                                                            label.col-md-3.form-label Measurement Id
+                                                            .col-md-9 
+                                                                input.form-control(type='text' value="G-47FG4DEV34" placeholder='Enter measurement id')
+                                                        
+                            button.btn.btn-primary.ms-auto.d-block Save
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

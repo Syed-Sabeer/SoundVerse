@@ -1,0 +1,577 @@
+/**=====================
+    3.9 Contacts CSS Start
+==========================**/
+.updateimg {
+  position: absolute;
+  left: 15px;
+  width: 100px;
+  top: 32px;
+  line-height: 93px;
+  opacity: 0;
+}
+
+#right-history {
+  top: 81px;
+  right: -320px;
+  height: 100%;
+  position: fixed;
+  width: 320px;
+  z-index: 9;
+  background-color: $white;
+  transition: .5s;
+  box-shadow: 0 0 9px rgba(191, 191, 191, 0.36);
+
+  [dir="rtl"] & {
+    right: unset;
+    left: -320px;
+  }
+
+  h6 {
+    span {
+      a {
+        color: $theme-body-font-color;
+      }
+    }
+  }
+
+  &.show {
+    right: 0;
+    transition: .3s;
+
+    [dir="rtl"] & {
+      right: unset;
+      left: 0;
+    }
+  }
+}
+
+.history-details {
+  >div {
+    @include pixelstrap-flex(flex, center, center);
+    padding: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320))) 0;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--chart-progress-light);
+    gap: 8px;
+
+    i {
+      color: rgba($badge-light-color, 0.8);
+    }
+  }
+
+  .d-flex {
+    padding: 20px 15px;
+    border-top: 1px solid var(--chart-progress-light);
+
+    i {
+      padding: 5px;
+      background: $warning-color;
+      color: $white;
+      border-radius: 100%;
+    }
+
+    .flex-grow-1 {
+      h6 {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+.delete-contact {
+  display: none;
+}
+
+.more-data {
+  animation: displayTransition 1s;
+}
+
+.contact-editform {
+  padding: 30px;
+  animation: displayTransition 1s;
+
+  form {
+    .form-control {
+      font-size: 14px;
+      color: rgba($badge-light-color, 0.8);
+    }
+
+    .bootstrap-select {
+      .dropdown-toggle {
+        margin: 0;
+        width: 100%;
+        border-radius: 6px;
+        border-color: rgba($badge-light-color, 0.1) !important;
+        color: $form-placeholder-color;
+
+        &:focus {
+          outline: unset !important;
+        }
+      }
+
+      .no-results {
+        font-size: 14px;
+      }
+    }
+  }
+
+  a {
+    display: block;
+  }
+
+  button {
+    margin-top: 30px;
+
+    @media (max-width:1399px) {
+      margin-top: 20px;
+    }
+  }
+
+  .select2-container {
+    .select2-selection--single {
+      height: 39px !important;
+      border-color: #ced4da !important;
+    }
+  }
+}
+
+#deletemodal {
+  .modal-header {
+    border-bottom: none;
+
+    .delete-data {
+      span {
+        svg {
+          vertical-align: middle;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+.email-wrap {
+  .email-app-sidebar {
+    .main-menu {
+      &.contact-options {
+        li {
+          &.nav-item {
+            &:nth-child(2) {
+              .btn-mail {
+                margin-top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.list-persons {
+  p {
+    font-family: $font-roboto, $font-serif;
+  }
+
+  .profile-mail {
+    padding: 20px 0;
+
+    .d-flex {
+      .flex-grow-1 {
+        .main-contact-option {
+          margin-top: 10px;
+          display: flex;
+          gap: 6px;
+          flex-wrap: wrap;
+
+          li {
+            background-color: var(--theme-default);
+            padding: 6px 12px;
+            border-radius: 6px;
+
+            a {
+              color: $white;
+            }
+
+            +li {
+              margin-left: 0px;
+            }
+          }
+        }
+      }
+    }
+
+    .d-flex {
+      -webkit-box-pack: justify;
+      padding-right: 15px;
+
+      [dir="rtl"] & {
+        padding-right: unset;
+        padding-left: 15px;
+      }
+
+      @media (max-width:575px) {
+        flex-wrap: wrap;
+        gap: 15px;
+
+        img {
+          margin: 0 !important;
+        }
+      }
+
+      @media (max-width:420px) {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      img {
+        height: 100px;
+        cursor: pointer;
+      }
+
+      .flex-grow-1 {
+        h5 {
+          span {
+            +span {
+              padding-left: 6px;
+
+              [dir="rtl"] & {
+                padding-left: unset;
+                padding-right: 6px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .common-flex {
+      img {
+        height: 70px;
+      }
+
+      .flex-grow-1 {
+
+        ul {
+          margin-top: 5px;
+
+          li {
+            display: inline-block;
+
+            a {
+              font-size: 13px;
+            }
+
+            +li {
+              padding-left: 10px;
+              margin-left: 5px;
+              border-left: 2px solid $light-color;
+
+              [dir="rtl"] & {
+                padding-left: unset;
+                margin-left: unset;
+                border-left: unset;
+                padding-right: 10px;
+                margin-right: 5px;
+                border-right: 2px solid $light-color;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .email-general {
+      padding-top: 20px;
+
+      ul {
+        padding-right: 20px;
+
+        li {
+          color: $dark-gray;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+
+          >span {
+
+            &:first-child,
+            &:last-child {
+              min-width: 108px;
+
+              @media (max-width:575px) {
+                min-width: 140px;
+              }
+            }
+          }
+
+          &:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      // p {
+      //   span {
+      //     margin-left: 20px;
+      //   }
+      // }
+
+      // .gender {
+      //   margin-top: 30px;
+      // }
+    }
+  }
+}
+
+.contacts-tabs {
+  .nav-pills {
+    border-right: 1px solid $light-color;
+    height: 100%;
+
+    .nav-link,
+    .show {
+
+      &.active,
+      >.nav-link {
+        background-color: rgba($primary-color, 0.05);
+        color: $theme-body-font-color;
+
+        .d-flex {
+          border-left: 2px solid var(--theme-default);
+
+          [dir="rtl"] & {
+            border-left: unset;
+            border-right: 2px solid var(--theme-default);
+          }
+        }
+      }
+    }
+
+    .nav-link {
+      color: $theme-body-font-color;
+      padding: 0;
+
+      .d-flex {
+        border-left: 2px solid $transparent-color;
+
+        [dir="rtl"] & {
+          border-left: unset;
+          border-right: 2px solid $transparent-color;
+        }
+      }
+
+      .d-flex {
+        .img-50 {
+          height: 50px;
+        }
+      }
+
+      +.nav-link {
+        border-top: 1px solid $light-color;
+        border-radius: 0;
+      }
+    }
+
+    .d-flex {
+      padding: 20px;
+    }
+  }
+
+  .tab-content {
+    .tab-content-child {
+      animation: displayTransition 1s;
+    }
+
+    .modal-header {
+      .pull-right {
+        a {
+          @include square-box(28px, 28px, 3px, rgba($primary-color, 0.1));
+          display: grid;
+          place-items: center;
+        }
+
+        i {
+          font-size: 14px;
+          color: var(--theme-default);
+        }
+      }
+    }
+  }
+}
+
+// responsive
+@media only screen and (max-width: 991px) {
+  #right-history {
+    top: 60px;
+  }
+
+  .updateimg {
+    top: 21px;
+  }
+
+  .list-persons {
+    .profile-mail {
+      padding: 20px;
+
+      .email-general {
+        // .gender {
+        //   margin-top: 20px;
+        // }
+      }
+    }
+  }
+
+  .contact-editform {
+    button {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .contact-editform {
+    padding: 20px;
+
+    &.pl-0 {
+      padding-left: 20px !important;
+    }
+  }
+
+  .contacts-tabs {
+    .nav-pills {
+      border-right: none;
+      border-bottom: 1px solid $light-color;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 575px) {
+  #right-history {
+    width: 308px;
+  }
+
+  .updateimg {
+    top: 16px;
+    left: 29px;
+  }
+
+  .contacts-tabs {
+    .d-flex {
+      img {
+        &.m-r-20 {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .nav-pills {
+      .d-flex {
+        padding: 15px;
+      }
+    }
+  }
+
+  .list-persons {
+    .profile-mail {
+      padding: 15px;
+
+      .email-general {
+        // .gender {
+        //   margin-top: 15px;
+        // }
+      }
+    }
+
+    .nav-pills {
+      .nav-link {
+        .d-flex {
+          .flex-grow-1 {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-editform {
+
+    button {
+      margin-top: 15px;
+    }
+
+    &.pl-0 {
+      padding-left: 15px !important;
+    }
+  }
+
+  .contact-editform,
+  .contact-options {
+    form {
+      .row {
+        >div {
+          .row {
+            >div {
+              >div {
+                margin-bottom: 0;
+              }
+
+              +div {
+                margin-top: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .updateimg {
+    line-height: 73px;
+    width: 80px;
+  }
+
+  .list-persons {
+    .profile-mail {
+      .flex-grow-1 {
+        display: block;
+
+        img {
+          height: 80px;
+          width: 80px !important;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+.dark-contact {
+  .nav {
+    .nav-link {
+      .d-flex {
+        .flex-grow-1 {
+          h6 {
+            color: var(--body-font-color);
+            font-weight: 400;
+            margin-bottom: 0;
+
+            span {
+              +span {
+                padding-left: 6px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**=====================
+   3.9 Contacts CSS Ends
+==========================**/

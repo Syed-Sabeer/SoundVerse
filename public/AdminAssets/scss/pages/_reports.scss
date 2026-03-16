@@ -1,0 +1,386 @@
+/**=====================
+    3.63 Reports CSS start
+==========================**/
+.product-report-wrapper,
+.sale-report-wrapper,
+.sale-return-wrapper,
+.customer-order-wrapper,
+.subscribed-user {
+    .flatpickr-input {
+        span {
+            border: 1px solid rgba($badge-light-color, 0.3);
+            padding: 6px 12px;
+            border-radius: 6px;
+            color: rgba($badge-light-color, 0.8);
+            width: 215px;
+
+        }
+
+        #rangeButtons {
+            flex-direction: column;
+            position: absolute;
+            z-index: 1;
+            top: 40px;
+            display: none;
+            box-shadow: 0px 0px 28px 6px rgba(235, 235, 235, 0.4);
+
+            &.range-option {
+                display: flex;
+            }
+
+            button {
+                border: unset;
+                padding: 8px 24px;
+                text-align: left;
+                background-color: $white;
+                color: $badge-light-color;
+
+                &:hover {
+                    color: var(--theme-default);
+                }
+
+                &.active {
+                    background-color: var(--theme-default);
+                    color: $white;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .top-body {
+        padding: 20px;
+        position: relative;
+
+        .bootstrap-select {
+            &.dropdown-toggle {
+                min-width: 100px;
+            }
+        }
+
+        .form-label {
+            margin-bottom: 0;
+        }
+
+        ~ {
+
+            .product-report,
+            .sale-return-report,
+            .sale-report,
+            .customer-order-report,
+            .subscribed-user-wrapper {
+                .dt-container {
+                    .dt-layout-row {
+
+                        .dt-buttons,
+                        .dt-search {
+                            margin: 0;
+                        }
+
+                        &:first-child {
+                            position: absolute;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            flex-direction: row-reverse;
+                            gap: 20px;
+                            right: 20px;
+                            top: 20px;
+
+                            @media (max-width:1320px) {
+                                position: relative;
+                                inset: 0;
+                                align-items: center;
+                                padding: 0 20px 20px 20px;
+                                justify-content: flex-end;
+                                flex-wrap: wrap;
+                                gap: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .product-report,
+    .sale-return-report,
+    .sale-report,
+    .customer-order-report,
+    .subscribed-user-wrapper {
+        .recent-table {
+
+            div.dt-container {
+                .dt-layout-row {
+                    .dt-search {
+                        position: relative;
+                        inset: unset;
+
+                        @media (max-width:640px) {
+                            top: 4px;
+                        }
+
+                        .dt-input {
+                            width: auto;
+                            padding: 6px;
+                            border-radius: 6px;
+                            opacity: 1;
+
+                            &:focus {
+                                &::placeholder {
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .form-control {
+        font-size: 14px;
+        color: rgba($badge-light-color, 0.8);
+    }
+
+    .product-report {
+        .recent-table {
+            table {
+
+                thead,
+                tbody {
+                    tr {
+
+                        th,
+                        td {
+                            color: var(--body-font-color);
+                            min-width: auto;
+
+                            &:first-child {
+                                padding-left: 20px;
+                            }
+
+                            &:last-child {
+                                padding-right: 20px;
+                                min-width: 82px;
+                            }
+
+                            &:nth-child(n+3) {
+                                text-align: center;
+                            }
+
+                            &:nth-child(2) {
+                                min-width: 215px;
+                            }
+
+                            &:nth-child(4) {
+                                min-width: 138px;
+                            }
+
+                            &:nth-child(5) {
+                                min-width: 78px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sale-report-wrapper {
+    .sale-report {
+        .recent-table {
+            table {
+
+                thead,
+                tbody {
+                    tr {
+
+                        th,
+                        td {
+                            color: var(--body-font-color);
+                            min-width: auto;
+
+                            &:first-child {
+                                padding-left: 20px;
+                            }
+
+                            &:last-child {
+                                padding-right: 20px;
+                                min-width: 155px;
+                            }
+
+                            &:nth-child(n+3) {
+                                text-align: center;
+                            }
+
+                            &:nth-child(2) {
+                                min-width: 96px;
+                            }
+
+                            &:nth-child(3) {
+                                min-width: 104px;
+                            }
+
+                            &:nth-child(4) {
+                                min-width: 173px;
+                            }
+
+                            &:nth-child(5) {
+                                min-width: 92px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sale-return-wrapper {
+    .sale-return-report {
+        .recent-table {
+            table {
+
+                thead,
+                tbody {
+                    tr {
+
+                        th,
+                        td {
+                            color: var(--body-font-color);
+                            min-width: auto;
+
+                            &:first-child {
+                                padding-left: 20px;
+                            }
+
+                            &:last-child {
+                                padding-right: 20px;
+                                min-width: 104px;
+                            }
+
+                            @media (max-width:1267px) and (min-width:1200px) {
+                                &:nth-child(4) {
+                                    display: none;
+                                }
+                            }
+
+                            @media (max-width:1199px) {
+
+                                &:nth-child(3) {
+                                    min-width: 85px;
+                                }
+
+                                &:nth-child(6) {
+                                    min-width: 175px;
+                                }
+
+                                &:nth-child(7) {
+                                    min-width: 100px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.customer-order-wrapper {
+    .customer-order-report {
+        .recent-table {
+            table {
+
+                thead,
+                tbody {
+                    tr {
+
+                        th,
+                        td {
+                            color: var(--body-font-color);
+                            min-width: auto;
+
+                            &:first-child {
+                                padding-left: 20px;
+                            }
+
+                            &:last-child {
+                                padding-right: 20px;
+                            }
+
+                            .customer-details {
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                gap: 12px;
+
+                                img {
+                                    height: 42px;
+                                    border-radius: 50%;
+                                }
+
+                                a {
+                                    color: $dark-color;
+                                    font-weight: 500;
+                                }
+
+                                &:hover {
+                                    a {
+                                        color: var(--theme-default);
+                                    }
+                                }
+                            }
+
+                            .customer-group {
+                                li {
+                                    .common-circle {
+                                        width: 34px;
+                                        height: 34px;
+                                    }
+
+                                    +li {
+                                        margin-left: -10px;
+
+                                        [dir="rtl"] & {
+                                            margin-left: unset;
+                                            margin-right: -10px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            @media (max-width:1199px) {
+                                &:nth-child(2) {
+                                    min-width: 190px;
+                                }
+
+                                &:nth-child(3) {
+                                    min-width: 122px;
+                                }
+
+                                &:nth-child(4) {
+                                    min-width: 100px;
+                                }
+
+                                &:nth-child(5) {
+                                    min-width: 118px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**=====================
+    3.63 Reports CSS end
+==========================**/

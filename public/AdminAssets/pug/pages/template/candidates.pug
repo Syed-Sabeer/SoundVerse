@@ -1,0 +1,1026 @@
+- var page_Title = 'Candidates';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var tooltip               = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Candidates
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Jobs
+                    li.breadcrumb-item.active Candidates
+          // Container-fluid starts
+          .container-fluid.candidate-wrapper
+            .row.g-3
+              .col-12 
+                .card 
+                  .card-body 
+                    .row.g-3
+                      .col-xl.col-md-4.col-sm-6
+                        label.form-label Location
+                        select.form-select(aria-label='Select location')
+                          option(selected='') Australia
+                          option(value='1') Japan
+                          option(value='2') Brazil
+                          option(value='3') Egypt 
+                          option(value='4') India
+                          option(value='5') Norway
+                          option(value='6') Spain
+                      .col-xl.col-md-4.col-sm-6
+                        label.form-label Skills
+                        select.form-select(aria-label='Select parent category')
+                          option(selected='') Senior Data Scientist
+                          option(value='1') Web Designer
+                          option(value='2') Software Engineer
+                          option(value='3') Wordpress Developer
+                          option(value='4') UI/UX Designer
+                      .col-xl.col-md-4.col-sm-6
+                        label.form-label Salary
+                        select.form-select(aria-label='Select parent category')
+                          option(selected='') Under $1000
+                          option(value='1') $2000-3000
+                          option(value='2') $4000-8000
+                          option(value='3') $10000-40000
+                          option(value='4') $120000-$340000
+                      .col-xl.col-md-4.col-sm-6
+                        label.form-label Experience
+                        select.form-select(aria-label='Select your experience')
+                          option(selected='') Fresher
+                          option(value='1') 1-2 Years
+                          option(value='2') 3-5 Years
+                          option(value='3') 6-10 Years
+                          option(value='4') 16+ Years
+                      .col.common-f-start
+                        a.btn.btn-primary.f-w-500(href="#!") Filter
+              .col-12
+                .card 
+                  .card-body.candidates-box.px-0
+                    .table-responsive.custom-scrollbar
+                      table.table#candidates-table 
+                        thead 
+                          tr
+                            th 
+                            th Candidate Name
+                            th Description
+                            th Educations
+                            th Experience & Skills
+                            th Action
+                        tbody 
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/6.jpg',alt='user')
+                                  .status
+                                    .inner-dot.bg-success
+                                div
+                                  a(href="#!").f-w-500 Margo Harrell
+                                  p Texas,US
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 03 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Software Engineer
+                                  
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $40000-80000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2011-2013
+                                  p.mb-0 High School 2009-2010
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span Fresher
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Java
+                                    span.badge.badge-light-warning C#
+                                    span.badge.badge-light-secondary Kotlin
+                                    span.badge.badge-light-success .NET
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/7.jpg',alt='user')
+                                  .status
+                                    .inner-dot.bg-warning
+                                div
+                                  a(href="#!").f-w-500 Carolyn Doyle
+                                  p Alberta,Canada
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 06 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Network Engineer
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $120000-340000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Master's Degree 2012-2015
+                                  p.mb-0 Bachelor's Degree 2009-2011
+                                  p.mb-0 High School 2002-2008
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 2+ Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary CCNA
+                                    span.badge.badge-light-warning Linux
+                                    span.badge.badge-light-secondary OSCP
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/9.jpg',alt='user')
+                                  .status
+                                    .inner-dot.bg-danger
+                                div
+                                  a(href="#!").f-w-500 Brynlee Everett
+                                  p Victoria,Australia
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 04 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Web Designer
+                                  
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $20000-30000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2013-2015
+                                  p.mb-0 High School 2001-2012
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 1 Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary HTML
+                                    span.badge.badge-light-warning CSS
+                                    span.badge.badge-light-secondary JS
+                                    span.badge.badge-light-success Jquery
+                                    span.badge.badge-light-danger Bootstrap 5
+                                    span.badge.badge-light-warning Figma
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark                        
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-11/user/1.jpg',alt='user')
+                                  .status
+                                    .inner-dot.bg-success
+                                div
+                                  a(href="#!").f-w-500 Anderson Porter
+                                  p Wales,UK
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 03 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Back-End Developer
+                                  
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $40000-80000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2015-2018
+                                  p.mb-0 High School 2003-2014
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 1 Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Node.js
+                                    span.badge.badge-light-warning Express
+                                    span.badge.badge-light-secondary MongoDB
+                                    span.badge.badge-light-success SQL
+                                    span.badge.badge-light-danger Rest APIs
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-9/user/1.png',alt='user')
+                                  .status
+                                    .inner-dot.bg-warning
+                                div
+                                  a(href="#!").f-w-500 Rome Gordon
+                                  p Wales,UK
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 03 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 UX/UI Designer
+                                  
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $40000-80000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2022-2024
+                                  p.mb-0 High School 2010-2021
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 1 Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Adobe XD
+                                    span.badge.badge-light-warning Sketch
+                                    span.badge.badge-light-secondary Figma
+                                    span.badge.badge-light-success Prototyping
+                                    span.badge.badge-light-danger User Research
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark             
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-9/user/2.png',alt='user')
+                                  .status
+                                    .inner-dot.bg-danger
+                                div
+                                  a(href="#!").f-w-500 Elina Huang
+                                  p Eastern Cape,Africa
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 02 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Blockchain Developer
+                                  
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $10000-40000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Master's Degree 2026-2028
+                                  p.mb-0 Bachelor's Degree 2023-2025
+                                  p.mb-0 High School 2011-2022
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 2+ Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Solidity
+                                    span.badge.badge-light-warning Ethereum
+                                    span.badge.badge-light-secondary Smart Contracts
+                                    span.badge.badge-light-success Hyperledger
+                                    span.badge.badge-light-danger Cryptography
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark      
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-9/user/4.png',alt='user')
+                                  .status
+                                    .inner-dot.bg-success
+                                div
+                                  a(href="#!").f-w-500 Rosie Myers
+                                  p Tokyo,Japan
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 01 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Network Engineer
+                                  
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $120000-$340000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Master's Degree 2024-2026
+                                  p.mb-0 Bachelor's Degree 2021-2023
+                                  p.mb-0 High School 2008-2020
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 5+ Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Cisco
+                                    span.badge.badge-light-warning Routing
+                                    span.badge.badge-light-secondary Switching
+                                    span.badge.badge-light-success Network Security
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark                     
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-9/user/5.png',alt='user')
+                                  .status
+                                    .inner-dot.bg-warning
+                                div
+                                  a(href="#!").f-w-500 Warren Buck
+                                  p Beijing,China
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 06 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 DevOps Engineer
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $120000-$340000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2009-2012
+                                  p.mb-0 High School 1999-2008
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 3+ Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Docker
+                                    span.badge.badge-light-warning Kubernetes
+                                    span.badge.badge-light-secondary Jenkins
+                                    span.badge.badge-light-success CI/CD
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark     
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/3.jpg',alt='user')
+                                  .status
+                                    .inner-dot.bg-danger
+                                div
+                                  a(href="#!").f-w-500 Derek Pollard
+                                  p Bahia,Brazil
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 02 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Project Manager
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $2000-$3000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2017-2019
+                                  p.mb-0 High School 2003-2016
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span Fresher
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Project Planning
+                                    span.badge.badge-light-warning Agile
+                                    span.badge.badge-light-secondary Risk Management
+                                    span.badge.badge-light-success Stakeholder Management
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark        
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/5.jpg',alt='user')
+                                  .status
+                                    .inner-dot.bg-success
+                                div
+                                  a(href="#!").f-w-500 Lucy Brock
+                                  p Queensland,Australia
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 03 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 AI/ML Engineer
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $10000-$40000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2018-2020
+                                  p.mb-0 High School 2004-2017
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span Fresher
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Keras
+                                    span.badge.badge-light-warning Python
+                                    span.badge.badge-light-secondary TensorFlow
+                                    span.badge.badge-light-success TensorFlow
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/7.jpg',alt='user')
+                                  .status
+                                    .inner-dot.bg-warning
+                                div
+                                  a(href="#!").f-w-500 Sydney McMillan
+                                  p Mpumalanga,Africa
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 03 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Quality Assurance Tester
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $10000-$40000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2018-2020
+                                  p.mb-0 High School 2004-2017
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 2+ Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Bug Tracking
+                                    span.badge.badge-light-warning Test Cases
+                                    span.badge.badge-light-secondary JUnit
+                                    span.badge.badge-light-success Selenium
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark         
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/10.jpg',alt='user')
+                                  .status
+                                    .inner-dot.bg-danger
+                                div
+                                  a(href="#!").f-w-500 Kylan Avalos
+                                  p Manitoba,Canada
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 01 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Software Engineer
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $10000-$40000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2021-2023
+                                  p.mb-0 High School 2006-2020
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span Fresher
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Python
+                                    span.badge.badge-light-warning Agile Methodologies
+                                    span.badge.badge-light-secondary Git
+                                    span.badge.badge-light-success Java
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark         
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/11.jpg',alt='user')
+                                  .status
+                                    .inner-dot.bg-success
+                                div
+                                  a(href="#!").f-w-500 Zoe Banks
+                                  p West Bengal,India
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 02 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Business Analyst
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $4000-$8000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2020-2022
+                                  p.mb-0 High School 2010-2019
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span Fresher
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary SQL
+                                    span.badge.badge-light-warning Data Analysis
+                                    span.badge.badge-light-secondary Process Mapping
+                                    span.badge.badge-light-success UML
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/13.jpg',alt='user')
+                                  .status
+                                    .inner-dot.bg-warning
+                                div
+                                  a(href="#!").f-w-500 Karter Oliver
+                                  p Florida,US
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 09 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Full-Stack Developer
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $10000-$40000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2014-2016
+                                  p.mb-0 High School 2005-2013
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 8+ Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary HTML 
+                                    span.badge.badge-light-warning CSS
+                                    span.badge.badge-light-secondary JavaScript
+                                    span.badge.badge-light-success Node.js
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark         
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/1.jpg',alt='user')
+                                  .status
+                                    .inner-dot.bg-danger
+                                div
+                                  a(href="#!").f-w-500 Yasmin Collins
+                                  p Illinois,US
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 12 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Game Developer
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $10000-$40000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2013-2015
+                                  p.mb-0 High School 2002-2012
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 3+ Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Game Design 
+                                    span.badge.badge-light-warning C++
+                                    span.badge.badge-light-secondary C#
+                                    span.badge.badge-light-success Unity
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark         
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/user/14.png',alt='user')
+                                  .status
+                                    .inner-dot.bg-success
+                                div
+                                  a(href="#!").f-w-500 Kingston Bravo
+                                  p Bahia,Brazil
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 05 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Digital Marketing Specialist
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 Under $1000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2020-2022
+                                  p.mb-0 High School 2007-2019
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 1 Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Content Marketing
+                                    span.badge.badge-light-warning Social Media
+                                    span.badge.badge-light-secondary Google Analytics
+                                    span.badge.badge-light-success SEO
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark   
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/user/10.jpg',alt='user')
+                                  .status
+                                    .inner-dot.bg-warning
+                                div
+                                  a(href="#!").f-w-500 Avayah Ashley
+                                  p Hesse,Germany
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 02 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Database Administrator
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $10000-$40000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2022-2025
+                                  p.mb-0 High School 2009-2021
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 2+ Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary MySQL
+                                    span.badge.badge-light-warning PostgreSQL
+                                    span.badge.badge-light-secondary Oracle
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark      
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/user/12.png',alt='user')
+                                  .status
+                                    .inner-dot.bg-success
+                                div
+                                  a(href="#!").f-w-500 Alexia Tran
+                                  p California,US
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 04 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Mobile App Developer
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $10000-$40000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2021-2024
+                                  p.mb-0 High School 2008-2020
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span Fresher
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Objective-C
+                                    span.badge.badge-light-warning React Native
+                                    span.badge.badge-light-secondary Kotlin
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark    
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/user/3.png',alt='user')
+                                  .status
+                                    .inner-dot.bg-success
+                                div
+                                  a(href="#!").f-w-500 Nadia Choi
+                                  p Manitoba,Canada
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 02 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 Quality Assurance Tester
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 $120000-$340000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2006-2008
+                                  p.mb-0 High School 1995-2005
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 9+ Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Bug Tracking
+                                    span.badge.badge-light-warning Test Cases
+                                    span.badge.badge-light-secondary Selenium
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark      
+                          tr 
+                            td
+                            td
+                              .common-flex.align-items-center
+                                .position-relative
+                                  img.img-fluid.rounded-circle(src='../assets/images/user/6.jpg',alt='user')
+                                  .status
+                                    .inner-dot.bg-success
+                                div
+                                  a(href="#!").f-w-500 Miles Ibarra
+                                  p Zhejiang,China
+                              .common-f-start
+                                .attachment
+                                  i.fa-solid.fa-paperclip
+                                  span 01 Projects
+                            td 
+                              ul.candidate-desc
+                                li
+                                  h6 IT Support Specialist
+                                li 
+                                  h6.c-light Salary Range: 
+                                    span.f-14 Under $1000
+                            td 
+                              ul.educations 
+                                li 
+                                  p.mb-0 Bachelor's Degree 2012-2014
+                                  p.mb-0 High School 2000-2011
+                            td
+                              ul.candidate-skill
+                                li
+                                  p.mb-2 Experience : 
+                                    span 2+ Year
+                                li 
+                                  .common-flex
+                                    span.badge.badge-light-primary Networking
+                                    span.badge.badge-light-warning Customer Support
+                                    span.badge.badge-light-secondary Troubleshooting
+                            td
+                              .d-flex 
+                                Button.btn.btn-primary(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Message') 
+                                  i.fa-solid.fa-envelope
+                                Button.btn.btn-success(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Approve')
+                                  i.fa-solid.fa-thumbs-up
+                                Button.btn.btn-danger(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Reject')
+                                  i.fa-solid.fa-circle-xmark                                    
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

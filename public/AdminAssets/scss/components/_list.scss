@@ -1,0 +1,273 @@
+/**=====================
+   2.19 List CSS Start
+==========================**/
+.list-group-item.active {
+	background-color: var(--theme-default);
+	border-color: var(--theme-default);
+}
+
+.list-group {
+	i {
+		margin-right: $list-group-margin;
+	}
+
+	img {
+		@include pixelstrap-size(40px, 40px);
+		margin-right: $list-group-margin;
+	}
+}
+
+$list-name: primary,
+	secondary,
+	success,
+	warning,
+	info,
+	light,
+	danger,
+	dark;
+
+$list-light-color: $primary-color,
+	$secondary-color,
+	$success-color,
+	$warning-color,
+	$info-color,
+	$light-color,
+	$danger-color,
+	$dark-color;
+
+@each $var in $list-name {
+	$i: index($list-name, $var);
+
+	.list-light-#{$var} {
+		background-color: rgba(nth($list-light-color, $i), 0.1);
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: rgba(nth($list-light-color, $i), 0.1) !important;
+		}
+	}
+
+	.list-hover-#{$var} {
+		background-color: unset;
+
+		&:hover,
+		&:active,
+		&.active,
+		&:focus {
+			background-color: rgba(nth($list-light-color, $i), 0.1);
+			color: $dark-color;
+			z-index: 0;
+		}
+	}
+}
+
+.horizontal-list-wrapper {
+	.list-group {
+		.list-group-item {
+			padding: 8px;
+
+		}
+	}
+}
+
+.list-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+
+	@media (max-width: 414px) {
+		flex-wrap: unset;
+		word-break: break-word;
+	}
+
+	@media (max-width: 366px) {
+		padding-bottom: 8px;
+	}
+
+	.list-img {
+		width: calc(40px + (55 - 40) * ((100vw - 320px) / (1920 - 320)));
+		height: calc(40px + (55 - 40) * ((100vw - 320px) / (1920 - 320)));
+		margin-bottom: 10px;
+		border-radius: 50%;
+	}
+
+	.list-content {
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.scrollbar-wrapper {
+	max-height: 270px;
+	overflow: auto;
+
+	.list-group-item {
+		&.active {
+			.list-content {
+
+				h6,
+				p,
+				small {
+					color: var(--body-font-color);
+				}
+			}
+		}
+	}
+}
+
+.main-lists-content {
+	.list-group-item {
+		&.active {
+
+			h6,
+			p {
+				color: $white;
+			}
+		}
+	}
+
+
+	small {
+		@media (max-width: 480px) {
+			display: none;
+		}
+	}
+}
+
+.list-behavior-1 {
+	@media (max-width: 1199px) {
+		gap: 12px;
+	}
+
+	@media (max-width:575px) {
+		&:first-child {
+			margin-bottom: 14px;
+		}
+	}
+
+	img {
+		@media (max-width:1999px) {
+			height: 86px;
+		}
+
+		@media (max-width:992px) {
+			height: 64px;
+		}
+	}
+
+	.flex-grow-1 {
+		margin-left: 16px;
+
+		@media (max-width:1199px) {
+			margin-left: 0;
+
+			p {
+				display: block;
+				display: -webkit-box;
+				max-width: 100%;
+				margin: 0 auto;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+
+		[dir="rtl"] & {
+			margin-right: 16px;
+			margin-left: unset;
+		}
+	}
+}
+
+.list-behaviors {
+	>div:nth-child(even) {
+		.flex-grow-1 {
+			order: -1;
+			margin-left: unset;
+			margin-right: 16px;
+
+			@media (max-width:1199px) {
+				margin-left: 0;
+				margin-right: 0;
+				order: unset;
+			}
+		}
+	}
+}
+
+.list-group {
+	.list-group-item {
+		padding: 11px 16px;
+		border-width: 1px;
+
+		.form-check-input {
+			&:focus {
+				box-shadow: unset !important;
+			}
+		}
+
+		i {
+			[dir="rtl"] & {
+				margin-left: 10px;
+				margin-right: unset;
+			}
+		}
+	}
+}
+
+.contact-profile {
+	@media (max-width:1216px) {
+		background-color: unset;
+
+		&.list-light-dark {
+			&:hover {
+				background-color: unset;
+			}
+		}
+	}
+}
+
+.badge-list {
+	.list-group-item {
+		@include pixelstrap-flex(flex, space-between, flex-start);
+		flex-wrap: wrap;
+
+		div {
+			margin-right: auto;
+			margin-left: 8px;
+
+			[dir="rtl"] & {
+				margin-left: auto;
+				margin-right: 8px;
+			}
+		}
+	}
+}
+
+.list-group-flush {
+	li {
+		border-bottom-width: 1px;
+		border-inline: unset;
+
+		&:first-child {
+			border-top: 0;
+			padding-top: 0;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+
+		i {
+			font-size: 16px;
+		}
+	}
+}
+
+/**=====================
+   2.19 List CSS Ends
+==========================**/

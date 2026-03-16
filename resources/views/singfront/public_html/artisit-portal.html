@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="SingWithMe Records Ltd" />
+    <meta name="description" content="SingWithMe Records Ltd" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>SingWithMe Records Ltd.</title>
+
+    <!-- FavIcon Link -->
+    <link rel="icon" href="assets/images/favicon.png" type="image/gif" sizes="36x36">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS Link -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Swiper Slider CSS Link -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+
+    <!-- Wow Animation CSS Link -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.min.css">
+
+    <!-- Main Style CSS Link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Start of Background Animation -->
+    <div id="vantajs-bg"></div>
+    <!-- End of Background Animation -->
+
+    <div class="overlay-body">
+
+        <!-- Start of Page Loader-->
+        <div class="page-loader">
+            <img src="assets/images/singWithMe/logo-trans.png" alt="">
+        </div>
+        <!-- End of Page Loader-->
+
+        <!-- Start of Header -->
+        <!-- Navbar will be inserted here -->
+        <div id="navbar-container"></div>
+        <script>
+            // Load navbar
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                });
+        </script>
+        <!-- End of Header -->
+
+        <!-- Start of InnerBanner -->
+        <section class="inner-banner contact-banner">
+            <div class="contact_child">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="h1-title wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                Artist Portal – Manage Your Music Career
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of InnerBanner -->
+
+        <section class="secArtist_portal py-5">
+            <div class="container">
+                <!-- Hero Section -->
+                <div class="hero">
+                    <h2>All-in-One <span class="un_Span">Dashboard</span> for Artists</h2>
+                    <p>Welcome to the Artist Portal, where you can upload your music, manage your royalties, and access
+                        all the tools you need to succeed in the music industry.</p>
+                </div>
+
+                <!-- Features -->
+                <div class="row justify-content-center">
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="feature-card">
+                            <div class="feature-icon"><lord-icon src="https://cdn.lordicon.com/tamskqkf.json"
+                                    trigger="loop" delay="2000" colors="primary:#7166ee,secondary:#110a5c">
+                                </lord-icon></div>
+                            <h3>Upload Your Music & Videos</h3>
+                            <p>Easily upload your tracks and music videos to be distributed across platforms like
+                                Spotify,
+                                YouTube, and iTunes.</p>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="feature-card">
+                            <div class="feature-icon"><lord-icon src="https://cdn.lordicon.com/lbcxnxti.json"
+                                    trigger="loop" delay="2000" colors="primary:#7166ee,secondary:#110a5c">
+                                </lord-icon></div>
+                            <h3>Track Royalties</h3>
+                            <p>Keep track of your earnings and view detailed reports of your streams and sales.</p>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="feature-card">
+                            <div class="feature-icon"><lord-icon src="https://cdn.lordicon.com/fqbvgezn.json"
+                                    trigger="loop" delay="2000" colors="primary:#7166ee,secondary:#110a5c">
+                                </lord-icon></div>
+                            <h3>Manage Your Subscription</h3>
+                            <p>Update your plan, manage billing, and unlock tools to grow your music career.</p>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="feature-card">
+                            <div class="feature-icon"><lord-icon src="https://cdn.lordicon.com/tebysptx.json"
+                                    trigger="loop" delay="2000" colors="primary:#7166ee,secondary:#110a5c">
+                                </lord-icon></div>
+                            <h3>Profile & Artwork</h3>
+                            <p>Upload your album artwork, promotional images, and bio to showcase your artist identity.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="feature-card">
+                            <div class="feature-icon"><lord-icon src="https://cdn.lordicon.com/jdgfsfzr.json"
+                                    trigger="loop" delay="2000" colors="primary:#7166ee,secondary:#110a5c">
+                                </lord-icon></div>
+                            <h3>Contact & Support</h3>
+                            <p>Reach out to our support team for help with your account, uploads, royalties, or anything
+                                else.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="cta">
+                    <a href="signup-form.html">Log In or Create Your Account</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="container">
+                <div class="disclaimer-container">
+                    <div class="disclaimer-header">
+                        <div class="dis_icon">
+                            <lord-icon src="https://cdn.lordicon.com/edcgvlnw.json" trigger="loop" delay="2000"
+                                colors="primary:#8930e8,secondary:#1b1091">
+                            </lord-icon>
+                        </div>
+                        <h2 class="disclaimer-title">Disclaimer</h2>
+                    </div>
+
+                    <div class="disclaimer-content">
+                        <p><span class="highlight-text">All artwork, logos, and visual content</span> uploaded with your
+                            song must be original or properly licensed. Using <span class="highlight-text">copyrighted
+                                material without permission</span> is strictly prohibited.</p>
+
+                        <br>
+
+                        <p>If any <span class="highlight-text">unauthorized content is detected</span>, your song will
+                            be
+                            removed from the platform. Please ensure you have <span class="highlight-text">full
+                                rights</span> before uploading.</p>
+                    </div>
+
+                    <div class="disclaimer-footer">
+                        <div class="compliance-badge">
+                            Copyright Compliance Required
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="faq-content py-5">
+            <div class="floating-elements">
+                <div class="floating-circle"></div>
+                <div class="floating-circle"></div>
+                <div class="floating-circle"></div>
+            </div>
+
+            <div class="container">
+                <div class="header">
+                    <svg class="music-icon" viewBox="0 0 100 100" fill="none">
+                        <circle cx="50" cy="50" r="40" stroke="url(#gradient1)" stroke-width="3" fill="none" />
+                        <path d="M35 35L35 65L50 55L65 65L65 35L50 45L35 35Z" fill="url(#gradient2)" />
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#60a5fa" />
+                                <stop offset="100%" style="stop-color:#a855f7" />
+                            </linearGradient>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ffffff" />
+                                <stop offset="100%" style="stop-color:#e0e7ff" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h1>FAQ</h1>
+                    <p>Copyright & Artwork Policy</p>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span class="question-text">Can I upload artwork or logos with my song, and are there any
+                                copyright restrictions?</span>
+                            <svg class="expand-icon" viewBox="0 0 24 24" fill="white">
+                                <path d="M12 4v16m8-8H4" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p><span class="highlight">All artwork, logos, and visual content uploaded with your
+                                        song must be original or properly licensed.</span> Using copyrighted material
+                                    without permission is strictly prohibited.</p>
+
+                                <div class="warning-badge">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+                                    </svg>
+                                    If any unauthorized content is detected, your song will be removed from the platform
+                                </div>
+
+                                <p>All artwork, logos, and visual content uploaded with your song must be original or
+                                    properly licensed. Using copyrighted material without permission is strictly
+                                    prohibited. If any unauthorized content is detected, your song will be removed from
+                                    the platform. Please ensure you have full rights before uploading.</p>
+
+                                <!-- <div class="tips-list">
+                                    <h4>Safe Sources for Artwork:</h4>
+                                    <ul>
+                                        <li>Create original artwork yourself or commission custom designs</li>
+                                        <li>Use royalty-free stock images from licensed platforms</li>
+                                        <li>Purchase commercial licenses for stock photography</li>
+                                        <li>Use Creative Commons licensed content with proper attribution</li>
+                                    </ul>
+                                </div>
+
+                                <div class="tips-list">
+                                    <h4>Prohibited Content:</h4>
+                                    <ul>
+                                        <li>Images from Google searches without proper licensing</li>
+                                        <li>Movie posters, celebrity photos, or branded content</li>
+                                        <li>Screenshots from movies, TV shows, or games</li>
+                                        <li>Copyrighted logos or brand imagery</li>
+                                    </ul>
+                                </div>
+
+                                <div class="info-badge">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    Please ensure you have full rights before uploading
+                                </div>
+
+                                <p>When in doubt, it's always better to create original content or work with licensed
+                                    material providers to avoid any copyright issues that could result in content
+                                    removal or account restrictions.</p>
+                            </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- newsletter section -->
+
+            <section class="news_letter py-5">
+                <div class="container">
+                    <div class="section-header">
+                        <h1 class="section-title">Stay <span class="un_Span">Connected</span></h1>
+                        <p class="section-subtitle">Join our community and never miss an update. Get the latest news,
+                            exclusive
+                            content, and special offers delivered straight to your inbox.</p>
+                    </div>
+
+                    <div class="newsletter_parent">
+                        <!-- Newsletter Section -->
+                        <div class="newsletter-section">
+                            <h2 class="newsletter-title">
+                                <div class="newsletter-icon">
+                                    <lord-icon src="https://cdn.lordicon.com/xovdoewm.json" trigger="loop" delay="1500"
+                                        state="in-reveal" colors="primary:#1b1091,secondary:#a866ee">
+                                    </lord-icon>
+                                </div>
+                                Newsletter
+                            </h2>
+                            <p class="newsletter-description">
+                                Subscribe to our weekly newsletter and be the first to know about new features, industry
+                                insights, and exclusive content tailored just for you.
+                            </p>
+                            <form class="newsletter-form" id="newsletterForm">
+                                <div class="input-group">
+                                    <input type="email" class="email-input" placeholder="Enter your email address"
+                                        required id="emailInput">
+                                    <button type="submit" class="subscribe-btn">
+                                        Subscribe
+                                    </button>
+                                </div>
+                                <div class="success-message" id="successMessage">
+                                    🎉 Thank you for subscribing! Check your email to confirm your subscription.
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- newsletter section -->
+
+
+            <!-- Start of Footer -->
+            <footer class="site-footer pt-5">
+                <div class="follow-us">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="title">
+                                    <h2 class="h2-title wow fadeup-animation" data-wow-duration="0.8s"
+                                        data-wow-delay="0.2s">follow us</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="follow-us-row">
+                            <ul>
+                                <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                    <a href="javascript:void(0);" title="Facebook">
+                                        <span class="big-text">Fb</span>
+                                        <span class="small-text">Facebook</span>
+                                    </a>
+                                </li>
+                                <!-- <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <a href="javascript:void(0);" title="Spotify">
+                                    <span class="big-text">Sp</span>
+                                    <span class="small-text">Spotify</span>
+                                </a>
+                            </li> -->
+                                <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                    <a href="javascript:void(0);" title="Instagram">
+                                        <span class="big-text">In</span>
+                                        <span class="small-text">Instagram</span>
+                                    </a>
+                                </li>
+                                <!-- <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                <a href="javascript:void(0);" title="Youtube">
+                                    <span class="big-text">Yt</span>
+                                    <span class="small-text">Youtube</span>
+                                </a>
+                            </li> -->
+
+                                <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                    <a href="javascript:void(0);" title="Twitter">
+                                        <span class="big-text">Tw</span>
+                                        <span class="small-text">Twitter</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <div class="container">
+                        <div class="row align-items-center ">
+                            <div class="col-lg-6 text-left ">
+                                <div class="footer-logo">
+                                    <a href="index.html" title="SingWithMe Records Ltd.">
+                                        <img src="assets/images/singWithMe/logo-trans.png" alt="" width="100px">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 text-right ">
+                                <span class="copyright-text ">© 2025 All Rights Reserved By | Designed By <a
+                                        href="https://thevisionbrands.com/" target="_blank" title="Vision Brands ">The
+                                        Vision Brands</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+
+
+        <!-- Jquery JS Link -->
+        <script src="assets/js/jquery-3.5.1.min.js"></script>
+
+        <!-- Fluid Simulation JS Link -->
+        <!-- <script src="../../cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="../../cdn.jsdelivr.net/npm/vanta%40latest/dist/vanta.halo.min.js"></script> -->
+
+        <!-- Bootstrap JS Link -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+
+        <!-- Swiper Slider JS Link -->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!-- font awesome JS Link -->
+        <script src="assets/js/font-awesome.min.js"></script>
+
+        <!-- Wow Animation JS Link -->
+        <script src="assets/js/wow.min.js"></script>
+
+        <!-- Custom JS Link -->
+        <script src="assets/js/custom.js"></script>
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <script>
+            function toggleFaq(element) {
+                const faqItem = element.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't already active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            }
+
+            // Add some interactive animations
+            document.addEventListener('DOMContentLoaded', function () {
+                const faqQuestions = document.querySelectorAll('.faq-question');
+
+                faqQuestions.forEach(question => {
+                    question.addEventListener('mouseenter', function () {
+                        this.style.transform = 'translateX(10px)';
+                    });
+
+                    question.addEventListener('mouseleave', function () {
+                        this.style.transform = 'translateX(0)';
+                    });
+                });
+            });
+        </script>
+</body>
+
+
+<!-- Mirrored from html.geekcodelab.com/spiffyplay/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jun 2025 12:54:56 GMT -->
+
+</html>

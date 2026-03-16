@@ -1,0 +1,647 @@
+- var page_Title = 'Sweet Alerts2';
+- var theme_customizer      = true;
+- var sweetalert2           = true;
+- var page_sweetalert2      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var prism                 = true;
+- var clipboard             = true;
+- var customcard            = true;
+- var animate1              = true;
+- var scrollbar             = true;
+- var height_equal          = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Sweet Alerts
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Bonus Ui
+                    li.breadcrumb-item.active sweet Alert
+          // Container-fluid starts                    
+          .container-fluid
+            .row
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Position Top Start
+                    p.f-m-light.mt-1
+                      | Use 
+                      code  "position: top-start"
+                      |  in javascript, you set the alert's position.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-secondary.sweet-16(type='button', onclick="_gaq.push(['_trackEvent', 'sweet-16']);") Click it! 
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#position-top-start-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#position-top-start-copy
+                          |&lt;button class="btn btn-secondary sweet-16" type="button" onclick="_gaq.push(['_trackEvent', 'sweet-16']);"&gt;Click it! &lt;/button&gt;
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Position Top End
+                    p.f-m-light.mt-1
+                      | Use 
+                      code  "position: top-end"
+                      |  in javascript, you set the alert's position.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-info.sweet-15(type='button', onclick="_gaq.push(['_trackEvent', 'sweet-15']);") Click it! 
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#position-top-end-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#position-top-end-copy
+                          |&lt;button class="btn btn-info sweet-15" type="button" onclick="_gaq.push(['_trackEvent', 'sweet-15']);"&gt;Click it! &lt;/button&gt; 
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Position Bottom Start
+                    p.f-m-light.mt-1
+                      | Use 
+                      code  "position: bottom-start"
+                      |  in javascript, you set the alert's position.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-warning.sweet-17(type='button', onclick="_gaq.push(['_trackEvent', 'sweet-17']);") Click it! 
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#position-bottom-start-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#position-bottom-start-copy
+                          |&lt;button class="btn btn-warning sweet-17" type="button" onclick="_gaq.push(['_trackEvent', 'sweet-17']);"&gt;Click it! &lt;/button&gt;
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Position Bottom End
+                    p.f-m-light.mt-1
+                      | Use 
+                      code  "position: bottom-end"
+                      |  in javascript, you set the alert's position.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-primary.sweet-18(type='button', onclick="_gaq.push(['_trackEvent', 'sweet-18']);") Click it! 
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#position-bottom-end-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#position-bottom-end-copy
+                          |&lt;button class="btn btn-primary sweet-18" type="button" onclick="_gaq.push(['_trackEvent', 'sweet-18']);"&gt;Click it! &lt;/button&gt; 
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Basic Example
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-1 
+                      | class to create a basic alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-primary.sweet-1(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-1']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#basic-alert-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#basic-alert-copy
+                          |&lt;button class="btn btn-primary sweet-1" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-1']);"&gt;Click it!&lt;/button&gt;
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Title with a Text Under
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-2 
+                      | class to create a title with text under alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-secondary.sweet-2(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-2']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#text-under-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#text-under-copy
+                          |&lt;button class="btn btn-secondary sweet-2" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-2']);"&gt;Click it!&lt;/button&gt;
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Dismiss Alert 
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-3 
+                      | class to create a dismiss alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-info.sweet-3(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-3']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#dismiss-alert-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#dismiss-alert-copy
+                          |&lt;button class="btn btn-info sweet-3" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-3']);"&gt;Click it!&lt;/button&gt;
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Rich Html Alert
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-4 
+                      | class to create a rich html alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-warning.sweet-4(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-4']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#rich-html-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#rich-html-copy
+                          |&lt;button class="btn btn-warning sweet-4" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-4']);"&gt;Click it!&lt;/button&gt;
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Confirmation Alert
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-5 
+                      | class to create a confirmation alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-warning.sweet-5(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-5']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#confirmation-alert-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#confirmation-alert-copy
+                          |&lt;button class="btn btn-warning sweet-5" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-5']);"&gt;Click it!&lt;/button&gt;
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Animated Alert
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-6 
+                      | class to create a animated alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-primary.sweet-6(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-6']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#animated-alert-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#animated-alert-copy
+                          |&lt;button class="btn btn-primary sweet-6" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-6']);"&gt;Click it!&lt;/button&gt;
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Confirmation with Triggers
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-7 
+                      | class to create a confirmation with triggers alert display.
+                      | .
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                     button.btn.btn-secondary.sweet-7(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-7']);") Click it!
+                     .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#confirm-trigger-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#confirm-trigger-copy
+                          |&lt;button class="btn btn-secondary sweet-7" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-7']);"&gt;Click it!&lt;/button&gt; 
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Image-rich Message
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-8 
+                      | class to create a image rich message alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-info.sweet-8(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-8']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#image-rich-message-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#image-rich-message-copy
+                          |&lt;button class="btn btn-info sweet-8" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-8']);"&gt;Click it!&lt;/button&gt; 
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Auto Close Timer
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-9 
+                      | class to create a auto close timer alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-danger.sweet-9(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-9']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#auto-close-timer-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#auto-close-timer-copy
+                          |&lt;button class="btn btn-danger sweet-9" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-9']);"&gt;Click it!&lt;/button&gt;
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 AJAX Request Alert
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-10 
+                      | class to create a ajax request alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-warning.sweet-10(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-10']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#ajax-req-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#ajax-req-copy
+                          |&lt;button class="btn btn-warning sweet-10" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-10']);"&gt;Click it!&lt;/button&gt;
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Confirmation with Approvals
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-11 
+                      | class to create a confirmation with approvals alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-primary.sweet-11(type='button', onclick="_gaq.push(['_trackEvent', 'sweet-11']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#confirmation-approval-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#confirmation-approval-copy
+                          |&lt;button class="btn btn-primary sweet-11" type="button" onclick="_gaq.push(['_trackEvent', 'sweet-11']);"&gt;Click it!&lt;/button&gt;
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Comprehensive RTL Support
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-12 
+                      | class to create a comprehensive RTL support alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-secondary.sweet-12(type='button', onclick="_gaq.push(['_trackEvent', 'sweet-12']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#rtl-alert-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#rtl-alert-copy
+                          |&lt;button class="btn btn-secondary sweet-12" type="button" onclick="_gaq.push(['_trackEvent', 'sweet-12']);"&gt;Click it!&lt;/button&gt;
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Password Generator Alert
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-13 
+                      | class to create a password generator alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-primary.sweet-13(type='button', onclick="_gaq.push(['_trackEvent', 'sweet-13']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#pwd-generate-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#pwd-generate-copy
+                          |&lt;button class="btn btn-primary sweet-13" type="button" onclick="_gaq.push(['_trackEvent', 'sweet-13']);"&gt;Click it!&lt;/button&gt; 
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Date Alert
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-14 
+                      | class to create a date alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-danger.sweet-14(type='button', onclick="_gaq.push(['_trackEvent', 'sweet-14']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#date-alert-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#date-alert-copy
+                          |&lt;button class="btn btn-danger sweet-14" type="button" onclick="_gaq.push(['_trackEvent', 'sweet-14']);"&gt;Click it!&lt;/button&gt; 
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Custom Positioned Dialog
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-19 
+                      | class to create a custom positioned dialog alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-warning.sweet-19(type='button', onclick="_gaq.push(['_trackEvent', 'sweet-19']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#position-dialog-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#position-dialog-copy
+                          |&lt;button class="btn btn-warning sweet-19" type="button" onclick="_gaq.push(['_trackEvent', 'sweet-19']);"&gt;Click it!&lt;/button&gt;
+              .col-xxl-3.col-lg-4.col-sm-6.col-12.box-col-4
+                .card.height-equal
+                  .card-header
+                    h5 Registration Form
+                    p.f-m-light.mt-1
+                      | Use 
+                      code sweet-20 
+                      | class to create a input form alert display.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa-solid.fa-gear.fa-spin
+                        li
+                          i.view-html.fa-solid.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    button.btn.btn-primary.sweet-20(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-20']);") Click it!
+                    .code-box-copy
+                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#registration-form-copy', title='Copy')
+                        i.icofont.icofont-copy-alt
+                      pre.custom-scrollbar
+                        code.language-html#registration-form-copy
+                          |&lt;button class="btn btn-primary sweet-20" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-20']);"&gt;Click it!&lt;/button&gt;
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files   

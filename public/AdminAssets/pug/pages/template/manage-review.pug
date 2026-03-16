@@ -1,0 +1,694 @@
+- var page_Title = 'Manage Review';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var scrollbar             = true;
+- var header_slider         = true;
+- var bs_select             = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var datatable_extension   = true;
+- var init_datatable        = true;
+- var validation_modal      = true;
+- var sweetalert2           = true;
+- var trash_popup           = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3 
+                    | Manage Review
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Ecommerce
+                    li.breadcrumb-item.active Manage Review
+          // Container-fluid starts
+          .container-fluid.manage-review-wrapper
+            .row 
+              .col-sm-12 
+                .card
+                  .card-body.px-0.pt-0
+                    .top-body
+                      .row.g-3
+                        .col-auto 
+                          .form-group
+                            label.form-label Rating
+                              select.selectpicker.search-picker(aria-label='Rating' data-live-search='true')
+                                option(value='5' selected data-content="<span class='rating'><i class='fa-solid fa-star txt-warning'></i></span> | 5 Star") 
+                                  | 5 Star
+                                option(value='4' data-content="<span class='rating'><i class='fa-solid fa-star txt-warning'></i></span> | 4 Star") 
+                                  | 4 Star
+                                option(value='3' data-content="<span class='rating'><i class='fa-solid fa-star txt-warning'></i></span> | 3 Star") 
+                                  | 3 Star
+                                option(value='2' data-content="<span class='rating'><i class='fa-solid fa-star txt-warning'></i></span> | 2 Star") 
+                                  | 2 Star
+                                option(value='1' data-content="<span class='rating'><i class='fa-solid fa-star txt-warning'></i></span> | 1 Star") 
+                                  | 1 Star
+                        .col-auto
+                          .form-group
+                            label.form-label Status
+                              select.selectpicker.search-picker(aria-label='Status' data-live-search='true')
+                                option(value='approve') Approve
+                                option(value='reject') Reject
+                    .manage-review
+                      .recent-table.table-responsive.custom-scrollbar
+                        table#manage-review-table.table
+                          thead 
+                            tr 
+                                th
+                                th
+                                th 
+                                    span.c-o-light.f-w-600 Add Products
+                                th 
+                                    span.c-o-light.f-w-600 Reviewer
+                                th 
+                                    span.c-o-light.f-w-600 Review
+                                th 
+                                    span.c-o-light.f-w-600 Date
+                                th 
+                                    span.c-o-light.f-w-600 Status
+                                th 
+                                    span.c-o-light.f-w-600 Action
+                          tbody 
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/product-categories/laptop.png", alt="laptop")
+                                  p Apple Desktop 2025
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/user/3.png", alt="user")
+                                  .user-details
+                                    a(href="#!") Cameron Willia
+                                    p.mb-0 cameron@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span Thanks to the new M-series processor, which can handle even the most demanding programs without lag, the performance is lightning quick. The gorgeous Retina 6K display is ideal for creative work like graphic design and video editing because it produces fine details and bright colours. I also like how the design is simple and elegant, and it looks great on my desk.
+                              td 02 Feb, 2016
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/product-categories/dvd.png", alt="dvd")
+                                  p DVD
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard/user/12.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Alexis Taylor
+                                    p.mb-0 alexis@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                .customer-review 
+                                  span This is DVD delivered on its promise of high-quality audio and visuals, which is why I bought it! Watching films or television shows at home is enjoyable because of the crisp, clear images and the engrossing sound. It's also very portable, light, and works with my old DVD player, which is fantastic.
+                              td 11 Mar, 2015
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/accessories/03.png", alt="beauty blender")
+                                  p Beauty Blender
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard/user/11.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Andrew Price
+                                    p.mb-0 andrew@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span Smoothies made with this blender are easy and quick to prepare. It is a fantastic vacation or work partner because it is small, light, and incredibly cleanable. However, it tends to become caught when it comes to frozen fruits or ice cubes. It is very effective and time-efficient for soft ingredients, such as protein drinks or fresh fruits.
+                              td 20 Nov, 2021
+                              td  
+                                span.badge.badge-light-danger Reject
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/25.png", alt="comfortable chair")
+                                  p Comfortable Chair
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/user/6.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Luke Mitchell
+                                    p.mb-0 luke@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span My back is supported and the tension is lessened because to the ergonomic design, which has proven invaluable for me working from home. Comfort and durability are well-balanced by the robust yet soft padding. It took a little while to assemble, but the finished product is well worth the effort. I heartily recommend this chair to anyone searching for a high-quality, reasonably priced one.
+                              td 25 Nov, 2022
+                              td  
+                                span.badge.badge-light-danger Reject
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/shop-categories/mouse.png", alt="green wireless mouse")
+                                  p Green Wireless Mouse
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard/user/10.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Emily Park
+                                    p.mb-0 emily@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span The Green Wireless Mouse is incredibly responsive, elegant, and small. Its flawless operation on nearly any surface, including glass, and its elegant appearance are two things I adore. It has an amazing battery life; I haven't needed to recharge it for weeks.
+                              td 15 Jan, 2016
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/shop-categories/camera.png", alt="camera")
+                                  p Camera
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard/user/13.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Olivia Gor
+                                    p.mb-0 olivia@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span Its sophisticated lens and sensor provide amazing image clarity, especially in low light. Because the autofocus is so quick, I can get every moment without any fuzz. I also adore how portable and lightweight it is, which makes travelling with it a breeze. For both novice and expert photographers, the touch screen interface is easy to use and provides a range of customisable options.
+                              td 02 Apr, 2024
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/14.png", alt="shoes")
+                                  p Pixel Shoes
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard-11/user/5.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Kathryn Roe
+                                    p.mb-0 kathryn@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span Pixel Shoes fulfilled my desire for a pair of shoes that are both fashionable and comfortable. The colour schemes are striking yet adaptable enough to go with a variety of ensembles, and the design is sleek and contemporary. They are ideal for all-day wear since they provide outstanding support. During lengthy treks, my feet will remain comfy because to the cushioning's smooth yet sturdy texture.
+                              td 26 Mar, 2022
+                              td  
+                                span.badge.badge-light-danger Reject
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/16.png", alt="camera")
+                                  p Leather Handbag
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/user/10.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Caleb Riv
+                                    p.mb-0 caleb@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span This leather purse has swiftly emerged as my preferred piece of gear for both business and leisure activities. The leather is of superb quality, feeling opulent to the touch and being both soft and resilient. Its roomy interior makes it easy to fit my phone, wallet, keys, and even a small tablet without feeling heavy.
+                              td 12 Feb, 2024
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/email-template/3.png", alt="arm chair")
+                                  p Arm Chair
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard-11/user/12.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Andrew Baker
+                                    p.mb-0 andrew@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span  The plush cushion feels wonderful for reading or relaxing, and it offers strong back support. It is quite comfy. The design is contemporary and goes well with the décor in my house. The cloth is comfortable and long-lasting, and I like the strong construction. But for more comfort, I do wish the armrests were a little broader. All things considered, it's a good chair for anyone searching for a chic and comfortable seating solution.
+                              td 08 Dec, 2018
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/product-categories/wireless-headphone.png", alt="wireless headphone")
+                                  p Wireless Ear Buds
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard-11/user/3.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Miranda Bailey
+                                    p.mb-0 miranda@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span I'm really pleased with the earbuds I purchased for my everyday commute and flights. The noise cancellation is excellent; it virtually eliminates background noise and conversation. The audio quality is excellent, with crystal-clear vocals and a deep bass. Although the battery lasts me all day, I find that using them for extended periods of time causes some discomfort.
+                              td 21 Feb, 2024
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/accessories/01.png", alt="Grinder")
+                                  p Pixel Grinder Jar
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard-11/user/1.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Thomas Tim
+                                    p.mb-0 thomas@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span The Pixel Grinder Jar has surpassed all of my expectations since I recently bought it! It fits my kitchen countertop nicely and has a clean, contemporary appearance. The smooth and effective grinding mechanism consistently produces a uniform texture. I mostly use it to grind spices, and it does a fantastic job of adding freshly ground flavours to any meal.
+                              td 19 May, 2015
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/product-categories/mouse.png", alt="mouse")
+                                  p M185 Mouse
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard-11/user/10.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Marvin Bob
+                                    p.mb-0 marvin@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span Anyone looking for a dependable and reasonably priced wireless mouse should choose the M185 Mouse. Its ergonomic design makes it comfortable to handle, even for prolonged periods of time. Setup is quite easy—just put in the USB receiver and you're ready to go—and the wireless connection is reliable.
+                              td 03 Jan, 2019
+                              td  
+                                span.badge.badge-light-danger Reject
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/product-categories/phone.png", alt="phone")
+                                  p Apple Iphone 13 pro
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard-11/user/11.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Russell Rose
+                                    p.mb-0 russell@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span The best smartphone I've ever had is without a doubt the Apple iPhone 13 Pro. With its Super Retina XDR OLED screen, the display is gorgeous, and the ProMotion function gives everything an exceptionally smooth appearance. I adore the 120Hz refresh rate since it makes the smartphone more snappy, especially while scrolling and playing games. The camera system is great.
+                              td 29 Dec, 2024
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/shop-categories/speaker.png", alt="speaker")
+                                  p Wireless Speaker
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard-11/user/4.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Savannah Bell
+                                    p.mb-0 savannah@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span This wireless speaker has me completely smitten! Even at high volumes, the sound quality is superb, with deep bass and clean highs without distortion. Because it is waterproof and surprisingly loud for its small size, it is ideal for both inside and outdoor use.
+                              td 18 Mar, 2019
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/15.png", alt="comfortable sofa")
+                                  p Comfortable Sofa
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard-11/user/2.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Leslie Ape
+                                    p.mb-0 leslie@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span I'm really happy with the comfortable sofa I recently bought for my living room. It is ideal for relaxing after a long day because of the extraordinarily soft cushions. In addition to being opulent, the cloth is strong and resilient, withstanding regular use without deteriorating. The size of the sofa is ideal; it provides lots of room without taking up too much space.
+                              td 18 Mar, 2019
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/product-categories/headphone.png", alt="headphones")
+                                  p Headphones
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard-9/user/4.png", alt="user")
+                                  .user-details
+                                    a(href="#!") Darrell Alexa
+                                    p.mb-0 darrell@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                  i.fa-regular.fa-star.txt-warning
+                                .customer-review 
+                                  span The sound quality is excellent, particularly the crisp highs and powerful bass. They fit tightly without coming off, even while I'm sprinting or jumping, and I use them frequently for my workouts. Impressively, the battery lasts for about ten hours between charges. Noise cancellation should be improved, though, as it has trouble totally blocking out loud outside sounds like traffic.
+                              td 20 Mar, 2024
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/accessories/07.png", alt="washing machine")
+                                  p Wool Washing Machine
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard-9/user/2.png", alt="user")
+                                  .user-details
+                                    a(href="#!") Gideon Quinn
+                                    p.mb-0 gideon@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                .customer-review 
+                                  span The way I take care of my delicate wool clothing has drastically changed since I started using the Wool Washing Machine a few months ago. It thoroughly cleans even the most delicate wool clothing and is gentler on materials than regular washers, preventing shrinkage or damage. To ensure the best care, the machine has several settings designed especially for various types of wool.
+                              td 28 May, 2020
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/accessories/02.png", alt="headphones")
+                                  p Golden Headphone
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard/user/3.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Bexley Nixon
+                                    p.mb-0 bexley@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                .customer-review 
+                                  span  The first thing that caught my eye was the gorgeous gold finish, which distinguishes them from other headphones in my collection and adds an elegant touch. With its powerful bass and clear treble, the sound quality is superb and provides a well-rounded listening experience for all musical genres.
+                              td 17 Nov, 2023
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/dashboard-8/shop-categories/phone.png", alt="i-phone")
+                                  p Apple Iphone 14 pro
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard-9/user/1.png", alt="user")
+                                  .user-details
+                                    a(href="#!") Kyler Nunez
+                                    p.mb-0 kyler@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                .customer-review 
+                                  span The camera system is amazing; the ProRAW feature offers a great deal of editing versatility, and the new 48 MP primary sensor takes clear, colourful pictures in any setting. Considering this device's capabilities, the battery has held up well, lasting a whole day with heavy use. The price, which is on the upper end, is the main drawback, but considering all the features and performance you get, I think it's worth it.
+                              td 10 Aug, 2020
+                              td  
+                                span.badge.badge-light-danger Reject
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                            tr.product-removes.inbox-data
+                              td
+                              td
+                              td 
+                                .product-names
+                                  .light-product-box
+                                    img.img-fluid(src="../assets/images/product/accessories/06.png", alt="study lamp")
+                                  p Study Lamp
+                              td 
+                                .common-f-start
+                                  img.img-fluid(src="../assets/images/dashboard/user/1.jpg", alt="user")
+                                  .user-details
+                                    a(href="#!") Kase Archer
+                                    p.mb-0 kase@gmail.com 
+                              td 
+                                .rating
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                  i.fa-solid.fa-star.txt-warning
+                                .customer-review 
+                                  span My study sessions have changed as a result of the Study Lamp. Whether I require a powerful beam during long study sessions or a gentle glow in the evening, the brightness options are ideal for any time of day. The sleek, contemporary design is perfect for my desk and doesn't take up much room.
+                              td 12 Jun, 2022
+                              td  
+                                span.badge.badge-light-success Approve
+                              td 
+                                a.square-danger.trash-5(href="#!")
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

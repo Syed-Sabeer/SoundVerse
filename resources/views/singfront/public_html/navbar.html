@@ -1,0 +1,222 @@
+<style>
+    .site-header {
+        position: relative;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .site-header.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: linear-gradient(135deg, #a66bef, #4d3d7e, #1d0c2e);
+        /* match your nav bar bg */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    .un_header .container-fluid {
+        padding-bottom: 3rem;
+        position: relative;
+        z-index: 11112;
+    }
+</style>
+
+<!-- Start of Header -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<header class="site-header un_header">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-lg-1 col-xl-2 col-xxl-3 ">
+                <div class="site-branding">
+                    <a href="index.html" title="SingWithMe Records Ltd.">
+                        <img src="assets/images/singWithMe/logo-trans.png" alt="Logo New">
+                        <!-- SingWithMe -->
+                        <!-- sound track -->
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-11 col-xl-10 col-xxl-9">
+                <div class="main-navigation">
+                    <button class="hamburger for-mob">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="header-menu">
+                        <div class="menu-main-menu-container">
+                            <ul>
+                                <li><a href="/index.html" title="Home">Home</a></li>
+                                <li class="un_dropdown">
+                                    <a href="#" title="About Us">About Us</a>
+                                    <ul class="service_drop">
+                                        <li><a href="about-us.html">About Us</a></li>
+                                        <li><a href="about-major-powel.html">About Major Powel</a></li>
+                                    </ul>
+                                </li>
+                                <li class="un_dropdown">
+                                    <a href="#" title="Services">Services</a>
+                                    <ul class="service_drop">
+                                        <li><a href="music-video.html">Music & Videos</a></li>
+                                        <li><a href="royalty-collection.html">Royalty Collection</a></li>
+                                        <li><a href="artisit-subscription.html">Artist Subscription Plan</a></li>
+                                        <li><a href="artwork-photo.html">Artwork & Photo Upload</a></li>
+                                        <li><a href="support-networking.html">Support & Networking</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="share-music.html" title="Artist Portal">Share Your Music </a></li>
+                                <li><a href="user-portal.html" title="Artist Portal">User Portal </a></li>
+                                <li><a href="artisit-portal.html" title="Artist Portal">Artist Portal </a></li>
+                                <li><a href="contact-us.html" title="Contact Form">Contact Form</a></li>
+                                <!-- <li><a href="index-2.html#songs" title="Songs">Songs</a></li>
+                                        <li><a href="contact-us.html" title="Contact Us">Contact Us</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newsbar">
+        <span class="news-label">Latest News:</span>
+        <div class="news-ticker">
+            <div class="news-items">
+                <span> Empowering independent artists worldwide — keep 80% of your royalties!</span>
+                <span>Distribute your music to Spotify, YouTube, iTunes & TikTok — hassle-free.</span>
+                <span>Upload songs, videos & artwork — reach a global audience today!</span>
+                <span>Transparent, artist-first platform — focus on your music, we’ll handle the rest.</span>
+                <span>Emerging or pro, SingWithMe Records is your trusted music partner.</span>
+                <span>Collect royalties, promote your work & grow your fanbase — all in one place.</span>
+                <span> Empowering independent artists worldwide — keep 80% of your royalties!</span>
+                <span>Distribute your music to Spotify, YouTube, iTunes & TikTok — hassle-free.</span>
+                <span>Upload songs, videos & artwork — reach a global audience today!</span>
+                <span>Transparent, artist-first platform — focus on your music, we’ll handle the rest.</span>
+                <span>Emerging or pro, SingWithMe Records is your trusted music partner.</span>
+                <span>Collect royalties, promote your work & grow your fanbase — all in one place.</span>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- fixed ws icon -->
+<a href="https://wa.me/441234567890" target="_blank" class="whatsapp-button">
+    <i class="fab fa-whatsapp"></i>
+</a>
+<!-- fixed ws icon -->
+
+<!-- mobile nav -->
+
+<div class="mobile-nav2">
+    <ul class="mobile-nav2-ul">
+
+        <!-- item 7 -->
+        <li class="relative group li-icon">
+            <a href="/artisit-portal.html"
+                class="text-lg xl:text-15px 2xl:text-lg hover:text-secondary-color font-semibold whitespace-nowrap d-flex"><i
+                    class="fa-solid fa-music"></i>
+                Artist</a>
+        </li>
+
+        <!-- item 4 -->
+        <li class="relative group li-icon">
+            <a id="chatbotGif" onclick="showBox()" href="#"
+                class="text-lg xl:text-15px 2xl:text-lg hover:text-secondary-color font-semibold whitespace-nowrap d-flex"><i
+                    class="fa-regular fa-comments"></i>
+                Live Chat</a>
+        </li>
+
+        <!-- item 6 -->
+        <li class="relative group li-icon">
+            <a href="https://wa.me/441234567890"
+                class="text-lg xl:text-15px 2xl:text-lg hover:text-secondary-color font-semibold whitespace-nowrap d-flex whtsp"><img
+                    class="whatsApp-logo" src="/assets/images/singWithMe/ws-icon.png" alt="" width="50px">
+                Ask US</a>
+        </li>
+
+        <!-- item 8 -->
+        <li class="relative group li-icon">
+            <a href="tel:+44(0)1234567890"
+                class="text-lg xl:text-15px 2xl:text-lg hover:text-secondary-color font-semibold whitespace-nowrap d-flex"><i
+                    class="fa-solid fa-phone-volume"></i>
+                Call</a>
+        </li>
+
+        <!-- item 5 -->
+        <li class="relative group li-icon">
+            <a href="#"
+                class="text-lg xl:text-15px 2xl:text-lg hover:text-secondary-color font-semibold whitespace-nowrap d-flex"><i
+                    class="fa-solid fa-user"></i>
+                Login</a>
+        </li>
+    </ul>
+</div>
+
+<!-- mobile nav -->
+
+<!-- chat bot code -->
+
+<!-- Fixed Chatbot Container -->
+
+<div class="parent-chatBot">
+    <img id="chatbotGif" onclick="showBox()" style="cursor:pointer;"
+        src="/assets/images/singWithMe/chat2.gif" alt="" width="150px">
+
+    <div class="chat-box" id="chatBox" style="display: none;">
+        <div class="chat-header">
+            <div class="title">
+                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712104.png" alt="bot" />
+                <div style="text-align: left;">
+                    <div>Customer Support</div>
+                    <div class="status">• Online</div>
+                </div>
+            </div>
+            <div style="cursor: pointer;" onclick="hideBox()">✖</div>
+        </div>
+
+        <div class="chat-body">
+            <div class="chat-message">Hello how can I help you?</div>
+            <div class="chat-time">5:13pm</div>
+
+            <div class="quick-replies">
+                <button>About Us?</button>
+                <button>Your Location?</button>
+                <button>Your Timings?</button>
+                <button>About Your Services?</button>
+            </div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" placeholder="Type Message" />
+            <div class="emoji">😊</div>
+        </div>
+
+        <div class="chat-footer">
+            <button>End Chat</button>
+        </div>
+    </div>
+</div>
+
+<!-- chat bot code -->
+
+
+<script>
+    // console.log("works");
+
+    // // Define functions in global scope
+    // function showBox() {
+    //     document.getElementById('chatBox').style.display = 'block';
+    //     document.getElementById('chatbotGif').style.display = 'none';
+    // }
+
+    // function hideBox() {
+    //     document.getElementById('chatBox').style.display = 'none';
+    //     document.getElementById('chatbotGif').style.display = 'block';
+    // }
+
+</script>

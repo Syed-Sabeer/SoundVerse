@@ -1,0 +1,163 @@
+- var page_Title = 'Sitemap';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+- var clipboard             = true;
+- var prism                 = true;
+- var customcard            = true;
+- var height_equal          = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Sitemap
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Pages
+                    li.breadcrumb-item.active Sitemap
+          // Container-fluid starts
+          .container-fluid.sitemap-wrapper
+            .row 
+              .col-12
+                .card
+                  .card-header 
+                    h5 Default Sitemap
+                  .card-body.default-sitemap
+                    .row.g-5
+                      .col-xxl-3.col-md-4.col-sm-6.box-col-4 
+                        h6.sub-title Dashboard
+                        .common-flex
+                          a(href="#!") Analytics
+                          a(href="#!") Logistics
+                          a(href="#!") Projects
+                          a(href="#!") E-commerce
+                          a(href="#!") CRM
+                          a(href="#!") POS
+                      .col-xxl-3.col-md-4.col-sm-6.box-col-4 
+                        h6.sub-title User Management
+                        .common-flex
+                          a(href="#!") Roles & Permission
+                          a(href="#!") User Cards
+                          a(href="#!") Two Factor Authentication
+                          a(href="#!") User List
+                          a(href="#!") Add User
+                          a(href="#!") User Profile
+                      .col-xxl-3.col-md-4.col-sm-6.box-col-4 
+                        h6.sub-title Settings
+                        .common-flex
+                          a(href="#!") Manage API 
+                          a(href="#!") Themes
+                          a(href="#!") Site Info
+                          a(href="#!") Email Settings
+                          a(href="#!") Password Policies
+                      .col-xxl-3.col-md-4.col-sm-6.box-col-4 
+                        h6.sub-title Reports
+                        .common-flex
+                          a(href="#!") Product Report
+                          a(href="#!") Sales Report
+                          a(href="#!") Sales Return
+                          a(href="#!") Customer Order
+                      .col-xxl-3.col-md-4.col-sm-6.box-col-4 
+                        h6.sub-title Error Pages
+                        .common-flex
+                          a(href="#!") 403 Error
+                          a(href="#!") 404 Error
+                          a(href="#!") 500 Error
+                      .col-xxl-3.col-md-4.col-sm-6.box-col-4 
+                        h6.sub-title Blog
+                        .common-flex
+                          a(href="#!") Add Blog
+                          a(href="#!") Blog Details
+                      .col-xxl-3.col-md-4.col-sm-6.box-col-4 
+                        h6.sub-title Authentication 
+                        .common-flex
+                          a(href="#!") Unlock User
+                          a(href="#!") Forgot Password
+                          a(href="#!") Reset Password
+                          a(href="#!") Maintenance
+                      .col-xxl-3.col-md-4.col-sm-6.box-col-4 
+                        h6.sub-title Support
+                        .common-flex
+                          a(href="#!") FAQs
+                          a(href="#!") Pricing
+                          a(href="#!") Support Ticket
+              .col-12 
+                .card 
+                  .card-header 
+                    h5 Tree Structure Sitemap
+                  .card-body.horizontal-sitemap
+                    ul.main-site 
+                      li 
+                        a.main-root(href="#!") Home
+                        ul.tier-1.custom-scrollbar
+                          li 
+                            a(href="#!") Ecommerce
+                            ul.tier-2 
+                              li 
+                                a(href="#!") Products 
+                                ul.tier-3
+                                  li 
+                                    a(href="#!") Add Product 
+                                  li
+                                    a(href="#!") Products Grid 
+                                  li
+                                    a(href="#!") Products List 
+                                  li
+                                    a(href="#!") Product Details
+                              li
+                                a(href="#!") Cart
+                              li 
+                                a(href="#!") Wishlist
+                          li 
+                            a(href="#!") Reports
+                            ul.tier-2 
+                              li 
+                                a(href="#!") Products 
+                              li 
+                                a(href="#!") Sales 
+                              li 
+                                a(href="#!") Sales Return 
+                              li 
+                                a(href="#!") Customer Order
+                          li 
+                            a(href="#!") Projects
+                            ul.tier-2
+                              li 
+                                a(href="#!") Project Details
+                              li 
+                                a(href="#!") Project List
+                              li 
+                                a(href="#!") Create New
+                          li 
+                            a(href="#!") Other Pages
+                            ul.tier-2
+                              li 
+                                a(href="#!") Starter Kit
+                              li 
+                                a(href="#!") Authentication
+                              li 
+                                a(href="#!") Manage API
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

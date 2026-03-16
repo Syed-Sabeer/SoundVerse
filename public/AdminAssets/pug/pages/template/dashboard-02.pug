@@ -1,0 +1,1048 @@
+- var page_Title = 'E-commerce Dashboard';
+- var apex                  = true;
+- var theme_customizer      = true;
+- var dashboard_2           = true;
+- var animate               = true;
+- var counter               = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var tooltip               = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3 
+                    | E-Commerce
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Dashboard
+                    li.breadcrumb-item.active E-Commerce
+          // Container-fluid starts
+          .container-fluid.dashboard-2
+            .row.size-column
+              .col-xxl-10.col-md-12.box-col-12.grid-ed-12
+                .row
+                  .col-12 
+                    .card 
+                      .card-body.main-title-box
+                        .common-space.gap-2
+                          h6.f-light The latest shopping trends and timeless essentials are waiting for you
+                          .e-common-button
+                            a(href="add-products.html" target="_blank").btn.btn-primary 
+                              i(data-feather='plus')
+                              | Add Product
+                            a(href="order-history.html" target="_blank").btn.btn-primary
+                              | View Orders
+                  .col-xxl-5.col-md-7.box-col-7
+                    .row 
+                      .col-sm-12 
+                        .card.o-hidden              
+                          .card-body.balance-widget
+                            span.f-w-500.f-light Total Earnings
+                            h4.mb-3.mt-1.f-w-500.mb-0.f-22 $
+                              span.counter(data-target='24515400') 0
+                            a(href="sales-report.html" target="_blank").purchase-btn.btn.btn-primary.btn-hover-effect.f-w-500 View Sales Report
+                            .mobile-right-img
+                              img.mobile-img(src="../assets/images/dashboard-2/monitor.png", alt="monitor with money")
+                      .col-6 
+                        .card.small-widget 
+                          .card-body.primary 
+                            span.f-light New Orders
+                            .d-flex.align-items-end.gap-1
+                              h4.counter(data-target='2435') 0
+                              span.font-primary.f-12.f-w-500
+                                i.icon-arrow-up
+                                span +50%
+                            .bg-gradient 
+                              svg.stroke-icon.svg-fill
+                                use(href='../assets/svg/icon-sprite.svg#new-order')
+                      .col-6 
+                        .card.small-widget 
+                          .card-body.warning
+                            span.f-light New Customers
+                            .d-flex.align-items-end.gap-1
+                              h4.counter(data-target='2908') 0
+                              span.font-warning.f-12.f-w-500
+                                i.icon-arrow-up
+                                span +20%
+                            .bg-gradient 
+                              svg.stroke-icon.svg-fill
+                                use(href='../assets/svg/icon-sprite.svg#customers')
+                      .col-6 
+                        .card.small-widget 
+                          .card-body.secondary
+                            span.f-light Average Sale
+                            .d-flex.align-items-end.gap-1
+                              h4
+                                | $
+                                span.counter(data-target='389') 0
+                                | k
+                              span.font-secondary.f-12.f-w-500
+                                i.icon-arrow-down
+                                span -10%
+                            .bg-gradient 
+                              svg.stroke-icon.svg-fill
+                                use(href='../assets/svg/icon-sprite.svg#sale')
+                      .col-6 
+                        .card.small-widget 
+                          .card-body.success
+                            span.f-light Gross Profit
+                            .d-flex.align-items-end.gap-1
+                              h4 
+                                | $
+                                span.counter(data-target='3908') 0
+                              span.font-success.f-12.f-w-500
+                                i.icon-arrow-up
+                                span +80%
+                            .bg-gradient 
+                              svg.stroke-icon.svg-fill
+                                use(href='../assets/svg/icon-sprite.svg#profit')
+                  .col-xxl-3.col-md-5.col-sm-6.box-col-5 
+                    .appointment
+                      .card
+                        .card-header.card-no-border
+                          .header-top
+                            h5.m-0 Top Customer
+                        .card-body.pt-0
+                          .appointment-table.customer-table.table-responsive.custom-scrollbar
+                            table.table.table-bordernone
+                              tbody
+                                tr
+                                  td
+                                    img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/1.jpg',alt='user')
+                                  td.img-content-box
+                                    a(href="user-profile.html").f-w-500 Jane Cooper
+                                    span.f-light jane@gmail.com
+                                tr
+                                  td
+                                    img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/2.jpg',alt='user')
+                                  td.img-content-box
+                                    a(href="user-profile.html").f-w-500 Cameron Willia
+                                    span.f-light cameron@gmail.com
+                                tr
+                                  td
+                                    img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/9.jpg',alt='user')
+                                  td.img-content-box
+                                    a(href="user-profile.html").f-w-500 Floyd Miles
+                                    span.f-light floyd@gmail.com
+                                tr
+                                  td
+                                    img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/5.jpg',alt='user')
+                                  td.img-content-box
+                                    a(href="user-profile.html").f-w-500 Dianne Russell
+                                    span.f-light dianne@gmail.com
+                                tr
+                                  td
+                                    img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/3.jpg',alt='user')
+                                  td.img-content-box
+                                    a(href="user-profile.html").f-w-500 Guy Hawkins
+                                    span.f-light guy@gmail.com
+                  .col-xxl-4.col-sm-6.box-col-6.ord-xl-i.box-ord-1
+                    .card 
+                      .card-header.card-no-border
+                        .header-top
+                          h5.m-0 Orders This Month
+                          .card-header-right-icon
+                            .dropdown.icon-dropdown
+                              button#orderThisMonth.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='orderThisMonth')
+                                a.dropdown-item(href='#') This Month
+                                a.dropdown-item(href='#') Previous Month
+                                a.dropdown-item(href='#') Last 3 Months
+                                a.dropdown-item(href='#') Last 6 Months
+                      .card-body.pt-0
+                        .light-card.balance-card.d-inline-block
+                          h4.mb-0 $12,000 
+                            span.f-light.f-14 (15,080 To Goal)
+                        .order-wrapper 
+                          #order-goal
+                  .col-xxl-3.col-md-6.box-col-6.ord-xl-ii.box-ord-2
+                    .card 
+                      .card-header.card-no-border 
+                        .header-top
+                          h5 Monthly Profits
+                          .card-header-right-icon
+                            .dropdown.icon-dropdown
+                              button#monthlyProfit.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='monthlyProfit')
+                                a.dropdown-item(href='#!') This Month
+                                a.dropdown-item(href='#!') Previous Month
+                                a.dropdown-item(href='#!') Last 3 Months
+                                a.dropdown-item(href='#!') Last 6 Months
+                      .card-body.pt-0 
+                        .monthly-profit
+                          #profitmonthly
+                  .col-xxl-9.box-col-12.ord-xl-iii.box-ord-3
+                    .card.heading-space
+                      .card-header.card-no-border
+                        .header-top
+                          h5 Recent Transactions
+                          .card-header-right-icon
+                            .dropdown.icon-dropdown
+                              button#recentTransaction.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='recentTransaction')
+                                a.dropdown-item(href='#!') This Month
+                                a.dropdown-item(href='#!') Previous Month
+                                a.dropdown-item(href='#!') Last 3 Months
+                                a.dropdown-item(href='#!') Last 6 Months
+                      .card-body.px-0.pt-0.recent-transaction
+                        .recent-table.table-responsive.custom-scrollbar
+                          table.table#recent-transaction 
+                            thead 
+                              tr
+                                th  
+                                th Transaction ID
+                                th Date
+                                th Customers
+                                th Product
+                                th QTY
+                                th Payments
+                                th Total Amount
+                            tbody 
+                              tr
+                                td 
+                                td.f-w-500 #541285
+                                td 20 Feb 2025
+                                td Wade Warren
+                                td Samsung TV
+                                td 512
+                                td PayPal
+                                td $52.00
+                              tr
+                                td 
+                                td.f-w-500 #558964
+                                td 02 Jun 2025
+                                td Albert Flores
+                                td Spring Bed
+                                td 620
+                                td Gpay
+                                td $82.00
+                              tr
+                                td 
+                                td.f-w-500 #562100
+                                td 20 Sep 2025
+                                td Cody Fisher
+                                td Comfort Sofa 
+                                td 208
+                                td Credit Card
+                                td $45.87
+                              tr
+                                td 
+                                td.f-w-500 #968357
+                                td 16 Feb 2025
+                                td Esther Howard
+                                td Samsung TV
+                                td 754
+                                td PayPal
+                                td $44.00
+                              tr
+                                td 
+                                td.f-w-500 #545710
+                                td 10 Sep 2025
+                                td Cody Fisher
+                                td Comfort Sofa 
+                                td 500
+                                td Credit Card
+                                td $14.35
+                              tr
+                                td 
+                                td.f-w-500 #369451
+                                td 13 Aug 2025
+                                td Jenny Wilson
+                                td Long Dress
+                                td 212
+                                td Bank Transfer
+                                td $12.32
+                  .col-xxl-3.col-xl-4.col-md-6.box-col-4.ord-xl-iv.box-ord-4
+                    .card.purchase-card.discover
+                      img.img-fluid(src="../assets/images/dashboard-2/discover.png", alt="vector discover")
+                      .card-body.pt-3 
+                        h5.mb-1 Discover Pro
+                        p.f-light Advanced navigation system with traffic updates in real-time
+                        a.purchase-btn.btn.btn-hover-effect.btn-primary.f-w-500(href="https://1.envato.market/3GVzd" target="_blank") Update Now
+                  .col-xxl-4.col-xl-4.col-md-6.box-col-4.ord-xl-v.box-ord-5
+                    .card.visitor-card 
+                      .card-header.card-no-border
+                        .header-top
+                          h5.m-0 Website Traffic
+                            span.f-14.font-primary.f-w-500.ms-1
+                              svg.svg-fill.me-1
+                                use(href='../assets/svg/icon-sprite.svg#user-visitor')
+                              | (+2.8)
+                          .card-header-right-icon
+                            .dropdown.icon-dropdown
+                              button#visitorButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='visitorButton')
+                                a.dropdown-item(href='#') Today
+                                a.dropdown-item(href='#') Yesterday
+                                a.dropdown-item(href='#') This Week 
+                                a.dropdown-item(href='#') This Month
+                                a.dropdown-item(href='#') Previous Month
+                      .card-body.pt-0
+                        .visitors-container
+                          #visitor-chart
+                  .col-xxl-5.col-xl-4.box-col-4.ord-xl-vi.box-ord-6
+                    .card.recent-order
+                      .card-header.card-no-border
+                        .header-top
+                          h5.m-0 Recent Orders
+                      .card-body.pt-0 
+                        .recent-sliders
+                          .nav.nav-pills.recent-order-scroll.custom-scrollbar(id="v-pills-tab" role="tablist")
+                            a.active(href ="#!" id="v-pills-furniture-tab" data-bs-toggle="pill" data-bs-target="#v-pills-furniture" role="tab" aria-controls="v-pills-furniture" aria-selected="true").frame-box
+                              span(data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='Furniture') 
+                                span.frame-image
+                                  img(src="../assets/images/dashboard-2/order/1.png", alt="vector T-shirt")
+                            a(id="v-pills-sport-tab" href="#!" data-bs-toggle="pill" data-bs-target="#v-pills-sport" role="tab" aria-controls="v-pills-sport" aria-selected="false").frame-box
+                              span(data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='Sports')
+                                span.frame-image
+                                  img(src="../assets/images/dashboard-2/order/2.png", alt="vector television")
+                            a(id="v-pills-electronics-tab" href="#!" data-bs-toggle="pill" data-bs-target="#v-pills-electronics" role="tab" aria-controls="v-pills-electronics" aria-selected="false").frame-box
+                              span(data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='Electronics')
+                                span.frame-image
+                                  img(src="../assets/images/dashboard-2/order/3.png", alt="vector headphone")
+                            a(id="v-pills-jewelry-tab" href="#!" data-bs-toggle="pill" data-bs-target="#v-pills-jewelry" role="tab" aria-controls="v-pills-jewelry" aria-selected="false").frame-box
+                              span(data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='Jewelry')
+                                span.frame-image
+                                  img(src="../assets/images/dashboard-2/order/4.png", alt="vector chair")
+                            a(id="v-pills-cloth-tab" href="#!" data-bs-toggle="pill" data-bs-target="#v-pills-cloth" role="tab" aria-controls="v-pills-cloth" aria-selected="false").frame-box
+                              span(data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='Clothing')
+                                span.frame-image
+                                  img(src="../assets/images/dashboard-2/order/5.png", alt="vector lamp") 
+                            a(id="v-pills-shoes-tab" href="#!" data-bs-toggle="pill" data-bs-target="#v-pills-shoes" role="tab" aria-controls="v-pills-shoes" aria-selected="false").frame-box
+                              span(data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='shoes')
+                                span.frame-image
+                                  img(src="../assets/images/dashboard-2/order/7.png", alt="shoes") 
+                          .tab-content(id="v-pills-tabContent") 
+                            div.tab-pane.fade.show.active(id="v-pills-furniture" role="tabpanel") 
+                              .recent-table.table-responsive.custom-scrollbar.recent-items
+                                table.table 
+                                  thead 
+                                    tr 
+                                      th.c-light Item
+                                      th.c-light Qty
+                                      th.c-light Price
+                                      th.c-light Total Price
+                                  tbody 
+                                    tr 
+                                      td
+                                        div.product-content
+                                          .order-image
+                                            img(src="../assets/images/dashboard-2/order/sub-product/4.png", alt="t-shirt")
+                                          div 
+                                            h6.f-14.mb-0
+                                              a(href="order-history.html") Office chair
+                                            span.f-light.f-12 Id : #CFDE-2163
+                                      td.f-w-500 X1
+                                      td.f-w-500 $56.00
+                                      td.f-w-500 $100.00
+                                    tr 
+                                      td
+                                        div.product-content
+                                          .order-image
+                                            img(src="../assets/images/dashboard-2/order/sub-product/3.png", alt="t-shirt")
+                                          div 
+                                            h6.f-14.mb-0
+                                              a(href="order-history.html") Wooden table
+                                            span.f-light.f-12 Id : #CFDE-2780
+                                      td.f-w-500 X2
+                                      td.f-w-500 $156.00
+                                      td.f-w-500 $870.00
+                            div.tab-pane.fade(id="v-pills-sport" role="tabpanel")
+                              .recent-table.table-responsive.custom-scrollbar.recent-items
+                                table.table 
+                                  thead 
+                                    tr 
+                                      th.f-light Item
+                                      th.f-light Qty
+                                      th.f-light Price
+                                      th.f-light Total Price
+                                  tbody 
+                                    tr 
+                                      td
+                                        div.product-content
+                                          .order-image
+                                            img(src="../assets/images/dashboard-2/order/sub-product/5.png", alt="television")
+                                          div 
+                                            h6.f-14.mb-0
+                                              a(href="order-history.html") Rugby ball
+                                            span.f-light.f-12 Id : #CFDE-2163
+                                      td.f-w-500 X1
+                                      td.f-w-500 $56.00
+                                      td.f-w-500 $390.00
+                                    tr 
+                                      td
+                                        div.product-content
+                                          .order-image
+                                            img(src="../assets/images/dashboard-2/order/sub-product/6.png", alt="television")
+                                          div 
+                                            h6.f-14.mb-0
+                                              a(href="order-history.html") Soccer ball
+                                            span.f-light.f-12 Id : #CFDE-2780
+                                      td.f-w-500 X2
+                                      td.f-w-500 $100.00
+                                      td.f-w-500 $870.00
+                            div.tab-pane.fade(id="v-pills-electronics" role="tabpanel")
+                              .recent-table.table-responsive.custom-scrollbar.recent-items
+                                table.table 
+                                  thead 
+                                    tr 
+                                      th.f-light Item
+                                      th.f-light Qty
+                                      th.f-light Price
+                                      th.f-light Total Price
+                                  tbody 
+                                    tr 
+                                      td
+                                        div.product-content
+                                          .order-image
+                                            img(src="../assets/images/dashboard-2/order/sub-product/1.png", alt="headephones")
+                                          div 
+                                            h6.f-14.mb-0
+                                              a(href="order-history.html") Office clock
+                                            span.f-light.f-12 Id : #CFDE-2163
+                                      td.f-w-500 X1
+                                      td.f-w-500 $56.00
+                                      td.f-w-500 $100.00
+                                    tr 
+                                      td
+                                        div.product-content
+                                          .order-image
+                                            img(src="../assets/images/dashboard-2/order/sub-product/2.png", alt="headephones")
+                                          div 
+                                            h6.f-14.mb-0
+                                              a(href="order-history.html") Coffee maker
+                                            span.f-light.f-12 Id : #CFDE-2780
+                                      td.f-w-500 X2
+                                      td.f-w-500 $156.00
+                                      td.f-w-500 $100.00
+                            div.tab-pane.fade(id="v-pills-jewelry" role="tabpanel")
+                              .recent-table.table-responsive.custom-scrollbar.recent-items
+                                table.table 
+                                  thead 
+                                    tr 
+                                      th.f-light Item
+                                      th.f-light Qty
+                                      th.f-light Price
+                                      th.f-light Total Price
+                                  tbody 
+                                    tr 
+                                      td
+                                        div.product-content
+                                          .order-image
+                                            img(src="../assets/images/dashboard-2/order/sub-product/7.png", alt="chair")
+                                          div 
+                                            h6.f-14.mb-0
+                                              a(href="order-history.html") Thyst earring
+                                            span.f-light.f-12 Id : #CFDE-2163
+                                      td.f-w-500 X1
+                                      td.f-w-500 $48.00
+                                      td.f-w-500 $50.00
+                                    tr 
+                                      td
+                                        div.product-content
+                                          .order-image
+                                            img(src="../assets/images/dashboard-2/order/sub-product/8.png", alt="chair")
+                                          div 
+                                            h6.f-14.mb-0
+                                              a(href="order-history.html") Necklace
+                                            span.f-light.f-12 Id : #CFDE-2780
+                                      td.f-w-500 X2
+                                      td.f-w-500 $73.00
+                                      td.f-w-500 $75.00
+                            div.tab-pane.fade(id="v-pills-cloth" role="tabpanel")
+                              .recent-table.table-responsive.custom-scrollbar.recent-items
+                                table.table 
+                                  thead 
+                                    tr 
+                                      th.f-light Item
+                                      th.f-light Qty
+                                      th.f-light Price
+                                      th.f-light Total Price
+                                  tbody 
+                                    tr 
+                                      td
+                                        div.product-content
+                                          .order-image
+                                            img(src="../assets/images/dashboard-2/order/sub-product/9.png", alt="lamp")
+                                          div 
+                                            h6.f-14.mb-0
+                                              a(href="order-history.html") Woman short
+                                            span.f-light.f-12 Id : #CFDE-2163
+                                      td.f-w-500 X1
+                                      td.f-w-500 $20.00
+                                      td.f-w-500 $25.00
+                                    tr 
+                                      td
+                                        div.product-content
+                                          .order-image
+                                            img(src="../assets/images/dashboard-2/order/sub-product/10.png", alt="lamp")
+                                          div 
+                                            h6.f-14.mb-0
+                                              a(href="order-history.html") Summer t-shirt
+                                            span.f-light.f-12 Id : #CFDE-2780
+                                      td.f-w-500 X2
+                                      td.f-w-500 $70.00
+                                      td.f-w-500 $88.00
+                            div.tab-pane.fade(id="v-pills-shoes" role="tabpanel")
+                              .recent-table.table-responsive.custom-scrollbar.recent-items
+                                table.table 
+                                  thead 
+                                    tr 
+                                      th.c-light Item
+                                      th.c-light Qty
+                                      th.c-light Price
+                                      th.c-light Total Price
+                                  tbody 
+                                    tr 
+                                      td
+                                        div.product-content
+                                          .order-image
+                                            img(src="../assets/images/dashboard-2/order/sub-product/11.png", alt="lamp")
+                                          div 
+                                            h6.f-14.mb-0
+                                              a(href="order-history.html") Leather sandals
+                                            span.f-light.f-12 Id : #CFDE-2163
+                                      td.f-w-500 X1
+                                      td.f-w-500 $20.00
+                                      td.f-w-500 $25.00
+                                    tr 
+                                      td
+                                        div.product-content
+                                          .order-image
+                                            img(src="../assets/images/dashboard-2/order/sub-product/12.png", alt="lamp")
+                                          div 
+                                            h6.f-14.mb-0
+                                              a(href="order-history.html") Blue sneakers
+                                            span.f-light.f-12 Id : #CFDE-2780
+                                      td.f-w-500 X2
+                                      td.f-w-500 $70.00
+                                      td.f-w-500 $88.00
+              .col-xxl-2.col-xl-3.col-md-4.grid-ed-none.box-col-none.d-xxl-block.d-none
+                .card
+                  .card-header.card-no-border 
+                    h5 Top Categories
+                  .card-body.pt-0 
+                    ul.categories-list
+                      li.d-flex 
+                        .bg-light 
+                          img(src="../assets/images/dashboard-2/category/1.png", alt="vector burger") 
+                        div 
+                          h6.mb-0
+                            a(href="category.html") Food & Drinks
+                          span.f-light.f-12.f-w-500 (12,200)
+                      li.d-flex 
+                        .bg-light 
+                          img(src="../assets/images/dashboard-2/category/2.png", alt="vector furniture") 
+                        div 
+                          h6.mb-0
+                            a(href="category.html") Furniture
+                          span.f-light.f-12.f-w-500 (7,510)
+                      li.d-flex 
+                        .bg-light 
+                          img(src="../assets/images/dashboard-2/category/3.png", alt="vector grocery box") 
+                        div 
+                          h6.mb-0
+                            a(href="category.html") Grocery
+                          span.f-light.f-12.f-w-500 (15,475)
+                      li.d-flex 
+                        .bg-light 
+                          img(src="../assets/images/dashboard-2/category/4.png", alt="vector game remote") 
+                        div 
+                          h6.mb-0
+                            a(href="category.html") Electronics
+                          span.f-light.f-12.f-w-500 (27,840)
+                      li.d-flex 
+                        .bg-light 
+                          img(src="../assets/images/dashboard-2/category/5.png", alt="vector toys") 
+                        div 
+                          h6.mb-0
+                            a(href="category.html") Toys & Games
+                          span.f-light.f-12.f-w-500 (8,788)
+                      li.d-flex 
+                        .bg-light 
+                          img(src="../assets/images/dashboard-2/category/6.png", alt="vector monitor") 
+                        div 
+                          h6.mb-0
+                            a(href="category.html") Desktop
+                          span.f-light.f-12.f-w-500 (10,673)
+                      li.d-flex 
+                        .bg-light 
+                          img(src="../assets/images/dashboard-2/category/7.png", alt="vector mobile") 
+                        div 
+                          h6.mb-0
+                            a(href="category.html") Mobile & Accessories
+                          span.f-light.f-12.f-w-500 (5,129) 
+                    div.recent-activity.notification
+                      h5 Recent Activity
+                      ul 
+                        li.d-flex
+                          .activity-dot-primary
+                          .w-100.ms-3
+                            p.d-flex.justify-content-between.mb-2
+                              span.date-content.light-background 8th March, 2025 
+                            h6 Added New Items
+                              span.dot-notification
+                            span.f-light Its arms extended outward to reveal a padded, angled arm
+                            .recent-images  
+                              ul 
+                                li 
+                                  .recent-img-wrap
+                                    img(src="../assets/images/dashboard-2/product/1.png", alt="chair")
+                                li 
+                                  .recent-img-wrap
+                                    img(src="../assets/images/dashboard-2/product/2.png", alt="chair")
+                                li 
+                                  .recent-img-wrap
+                                    img(src="../assets/images/dashboard-2/product/3.png", alt="men t-shirt")
+                        li.d-flex
+                          .activity-dot-warning
+                          .w-100.ms-3
+                            p.d-flex.justify-content-between.mb-2
+                              span.date-content.light-background 2nd Sep, Today
+                            h6 Ankita Comments this Products
+                              span.dot-notification
+                            span It looks amazing in my room, arrived swiftly, and was simple to build
+                        li.d-flex
+                          .activity-dot-secondary
+                          .w-100.ms-3
+                            p.d-flex.justify-content-between.mb-2
+                              span.date-content.light-background 3nd Sep, 2024
+                            h6 Jack Purchase 
+                              span.dot-notification
+                            span It's the centre of attention in my room, and people always comment on it.
+                        li.d-flex
+                          .activity-dot-success
+                          .w-100.ms-3
+                            p.d-flex.justify-content-between.mb-2
+                              span.date-content.light-background 2nd Sep, Today
+                            h6 Jerry Comments this Products
+                              span.dot-notification
+                            span This couch was a recent buy, and I adore it!
+              .col-xxl-7.col-lg-8.col-md-7.box-col-8.ord-xl-vii.box-ord-7
+                .card
+                  .card-header.card-no-border
+                    .header-top
+                      h5 Order Overview
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#orderOverview.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='orderOverview')
+                            a.dropdown-item(href='#!') This Month
+                            a.dropdown-item(href='#!') Previous Month
+                            a.dropdown-item(href='#!') Last 3 Months
+                            a.dropdown-item(href='#!') Last 6 Months
+                  .card-body.pt-0
+                    .row.m-0.overall-card.overview-card
+                      .col-xl-9.col-md-8.col-sm-8.p-0.box-col-8.w-md-100                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                        .chart-right
+                          .row
+                            .col-xl-12
+                              .card-body.p-0
+                                ul.balance-data 
+                                  li
+                                    span.circle.bg-secondary
+                                    span.f-light.ms-1 Refunds
+                                  li
+                                    span.circle.bg-primary 
+                                    span.f-light.ms-1 Earning
+                                  li
+                                    span.circle.bg-success 
+                                    span.f-light.ms-1 Order
+                                .current-sale-container.order-container
+                                  #orderoverview.overview-wrapper
+                                  .back-bar-container 
+                                    #order-bar
+                      .col-xl-3.col-md-4.col-sm-4.p-0.box-col-4e.ds-md-none
+                        .row.g-sm-3.g-2
+                          .col-md-12
+                            .light-card.balance-card.widget-hover
+                              .svg-box
+                                svg.svg-fill
+                                  use(href='../assets/svg/icon-sprite.svg#orders')
+                              div 
+                                span.f-light Orders
+                                h6.mt-1.mb-0.counter(data-target='10098') 0
+                          .col-md-12
+                            .light-card.balance-card.widget-hover
+                              .svg-box
+                                svg.svg-fill
+                                  use(href='../assets/svg/icon-sprite.svg#expense')
+                              div 
+                                span.f-light Earning
+                                h6.mt-1.mb-0
+                                  | $
+                                  span.counter(data-target='12678') 0
+                          .col-md-12
+                            .light-card.balance-card.widget-hover
+                              .svg-box
+                                svg.svg-fill
+                                  use(href='../assets/svg/icon-sprite.svg#doller-return')
+                              div 
+                                span.f-light Refunds
+                                h6.mt-1.mb-0.counter(data-target='3001') 0  
+              .col-xxl-5.box-col-12
+                .card
+                  .card-header.card-no-border
+                    .header-top
+                      h5 Stock Report
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#stockReport.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='stockReport')
+                            a.dropdown-item(href='#!') This Month
+                            a.dropdown-item(href='#!') Previous Month
+                            a.dropdown-item(href='#!') Last 3 Months
+                            a.dropdown-item(href='#!') Last 6 Months
+                  .card-body.px-0.pt-0.stock-report
+                    .recent-table.table-responsive.custom-scrollbar
+                      table.table#stock-report 
+                        thead 
+                          tr 
+                            th Items
+                            th Product ID
+                            th QTY
+                            th Price
+                            th Status
+                        tbody
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                .img-border
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/14.png',alt='user')
+                                a(href="product-report.html").f-w-500 Shoes
+                            td #854129
+                            td 0 PCS
+                            td $513
+                            td
+                              button.btn.button-light-danger.txt-danger.f-w-500 Out of Stock
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                .img-border
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/15.png',alt='user')
+                                a(href="product-report.html").f-w-500 Couch
+                            td #245987
+                            td 95 PCS
+                            td $3061
+                            td
+                              button.btn.button-light-success.txt-success.f-w-500 In Stock
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                .img-border
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/16.png',alt='user')
+                                a(href="product-report.html").f-w-500 Bags
+                            td #357896
+                            td 45 PCS
+                            td $1256
+                            td
+                              button.btn.button-light-success.txt-success.f-w-500 In Stock
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                .img-border
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/24.png',alt='user')
+                                a(href="product-report.html").f-w-500 Watch
+                            td #589456
+                            td 0 PCS
+                            td $120
+                            td
+                              button.btn.button-light-danger.txt-danger.f-w-500 Out of Stock
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                .img-border
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/25.png',alt='user')
+                                a(href="product-report.html").f-w-500 Chair
+                            td #698789
+                            td 10 PCS
+                            td $1200
+                            td
+                              button.btn.button-light-success.txt-success.f-w-500 In Stock
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                .img-border
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/26.png',alt='user')
+                                a(href="product-report.html").f-w-500 Lamp
+                            td #120447
+                            td 0 PCS
+                            td $1200
+                            td
+                              button.btn.button-light-danger.txt-danger.f-w-500 Out of Stock
+                          
+              .col-xxl-5.col-md-6.box-col-6.ord-xl-ix.box-ord-9
+                .card
+                  .card-header.card-no-border
+                    .header-top
+                      h5 Best Sellers
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#bestSeller.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='bestSeller')
+                            a.dropdown-item(href='#!') This Month
+                            a.dropdown-item(href='#!') Previous Month
+                            a.dropdown-item(href='#!') Last 3 Months
+                            a.dropdown-item(href='#!') Last 6 Months
+                  .card-body.px-0.pt-0
+                    .seller-table.table-responsive.custom-scrollbar
+                      table.table#selling-table
+                        thead 
+                          tr
+                            th 
+                            th Sellers
+                            th Company 
+                            th Category
+                            th Earnings
+                        tbody 
+                          tr 
+                            td 
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/3.jpg',alt='user')
+                                a(href="seller-list.html").f-w-500 Wade Warren
+                            td Nexus
+                            td Electronics
+                            td $32547
+                          tr 
+                            td 
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/user/10.jpg',alt='user')
+                                a(href="seller-list.html").f-w-500 Jenny Wilson
+                            td Blaze
+                            td Clothing
+                            td $84206
+                          tr 
+                            td 
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/user/14.png',alt='user')
+                                a(href="seller-list.html").f-w-500 Guy Hawkins
+                            td SkyEdge
+                            td Beauty
+                            td $21059
+                          tr 
+                            td 
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard/user/6.jpg',alt='user')
+                                a(href="seller-list.html").f-w-500 Jacob Jones
+                            td Corp
+                            td Grocery
+                            td $23180
+                          tr 
+                            td 
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/user/3.jpg',alt='user')
+                                a(href="seller-list.html").f-w-500 Eleanor Pena
+                            td Zenith
+                            td Sports
+                            td $45278
+                          tr 
+                            td 
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/user/6.jpg',alt='user')
+                                a(href="seller-list.html").f-w-500 Marvin Lisa
+                            td Sparksy
+                            td Electronics
+                            td $78541
+                          tr 
+                            td 
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/user/12.png',alt='user')
+                                a(href="seller-list.html").f-w-500 Albert Flores
+                            td Nexus
+                            td Sports
+                            td $23416
+                          tr 
+                            td 
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/user/3.png',alt='user')
+                                a(href="seller-list.html").f-w-500 Cody Fisher
+                            td Spark
+                            td Clothing
+                            td $84206
+              .col-xxl-3.col-lg-4.box-col-4e.ord-xl-vii.col-md-5.box-ord-8
+                .card
+                  .card-header.card-no-border.pb-0
+                    .header-top
+                      h5 Payment Gateway Earnings
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#gatewayEarning.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='gatewayEarning')
+                            a.dropdown-item(href='#!') This Month
+                            a.dropdown-item(href='#!') Previous Month
+                            a.dropdown-item(href='#!') Last 3 Months
+                            a.dropdown-item(href='#!') Last 6 Months
+                  .card-body.payment-gateway
+                    .pay-box
+                      .common-flex.align-items-center
+                        .outer-line.border-primary
+                          .outer-svg-box.bg-light-primary
+                            svg.fill-primary
+                              use(href='../assets/svg/icon-sprite.svg#earning1')
+                        a(href="#!").f-w-500 PayPal
+                      span.text-end.txt-success +$420
+                    .pay-box
+                      .common-flex.align-items-center
+                        .outer-line.border-secondary
+                          .outer-svg-box.bg-light-secondary
+                            svg.fill-secondary
+                              use(href='../assets/svg/icon-sprite.svg#earning2')
+                        a(href="#!").f-w-500 Credit Card
+                      span.text-end.txt-danger -$250
+                    .pay-box
+                      .common-flex.align-items-center
+                        .outer-line.border-success
+                          .outer-svg-box.bg-light-success
+                            svg.fill-success
+                              use(href='../assets/svg/icon-sprite.svg#earning3')
+                        a(href="#!").f-w-500 Amazon Pay
+                      span.text-end.txt-success +$603
+                    .pay-box
+                      .common-flex.align-items-center
+                        .outer-line.border-info
+                          .outer-svg-box.bg-light-info
+                            svg.fill-info
+                              use(href='../assets/svg/icon-sprite.svg#earning4')
+                        a(href="#!").f-w-500 Cashback
+                      span.text-end.txt-success +$603
+                    .pay-box
+                      .common-flex.align-items-center
+                        .outer-line.border-warning
+                          .outer-svg-box.bg-light-warning
+                            svg.fill-warning
+                              use(href='../assets/svg/icon-sprite.svg#earning1')
+                        a(href="#!").f-w-500 PayPal
+                      span.text-end.txt-danger -$250
+                    .pay-box
+                      .common-flex.align-items-center
+                        .outer-line.border-danger
+                          .outer-svg-box.bg-light-danger
+                            svg.fill-danger
+                              use(href='../assets/svg/icon-sprite.svg#earning2')
+                        a(href="#!").f-w-500 Credit Card
+                      span.text-end.txt-success +$485
+              .col-xxl-4.col-md-6.box-col-6.ord-xl-x.box-ord-10
+                .card
+                  .card-header.card-no-border
+                    .header-top
+                      h5 Trending Products
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#treadingProduct.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='treadingProduct')
+                            a.dropdown-item(href='#!') This Month
+                            a.dropdown-item(href='#!') Previous Month
+                            a.dropdown-item(href='#!') Last 3 Months
+                            a.dropdown-item(href='#!') Last 6 Months
+                  .card-body.px-0.pt-0.treading-product
+                    .recent-table.table-responsive.custom-scrollbar
+                      table.table#treading-t-product
+                        thead 
+                          tr 
+                            th Product Name
+                            th Category
+                            th Sold
+                        tbody 
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/17.png',alt='user')
+                                a(href="list-products.html").f-w-500 iPhone 15P
+                            td Electronics
+                            td 1,500
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/18.png',alt='user')
+                                a(href="list-products.html").f-w-500 E2 Watch
+                            td Electronics
+                            td 3,851
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                .img-border
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/19.png',alt='user')
+                                a(href="list-products.html").f-w-500 Air Max1
+                            td Footwear
+                            td 4,540
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                .img-border
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/20.png',alt='user')
+                                a(href="list-products.html").f-w-500 Pink Coat
+                            td Clothing
+                            td 6,780
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/21.png',alt='user')
+                                a(href="list-products.html").f-w-500 Indoor Plants
+                            td Decors
+                            td 4,254
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/22.png',alt='user')
+                                a(href="list-products.html").f-w-500 Sunglass
+                            td Accessories
+                            td 3,452
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                .img-border
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/23.png',alt='user')
+                                a(href="list-products.html").f-w-500 Camera Stand
+                            td Accessories
+                            td 1,587
+                          tr 
+                            td
+                              .common-flex.align-items-center
+                                .img-border
+                                  img.img-fluid.rounded-circle(src='../assets/images/dashboard-2/order/sub-product/27.png',alt='user')
+                                a(href="list-products.html").f-w-500 Airpods Pro
+                            td Electronics
+                            td 1,256
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

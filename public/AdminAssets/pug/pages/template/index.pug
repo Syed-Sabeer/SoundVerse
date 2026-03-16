@@ -1,0 +1,631 @@
+- var page_Title = 'Default Dashboard';
+- var theme_customizer      = true;
+- var apex                  = true;
+- var sidebar               = true;
+- var scrollbar             = true;
+- var notify                = true;
+- var counter               = true;
+- var animate               = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var clock                 = true;
+- var dashboard_default     = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body(onload='startTime()')
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid         
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Default 
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Dashboard
+                    li.breadcrumb-item.active Default      
+          // Container-fluid starts
+          .container-fluid.default-dashboard
+            .row.widget-grid
+              .col-xxl-4.col-sm-6.box-col-6 
+                .card.profile-box
+                  .card-body
+                    .d-flex.media-wrapper.justify-content-between
+                      .flex-grow-1 
+                        .greeting-user
+                          h2.f-w-600 Welcome Emay Walter!
+                          p Here whats happing in your account today
+                          .whatsnew-btn
+                            a.btn.btn-outline-white(href="user-profile.html" target="_blank") View Profile
+                      div   
+                        .clockbox
+                          svg#clock(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600')
+                            g#face
+                              circle.circle(cx='300' cy='300' r='253.9')
+                              path.hour-marks(d='M300.5 94V61M506 300.5h32M300.5 506v33M94 300.5H60M411.3 107.8l7.9-13.8M493 190.2l13-7.4M492.1 411.4l16.5 9.5M411 492.3l8.9 15.3M189 492.3l-9.2 15.9M107.7 411L93 419.5M107.5 189.3l-17.1-9.9M188.1 108.2l-9-15.6')
+                              circle.mid-circle(cx='300' cy='300' r='16.2')
+                            g#hour
+                              path.hour-hand(d='M300.5 298V142')
+                              circle.sizing-box(cx='300' cy='300' r='253.9')
+                            g#minute
+                              path.minute-hand(d='M300.5 298V67')    
+                              circle.sizing-box(cx='300' cy='300' r='253.9')
+                            g#second
+                              path.second-hand(d='M300.5 350V55')
+                              circle.sizing-box(cx='300' cy='300' r='253.9')    
+                        .badge.f-10.p-0#txt
+                    .cartoon
+                      img.img-fluid(src="../assets/images/dashboard/cartoon.svg" alt="vector women with leptop") 
+              .col-xxl-auto.col-xl-3.col-sm-6.box-col-3 
+                .row  
+                  .col-xl-12 
+                    .card.widget-1
+                      .card-body
+                        .widget-content
+                          .widget-round.secondary
+                            .bg-round
+                              svg
+                                use(href='../assets/svg/icon-sprite.svg#c-revenue') 
+                              svg.half-circle.svg-fill
+                                use(href='../assets/svg/icon-sprite.svg#halfcircle')
+                          div 
+                            h4
+                              | $
+                              span.counter(data-target='45195') 0
+                            span.f-light Revenue
+                        div.font-success.f-w-500
+                          i.bookmark-search.me-1(data-feather='trending-up')
+                          span.txt-success +50%
+                    .col-xl-12 
+                      .card.widget-1
+                        .card-body
+                          .widget-content
+                            .widget-round.success
+                              .bg-round
+                                svg
+                                  use(href='../assets/svg/icon-sprite.svg#c-customer') 
+                                svg.half-circle.svg-fill
+                                  use(href='../assets/svg/icon-sprite.svg#halfcircle')
+                            div 
+                              h4 
+                                span.counter(data-target='845') 0
+                                | +
+                              span.f-light Customers
+                          div.font-danger.f-w-500
+                            i.bookmark-search.me-1(data-feather='trending-down')
+                            span.txt-danger -40%
+              .col-xxl-auto.col-xl-3.col-sm-6.box-col-3 
+                .row 
+                  .col-xl-12 
+                    .card.widget-1
+                      .card-body 
+                        .widget-content
+                          .widget-round.warning
+                            .bg-round
+                              svg
+                                use(href='../assets/svg/icon-sprite.svg#c-profit') 
+                              svg.half-circle.svg-fill
+                                use(href='../assets/svg/icon-sprite.svg#halfcircle')
+                          div 
+                            h4 
+                              span.counter(data-target='80') 0
+                              | %
+                            span.f-light Profit
+                        div.font-danger.f-w-500
+                          i.bookmark-search.me-1(data-feather='trending-down')
+                          span.txt-danger -20%
+                    .col-xl-12 
+                      .card.widget-1
+                        .card-body 
+                          .widget-content
+                            .widget-round.primary
+                              .bg-round
+                                svg.fill-primary
+                                  use(href='../assets/svg/icon-sprite.svg#c-invoice') 
+                                svg.half-circle.svg-fill
+                                  use(href='../assets/svg/icon-sprite.svg#halfcircle')
+                            div 
+                              h4.counter(data-target='10905') 0
+                              span.f-light Invoices
+                          div.font-success.f-w-500
+                            i.bookmark-search.me-1(data-feather='trending-up')
+                            span.txt-success +50%
+              .col-xxl-auto.col-xl-4.col-sm-6.box-col-4.ord-xl-5.box-ord-5
+                .card
+                  .card-header.card-no-border.pb-2
+                    .header-top 
+                      h5 Visitors
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#visitorButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='visitorButton')
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') Tomorrow
+                            a.dropdown-item(href='#!') Yesterday
+                  .card-body.visitor-chart.pt-0
+                    .common-flex
+                      h6
+                        span.counter(data-target='98736') 0
+                        | K
+                      .d-flex 
+                        p ( 
+                          span.txt-success.f-w-500.me-1 +0.4%
+                          | Than last week)
+                    #visitor_chart
+              .col-xxl-4.col-sm-6.ord-xl-1.ord-md-1.box-ord-1.box-col-6
+                .card 
+                  .card-header.card-no-border
+                    .header-top 
+                      h5 Top Customers
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#customerButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='customerButton')
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') Tomorrow
+                            a.dropdown-item(href='#!') Yesterday
+                  .card-body.main-customer-table.px-0.pt-0
+                    .recent-table.table-responsive.custom-scrollbar
+                      table.table#top-customer
+                        thead 
+                          tr
+                            th
+                            th Customers
+                            th Total Purchase
+                            th Total Price
+                        tbody 
+                          tr
+                            td 
+                            td
+                              .d-flex
+                                img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/2.jpg',alt='user')
+                                .img-content-box
+                                  a(href="products-list.html").f-w-500 Jane Cooper
+                                  p.mb-0.f-light #452140
+                              
+                            td 65 Purchases
+                            td.f-w-500.txt-success $970.00
+                          tr 
+                            td
+                            td
+                              .d-flex
+                                img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/3.jpg',alt='user')
+                                .img-content-box
+                                  a(href="products-list.html").f-w-500 Wade Warren
+                                  p.mb-0.f-light #844967
+                              
+                            td 42 Purchases
+                            td.f-w-500.txt-success $300.00
+                          tr
+                            td 
+                            td
+                              .d-flex
+                                img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/4.jpg',alt='user')
+                                .img-content-box
+                                  a(href="products-list.html").f-w-500 Guy Hawkins
+                                  p.mb-0.f-light #321489
+                              
+                            td 38 Purchases
+                            td.f-w-500.txt-success $900.00
+                          tr
+                            td 
+                            td
+                              .d-flex
+                                img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/5.jpg',alt='user')
+                                .img-content-box
+                                  a(href="products-list.html").f-w-500 Jake Spy
+                                  p.mb-0.f-light #954687
+                            td 23 Purchases
+                            td.f-w-500.txt-success $300.00
+                          tr
+                            td 
+                            td
+                              .d-flex
+                                img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard-9/user/1.png',alt='user')
+                                .img-content-box
+                                  a(href="products-list.html").f-w-500 Devin Jake
+                                  p.mb-0.f-light #562778
+                            td 12 Purchases
+                            td.f-w-500.txt-success $500.00
+                          tr
+                            td 
+                            td
+                              .d-flex
+                                img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard-9/user/2.png',alt='user')
+                                .img-content-box
+                                  a(href="products-list.html").f-w-500 Jacob Jones
+                                  p.mb-0.f-light #589356
+                            td 10 Purchases
+                            td.f-w-500.txt-success $420.00
+                          tr
+                            td 
+                            td
+                              .d-flex
+                                img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard-9/user/5.png',alt='user')
+                                .img-content-box
+                                  a(href="products-list.html").f-w-500 Jams Bone
+                                  p.mb-0.f-light #589657
+                            td 10 Purchases
+                            td.f-w-500.txt-success $440.00
+                          tr
+                            td 
+                            td
+                              .d-flex
+                                img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard-9/user/3.png',alt='user')
+                                .img-content-box
+                                  a(href="products-list.html").f-w-500 Mili Pais
+                                  p.mb-0.f-light #589654
+                            td 12 Purchases
+                            td.f-w-500.txt-success $240.00
+
+              .col-xxl-5.col-lg-6.box-col-6.ord-xl-2.ord-md-3.box-ord-2
+                .card
+                  .card-header.card-no-border
+                    .header-top 
+                      h5 Sales Statistical Overview
+                      .card-header-right-icon
+                        .dropdown.custom-dropdown
+                          button.btn.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                            | Year
+                          ul.dropdown-menu
+                            li
+                              a.dropdown-item(href='#!') Day
+                            li
+                              a.dropdown-item(href='#!') Month
+                            li
+                              a.dropdown-item(href='#!') Year
+                  .card-body.pt-0
+                    .row.m-0.overall-card
+                      .col-12.p-0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                        .chart-right
+                          .row
+                            .col-xl-12
+                              .card-body.p-0.statistical-card
+                                ul.d-flex.m-b-15
+                                  li
+                                    h5.counter(data-target='19897') 0
+                                    span.f-light Total Cost
+                                  li
+                                    h5 
+                                      | $
+                                      span.counter(data-target='849058') 0
+                                    span.f-light Total Revenue
+                                .current-sale-container
+                                  #chart-currently
+
+              .col-xl-3.col-md-6.ord-xl-3.ord-md-4.box-ord-3
+                .card.monthly-header 
+                  .card-header.card-no-border
+                    .header-top 
+                      h5 Monthly Target
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#monthlyButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='monthlyButton')
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') Tomorrow
+                            a.dropdown-item(href='#!') Yesterday
+                  .card-body  
+                    .monthly-target
+                      #monthly_target.position-relative
+                    .target-content
+                      p Revenue Surges! Today's earnings soar to $3653, marking an impressive uptick from last month. Keep the momentum going!
+                      .common-box
+                        ul.common-flex
+                          li
+                            h6 Revenue
+                            span.common-space.badge.badge-light-success 
+                              i.me-1(data-feather='trending-up')
+                              | $20k
+                          li
+                            h6 Target
+                            span.common-space.badge.badge-light-danger
+                              i.me-1(data-feather='trending-down')
+                              | $16k
+                          li
+                            h6 Today
+                            span.common-space.badge.badge-light-success
+                              i.me-1(data-feather='trending-up')
+                              | $1.6k
+              .col-xl-5.col-md-6.ord-xl-4.ord-md-5.box-ord-4
+                .card.activity-log.notification.main-timeline
+                  .card-header.card-no-border
+                    .header-top 
+                      h5 Activity Log 
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#activityButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='activityButton')
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') Tomorrow
+                            a.dropdown-item(href='#!') Yesterday
+                  .card-body.pt-0.dark-timeline.basic-timeline
+                    ul 
+                      li.d-flex
+                        .timeline-dot-primary
+                        .w-100.ms-3
+                          .d-flex.justify-content-between.align-items-center
+                            p.mb-0.f-16.f-w-500 Brooklyn Simmons
+                              span.f-w-400 (Commented:
+                                a(href="#!") &nbsp;NFT App
+                                | )
+                            span.c-light 7:00 AM 
+                          p.mb-0.f-light.pb-1 This smithe design looks great...
+                          p.date-content.p-0 22 Feb 2024
+                      li.d-flex
+                        .timeline-dot-secondary
+                        .w-100.ms-3
+                          .d-flex.justify-content-between.align-items-center
+                            p.mb-0.f-16.f-w-500 Leslie Alexander
+                              span.f-w-400 (Shared images:
+                                a(href="#!") &nbsp; Barkha
+                                | )
+                            span.c-light 5:12 AM 
+                          p.mb-0.f-light.pb-1 Food Delivery App figma &amp; Ai...
+                          ul.common-flex.pb-1
+                            li
+                              img.img-fluid(src="../assets/images/dashboard/bg-1.png", alt="background")
+                            li
+                              img.img-fluid(src="../assets/images/dashboard/bg-2.png", alt="background")
+                            li
+                              img.img-fluid(src="../assets/images/dashboard/bg-3.png", alt="background")
+                          p.date-content.p-0 15 Feb 2024
+                      li.d-flex
+                        .timeline-dot-success
+                        .w-100.ms-3
+                          .d-flex.justify-content-between.align-items-center
+                            p.mb-0.f-16.f-w-500 Kristin Watson 
+                              span.f-w-400 (Add new screen:  
+                                a(href="#!") &nbsp;Cuba Admin
+                                | )
+                            span.c-light 7:00 AM 
+                          p.mb-0.f-light.pb-1 Make sure your AI file is cloud storage...
+                          p.date-content.p-0 10 Jan 2024
+              .col-xxl-7.col-lg-8.ord-xl-6.ord-md-6.box-ord-6.box-col-8e
+                .card
+                  .card-header.card-no-border
+                    .header-top 
+                      h5 Recent Orders
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#recentButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='recentButton')
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') Tomorrow
+                            a.dropdown-item(href='#!') Yesterday
+                  .card-body.px-0.pt-0.common-option
+                    .recent-table.table-responsive.currency-table.recent-order-table.custom-scrollbar 
+                      table.table#main-recent-order
+                        thead 
+                          tr
+                            th
+                            th Product Name
+                            th Customers
+                            th Qty
+                            th Total Price
+                            th Order Date
+                            th Status
+                        tbody 
+                          tr 
+                            td
+                            td
+                              .d-flex.align-items-center.gap-2
+                                .currency-icon.warning
+                                  img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/16.png", alt="")
+                                div 
+                                  a(href="product-details.html").f-14.mb-0.f-w-500.c-light Bag
+                                  p.c-o-light #452140 
+                            td Jenny Wilson
+                            td 2 PCS
+                            td $2,854
+                            td 16 Jan,2024
+                            td 
+                              button.btn.button-light-success.txt-success.f-w-500 Delivered
+                          tr
+                            td
+                            td
+                              .d-flex.align-items-center.gap-2
+                                .currency-icon.warning
+                                  img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/25.png", alt="")
+                                div 
+                                  a(href="product-details.html").f-14.mb-0.f-w-500.c-light Sofa
+                                  p.c-o-light #844967
+                            td Esther Howard
+                            td 1 PCS
+                            td $9,943
+                            td 21 Feb,2024
+                            td 
+                              button.btn.button-light-warning.txt-warning.f-w-500 In Progress
+                          tr
+                            td
+                            td
+                              .d-flex.align-items-center.gap-2
+                                .currency-icon.warning
+                                  img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/26.png", alt="")
+                                div 
+                                  a(href="product-details.html").f-14.mb-0.f-w-500.c-light Lamp
+                                  p.c-o-light #321489
+                            td Darrell Steward
+                            td 1 PCS
+                            td $8,195
+                            td 09 Mar,2024
+                            td 
+                              button.btn.button-light-info.txt-info.f-w-500 Pending
+                          tr
+                            td
+                            td
+                              .d-flex.align-items-center.gap-2
+                                .currency-icon.warning
+                                  img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/24.png", alt="")
+                                div 
+                                  a(href="product-details.html").f-14.mb-0.f-w-500.c-light Watch
+                                  p.c-o-light #954687
+                            td Dianne Russell
+                            td 3 PCS
+                            td $1,706
+                            td 14 Apr,2024
+                            td 
+                              button.btn.button-light-danger.txt-danger.f-w-500 Canceled
+                          tr
+                            td
+                            td
+                              .d-flex.align-items-center.gap-2
+                                .currency-icon.warning
+                                  img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/6.png", alt="")
+                                div 
+                                  a(href="product-details.html").f-14.mb-0.f-w-500.c-light Football
+                                  p.c-o-light #896748
+                            td Darrell Steward
+                            td 2 PCS
+                            td $7,580
+                            td 14 Apr,2024
+                            td 
+                              button.btn.button-light-danger.txt-danger.f-w-500 Canceled
+                          tr
+                            td
+                            td
+                              .d-flex.align-items-center.gap-2
+                                .currency-icon.warning
+                                  img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/10.png", alt="")
+                                div 
+                                  a(href="product-details.html").f-14.mb-0.f-w-500.c-light T-shirt
+                                  p.c-o-light #321489
+                            td Darrell Steward
+                            td 1 PCS
+                            td $8,195
+                            td 09 Mar,2024
+                            td 
+                              button.btn.button-light-info.txt-info.f-w-500 Pending
+                          tr
+                            td
+                            td
+                              .d-flex.align-items-center.gap-2
+                                .currency-icon.warning
+                                  img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/11.png", alt="")
+                                div 
+                                  a(href="product-details.html").f-14.mb-0.f-w-500.c-light Sleeper
+                                  p.c-o-light #452140 
+                            td Courtney Henry
+                            td 2 PCS
+                            td $2,854
+                            td 16 Jan,2024
+                            td 
+                              button.btn.button-light-success.txt-success.f-w-500 Delivered
+                          tr
+                            td
+                            td
+                              .d-flex.align-items-center.gap-2
+                                .currency-icon.warning
+                                  img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/14.png", alt="")
+                                div 
+                                  a(href="product-details.html").f-14.mb-0.f-w-500.c-light Shoes
+                                  p.c-o-light #844967
+                            td Esther Howard
+                            td 1 PCS
+                            td $9,943
+                            td 21 Feb,2024
+                            td 
+                              button.btn.button-light-warning.txt-warning.f-w-500 In Progress
+              .col-xxl-3.col-lg-4.col-sm-6.box-col-4.ord-xl-7.ord-md-2.box-ord-7
+                .card.buy-card
+                  img.img-fluid(src="../assets/images/dashboard/purchase1.png", alt="vector mens with laptop")
+                  .card-body
+                    h6.mb-3 Buy 
+                      a.txt-info(href="#!") Pro Account 
+                      | to Explore Premium Features
+                    a.purchase-btn.btn.btn-primary.btn-hover-effect.f-w-500(href="https://1.envato.market/3GVzd" target="_blank") Buy Now
+              .col-xxl-5.col-lg-6.ord-xl-9.ord-md-7.box-ord-7.box-col-6
+                .card.sales-report
+                  .card-header.card-no-border
+                    .header-top 
+                      h5 Sales Report
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#salesButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='salesButton')
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') Tomorrow
+                            a.dropdown-item(href='#!') Yesterday
+                  .card-body.pt-0 
+                    ul.balance-data 
+                      li
+                        span.circle.bg-primary
+                        span.c-light.ms-1 Orders
+                      li
+                        span.circle.bg-warning 
+                        span.c-light.ms-1 Earnings
+                      li
+                        span.circle.bg-secondary 
+                        span.c-light.ms-1 Refunds
+                    #sale_report
+              .col-xxl-4.col-lg-6.ord-xl-10.ord-md-8.box-ord-7.box-col-6
+                .card
+                  .card-header.card-no-border
+                    .header-top 
+                      h5 Manage Appointments
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#manageButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='manageButton')
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') Tomorrow
+                            a.dropdown-item(href='#!') Yesterday
+                  .card-body.pt-0
+                    ul.appointments-wrapper
+                      li.d-flex.align-items-start
+                        span 12:30
+                        .bg-lighter-primary
+                        .main-box
+                          div.mb-2 
+                            span Participating Meeting
+                            span.c-o-light There are many variations of passages available
+                            span.txt-primary 2:00 PM - 4:30 PM
+                          div
+                            button.btn.btn-primary General
+                      li.d-flex.align-items-start
+                        span 11:30
+                        .bg-lighter-warning
+                        .main-box
+                          div 
+                            span Customer Support issues
+                      li.d-flex.align-items-start
+                        span 10:25
+                        .bg-lighter-dark
+                        .main-box
+                          div 
+                            span Read the report
+                      li.d-flex.align-items-start
+                        span 09:00
+                        .bg-lighter-success
+                        .main-box
+                          div 
+                            span Development issue #26
+          // Container-fluid Ends
+        include ../../components/footer        
+    include ../../components/footer-files

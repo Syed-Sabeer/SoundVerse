@@ -1,0 +1,936 @@
+- var page_Title = 'Project List';
+- var theme_customizer      = true;
+- var apex                  = true;
+- var sidebar               = true;
+- var scrollbar             = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var apexmoment            = true;
+- var tooltip               = true;
+- var project_stat          = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.default-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper.default-menu.default-menu
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3 
+                    | Project List
+
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Projects
+                    li.breadcrumb-item.active Project List
+          // Container-fluid starts
+          .container-fluid
+            .row.project-cards
+              .col-md-12.project-list
+                .card
+                  .card-header
+                    .header-top
+                      h5.m-0 Projects Overview
+                  .card-body
+                    .row.g-3 
+                      .col-xxl-3.col-sm-6.box-col-6
+                        .main-card-box.bg-10-primary.h-100
+                          .p-20.main-cost-performance
+                            h5 Project Cost Performance
+                            .common-space.p-t-10
+                              div
+                                .cost-performance-wrapper
+                                  #cost-performance
+                              .cost-right-data
+                                ul 
+                                  li
+                                    h6 $45.764
+                                    span Total Budget
+                                  li 
+                                    h6 $85.490
+                                    span Actual Cost
+                      .col-xxl-3.col-sm-6.box-col-6
+                        .main-card-box.bg-10-secondary.h-100
+                          .p-20.common-space
+                            div
+                              h5 8.63
+                              span.c-o-light Highlights Rating
+                            .project-right-icon.bg-10-secondary
+                              i.fa-solid.fa-thumbs-up.fa-fade.txt-secondary
+                          .highlight-content
+                            .common-space
+                              span.f-w-500 Avg. Client Rate
+                              div 
+                                i.txt-success(data-feather='trending-up')
+                                span.f-w-500 7.8 / 10
+                            .common-space
+                              span.f-w-500 Avg. Marketplace Rate
+                              div 
+                                i.txt-danger(data-feather='trending-down')
+                                span.f-w-500 6.8 / 10
+                      .col-xxl-3.col-sm-6.box-col-6
+                        .main-card-box.bg-10-success.h-100
+                          .p-20.common-space
+                            div
+                              h5 56
+                              span.c-o-light Professionals Team
+                            .project-right-icon.bg-10-success
+                              i.fa-solid.fa-user.fa-fade.txt-success
+                          .p-20
+                            h6.mb-sm-3.mb-2 View Team Members
+                            ul.common-f-start
+                              li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Marley Ford')
+                                  img.common-circle(src="../assets/images/dashboard-11/user/3.jpg", alt="user")
+                              li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Wilson')
+                                  img.common-circle(src="../assets/images/dashboard-11/user/7.jpg", alt="user")
+                              li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jessica Anderson')
+                                  img.common-circle(src="../assets/images/dashboard-11/user/8.jpg", alt="user")
+                              li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Ford Stoll')
+                                  img.common-circle(src="../assets/images/dashboard-11/user/9.jpg", alt="user")
+                              li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Davis Jone')
+                                  img.common-circle(src="../assets/images/dashboard-11/user/1.jpg", alt="user")
+                              li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='40+ More') 
+                                  .common-circle.bg-lighter-secondary 40+
+                      .col-xxl-3.col-sm-6.box-col-6
+                        .main-card-box.bg-10-warning.h-100
+                          .p-20.common-space
+                            div
+                              h5 153
+                              span.c-o-light Total Projects
+                            .project-right-icon.bg-10-warning
+                              i.fa-solid.fa-file-pen.fa-fade.txt-warning
+                          .project-list-card
+                            .common-space
+                              span.f-w-500 Pending
+                              span 27
+                            .common-space 
+                              span.f-w-500 Progress
+                              span 48
+                            .common-space
+                              span.f-w-500 Completed
+                              span 78
+              .col-12 
+                .card.p-3
+                  .common-space.project-tabs
+                    ul#top-tab.nav.nav-tabs.border-tab(role='tablist')
+                      li.nav-item
+                        a#top-home-tab.nav-link.active(data-bs-toggle='tab', href='#top-home', role='tab', aria-controls='top-home', aria-selected='true')
+                          i.fa-solid.fa-bullseye
+                          | All
+                      li.nav-item
+                        a#progress-top-tab.nav-link(data-bs-toggle='tab', href='#top-progress', role='tab', aria-controls='top-progress', aria-selected='false')
+                          i.fa-solid.fa-bars-progress
+                          | In Progress
+                      li.nav-item
+                        a#pending-top-tab.nav-link(data-bs-toggle='tab', href='#top-pending', role='tab', aria-controls='top-pending', aria-selected='false')
+                          i.fa-regular.fa-hourglass-half
+                          | Pending
+                      li.nav-item
+                        a#completed-top-tab.nav-link(data-bs-toggle='tab', href='#top-completed', role='tab', aria-controls='top-completed', aria-selected='false')
+                          i.fa-solid.fa-circle-check
+                          | Completed
+                    a.btn.btn-primary(href="projectcreate.html" target="_blank")
+                      i.fa-solid.fa-plus
+                      |  Add Project  
+              .col-sm-12
+                .card
+                  .card-body.projects-wrapper
+                    #top-tabContent.tab-content
+                      #top-home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='top-home-tab')
+                        .row.g-4
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-primary
+                                  .header-top
+                                      span.badge.badge-light-primary Pending
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 06 Nov, 2025
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/1.png", alt="dashboard")
+                                        div
+                                          h6 CRM Dashboard
+                                          span Create a Brand logo design for a mofi admin.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 40%
+                                    .progress
+                                      .progress-bar.bg-primary(style='width: 40%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Alexis Taylor')
+                                              img.rounded-circle(src="../assets/images/dashboard/user/10.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Andrew Price')
+                                              img.rounded-circle(src="../assets/images/dashboard/user/11.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Emily Park') 
+                                              .common-circle.bg-lighter-warning E
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Caryl Kauth')
+                                              img.rounded-circle(src="../assets/images/dashboard/user/1.jpg", alt="user")
+                                        p.mb-0 Budget 
+                                          span $845,540.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-success
+                                  .header-top
+                                      span.badge.badge-light-success Completed
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 10 Mar, 2025
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/2.png", alt="application")
+                                        div
+                                          h6 Chat Application
+                                          span Create a chat application for business messaging needs.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 100%
+                                    .progress
+                                      .progress-bar.bg-success(style='width: 100%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Caleb Rivera')
+                                            img.rounded-circle(src="../assets/images/dashboard/user/12.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jenny Wilson')
+                                            img.rounded-circle(src="../assets/images/dashboard/user/2.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Olivia Gor')
+                                            img.rounded-circle(src="../assets/images/dashboard/user/13.jpg", alt="user")
+                                        p.mb-0 Budget 
+                                          span $348,940.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-warning
+                                  .header-top
+                                      span.badge.badge-light-warning In Progress
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 12 July, 2023
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/3.png", alt="landing page")
+                                        div
+                                          h6 Redesign - Landing page
+                                          span Resign a landing page design. as per abc minimal design.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 60%
+                                    .progress
+                                      .progress-bar.bg-warning(style='width: 60%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Levine Raven')
+                                            img.rounded-circle(src="../assets/images/dashboard-11/user/2.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Davis Jone')
+                                            img.rounded-circle(src="../assets/images/dashboard-11/user/12.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jessica Anderson')
+                                              img.rounded-circle(src="../assets/images/dashboard-9/user/2.png", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Dashiell Wolfe')
+                                              img.rounded-circle(src="../assets/images/dashboard-9/user/5.png", alt="user")
+                                        p.mb-0 Budget 
+                                          span $753,759.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-primary
+                                  .header-top
+                                      span.badge.badge-light-primary Pending
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 10 Feb, 2023
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/4.png", alt="meeting")
+                                        div
+                                          h6 Client Meeting
+                                          span Meeting about share web all live link.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 20%
+                                    .progress
+                                      .progress-bar.bg-primary(style='width: 20%')
+                                    .project-bottom.common-space
+                                      ul.common-f-start
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Thomas Jones')
+                                          img.rounded-circle(src="../assets/images/dashboard-9/user/1.png", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Karen Jones') 
+                                          .common-circle.bg-lighter-dark K
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Elizabeth Williams')
+                                          img.rounded-circle(src="../assets/images/dashboard-9/user/3.png", alt="user")  
+                                      p.mb-0 Budget 
+                                        span $159,948.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-warning
+                                  .header-top
+                                      span.badge.badge-light-warning In Progress
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 09 Feb, 2025
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/5.png", alt="landing page")
+                                        div
+                                          h6 Makeover-Landing page
+                                          span Create landing page in design guidelines.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 50%
+                                    .progress
+                                      .progress-bar.bg-warning(style='width: 50%')
+                                    .project-bottom.common-space
+                                      ul.common-f-start
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Wilson')
+                                          img.rounded-circle(src="../assets/images/dashboard-11/user/2.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Richard Taylor')
+                                          img.rounded-circle(src="../assets/images/dashboard-11/user/1.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Linda Brown') 
+                                          .common-circle.bg-lighter-danger L
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jessica Anderson')
+                                          img.rounded-circle(src="../assets/images/dashboard-11/user/8.jpg", alt="user") 
+                                      p.mb-0 Budget 
+                                        span $987,720.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-primary
+                                  .header-top
+                                      span.badge.badge-light-primary Pending
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 14 May, 2025
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/6.png", alt="project")
+                                        div
+                                          h6 Sales Project
+                                          span Create a chat application for business messaging needs.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 70%
+                                    .progress
+                                      .progress-bar.bg-primary(style='width: 70%')
+                                    .project-bottom.common-space
+                                      ul.common-f-start
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Marley Ford')
+                                          img.rounded-circle(src="../assets/images/dashboard-11/user/10.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Gray Curran')
+                                          img.rounded-circle(src="../assets/images/dashboard-11/user/9.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Yarrow  Wix') 
+                                          .common-circle.bg-lighter-info Y
+                                      p.mb-0 Budget 
+                                        span $821,961.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-success
+                                  .header-top
+                                      span.badge.badge-light-success Completed
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 27 Oct, 2025
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/7.png", alt="application")
+                                        div
+                                          h6 Grocery App
+                                          span smooth purchasing journey and effective delivery options.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 100%
+                                    .progress
+                                      .progress-bar.bg-success(style='width: 100%')
+                                    .project-bottom.common-space
+                                      ul.common-f-start
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Calista Rivers')
+                                          img.rounded-circle(src="../assets/images/dashboard/user/3.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jasper Nightingale')
+                                          img.rounded-circle(src="../assets/images/dashboard/user/4.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Seraphina Evergreen') 
+                                          .common-circle.bg-lighter-primary S
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Caspian Wilde')
+                                          img.rounded-circle(src="../assets/images/dashboard/user/5.jpg", alt="user")
+                                      p.mb-0 Budget 
+                                        span $951,675.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-warning
+                                  .header-top
+                                      span.badge.badge-light-warning In Progress
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 02 Feb, 2025
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/9.png", alt="landing page")
+                                        div
+                                          h6 NFT Website
+                                          span Explore our NFT marketplace to find digital assets.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 75%
+                                    .progress
+                                      .progress-bar.bg-warning(style='width: 75%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Daxton Creed')
+                                            .common-circle.bg-lighter-primary D
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Marigold Luna')
+                                            .common-circle.bg-lighter-warning M
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Charles Rodriguez')
+                                              img.rounded-circle(src="../assets/images/user/14.png", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Hernandez')
+                                              img.rounded-circle(src="../assets/images/user/3.png", alt="user")
+                                        p.mb-0 Budget 
+                                          span $753,759.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-success
+                                  .header-top
+                                      span.badge.badge-light-success Completed
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 28 Jan, 2025
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/10.png", alt="application")
+                                        div
+                                          h6 Sales management 
+                                          span Precise objectives and deliver exceptional performance
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 35
+                                    .progress
+                                      .progress-bar.bg-success(style='width: 35%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Atlas Stone')
+                                            img.rounded-circle(src="../assets/images/user/12.png", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Oceana Meridian')
+                                            img.rounded-circle(src="../assets/images/user/10.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jett Maverick')
+                                            .common-circle.bg-lighter-primary J
+                                        p.mb-0 Budget 
+                                          span $652,444.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-warning
+                                  .header-top
+                                      span.badge.badge-light-warning In Progress
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 28 Nov, 2025
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/12.png", alt="landing page")
+                                        div
+                                          h6 Fish Mobile App
+                                          span Real-time tracking, and fishing advice.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 87%
+                                    .progress
+                                      .progress-bar.bg-warning(style='width: 87%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Xander Wilde')
+                                            .common-circle.bg-lighter-secondary X
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Charles Rodriguez')
+                                              img.rounded-circle(src="../assets/images/dashboard-11/user/5.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Zenith Nova')
+                                            .common-circle.bg-lighter-info Z
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Hernandez')
+                                              img.rounded-circle(src="../assets/images/dashboard-11/user/6.jpg", alt="user")
+                                        p.mb-0 Budget 
+                                          span $241,989.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-success
+                                  .header-top
+                                      span.badge.badge-light-success Completed
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 03 Sep, 2025
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/11.png", alt="application")
+                                        div
+                                          h6 Nursery App
+                                          span Correspondence and monitor your child's development.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 25
+                                    .progress
+                                      .progress-bar.bg-success(style='width: 25%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Kairos Frost') 
+                                            .common-circle.bg-lighter-dark K
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Oceana Meridian')
+                                            img.rounded-circle(src="../assets/images/user/2.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Ember Wren')
+                                            .common-circle.bg-lighter-primary E
+                                        p.mb-0 Budget 
+                                          span $652,444.00
+
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-primary
+                                  .header-top
+                                      span.badge.badge-light-primary Pending
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 08 Nov, 2025
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/8.png", alt="e-commerce web")
+                                        div
+                                          h6 E-commerce Web
+                                          span E-commerce is focusing on optimizing.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 80%
+                                    .progress
+                                      .progress-bar.bg-primary(style='width: 80%')
+                                    .project-bottom.common-space
+                                      ul.common-f-start
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Joseph Garcia')
+                                          img.rounded-circle(src="../assets/images/avtar/16.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Elizabeth Davis')
+                                          img.rounded-circle(src="../assets/images/avtar/3.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Karen Moore') 
+                                          .common-circle.bg-lighter-warning K
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Robert Williams')
+                                          .common-circle.bg-lighter-danger R
+                                      p.mb-0 Budget 
+                                        span $400,548.00
+                          
+
+                      #top-progress.tab-pane.fade(role='tabpanel', aria-labelledby='progress-top-tab')
+                        .row.g-4
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-warning
+                                  .header-top
+                                      span.badge.badge-light-warning In Progress
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 12 July, 2023
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/3.png", alt="landing page")
+                                        div
+                                          h6 Redesign - Landing page
+                                          span Resign a landing page design. as per abc minimal design.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 60%
+                                    .progress
+                                      .progress-bar.bg-warning(style='width: 60%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Levine Raven')
+                                            img.rounded-circle(src="../assets/images/dashboard-11/user/2.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Davis Jone')
+                                            img.rounded-circle(src="../assets/images/dashboard-11/user/12.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jessica Anderson')
+                                              img.rounded-circle(src="../assets/images/dashboard-9/user/2.png", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Dashiell Wolfe')
+                                              img.rounded-circle(src="../assets/images/dashboard-9/user/5.png", alt="user")
+                                        p.mb-0 Budget 
+                                          span $753,759.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-warning
+                                  .header-top
+                                      span.badge.badge-light-warning In Progress
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 09 Feb, 2025
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/5.png", alt="landing page")
+                                        div
+                                          h6 Makeover-Landing page
+                                          span Create landing page in design guidelines.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 50%
+                                    .progress
+                                      .progress-bar.bg-warning(style='width: 50%')
+                                    .project-bottom.common-space
+                                      ul.common-f-start
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Wilson')
+                                          img.rounded-circle(src="../assets/images/dashboard-11/user/2.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Richard Taylor')
+                                          img.rounded-circle(src="../assets/images/dashboard-11/user/1.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Linda Brown') 
+                                          .common-circle.bg-lighter-danger L
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jessica Anderson')
+                                          img.rounded-circle(src="../assets/images/dashboard-11/user/8.jpg", alt="user") 
+                                      p.mb-0 Budget 
+                                        span $987,720.00 
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-warning
+                                  .header-top
+                                      span.badge.badge-light-warning In Progress
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 02 Feb, 2025
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/9.png", alt="landing page")
+                                        div
+                                          h6 NFT Website
+                                          span Explore our NFT marketplace to find digital assets.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 75%
+                                    .progress
+                                      .progress-bar.bg-warning(style='width: 75%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Daxton Creed')
+                                            .common-circle.bg-lighter-primary D
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Marigold Luna')
+                                            .common-circle.bg-lighter-warning M
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Charles Rodriguez')
+                                              img.rounded-circle(src="../assets/images/user/14.png", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Hernandez')
+                                              img.rounded-circle(src="../assets/images/user/3.png", alt="user")
+                                        p.mb-0 Budget 
+                                          span $753,759.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-warning
+                                  .header-top
+                                      span.badge.badge-light-warning In Progress
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 28 Nov, 2025
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/12.png", alt="landing page")
+                                        div
+                                          h6 Fish Mobile App
+                                          span Real-time tracking, and fishing advice.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 87%
+                                    .progress
+                                      .progress-bar.bg-warning(style='width: 87%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Xander Wilde')
+                                            .common-circle.bg-lighter-secondary X
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Charles Rodriguez')
+                                              img.rounded-circle(src="../assets/images/dashboard-11/user/5.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Zenith Nova')
+                                            .common-circle.bg-lighter-info Z
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Hernandez')
+                                              img.rounded-circle(src="../assets/images/dashboard-11/user/6.jpg", alt="user")
+                                        p.mb-0 Budget 
+                                          span $241,989.00 
+                                                
+                                
+                      #top-pending.tab-pane.fade(role='tabpanel', aria-labelledby='pending-top-tab')
+                        .row.g-4
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-primary
+                                  .header-top
+                                      span.badge.badge-light-primary Pending
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 06 Nov, 2025
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/1.png", alt="dashboard")
+                                        div
+                                          h6 CRM Dashboard
+                                          span Create a Brand logo design for a mofi admin.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 40%
+                                    .progress
+                                      .progress-bar.bg-primary(style='width: 40%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Alexis Taylor')
+                                              img.rounded-circle(src="../assets/images/dashboard/user/10.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Andrew Price')
+                                              img.rounded-circle(src="../assets/images/dashboard/user/11.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Emily Park') 
+                                              .common-circle.bg-lighter-warning E
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Caryl Kauth')
+                                              img.rounded-circle(src="../assets/images/dashboard/user/1.jpg", alt="user")
+                                        p.mb-0 Budget 
+                                          span $845,540.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-primary
+                                  .header-top
+                                      span.badge.badge-light-primary Pending
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 10 Feb, 2023
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/4.png", alt="meeting")
+                                        div
+                                          h6 Client Meeting
+                                          span Meeting about share web all live link.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 20%
+                                    .progress
+                                      .progress-bar.bg-primary(style='width: 20%')
+                                    .project-bottom.common-space
+                                      ul.common-f-start
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Thomas Jones')
+                                          img.rounded-circle(src="../assets/images/dashboard-9/user/1.png", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Karen Jones') 
+                                          .common-circle.bg-lighter-dark K
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Elizabeth Williams')
+                                          img.rounded-circle(src="../assets/images/dashboard-9/user/3.png", alt="user")  
+                                      p.mb-0 Budget 
+                                        span $159,948.00   
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-primary
+                                  .header-top
+                                      span.badge.badge-light-primary Pending
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 14 May, 2025
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/6.png", alt="project")
+                                        div
+                                          h6 Sales Project
+                                          span Market reach and optimizing sales processes.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 70%
+                                    .progress
+                                      .progress-bar.bg-primary(style='width: 70%')
+                                    .project-bottom.common-space
+                                      ul.common-f-start
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Marley Ford')
+                                          img.rounded-circle(src="../assets/images/dashboard-11/user/10.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Gray Curran')
+                                          img.rounded-circle(src="../assets/images/dashboard-11/user/9.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Yarrow  Wix') 
+                                          .common-circle.bg-lighter-info Y
+                                      p.mb-0 Budget 
+                                        span $821,961.00 
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-primary
+                                  .header-top
+                                      span.badge.badge-light-primary Pending
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 08 Nov, 2025
+                                      
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/8.png", alt="e-commerce web")
+                                        div
+                                          h6 E-commerce Web
+                                          span E-commerce is focusing on optimizing.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 80%
+                                    .progress
+                                      .progress-bar.bg-primary(style='width: 80%')
+                                    .project-bottom.common-space
+                                      ul.common-f-start
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Joseph Garcia')
+                                          img.rounded-circle(src="../assets/images/avtar/16.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Elizabeth Davis')
+                                          img.rounded-circle(src="../assets/images/avtar/3.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Karen Moore') 
+                                          .common-circle.bg-lighter-warning K
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Robert Williams')
+                                          .common-circle.bg-lighter-danger R
+                                      p.mb-0 Budget 
+                                        span $400,548.00
+
+                      #top-completed.tab-pane.fade(role='tabpanel', aria-labelledby='completed-top-tab')
+                        .row.g-4
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-success
+                                  .header-top
+                                      span.badge.badge-light-success Completed
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 10 Mar, 2025
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/2.png", alt="application")
+                                        div
+                                          h6 Chat Application
+                                          span Create a chat application for business messaging needs.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 100%
+                                    .progress
+                                      .progress-bar.bg-success(style='width: 100%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Caleb Rivera')
+                                            img.rounded-circle(src="../assets/images/dashboard/user/12.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jenny Wilson')
+                                            img.rounded-circle(src="../assets/images/dashboard/user/2.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Olivia Gor')
+                                            img.rounded-circle(src="../assets/images/dashboard/user/13.jpg", alt="user")
+                                        p.mb-0 Budget 
+                                          span $348,940.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-success
+                                  .header-top
+                                      span.badge.badge-light-success Completed
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 27 Oct, 2025
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/7.png", alt="application")
+                                        div
+                                          h6 Figma Design
+                                          span Offering strong design and real-time collaboration.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 100%
+                                    .progress
+                                      .progress-bar.bg-success(style='width: 100%')
+                                    .project-bottom.common-space
+                                      ul.common-f-start
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Calista Rivers')
+                                          img.rounded-circle(src="../assets/images/dashboard/user/3.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jasper Nightingale')
+                                          img.rounded-circle(src="../assets/images/dashboard/user/4.jpg", alt="user")
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Seraphina Evergreen') 
+                                          .common-circle.bg-lighter-primary S
+                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Caspian Wilde')
+                                          img.rounded-circle(src="../assets/images/dashboard/user/5.jpg", alt="user")
+                                      p.mb-0 Budget 
+                                        span $951,675.00     
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-success
+                                  .header-top
+                                      span.badge.badge-light-success Completed
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 28 Jan, 2025
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/10.png", alt="application")
+                                        div
+                                          h6 Sales management 
+                                          span Precise objectives and deliver exceptional performance
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 35
+                                    .progress
+                                      .progress-bar.bg-success(style='width: 35%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Atlas Stone')
+                                            img.rounded-circle(src="../assets/images/user/12.png", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Oceana Meridian')
+                                            img.rounded-circle(src="../assets/images/user/10.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jett Maverick')
+                                            .common-circle.bg-lighter-primary J
+                                        p.mb-0 Budget 
+                                          span $652,444.00
+                          .col-xxl-3.col-md-6.col-ed-4.box-col-6
+                            .progress-project-box
+                              .list-box.title-line-success
+                                  .header-top
+                                      span.badge.badge-light-success Completed
+                                      p.mb-0.c-o-light 
+                                        svg.me-2 
+                                          use(href='../assets/svg/icon-sprite.svg#vector-calendar')
+                                        | 03 Sep, 2025
+                                  .project-body
+                                    .common-f-start.gap-3
+                                        img.img-fluid(src="../assets/images/project/list/11.png", alt="application")
+                                        div
+                                          h6 Nursery App
+                                          span Correspondence and monitor your child's development.
+                                    .common-space
+                                      p.mb-0.c-o-light Tasks
+                                      span 25
+                                    .progress
+                                      .progress-bar.bg-success(style='width: 25%')
+                                    .project-bottom.common-space
+                                        ul.common-f-start
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Kairos Frost') 
+                                            .common-circle.bg-lighter-dark K
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Oceana Meridian')
+                                            img.rounded-circle(src="../assets/images/user/2.jpg", alt="user")
+                                          li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Ember Wren')
+                                            .common-circle.bg-lighter-primary E
+                                        p.mb-0 Budget 
+                                          span $652,444.00
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

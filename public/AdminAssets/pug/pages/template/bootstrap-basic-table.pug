@@ -1,0 +1,1271 @@
+- var page_Title = 'Basic Tables';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/taptop
+    include ../../components/loader
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Bootstrap Basic Tables
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Bootstrap Tables
+                    li.breadcrumb-item.active Bootstrap Basic Tables
+          // Container-fluid starts
+          .container-fluid.basic_table
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5 Basic Table with Border Bottom Color
+                    p.f-m-light.mt-1 
+                      | Use 
+                      code table
+                      |  class to any table, and 
+                      code border-bottom-* 
+                      | class for Border bottom color
+                      |.
+                  .table-responsive.custom-scrollbar
+                    table.table.border-bottom-table
+                      thead
+                        tr.border-bottom-primary
+                          th(scope='col') Id
+                          th(scope='col') First Name
+                          th(scope='col') Last Name
+                          th(scope='col') Username
+                          th(scope='col') Designation
+                          th(scope='col') Company
+                          th(scope='col') Language
+                          th(scope='col') Country
+                      tbody
+                        tr.border-bottom-secondary
+                          th(scope='row') 1
+                          td 
+                            img.img-30.me-2(src="../assets/images/user/1.jpg", alt="profile") 
+                            | Ram Jacob
+                          td Wolfe
+                          td RamJacob@twitter
+                          td Developer
+                          td Apple Inc.
+                          td 
+                            span.badge.badge-light-danger Php
+                          td IND
+                        tr.border-bottom-success
+                          th(scope='row') 2
+                          td 
+                            img.img-30.me-2(src="../assets/images/user/2.jpg", alt="profile")
+                            | John Deo
+                          td Gummer
+                          td JohnDeo@twitter	
+                          td Designer
+                          td Hewlett packard	
+                          td 
+                            span.badge.badge-light-primary Html
+                          td US
+                        tr.border-bottom-info
+                          th(scope='row') 3
+                          td 
+                            img.img-30.me-2(src="../assets/images/user/3.jpg", alt="profile")
+                            | Elana John
+                          td Cazale	
+                          td ElanaJohn@twitter
+                          td Designer
+                          td Microsoft
+                          td 
+                            span.badge.badge-light-danger Pug
+                          td UK
+                        tr.border-bottom-warning
+                          th(scope='row') 4
+                          td 
+                            img.img-30.me-2(src="../assets/images/user/7.jpg", alt="")
+                            | Meryl Streep
+                          td Roberts
+                          td MerylStreep@twitter
+                          td Developer
+                          td Tata Ltd.	
+                          td 
+                            span.badge.badge-light-success React
+                          td IDN
+                        tr.border-bottom-danger
+                          th(scope='row') 5
+                          td 
+                            img.img-30.me-2(src="../assets/images/user/2.png", alt="")
+                            | Emma Stone
+                          td Stone
+                          td EmmaStone@twitter	
+                          td Developer
+                          td Wipro Ltd.	
+                          td 
+                            span.badge.badge-light-primary Vue
+                          td IRN
+                        tr.border-bottom-light 
+                          th(scope='row') 6
+                          td 
+                            img.img-30.me-2(src="../assets/images/user/3.png", alt="") 
+                            | Eliana Jons
+                          td Jons
+                          td ElianaJons@twitter		
+                          td Developer
+                          td Info Ltd.		
+                          td 
+                            span.badge.badge-light-success Vue
+                          td IRN
+              .col-sm-12
+                .card
+                  .card-header
+                    h5 Bootstrap Table With Variants
+                    p.f-m-light.mt-1 
+                      | Use 
+                      code table
+                      |  class to any table, and 
+                      code border-bottom-* 
+                      | class for Border bottom color
+                      |.
+                  .table-responsive.custom-scrollbar
+                    table.table
+                      thead
+                        tr 
+                          th(scope='col') #
+                          th(scope='col') Roll Number
+                          th(scope='col') Student Name
+                          th(scope='col') Standard
+                          th(scope='col') Grade
+                          th(scope='col') Percentage
+                      tbody 
+                        tr 
+                          td Default 
+                          td 01
+                          td Watson Freeman
+                          td 10
+                            sup th
+                          td A 
+                            sup +
+                          td 89.5%
+                        tr.table-primary 
+                          td Primary
+                          td 02
+                          td Miley Morgan
+                          td 06
+                            sup th
+                          td B
+                            sup +
+                          td 65.6%
+                        tr.table-secondary
+                          td Secondary
+                          td 03
+                          td Charli Olsen
+                          td 02
+                            sup th
+                          td C
+                            sup +
+                          td 45.2%
+                        tr.table-success
+                          td Success
+                          td 04
+                          td Levi Berger
+                          td 11
+                            sup th
+                          td A
+                            sup +
+                          td 78.3%
+                        tr.table-danger
+                          td Danger
+                          td 05
+                          td Ayaan Rich
+                          td 08
+                            sup th
+                          td B
+                            sup +
+                          td 67.9%
+                        tr.table-warning
+                          td Warning
+                          td 06
+                          td Mae Flores
+                          td 12
+                            sup th
+                          td A
+                            sup +
+                          td 99.4%
+                        tr.table-info
+                          td Info
+                          td 07
+                          td Angel Terrell
+                          td 10
+                            sup th
+                          td B
+                            sup +
+                          td 70.3%
+                        tr.table-light
+                          td Light
+                          td 08
+                          td Logan Luna
+                          td 11
+                            sup th
+                          td A
+                            sup +
+                          td 92.5%
+                        tr.table-dark
+                          td Dark
+                          td 09
+                          td Sage Cuevas
+                          td 04
+                            sup th
+                          td A
+                            sup +
+                          td 97.6%
+              .col-sm-12
+                .card
+                  .card-header
+                    h5 Inverse Table
+                    p.f-m-light.mt-1 
+                      | Use 
+                      code table-inverse
+                      |  class inside table element.
+                  .table-responsive.custom-scrollbar
+                    table.table.table-inverse
+                      thead
+                        tr.border-bottom-light
+                          th(scope='col') Id
+                          th(scope='col') First Name
+                          th(scope='col') Last Name
+                          th(scope='col') Office
+                          th(scope='col') Position
+                          th(scope='col') Salary
+                          th(scope='col') Join Date	
+                          th(scope='col') Age
+                      tbody
+                        tr
+                          th(scope='row') 1
+                          td Stephan
+                          td Laiten
+                          td Tokyo
+                          td Accountant
+                          td $2100.00	
+                          td 21/01/2024		
+                          td 20	
+                        tr
+                          th(scope='row') 2
+                          td Fay	
+                          td Van Damme	
+                          td London	
+                          td CEO
+                          td $1420.00		
+                          td 14/02/2021			
+                          td 22
+                        tr
+                          th(scope='row') 3
+                          td Brevin	
+                          td Oleveria
+                          td New York	
+                          td Software Engineer	
+                          td $1340.00		
+                          td 04/06/2024		
+                          td 18	
+                        tr
+                          th(scope='row') 4
+                          td Regina
+                          td Ottandy	
+                          td France	
+                          td Pre-sale Support	
+                          td $3400.00		
+                          td 10/08/2024			
+                          td 25	
+                        tr
+                          th(scope='row') 5
+                          td Vani
+                          td Shah	
+                          td Los Angeles	
+                          td Senior Developer	
+                          td $3500.00	
+                          td 23/07/2024		
+                          td 28	
+              .col-sm-12
+                .card
+                  .card-header
+                    h5 Hoverable Rows with Horizontal Border
+                    p.f-m-light.mt-1 
+                      | Hoverable row use a class  
+                      code table-hover
+                      |  and for horizontal border use a class 
+                      code table-border-horizontal
+                      |  , solid border use a class 
+                      code border-solid, table 
+                      | classes.
+                  .table-responsive.signal-table.custom-scrollbar
+                    table.table.table-hover
+                      thead
+                        tr
+                          th(scope='col') Id
+                          th(scope='col') Status
+                          th(scope='col') Signal Name	
+                          th(scope='col') Security
+                          th(scope='col') Stage
+                          th(scope='col') Schedule
+                          th(scope='col') Team Lead
+                      tbody
+                        tr
+                          th(scope='row') 1
+                          td.d-flex.align-items-center
+                            i.bg-light-success.font-success(data-feather="alert-triangle")
+                            span.font-success No Signal
+                          td Astrid: NE Shared managed
+                          td Medium
+                          td Triaged
+                          td 0.33	
+                          td Chase Nguyen	
+                        tr
+                          th(scope='row') 2
+                          td.d-flex.align-items-center
+                            i.bg-light-danger.font-danger(data-feather="alert-triangle")
+                            span.font-danger Offline
+                          td Cosmo: prod shared ares	
+                          td Huge
+                          td Triaged
+                          td 0.39
+                          td Brie Furman
+                        tr
+                          th(scope='row') 3
+                          td.d-flex.align-items-center 
+                            i.bg-light-primary.font-primary(data-feather="alert-circle")
+                            span.font-primary Online
+                          td Phoenix: prod shared lyra-lists	
+                          td Minor
+                          td No Triaged
+                          td 3.12	
+                          td Jeremy Lake
+                        tr
+                          th(scope='row') 4
+                          td.d-flex.align-items-center 
+                            i.bg-light-success.font-success(data-feather="check-circle")
+                            span.font-success No Signal
+                          td Astrid: NE Shared managed
+                          td Negligible
+                          td Triaged
+                          td 13.18
+                          td Angelica Howards
+                        tr
+                          th(scope='row') 5
+                          td.d-flex.align-items-center 
+                            i.bg-light-danger.font-danger(data-feather="check-circle")
+                            span.font-danger Online
+                          td Astrid: NE Shared managed
+                          td Medium
+                          td No Triaged
+                          td 5.33		
+                          td Diane Okuma
+              .col-sm-12
+                .card.common-striped
+                  .card-header
+                    h5 Inverse Table Background
+                    p.f-m-light.mt-1 
+                      | Use 
+                      code bg-info, bg-success, bg-warning and bg-danger 
+                      | classes with light text on dark backgrounds inside table element.
+                      br
+                      | To set the light background color use 
+                      code bg-[color] 
+                      |  class where 
+                      code  [color]
+                      |  is the value of your selected color from stack color palette. So for teal color background class will be 
+                      code  bg-teal
+                      |.
+                  .table-responsive.custom-scrollbar
+                    table.table.table-striped
+                      thead.tbl-strip-thad-bdr
+                        tr
+                          th(scope='col') Id
+                          th(scope='col') First Name
+                          th(scope='col') Last Name
+                          th(scope='col') Company
+                          th(scope='col') Credit Volume	  
+                          th(scope='col') Username
+                          th(scope='col') Role	  
+                          th(scope='col') Country
+                      tbody
+                        tr
+                          th(scope='row') 1
+                          td Ram Jacob	
+                          td Wolfe
+                          td Apple Inc.	
+                          td $3500.00	
+                          td RamJacob@twitter	
+                          td Developer
+                          td IND
+                        tr
+                          th(scope='row') 2
+                          td John Deo		
+                          td Gummer	
+                          td Hewlett packard		
+                          td $2400.00
+                          td JohnDeo@twitter		
+                          td Designer
+                          td US
+                        tr
+                          th(scope='row') 3
+                          td Elana John		
+                          td Wolfe
+                          td Microsoft		
+                          td $2560.00	
+                          td ElanaJohn@twitter	
+                          td Designer
+                          td UK
+                        tr
+                          th(scope='row') 4
+                          td Meryl Streep	
+                          td Roberts
+                          td Tata Ltd.		
+                          td $1870.00
+                          td MerylStreep@twitter	
+                          td Developer
+                          td IND
+                        tr
+                          th(scope='row') 5
+                          td Emma Stone	
+                          td Stone
+                          td Wipro Ltd.		
+                          td $4580.00	
+                          td EmmaStone@twitter	
+                          td Developer
+                          td IRN
+                        tr
+                          th(scope='row') 6
+                          td Eliana Jons	
+                          td Jons
+                          td Info Ltd.		
+                          td $4580.00	
+                          td ElianaJons@twitter		
+                          td Developer
+                          td IRN
+              .col-sm-12
+                .card
+                  .card-header
+                    h5 Caption
+                    p.f-m-light.mt-1 
+                      | A 
+                      code &lt;caption&gt;
+                      |  functions like a heading for a table. It helps users with screen readers to find a table and understand what it’s about and decide if they want to read it.
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table
+                          caption List of users
+                          thead
+                            tr
+                              th(scope='col') Id
+                              th(scope='col') Employee Name	
+                              th(scope='col') Email
+                              th(scope='col') Experience
+                              th(scope='col') Sex
+                              th(scope='col') Contact No.	
+                              th(scope='col') Age
+                          tbody
+                            tr
+                              th(scope='row') 1
+                              td Elana Robbert	
+                              td ElanaRob@gmail.com	
+                              td 1 Year	
+                              td Male	
+                              td +91 9789887777		
+                              td 28	
+                            tr
+                              th(scope='row') 2
+                              td Stiphen Deo		
+                              td Stiphen@yahoo.com		
+                              td 6 Month		
+                              td Female
+                              td +91 9874563210		
+                              td 22	
+                            tr
+                              th(scope='row') 3
+                              td Genelia Ottre	
+                              td Genelia@gmail.com	
+                              td 2 Days		
+                              td Male	
+                              td +91 8794562135		
+                              td 24	
+              .col-lg-6 
+                .card
+                  .card-header
+                    h5 Table Head Options
+                    p.f-m-light.mt-1
+                      | Similar to tables , use the modifier classes
+                      code  table-[color]
+                      |   to make 
+                      code thead
+                      |  appear in any color.
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table
+                          thead.table-dark
+                            tr
+                              th(scope='col') Id
+                              th(scope='col') First Name
+                              th(scope='col') Last Name
+                              th(scope='col') Username
+                          tbody
+                            tr
+                              th(scope='row') 1
+                              td Mark
+                              td Otto
+                              td @mdo
+                            tr
+                              th(scope='row') 2
+                              td Jacob
+                              td Thornton
+                              td @fat
+                            tr
+                              th(scope='row') 3
+                              td Larry
+                              td the Bird
+                              td @twitter
+              .col-lg-6
+                .card
+                  .card-header
+                    h5 Striped Row with Inverse Table
+                    p.f-m-light.mt-1 
+                      | Use 
+                      code table-striped
+                      |  to add zebra-striping to any table row within the 
+                      code
+                      | . This styling doesn't work in IE8 and below as :nth-child CSS selector isn't supported.
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table.table-inverse.table-striped
+                          thead
+                            tr
+                              th(scope='col') Id
+                              th(scope='col') Dessert
+                              th(scope='col') Calories
+                              th(scope='col') Fat
+                              th(scope='col') Price
+                          tbody
+                            tr
+                              th(scope='row') 1
+                              td KitKat
+                              td 518
+                              td 26
+                              td 20
+                            tr
+                              th(scope='row') 2
+                              td Donut
+                              td 452
+                              td 25
+                              td 80
+                            tr
+                              th(scope='row') 3
+                              td Eclair
+                              td 262
+                              td 16
+                              td 10
+              .col-lg-6
+                .card
+                  .card-header
+                    h5 Striped Columns
+                    p.f-m-light.mt-1 
+                      | Use 
+                      code table-striped-columns 
+                      | to add zebra-striping to any table column.
+                  .card-block.row.emphasis-table
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table.table-striped-columns
+                          thead
+                            tr
+                              th(scope='col') #
+                              th(scope='col') Name
+                              th(scope='col') Age
+                              th(scope='col') City
+                              th(scope='col') Occupation
+                          tbody
+                            tr
+                              th(scope='row') 1
+                              td Kara Mayer
+                              td 53
+                              td New York
+                              td Software Engineer
+                            tr
+                              th(scope='row') 2
+                              td Jorge Molina
+                              td 22
+                              td Chicago
+                              td Teacher
+                            tr
+                              th(scope='row') 3
+                              td Adele Gibbs
+                              td 28
+                              td Miami
+                              td Financial Advisor
+              .col-lg-6
+                .card
+                  .card-header
+                    h5 Active Tables
+                    p.f-m-light.mt-1 
+                      | Highlight a table row or cell by adding a 
+                      code table-active 
+                      | class.
+                  .card-block.row.emphasis-table
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table
+                          thead
+                            tr
+                              th(scope='col') Product ID
+                              th(scope='col') Product Name
+                              th(scope='col') Category
+                              th(scope='col') Price
+                          tbody
+                            tr.table-active
+                              th(scope='row') 
+                                a(href="#!") P001
+                              td Laptop
+                              td Computers
+                              td $999
+                            tr
+                              th(scope='row') 
+                                a(href="#!") P002
+                              td Headphones
+                              td Audio
+                              td.table-active $600
+                            tr
+                              th(scope='row') 
+                                a(href="#!") P003
+                              td.table-active Electric Kettle
+                              td.table-active Home
+                              td $40
+              .col-lg-6
+                .card
+                  .card-header
+                    h5 Table Borders
+                    p.f-m-light.mt-1 
+                      | Add 
+                      code table-bordered 
+                      | for borders on all sides of the table and cells.
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table.table-bordered
+                          thead
+                            tr
+                              th(scope='col') ISBN
+                              th(scope='col') Title
+                              th(scope='col') Author
+                              th(scope='col') Year Published
+                          tbody
+                            tr
+                              th(scope='row') 978-1-891830-75-4
+                              td The Great Gatsby
+                              td F. Scott Fitzgerald
+                              td 1975
+                            tr
+                              th(scope='row') 978-0-06-112008-4
+                              td To Kill a Mockingbird
+                              td Harper Lee
+                              td 1985
+                            tr
+                              th(scope='row') 978-0-452-28423-4
+                              td 1987
+                              td George Orwell
+                              td 1947
+                            tr
+                              th(scope='row') 978-1-5011-8687-0
+                              td Where the Crawdads Sing
+                              td Delia Owens
+                              td 2019
+
+              .col-lg-6
+                .card
+                  .card-header
+                    h5 Table Without Borders
+                    p.f-m-light.mt-1 
+                      | Add 
+                      code table-borderless 
+                      | for a table without borders.
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table.table-borderless
+                          thead
+                            tr
+                              th(scope='col') Date
+                              th(scope='col') Exercise Type
+                              th(scope='col') Duration
+                              th(scope='col') Calories Burned
+                          tbody
+                            tr
+                              th(scope='row') 21-07-2024
+                              td Running
+                              td 30
+                              td 300
+                            tr
+                              th(scope='row') 29-07-2024
+                              td Cycling
+                              td 45
+                              td 400
+                            tr
+                              th(scope='row') 11-08-2024
+                              td Yoga
+                              td 60
+                              td 200
+                            tr
+                              th(scope='row') 25-11-2024
+                              td Weightlifting
+                              td 40
+                              td 250
+
+              .col-lg-12
+                .card
+                  .card-header
+                    h5 Vertical alignment
+                    p.f-m-light.mt-1 
+                      | Table cells of 
+                      code &lt;thead&gt; 
+                      | are always vertical aligned to the bottom. Table cells in 
+                      code &lt;tbody&gt; 
+                      | inherit their alignment from 
+                      code &lt;table&gt; 
+                      | and are aligned to the top by default. Use the vertical align classes to re-align where needed.
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table.align-middle
+                          thead
+                            tr
+                              th(scope='col') Heading1
+                              th(scope='col') Heading2
+                              th(scope='col') Heading3
+                              th(scope='col') Heading4
+                          tbody
+                            tr
+                              td This cell inherits 
+                                code vertical-align: middle; 
+                                | from the table
+                              td This cell inherits 
+                                code vertical-align: middle; 
+                                | from the table
+                              td This cell inherits 
+                                code vertical-align: middle; 
+                                | from the table
+                              td This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.
+                            tr
+                              td This cell inherits 
+                                code vertical-align: bottom; 
+                                | from the table row
+                              td This cell inherits 
+                                code vertical-align: bottom; 
+                                | from the table row
+                              td This cell inherits 
+                                code vertical-align: bottom; 
+                                | from the table row
+                              td This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.
+                            tr
+                              td This cell inherits 
+                                code vertical-align: middle; 
+                                | from the table
+                              td This cell inherits 
+                                code vertical-align: middle; 
+                                | from the table
+                              td This cell is aligned to the top.
+                              td This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.
+              .col-lg-6
+                .card
+                  .card-header
+                    h5 Nesting
+                    p.f-m-light.mt-1 
+                      | Border styles, active styles, and table variants are not inherited by nested tables.
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table
+                          thead
+                            tr
+                              th(scope='col') Date
+                              th(scope='col') Student Name
+                              th(scope='col') Status
+                              th(scope='col') Notes
+                          tbody
+                            tr
+                              td 05-09-2024
+                              td Ryder Grant
+                              td 
+                                span.badge.badge-success Present
+                              td On time
+                            tr
+                              td(colspan='4')
+                                table.table.mb-0.table-bordered
+                                  thead
+                                    tr
+                                      th(scope='col') Course Name
+                                      th(scope='col') Instructor
+                                      th(scope='col') Day
+                                      th(scope='col') Time
+                                  tbody
+                                    tr
+                                      td Data Structures
+                                      td Prof. A. Smith
+                                      td Monday
+                                      td 10:00 AM
+                                    tr
+                                      td Database Systems
+                                      td Prof. D. Johnson
+                                      td Friday
+                                      td 09:00 AM
+                            tr
+                              td 11-10-2024
+                              td Collins Ellison
+                              td 
+                                span.badge.badge-danger Absent
+                              td Sick leave
+                            tr
+                              td 25-11-2024
+                              td Ocean Kelly
+                              td 
+                                span.badge.badge-success Present
+                              td Late by 10 minutes
+                            tr
+                              td 18-12-2024
+                              td Jayce Fisher
+                              td 
+                                span.badge.badge-danger Absent
+                              td Family emergency
+              .col-lg-6
+                .card
+                  .card-header
+                    h5 Anatomy (Table Head)
+                    p.f-m-light.mt-1 
+                      | Similar to tables and dark tables, use the modifier classes 
+                      code table-light 
+                      | or 
+                      code table-dark 
+                      | to make 
+                      code &lt;thead&gt;
+                      | s appear light or dark gray.
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table.table-light
+                          thead
+                            tr
+                              th(scope='col') Version
+                              th(scope='col') Release Date
+                              th(scope='col') New Features
+                              th(scope='col') Bug Fixes
+                          tbody
+                            tr
+                              td 
+                                span.badge.badge-primary 1.0.0
+                              td 15-05-2024
+                              td Improved UI
+                              td Resolved crash on startup
+                            tr
+                              td 
+                                span.badge.badge-secondary 1.1.0
+                              td 25-06-2024
+                              td Added user profiles
+                              td Fixed login issues
+                            tr
+                              td 
+                                span.badge.badge-warning 2.1.0
+                              td 06-06-2024
+                              td Security features
+                              td Corrected auth errors
+                            tr
+                              td 
+                                span.badge.badge-success 2.2.0
+                              td 08-07-2024
+                              td Multi-language support
+                              td Fixed display bugs
+                            tr
+                              td 
+                                span.badge.badge-info 3.1.0
+                              td 12-08-2024
+                              td Added Sellers
+                              td Fixed seller details
+                            tr
+                              td 
+                                span.badge.badge-primary 3.2.0
+                              td 27-09-2024
+                              td Added dashboards
+                              td Fixed Timeline issue
+                            tr
+                              td 
+                                span.badge.badge-secondary 4.1.0
+                              td 28-12-2024
+                              td Gallery placeholders
+                              td Fixed placeholder delay issue
+
+
+
+              .col-lg-6
+                .card
+                  .card-header
+                    h5 Table Foot
+                    p.f-m-light.mt-1 
+                      | To prevent any styles from leaking to nested tables, we use the child combinator (>) selector in our CSS. Since we need to target all the tds and ths in the thead, tbody, and tfoot, our selector would look pretty long without it. 
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table
+                          thead
+                            tr
+                              th(scope='col') Product ID
+                              th(scope='col') Product Name
+                              th(scope='col') Category
+                              th(scope='col') Price ($)
+                          tbody
+                            tr
+                              td P005
+                              td Headphones
+                              td Audio
+                              td $120
+                            tr
+                              td P006
+                              td Blender
+                              td Kitchen
+                              td $80
+                            tr
+                              td P007
+                              td Smartphone
+                              td Electronics
+                              td $690
+                            tr
+                              td P008
+                              td Electric Kettle
+                              td Home
+                              td $40
+                          tfoot
+                            tr 
+                              td(colspan="3") Total Products
+                              td 04
+
+              .col-lg-6
+                .card
+                  .card-header
+                    h5 Table Group Dividers
+                    p.f-m-light.mt-1 
+                      | Add a thicker border, darker between table groups—
+                      code &lt;thead&gt;, &lt;tbody&gt;, and &lt;tfoot&gt;—with 
+                      code table-group-divider
+                      | . Customize the color by changing the border-top-color (which we don’t currently provide a utility class for at this time).
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table
+                          thead
+                            tr
+                              th(scope='col') #
+                              th(scope='col') First
+                              th(scope='col') Last
+                              th(scope='col') Handle
+                          tbody.table-group-divider
+                            tr
+                              th(scope='row') 1
+                              td Mark
+                              td Otto
+                              td @mdo
+                            tr
+                              th(scope='row') 2
+                              td Jacob
+                              td Thornton
+                              td @fat
+                            tr
+                              th(scope='row') 3
+                              td(colspan='2') Larry the Bird
+                              td @twitter
+                            tr
+                              th(scope='row') 4
+                              td Larry
+                              td Olson
+                              td @instagram
+                            tr
+                              th(scope='row') 5
+                              td(colspan='2') Franklin
+                              td @linkedin
+
+              .col-sm-12
+                .card
+                  .card-header
+                    h5 Breakpoint Specific
+                    p.f-m-light.mt-1 
+                      | Use  
+                      code table-responsive"❴-sm|-md|-lg|-xl|-xxl❵"
+                      |  functions like a heading for a table. It helps users with screen readers to find a table and understand what it’s about and decide if they want to read it.
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table.table-responsive-sm
+                          thead
+                            tr
+                              th(scope='col') Id
+                              th(scope='col') Name
+                              th(scope='col') Order Id	
+                              th(scope='col') Price
+                              th(scope='col') Quantity
+                              th(scope='col') Total
+                          tbody
+                            tr
+                              th(scope='row') 1
+                              td Iphone X Grey	
+                              td C12345
+                              td $12550	
+                              td 1
+                              td $12550
+
+                            tr
+                              th(scope='row') 2
+                              td Titan Watch	
+                              td A14725	
+                              td $120
+                              td 2
+                              td $250
+                            tr
+                              th(scope='row') 3
+                              td Apple Airpods	
+                              td B54213
+                              td $210	
+                              td 1
+                              td $210
+              .col-sm-12
+                .card
+                  .card-header
+                    h5 Responsive Tables with Light Background
+                    p.f-m-light.mt-1 
+                      | A 
+                      code table-responsive , light-card
+                      |  inside table element.
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table.light-card
+                          thead
+                            tr
+                              th(scope='col') Id
+                              th(scope='col') Task
+                              th(scope='col') Email
+                              th(scope='col') Phone
+                              th(scope='col') Assign
+                              th(scope='col') Date
+                              th(scope='col') Price   
+                              th(scope='col') Status
+                              th(scope='col') Progress
+                          tbody
+                            tr
+                              th(scope='row') 1
+                              td Web Development	
+                              td Pixel@efo.com	
+                              td +91 7874226671	
+                              td Mark Jecno	
+                              td 12/07/2024	
+                              td $2315.00	
+                              td.font-danger Pending
+                              td 75%
+                            tr
+                              th(scope='row') 2
+                              td Graphic Design	
+                              td Strap@google.com	
+                              td +91 8347855785	
+                              td Elana John	
+                              td 23/08/2024	
+                              td $4125.00	
+                              td.font-danger Pending	
+                              td 45%
+                            tr
+                              th(scope='row') 3
+                              td WordPress
+                              td Pixelstrap@gmail.com	
+                              td +91 635609347	
+                              td John Deo
+                              td 15/04/2024	
+                              td $6123.00	
+                              td.font-success Done
+                              td 100%
+              .col-sm-12
+                .card
+                  .card-header
+                    h5 Sizing Tables
+                    p.f-m-light.mt-1 
+                      | Example of extra large table, Add
+                      code  table-xl
+                      |  class to the
+                      code  table
+                      |  , Large table Add 
+                      code  table-lg
+                      |   , Default table Add 
+                      code table-de
+                      |   , Small table Add 
+                      code table-sm 
+                      | , Extra Small table Add 
+                      code table-xs 
+                      | to create a table.
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table.table-lg
+                          thead
+                            tr
+                              th(scope='col') Id
+                              th(scope='col') Employee Name
+                              th(scope='col') Date
+                              th(scope='col') Status
+                              th(scope='col') Hours
+                              th(scope='col') Performance
+                          tbody
+                            tr
+                              th(scope='row') 1
+                              td Mark Jecno	
+                              td 22/08/2024	
+                              td.font-danger On leave	
+                              td 0
+                              td 29/30
+                            tr
+                              th(scope='row') 2
+                              td Elana Robbert	
+                              td 21/08/2024	
+                              td.font-success Present
+                              td 10
+                              td 30/30
+                            tr
+                              th(scope='row') 3
+                              td John Deo	
+                              td 18/08/2024
+                              td.font-danger On leave	
+                              td 8
+                              td 28/30
+              .col-sm-12
+                .card.common-striped
+                  .card-header
+                    h5 Custom Table Color with Hover and Stripped
+                    p.f-m-light.mt-1 
+                      | Use class 
+                      code table-hover, table-striped table-*table-info , table-success , table-success , table-info , table-danger , table-primary , table-secondary , table-light , table-active
+                      |   inside table element.
+                  .table-responsive.custom-scrollbar
+                    table.table.table-striped.table-hover
+                      thead.tbl-strip-thad-bdr
+                        tr
+                          th(scope='col') Id
+                          th(scope='col') Film Title
+                          th(scope='col') Released
+                          th(scope='col') Studio
+                          th(scope='col') Budget  
+                          th(scope='col') Domestic Gross
+                      tbody
+                        tr
+                          th(scope='row') 1
+                          td Frozen	
+                          td 2013	
+                          td Disney	
+                          td $150,000,000
+                          td $400,953,009
+                        tr
+                          th(scope='row') 2
+                          td Minions	
+                          td 2015	
+                          td Universal	
+                          td $74,000,000
+                          td $336,045,770
+                        tr
+                          th(scope='row') 3
+                          td Zootopia	
+                          td 2016	
+                          td Disney	
+                          td $150,000,000
+                          td $341,268,248
+                        tr
+                          th(scope='row') 4
+                          td Finding Dory		
+                          td 2016
+                          td Disney	Pixar
+                          td $175,000,000
+                          td 	$486,295,561
+                        tr
+                          th(scope='row') 5
+                          td Toy Story 3		
+                          td 2010
+                          td Disney	Pixar
+                          td $200,000,000
+                          td $415,004,880
+              .col-sm-12
+                .card
+                  .card-header.card-no-border
+                    h5 Dashed Border 
+                    p.f-m-light.mt-1
+                      | Use 
+                      code table-dashed
+                      |  class for dash border for dotted border use class
+                      code  table-dotted
+                      |  for double border use class
+                      code  table-double
+                      |.
+                  .card-block.row
+                    .col-sm-12.col-lg-12.col-xl-12
+                      .table-responsive.custom-scrollbar
+                        table.table.table-dashed
+                          thead
+                            tr
+                              th(scope='col') Id 
+                              th(scope='col') Classname
+                              th(scope='col') Type
+                              th(scope='col') Hours
+                              th(scope='col') Trainer
+                              th(scope='col') Spots
+                          tbody
+                            tr
+                              th(scope='row') 1
+                              td Crit Cardio
+                              td Gym
+                              td 9:00 AM - 11:00 AM	
+                              td Aaron Chapman	
+                              td 10
+                            tr
+                              th(scope='row') 2
+                              td Zumba Dance
+                              td Dance
+                              td 8:00 AM - 9:00 AM		
+                              td Donna Wilson	
+                              td 12
+                            tr
+                              th(scope='row') 3
+                              td Like a butterfly	
+                              td Boxing
+                              td 9:00 AM - 10:00 AM	
+                              td Randy Porter		
+                              td 13
+                            tr
+                              th(scope='row') 4
+                              td Pilates Reformer	
+                              td Gym
+                              td 7:00 AM - 8:30 AM		
+                              td Aaron Chapman	
+                              td 15
+                            tr
+                              th(scope='row') 5
+                              td Mind & Body	
+                              td Yoga
+                              td 8:00 AM - 9:00 AM		
+                              td Adam Stewart	
+                              td 20
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files      

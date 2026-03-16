@@ -1,0 +1,285 @@
+/**=====================
+    3.61 Roles and Permission CSS start
+==========================**/
+.role-permission-wrapper {
+    .permission-table {
+        div.dt-container {
+            .dt-layout-row {
+                .dt-search {
+                    top: 20px;
+                    right: 234px;
+
+                    @media (max-width:640px) {
+                        top: 0;
+                    }
+
+                    .dt-input {
+                        @include pixelstrap-search(auto, 6px, 6px);
+                    }
+                }
+            }
+        }
+
+        table {
+
+            thead,
+            tbody {
+                tr {
+
+                    th,
+                    td {
+                        min-width: auto;
+                        color: var(--body-font-color);
+
+                        &:first-child {
+                            padding-left: 20px;
+                        }
+
+                        &:last-child {
+                            padding-right: 20px;
+                        }
+
+                        .badge {
+                            padding: 6px 10px;
+                        }
+
+                        .square-white {
+                            @include square-box(34px, 34px, 2px, var(--white));
+                            @include pixelstrap-flex(flex, center, center);
+                            box-shadow: 0px 0px 28px 6px rgba(235, 235, 235, 0.4);
+
+                            svg {
+                                @include pixelstrap-size(16px, 16px);
+                                fill: $badge-light-color;
+                            }
+                        }
+
+                        @media (max-width:1199px) {
+                            &:nth-child(2) {
+                                min-width: 150px;
+                            }
+
+                            &:nth-child(3) {
+                                min-width: 160px;
+                            }
+
+                            &:nth-child(4) {
+                                min-width: 165px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .modal {
+
+        &-header,
+        &-body {
+            .form-label {
+                font-weight: 500;
+            }
+
+            .modal-title {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .permission-form {
+        ul {
+            display: grid;
+            padding: 10px 0 10px 0;
+            border-bottom: 1px solid var(--chart-progress-light);
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            overflow: auto;
+
+            @media (max-width:575px) {
+                display: flex;
+                gap: 32px;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+            }
+
+            li {
+                &:first-child {
+                    font-weight: 500;
+
+                    @media (max-width:575px) {
+                        min-width: 75px;
+                    }
+                }
+
+                .form-check {
+                    position: relative;
+
+                    .form-check-input {
+                        @include pixelstrap-size(18px, 18px);
+                        position: absolute;
+                        top: -2px;
+                        left: 16px;
+
+                        [dir="rtl"] & {
+                            left: unset;
+                            right: 16px;
+                        }
+
+                        &:focus {
+                            box-shadow: unset;
+                        }
+
+                        &:valid {
+                            border-color: $badge-light-color;
+                        }
+
+                        &:invalid {
+                            border-color: $danger-color;
+                        }
+
+                        &:invalid~.form-check-label {
+                            color: $danger-color;
+                        }
+
+                        &:valid~.form-check-label {
+                            color: $badge-light-color;
+                        }
+
+                        &:checked {
+                            background-color: var(--theme-default);
+
+                            &:valid {
+                                border-color: var(--theme-default);
+                            }
+                        }
+                    }
+
+                    .form-check-label {
+                        margin-bottom: 0;
+                    }
+
+                    @media (max-width:991px) {
+                        padding-left: 1.2em;
+
+                        .form-check-input {
+                            @include pixelstrap-size(16px, 16px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// User-list page
+.user-list-wrapper {
+    .square-white {
+        @include square-box(34px, 34px, 2px, var(--white));
+        @include pixelstrap-flex(flex, center, center);
+        box-shadow: 0px 0px 28px 6px rgba(235, 235, 235, 0.4);
+
+        svg {
+            @include pixelstrap-size(16px, 16px);
+            fill: $badge-light-color;
+        }
+    }
+
+    .user-list-table {
+        div.dt-container {
+            .dt-layout-row {
+                .dt-search {
+                    right: 185px;
+                    top: 20px;
+
+                    @media (max-width:640px) {
+                        top: 0;
+                    }
+
+                    .dt-input {
+                        @include pixelstrap-search(auto, 6px, 6px);
+                    }
+                }
+            }
+        }
+
+        table {
+
+            thead,
+            tbody {
+                tr {
+
+                    th,
+                    td {
+                        min-width: auto;
+                        color: var(--body-font-color);
+
+                        &:first-child {
+                            padding-left: 20px;
+                        }
+
+                        &:last-child {
+                            padding-right: 20px;
+                        }
+
+                        .badge {
+                            padding: 6px 10px;
+                        }
+
+                        a {
+                            color: $dark-color;
+
+                            &:hover {
+                                color: var(--theme-default)
+                            }
+                        }
+
+                        .square-white {
+                            @include square-box(34px, 34px, 2px, var(--white));
+                            @include pixelstrap-flex(flex, center, center);
+                            box-shadow: 0px 0px 28px 6px rgba(235, 235, 235, 0.4);
+
+                            svg {
+                                @include pixelstrap-size(16px, 16px);
+                                fill: $badge-light-color;
+                            }
+                        }
+
+                        @media (max-width:1239px) and (min-width:1200px) {
+                            &:nth-child(5) {
+                                display: none;
+                            }
+                        }
+
+                        @media (max-width:1199px) {
+                            &:nth-child(2) {
+                                min-width: 100px;
+                            }
+
+                            &:nth-child(4) {
+                                min-width: 130px;
+                            }
+
+                            &:nth-child(5) {
+                                min-width: 165px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.role-permission-wrapper,
+.user-list-wrapper {
+    .card-header-right-icon {
+        .btn {
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+/**=====================
+    3.61 Roles and Permission CSS end
+==========================**/

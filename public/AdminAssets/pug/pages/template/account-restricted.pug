@@ -1,0 +1,23 @@
+- var page_Title = 'Account Restricted';
+- var sidebar               = false;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    // login page start
+    .container-fluid.p-0
+      .row.m-0
+        .col-12.p-0     
+          .login-card.login-dark
+            div.restricted-account
+              div
+                a.logo(href="index.html")
+                  img.img-fluid.for-light(src="../assets/images/logo/logo.png" alt="looginpage" )
+                  img.img-fluid.for-dark(src="../assets/images/logo/logo_dark.png" alt="looginpage" )
+              .login-main 
+                form.theme-form
+                  h2 Your account login is restricted 
+                  p Access to your account may be restricted you may have violated our professional community policies.
+                  a.btn.btn-primary(href="index.html" target="_blank") Home Page
+                  img.img-fluid(src="../assets/images/login/4.png", alt="restricted account")
+      include ../../components/footer-files

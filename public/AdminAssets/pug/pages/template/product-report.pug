@@ -1,0 +1,416 @@
+- var page_Title = 'Products';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var bs_select             = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var datatable_extension   = true;
+- var validation_modal      = true;
+- var flatpickr             = true;
+- var moment_picker         = true;
+- var custom_flatpickr      = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Products
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Reports
+                    li.breadcrumb-item.active Products
+          // Container-fluid starts
+          .container-fluid.product-report-wrapper
+            .row 
+                .col-12 
+                    .card 
+                        .card-body.px-0.pt-0
+                            .top-body
+                                .row.common-f-start.g-sm-3.g-2
+                                    .col-auto
+                                        label.form-label Select Dates
+                                    .col-auto
+                                        #reportrange.range-dropdown
+                                            span
+                            .product-report
+                                .recent-table.table-responsive.custom-scrollbar
+                                    table#product-report-table.table
+                                        thead 
+                                            tr 
+                                                th
+                                                th 
+                                                    span.c-o-light.f-w-600 Product Name
+                                                th 
+                                                    span.c-o-light.f-w-600 SKU
+                                                th 
+                                                    span.c-o-light.f-w-600 Total Product Sold
+                                                th 
+                                                    span.c-o-light.f-w-600 Price
+                                                th 
+                                                    span.c-o-light.f-w-600 Rating
+                                        tbody 
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-8/product-categories/laptop.png", alt="laptop")
+                                                        p Apple Desktop 2024
+                                                td 02145YK796
+                                                td 34
+                                                td 56000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/15.png", alt="sofa")
+                                                        p Comfortable Sofa
+                                                td 456DF78DFQ
+                                                td 25
+                                                td 99000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-8/product-categories/mouse.png", alt="mouse")
+                                                        p M185 Mouse
+                                                td 	02145YK796
+                                                td 13
+                                                td 56000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/16.png", alt="mouse")
+                                                        p Leather Handbag
+                                                td 456DF78DER
+                                                td 100
+                                                td 1100.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-8/product-categories/headphone.png", alt="headphones")
+                                                        p Headphones
+                                                td 33KR5689B1
+                                                td 78
+                                                td 10000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-8/shop-categories/mouse.png", alt="green wireless mouse")
+                                                        p Green Wireless Mouse
+                                                td AD6789HEY0
+                                                td 95
+                                                td 15000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/product/accessories/02.png", alt="green wireless mouse")
+                                                        p Golden Headphone
+                                                td 33KR5689B1
+                                                td 45
+                                                td 18000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-8/product-categories/dvd.png", alt="DVD")
+                                                        p DVD
+                                                td HG5667DFQ1
+                                                td 155
+                                                td 5600.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/25.png", alt="comfortable chair")
+                                                        p Comfortable Chair
+                                                td 568GH3LLQ2
+                                                td 120
+                                                td 78000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/product/accessories/01.png", alt="Grinder")
+                                                        p Bajaj Grinder Jar
+                                                td 56379FG3AW
+                                                td 14
+                                                td 19000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/email-template/3.png", alt="chairs")
+                                                        p Arm Chair
+                                                td 5633GD3K54
+                                                td 14
+                                                td 1000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-8/shop-categories/phone.png", alt="i-phone")
+                                                        p Apple Iphone 14 pro
+                                                td 56379FG3AW
+                                                td 10
+                                                td 120000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/product/accessories/07.png", alt="washing machine")
+                                                        p Wool Washing Machine
+                                                td 33KR5689B1
+                                                td 150
+                                                td 55000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-8/product-categories/ipad.png", alt="mac laptop")
+                                                        p MacBook Air 13.3-inch
+                                                td 589KO8PPQ8
+                                                td 140
+                                                td 450000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/email-template/3.png", alt="chairs")
+                                                        p Wood Chair
+                                                td 33KR5689B1
+                                                td 100
+                                                td 55000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/email-template/3.png", alt="chairs")
+                                                        p Wireless Ear Buds
+                                                td AD6789HEY0
+                                                td 14
+                                                td 15000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/product/accessories/05.png", alt="wallet")
+                                                        p Wallet
+                                                td 56379FG3AW
+                                                td 28
+                                                td 19000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-8/shop-categories/watch.png", alt="watch")
+                                                        p Sport Watch
+                                                td 58FR7K34F6
+                                                td 38
+                                                td 25000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-8/shop-categories/camera.png", alt="camera")
+                                                        p Smart Camera
+                                                td 02145YK796
+                                                td 14
+                                                td 56000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td 
+                                                    .product-names
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/product/accessories/08.png", alt="projector")
+                                                        p Projector
+                                                td AD6789HEY0
+                                                td 16
+                                                td 15000.00
+                                                td 
+                                                    .rating
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-solid.fa-star.txt-warning
+                                                        i.fa-regular.fa-star.txt-warning
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

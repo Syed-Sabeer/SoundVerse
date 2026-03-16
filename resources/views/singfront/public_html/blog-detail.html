@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="SingWithMe Records Ltd" />
+    <meta name="description" content="SingWithMe Records Ltd" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>SingWithMe Records Ltd.</title>
+
+    <!-- FavIcon Link -->
+    <link rel="icon" href="assets/images/favicon.png" type="image/gif" sizes="36x36">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS Link -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Swiper Slider CSS Link -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+
+    <!-- Wow Animation CSS Link -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.min.css">
+
+    <!-- Main Style CSS Link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Start of Background Animation -->
+    <div id="vantajs-bg"></div>
+    <!-- End of Background Animation -->
+
+    <div class="overlay-body">
+
+        <!-- Start of Page Loader-->
+        <div class="page-loader">
+            <img src="assets/images/singWithMe/logo-trans.png" alt="" >
+        </div>
+        <!-- End of Page Loader-->
+
+        <!-- Start of Header -->
+        <!-- Navbar will be inserted here -->
+        <div id="navbar-container"></div>
+        <script>
+            // Load navbar
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                });
+        </script>
+        <!-- End of Header -->
+
+        <!-- Start of InnerBanner -->
+        <section class="inner-banner contact-banner">
+            <div class="contact_child">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="h1-title wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                Blog Detail
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of InnerBanner -->
+
+
+
+
+
+        <!-- blog-detail -->
+        <section class="blog-detail">
+                <div class="container">
+            <div class="blog-hero mt-4">
+            <img src="/assets/images/vidar-nordli-mathisen.jpg" alt="Musician with guitar on stage">
+            <h1>How to <span class="un_Span">Upload & Distribute</span> Your Music Like a Pro</h1>
+            <div class="blog-meta">Published on July 11, 2025 · by Team SingWithMe</div>
+            </div>
+
+            <div class="blog-content">
+            <p>Distributing your music professionally means more than just uploading a file. It’s about making sure your music reaches every major platform, is properly tagged, and is discoverable by your growing audience.</p>
+
+            <h2>Why Distribution Matters</h2>
+            <p>Without proper distribution, even your best track can sit unheard. Platforms like Spotify, Apple Music, YouTube, and Amazon offer global reach — but you need the right strategy to take advantage of them.</p>
+
+            <h2>Step-by-Step Upload Guide</h2>
+            <ul>
+                <li><strong>Step 1:</strong> Finalize your audio and artwork (WAV or MP3 formats, 3000x3000px cover art recommended).</li>
+                <li><strong>Step 2:</strong> Create an account with a distributor or use the <em>SingWithMe Artist Portal</em>.</li>
+                <li><strong>Step 3:</strong> Add metadata: track title, genre, artist name, contributors, and ISRC codes (if available).</li>
+                <li><strong>Step 4:</strong> Choose platforms and regions — opt for worldwide distribution unless otherwise planned.</li>
+                <li><strong>Step 5:</strong> Set a release date and submit. Most platforms take 3–7 days to process.</li>
+            </ul>
+
+            <h2>Tips for a Successful Launch</h2>
+            <ul>
+                <li>Schedule your release at least 2 weeks in advance.</li>
+                <li>Promote your music with pre-saves and teaser content on social media.</li>
+                <li>Use tools like Spotify for Artists to pitch to editorial playlists.</li>
+            </ul>
+
+            <p>Uploading your music doesn't have to be stressful. With the right tools and preparation, you can distribute your tracks professionally — and start gaining the recognition you deserve.</p>
+
+            <a class="back-link" href="/index.html">← Back to Blog</a>
+            </div>
+                </div>
+        </section>
+        <!-- blog-detail -->
+
+
+        <!-- newsletter section -->
+
+        <section class="news_letter py-5">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Stay <span class="un_Span">Connected</span></h1>
+                <p class="section-subtitle">Join our community and never miss an update. Get the latest news, exclusive
+                    content, and special offers delivered straight to your inbox.</p>
+            </div>
+
+            <div class="newsletter_parent">
+                <!-- Newsletter Section -->
+                <div class="newsletter-section">
+                    <h2 class="newsletter-title">
+                        <div class="newsletter-icon">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/xovdoewm.json"
+                                trigger="loop"
+                                delay="1500"
+                                state="in-reveal"
+                                colors="primary:#1b1091,secondary:#a866ee">
+                            </lord-icon>
+                    </div>
+                        Newsletter
+                    </h2>
+                    <p class="newsletter-description">
+                        Subscribe to our weekly newsletter and be the first to know about new features, industry
+                        insights, and exclusive content tailored just for you.
+                    </p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="input-group">
+                            <input type="email" class="email-input" placeholder="Enter your email address" required
+                                id="emailInput">
+                            <button type="submit" class="subscribe-btn">
+                                Subscribe
+                            </button>
+                        </div>
+                        <div class="success-message" id="successMessage">
+                            🎉 Thank you for subscribing! Check your email to confirm your subscription.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- newsletter section -->
+<!-- Start of Footer -->
+        <footer class="site-footer pt-5">
+            <div class="follow-us">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="title">
+                                <h2 class="h2-title wow fadeup-animation" data-wow-duration="0.8s"
+                                    data-wow-delay="0.2s">follow us</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="follow-us-row">
+                        <ul>
+                            <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                <a href="javascript:void(0);" title="Facebook">
+                                    <span class="big-text">Fb</span>
+                                    <span class="small-text">Facebook</span>
+                                </a>
+                            </li>
+                            <!-- <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <a href="javascript:void(0);" title="Spotify">
+                                    <span class="big-text">Sp</span>
+                                    <span class="small-text">Spotify</span>
+                                </a>
+                            </li> -->
+                            <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                <a href="javascript:void(0);" title="Instagram">
+                                    <span class="big-text">In</span>
+                                    <span class="small-text">Instagram</span>
+                                </a>
+                            </li>
+                            <!-- <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                <a href="javascript:void(0);" title="Youtube">
+                                    <span class="big-text">Yt</span>
+                                    <span class="small-text">Youtube</span>
+                                </a>
+                            </li> -->
+
+                            <li class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                <a href="javascript:void(0);" title="Twitter">
+                                    <span class="big-text">Tw</span>
+                                    <span class="small-text">Twitter</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row align-items-center ">
+                        <div class="col-lg-6 text-left ">
+                            <div class="footer-logo">
+                                <a href="index.html" title="SingWithMe Records Ltd.">
+                                    <img src="assets/images/singWithMe/logo-trans.png" alt="" width="100px">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-right ">
+                            <span class="copyright-text ">© 2025 All Rights Reserved By | Designed By <a
+                                    href="https://thevisionbrands.com/" target="_blank" title="Vision Brands ">The
+                                    Vision Brands</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+
+    <!-- Jquery JS Link -->
+    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+
+    <!-- Fluid Simulation JS Link -->
+    <!-- <script src="../../cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="../../cdn.jsdelivr.net/npm/vanta%40latest/dist/vanta.halo.min.js"></script> -->
+
+    <!-- Bootstrap JS Link -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+
+    <!-- Swiper Slider JS Link -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!-- font awesome JS Link -->
+    <script src="assets/js/font-awesome.min.js"></script>
+
+    <!-- Wow Animation JS Link -->
+    <script src="assets/js/wow.min.js"></script>
+
+    <!-- Custom JS Link -->
+    <script src="assets/js/custom.js"></script>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+</body>
+
+
+<!-- Mirrored from html.geekcodelab.com/spiffyplay/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jun 2025 12:54:56 GMT -->
+
+</html>

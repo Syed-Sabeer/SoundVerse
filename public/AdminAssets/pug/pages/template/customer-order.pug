@@ -1,0 +1,489 @@
+- var page_Title = 'Customer Order';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var tooltip               = true;
+- var bs_select             = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var datatable_extension   = true;
+- var validation_modal      = true;
+- var flatpickr             = true;
+- var moment_picker         = true;
+- var custom_flatpickr      = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Customer Order
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Reports
+                    li.breadcrumb-item.active Customer Order
+          // Container-fluid starts
+          .container-fluid.customer-order-wrapper
+            .row 
+                .col-12 
+                    .card 
+                        .card-body.px-0.pt-0
+                            .top-body
+                                .row.common-f-start.g-sm-3.g-2
+                                    .col-auto
+                                        label.form-label Select Dates
+                                    .col-auto
+                                        #reportrange.range-dropdown
+                                            span
+                            .customer-order-report
+                                .recent-table.table-responsive.custom-scrollbar
+                                    table#customer-order-table.table
+                                        thead 
+                                            tr 
+                                                th
+                                                th 
+                                                    span.c-o-light.f-w-600 Customer Name
+                                                th 
+                                                    span.c-o-light.f-w-600 Customer Group
+                                                th 
+                                                    span.c-o-light.f-w-600 No. Of Orders
+                                                th 
+                                                    span.c-o-light.f-w-600 No. Of Products
+                                                th 
+                                                    span.c-o-light.f-w-600 Total
+                                        tbody 
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/user/6.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Floyd Miles
+                                                            p.c-o-light floyd@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Marley Ford')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/3.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Wilson')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/7.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jessica Anderson')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/8.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Ford Stoll')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/9.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Davis Jone')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/1.jpg", alt="user")
+                                                td 100
+                                                td 180
+                                                td $9500
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/user/3.png", alt="user")
+                                                        div
+                                                            a(href="#!") Celine Stokes
+                                                            p.c-o-light celine@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Alexis Taylor')
+                                                            img.common-circle(src="../assets/images/dashboard/user/10.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Andrew Price')
+                                                            img.common-circle(src="../assets/images/dashboard/user/11.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Emily Park') 
+                                                            .common-circle.bg-lighter-warning E
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Caryl Kauth')
+                                                            img.common-circle(src="../assets/images/dashboard/user/1.jpg", alt="user")
+                                                td 400
+                                                td 100
+                                                td $2008
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard-11/user/2.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Ila Malone
+                                                            p.c-o-light ila@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Caleb Rivera')
+                                                            img.common-circle(src="../assets/images/dashboard/user/12.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jenny Wilson')
+                                                            img.common-circle(src="../assets/images/dashboard/user/2.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Olivia Gor')
+                                                            img.common-circle(src="../assets/images/dashboard/user/13.jpg", alt="user")
+                                                td 125
+                                                td 600
+                                                td $5982
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard-11/user/1.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Poppy Mosley
+                                                            p.c-o-light poppy@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Wilson')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/2.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Richard Taylor')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/1.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Linda Brown') 
+                                                            .common-circle.bg-lighter-danger L
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jessica Anderson')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/8.jpg", alt="user") 
+                                                td 200
+                                                td 880
+                                                td $98572
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard-11/user/4.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Eileen Portillo
+                                                            p.c-o-light eileen@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Levine Raven')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/2.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Davis Jone')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/12.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jessica Anderson')
+                                                            img.common-circle(src="../assets/images/dashboard-9/user/2.png", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Dashiell Wolfe')
+                                                            img.common-circle(src="../assets/images/dashboard-9/user/5.png", alt="user")
+                                                td 850
+                                                td 450
+                                                td $1500
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard-11/user/5.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Ruben Charles
+                                                            p.c-o-light ruben@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Thomas Jones')
+                                                            img.common-circle(src="../assets/images/dashboard-9/user/1.png", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Karen Jones') 
+                                                            .common-circle.bg-lighter-dark K
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Elizabeth Williams')
+                                                            img.common-circle(src="../assets/images/dashboard-9/user/3.png", alt="user")  
+                                                td 470
+                                                td 420
+                                                td $8888
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard-11/user/7.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Sullivan Thomas
+                                                            p.c-o-light sullivan@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Kairos Frost') 
+                                                            .common-circle.bg-lighter-dark K
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Oceana Meridian')
+                                                            img.common-circle(src="../assets/images/user/2.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Ember Wren')
+                                                            .common-circle.bg-lighter-primary E
+                                                td 550
+                                                td 200
+                                                td $9580
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard-11/user/8.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Jeffrey Daniel
+                                                            p.c-o-light jeffrey@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Atlas Stone')
+                                                            img.common-circle(src="../assets/images/user/12.png", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Oceana Meridian')
+                                                            img.common-circle(src="../assets/images/user/10.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jett Maverick')
+                                                            .common-circle.bg-lighter-primary J
+                                                td 130
+                                                td 250
+                                                td $1050
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard-11/user/9.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Romeo Murray
+                                                            p.c-o-light romeo@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Atlas Stone')
+                                                            img.common-circle(src="../assets/images/user/12.png", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Oceana Meridian')
+                                                            img.common-circle(src="../assets/images/user/10.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jett Maverick')
+                                                            .common-circle.bg-lighter-warning J
+                                                td 225
+                                                td 260
+                                                td $3500
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard-11/user/10.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Zola Rodriguez
+                                                            p.c-o-light zola@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Calista Rivers')
+                                                            img.common-circle(src="../assets/images/dashboard/user/3.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jasper Nightingale')
+                                                            img.common-circle(src="../assets/images/dashboard/user/4.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Seraphina Evergreen') 
+                                                            .common-circle.bg-lighter-primary S
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Caspian Wilde')
+                                                            img.common-circle(src="../assets/images/dashboard/user/5.jpg", alt="user")
+                                                td 305
+                                                td 680
+                                                td $4590
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard/user/3.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Mekhi Rubio
+                                                            p.c-o-light mekhi@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Daxton Creed')
+                                                            .common-circle.bg-lighter-primary D
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Marigold Luna')
+                                                            .common-circle.bg-lighter-warning M
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Charles Rodriguez')
+                                                            img.common-circle(src="../assets/images/user/14.png", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Hernandez')
+                                                            img.common-circle(src="../assets/images/user/3.png", alt="user")
+                                                td 460
+                                                td 850
+                                                td $5600
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard-11/user/11.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Corbin Lynn
+                                                            p.c-o-light corbin@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Joseph Garcia')
+                                                            img.common-circle(src="../assets/images/avtar/16.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Elizabeth Davis')
+                                                            img.common-circle(src="../assets/images/avtar/3.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Karen Moore') 
+                                                            .common-circle.bg-lighter-warning K
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Robert Williams')
+                                                            .common-circle.bg-lighter-danger R
+                                                td 500
+                                                td 120
+                                                td $9980
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard/user/4.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Zev Livingston
+                                                            p.c-o-light zev@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Joseph Garcia')
+                                                            img.common-circle(src="../assets/images/avtar/16.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Elizabeth Davis')
+                                                            img.common-circle(src="../assets/images/avtar/3.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Karen Moore') 
+                                                            .common-circle.bg-lighter-warning K
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Robert Williams')
+                                                            .common-circle.bg-lighter-danger R
+                                                td 586
+                                                td 140
+                                                td $5780
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard/user/11.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Queen Hart
+                                                            p.c-o-light queen@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Daxton Creed')
+                                                            .common-circle.bg-lighter-primary D
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Marigold Luna')
+                                                            .common-circle.bg-lighter-warning M
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Charles Rodriguez')
+                                                            img.common-circle(src="../assets/images/user/14.png", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Hernandez')
+                                                            img.common-circle(src="../assets/images/user/3.png", alt="user")
+                                                td 587
+                                                td 140
+                                                td $8900
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard/user/12.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Braelynn Fowler
+                                                            p.c-o-light braelynn@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Levine Raven')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/2.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Davis Jone')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/12.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jessica Anderson')
+                                                            img.common-circle(src="../assets/images/dashboard-9/user/2.png", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Dashiell Wolfe')
+                                                            img.common-circle(src="../assets/images/dashboard-9/user/5.png", alt="user")
+                                                td 478
+                                                td 150
+                                                td $9800
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard/user/6.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Opal Vazquez
+                                                            p.c-o-light opal@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Xander Wilde')
+                                                            .common-circle.bg-lighter-secondary X
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Charles Rodriguez')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/5.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Zenith Nova')
+                                                            .common-circle.bg-lighter-info Z
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Hernandez')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/6.jpg", alt="user")
+                                                td 985
+                                                td 120
+                                                td $6600
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard/user/13.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Peyton Hendrix
+                                                            p.c-o-light peyton@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Joseph Garcia')
+                                                            img.common-circle(src="../assets/images/avtar/16.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Elizabeth Davis')
+                                                            img.common-circle(src="../assets/images/avtar/3.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Karen Moore') 
+                                                            .common-circle.bg-lighter-warning K
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Robert Williams')
+                                                            .common-circle.bg-lighter-danger R
+                                                td 890
+                                                td 250
+                                                td $9990
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard/user/7.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Cooper Hanna
+                                                            p.c-o-light cooper@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jasper Nightingale')
+                                                            img.common-circle(src="../assets/images/dashboard/user/4.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Calista Rivers')
+                                                            img.common-circle(src="../assets/images/dashboard/user/3.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Caspian Wilde')
+                                                            img.common-circle(src="../assets/images/dashboard/user/5.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Seraphina Evergreen') 
+                                                            .common-circle.bg-lighter-primary S
+                                                td 250
+                                                td 650
+                                                td $1790
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard/user/10.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Tristen Harrison
+                                                            p.c-o-light tristen@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Sarah Wilson')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/2.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Linda Brown') 
+                                                            .common-circle.bg-lighter-danger L
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jessica Anderson')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/8.jpg", alt="user") 
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Richard Taylor')
+                                                            img.common-circle(src="../assets/images/dashboard-11/user/1.jpg", alt="user")
+                                                td 105
+                                                td 225
+                                                td $9999
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td
+                                                    .customer-details
+                                                        img.img-fluid(src="../assets/images/dashboard/user/1.jpg", alt="user")
+                                                        div
+                                                            a(href="#!") Rosalyn Hammond
+                                                            p.c-o-light rosalyn@gmail.com
+                                                td 
+                                                    ul.common-f-start.customer-group
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Caleb Rivera')
+                                                            img.common-circle(src="../assets/images/dashboard/user/12.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jenny Wilson')
+                                                            img.common-circle(src="../assets/images/dashboard/user/2.jpg", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Dashiell Wolfe')
+                                                            img.common-circle(src="../assets/images/dashboard-9/user/5.png", alt="user")
+                                                        li(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Jessica Anderson')
+                                                            img.common-circle(src="../assets/images/dashboard-9/user/2.png", alt="user")
+                                                td 104
+                                                td 130
+                                                td $8005
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

@@ -1,0 +1,279 @@
+- var page_Title = 'Wishlist';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var trash                 = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Wishlist
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Ecommerce
+                    li.breadcrumb-item.active Wishlist
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-sm-12
+                .card
+                  .card-body
+                    h5 Wishlist 
+                      span.c-o-light &lpar;11&rpar;
+              .col-12 
+                .row.g-3.m-b-20 
+                  .col-xxl-4.col-sm-6.box-col-6.inbox-data 
+                    .card.mb-0.h-100
+                      .wishlist-box.card-body
+                        div
+                          .wishlist-image
+                            a(href="product-grid.html")
+                              img(src="../assets/images/dashboard-2/order/sub-product/16.png", alt="purse")
+                            .wishlist-close-btn
+                              button.btn.trash-3 
+                                i.fa-solid.fa-xmark
+                          .wishlist-footer
+                            span.brand-name Fendi
+                            a(href="product-grid.html") 
+                              h6 2008 Leather Bag Premium
+                            span.txt-success.mt-1 In Stock 
+                            h6.price $250.42
+                              del $300.00
+                            a.btn.bg-primary.btn-hover-effect(href="cart.html") 
+                              i.fa-solid.fa-cart-shopping.me-2
+                              | Move to Cart
+                  .col-xxl-4.col-sm-6.box-col-6.inbox-data 
+                    .card.mb-0.h-100
+                      .wishlist-box.card-body
+                        div
+                          .wishlist-image
+                            a(href="product-grid.html")
+                              img(src="../assets/images/dashboard-2/order/sub-product/24.png", alt="watch")
+                            .wishlist-close-btn
+                              button.btn.trash-3 
+                                i.fa-solid.fa-xmark
+                          .wishlist-footer
+                            span.brand-name Fastrack
+                            a(href="product-grid.html") 
+                              h6 Chronosphere Elite Watch
+                            span.txt-success.mt-1 In Stock 
+                            h6.price $140.00
+                              del $200.00
+                            a.btn.bg-primary.btn-hover-effect(href="cart.html") 
+                              i.fa-solid.fa-cart-shopping.me-2
+                              | Move to Cart
+                  .col-xxl-4.col-sm-6.box-col-6.inbox-data 
+                    .card.mb-0.h-100
+                      .wishlist-box.card-body
+                        div
+                          .wishlist-image
+                            a(href="product-grid.html")
+                              img(src="../assets/images/dashboard-2/order/sub-product/14.png", alt="shoes")
+                            .wishlist-close-btn
+                              button.btn.trash-3 
+                                i.fa-solid.fa-xmark
+                          .wishlist-footer
+                            span.brand-name Sneaker
+                            a(href="product-grid.html") 
+                              h6 Men's Shoes for Running
+                            span.txt-success.mt-1 In Stock 
+                            h6.price $150.42
+                              del $180.00
+                            a.btn.bg-primary.btn-hover-effect(href="cart.html") 
+                              i.fa-solid.fa-cart-shopping.me-2
+                              | Move to Cart
+                  .col-xxl-4.col-sm-6.box-col-6.inbox-data 
+                    .card.mb-0.h-100
+                      .wishlist-box.card-body.h-100
+                        div
+                          .wishlist-image
+                            a(href="product-grid.html")
+                              img(src="../assets/images/dashboard-2/order/sub-product/26.png", alt="lamp")
+                            .wishlist-close-btn
+                              button.btn.trash-3 
+                                i.fa-solid.fa-xmark
+                          .wishlist-footer
+                            span.brand-name Luminara
+                            a(href="product-grid.html") 
+                              h6 Golden Light Wall Lamps
+                            span.txt-danger.mt-1 Out of Stock
+                            h6.price $99.42
+                              del $120.00
+                            .common-flex
+                              a.btn.bg-primary.btn-hover-effect.disabled(href="#!")
+                                i.fa-solid.fa-cart-shopping.me-2
+                                | Move to Cart
+                              a.btn.bg-danger.btn-hover-effect(href="#!")
+                                i.fa-solid.fa-bell.me-2
+                                | Notify Me When Available
+                  .col-xxl-4.col-sm-6.box-col-6.inbox-data 
+                    .card.mb-0.h-100
+                      .wishlist-box.card-body.h-100
+                        div
+                          .wishlist-image
+                            a(href="product-grid.html")
+                              img(src="../assets/images/dashboard-8/product-categories/headphone.png", alt="headphone")
+                            .wishlist-close-btn
+                              button.btn.trash-3 
+                                i.fa-solid.fa-xmark
+                          .wishlist-footer
+                            span.brand-name Boat
+                            a(href="product-grid.html") 
+                              h6 Wireless Headphone with Mic
+                            span.txt-danger.mt-1 Out of Stock 
+                            h6.price $1800.42
+                              del $2000.00
+                            .common-flex
+                              a.btn.bg-primary.btn-hover-effect.disabled(href="#!")
+                                i.fa-solid.fa-cart-shopping.me-2
+                                | Move to Cart
+                              a.btn.bg-danger.btn-hover-effect(href="#!")
+                                i.fa-solid.fa-bell.me-2
+                                | Notify Me When Available
+                  .col-xxl-4.col-sm-6.box-col-6.inbox-data 
+                    .card.mb-0.h-100
+                      .wishlist-box.card-body.h-100
+                        div
+                          .wishlist-image
+                            a(href="product-grid.html")
+                              img(src="../assets/images/dashboard-8/product-categories/phone.png", alt="phone")
+                            .wishlist-close-btn
+                              button.btn.trash-3 
+                                i.fa-solid.fa-xmark
+                          .wishlist-footer
+                            span.brand-name Apple
+                            a(href="product-grid.html") 
+                              h6 Iphone 13 Pro(128GB) - LightBlue
+                            span.txt-success.mt-1 In Stock 
+                            h6.price $9799.30
+                              del $98727.00
+                            a.btn.bg-primary.btn-hover-effect(href="cart.html") 
+                              i.fa-solid.fa-cart-shopping.me-2
+                              | Move to Cart
+                  .col-xxl-4.col-sm-6.box-col-6.inbox-data 
+                    .card.mb-0.h-100
+                      .wishlist-box.card-body.h-100
+                        div
+                          .wishlist-image
+                            a(href="product-grid.html")
+                              img(src="../assets/images/dashboard-8/product-categories/watch.png", alt="watch")
+                            .wishlist-close-btn
+                              button.btn.trash-3 
+                                i.fa-solid.fa-xmark
+                          .wishlist-footer
+                            span.brand-name Apple
+                            a(href="product-grid.html") 
+                              h6 Apple Smart Watches-i2
+                            span.txt-danger.mt-1 Out Of Stock 
+                            h6.price $785.30
+                              del $890.00
+                            .common-flex
+                              a.btn.bg-primary.btn-hover-effect.disabled(href="#!")
+                                i.fa-solid.fa-cart-shopping.me-2
+                                | Move to Cart
+                              a.btn.bg-danger.btn-hover-effect(href="#!")
+                                i.fa-solid.fa-bell.me-2
+                                | Notify Me When Available
+                  .col-xxl-4.col-sm-6.box-col-6.inbox-data 
+                    .card.mb-0.h-100
+                      .wishlist-box.card-body.h-100
+                        div
+                          .wishlist-image
+                            a(href="product-grid.html")
+                              img(src="../assets/images/dashboard-8/product-categories/dvd.png", alt="DVD")
+                            .wishlist-close-btn
+                              button.btn.trash-3 
+                                i.fa-solid.fa-xmark
+                          .wishlist-footer
+                            span.brand-name VistaPlay
+                            a(href="product-grid.html") 
+                              h6 DVD Player Amplifier-iB33
+                            span.txt-success.mt-1 In Stock 
+                            h6.price $448.00
+                              del $500.00
+                            a.btn.bg-primary.btn-hover-effect(href="cart.html") 
+                              i.fa-solid.fa-cart-shopping.me-2
+                              | Move to Cart
+                  .col-xxl-4.col-sm-6.box-col-6.inbox-data 
+                    .card.mb-0.h-100
+                      .wishlist-box.card-body.h-100
+                        div
+                          .wishlist-image
+                            a(href="product-grid.html")
+                              img(src="../assets/images/dashboard-8/product-categories/mouse.png", alt="mouse")
+                            .wishlist-close-btn
+                              button.btn.trash-3 
+                                i.fa-solid.fa-xmark
+                          .wishlist-footer
+                            span.brand-name SwiftClick
+                            a(href="product-grid.html") 
+                              h6 Swiftclick Wireless Mouse 
+                            span.txt-success.mt-1 In Stock 
+                            h6.price $150.00
+                              del $210.00
+                            a.btn.bg-primary.btn-hover-effect(href="cart.html") 
+                              i.fa-solid.fa-cart-shopping.me-2
+                              | Move to Cart
+                  .col-xxl-4.col-sm-6.box-col-6.inbox-data 
+                    .card.mb-0.h-100
+                      .wishlist-box.card-body.h-100
+                        div
+                          .wishlist-image
+                            a(href="product-grid.html")
+                              img(src="../assets/images/product/category/5.png", alt="camera")
+                            .wishlist-close-btn
+                              button.btn.trash-3 
+                                i.fa-solid.fa-xmark
+                          .wishlist-footer
+                            span.brand-name Panasonic
+                            a(href="product-grid.html") 
+                              h6 Lens Camera 12-40mm(Black)
+                            span.txt-success.mt-1 In Stock 
+                            h6.price $800.00
+                              del $900.00
+                            a.btn.bg-primary.btn-hover-effect(href="cart.html") 
+                              i.fa-solid.fa-cart-shopping.me-2
+                              | Move to Cart
+                  .col-xxl-4.col-sm-6.box-col-6.inbox-data 
+                    .card.mb-0.h-100
+                      .wishlist-box.card-body.h-100
+                        div
+                          .wishlist-image
+                            a(href="product-grid.html")
+                              img(src="../assets/images/product/category/4.png", alt="sleeper")
+                            .wishlist-close-btn
+                              button.btn.trash-3 
+                                i.fa-solid.fa-xmark
+                          .wishlist-footer
+                            span.brand-name Ortho
+                            a(href="product-grid.html") 
+                              h6 Doctor Ortho Slippers for M/F
+                            span.txt-success.mt-1 In Stock 
+                            h6.price $180.00
+                              del $200.00
+                            a.btn.bg-primary.btn-hover-effect(href="cart.html") 
+                              i.fa-solid.fa-cart-shopping.me-2
+                              | Move to Cart
+            // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

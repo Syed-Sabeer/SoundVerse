@@ -1,0 +1,1207 @@
+- var page_Title = 'Flash Icons';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var clipboard             = true;
+- var prism                 = true;
+- var customcard            = true;
+- var height_equal          = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Flash Icons
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Animation
+                    li.breadcrumb-item.active Flash Icons
+          // Container-fluid starts
+          .container-fluid 
+            .row
+                .col-12
+                  .card
+                    .card-header
+                      h5 Pulse Animations
+                      p.f-m-light.mt-1
+                        | You can use the 
+                        code main-animate
+                        |  and 
+                        code pulse-wrapper
+                        |  classes for the pulse animation.
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            i.fa-solid.fa-gear.fa-spin
+                          li
+                            i.view-html.fa-solid.fa-code
+                          li
+                            i.icofont.icofont-maximize.full-card
+                          li
+                            i.icofont.icofont-minus.minimize-card
+                          li
+                            i.icofont.icofont-refresh.reload-card
+                          li
+                            i.icofont.icofont-error.close-card
+                    .card-body.pulse-wrapper.main-animate
+                      .row.g-3
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Stroke Icons
+                            div.common-flex 
+                              a(href="#!")  
+                                svg.stroke-icon
+                                    use(href='../assets/svg/icon-sprite.svg#stroke-calendar')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-ui-kits')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-bookmark')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-to-do')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-table')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-animation')
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Fill Icons 
+                            div.common-flex 
+                              a(href="#!")  
+                                svg.fill-icon
+                                    use(href='../assets/svg/icon-sprite.svg#fill-calender')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-ui-kits')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-bookmark')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-to-do')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-table')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-animation')
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Feather Icons   
+                            div.common-flex 
+                              a(href="#!")  
+                                i(data-feather='gitlab')
+                              a(href="#!")  
+                                i(data-feather='twitter')
+                              a(href="#!")  
+                                i(data-feather='youtube')
+                              a(href="#!")  
+                                i(data-feather='thumbs-up')
+                              a(href="#!")  
+                                i(data-feather='instagram')
+                              a(href="#!")  
+                                i(data-feather='github')
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Ico Icons 
+                            div.common-flex 
+                              a(href="#!")  
+                                i.icofont.icofont-hotel-boy-alt
+                              a(href="#!")  
+                                i.icofont.icofont-boy
+                              a(href="#!")  
+                                i.icofont.icofont-girl
+                              a(href="#!")  
+                                i.icofont.icofont-business-man
+                              a(href="#!")  
+                                i.icofont.icofont-man-in-glasses
+                              a(href="#!")  
+                                i.icofont.icofont-business-man-alt-1
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Fontawesome Icons   
+                            div.common-flex 
+                              a(href="#!")  
+                                i.fa-regular.fa-sun
+                              a(href="#!")  
+                                i.fa-brands.fa-linux
+                              a(href="#!")  
+                                i.fa-brands.fa-stack-overflow
+                              a(href="#!")  
+                                i.fa-brands.fa-windows
+                              a(href="#!")  
+                                i.fa-brands.fa-reddit-alien
+                              a(href="#!")  
+                                i.fa-brands.fa-dropbox
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#pulse_animation', title='Copy')
+                          i.icofont.icofont-copy-alt
+                        pre.custom-scrollbar
+                          code.language-html#pulse_animation
+                            |&lt;div class="card-body pulse-wrapper main-animate"&gt;
+                            |  &lt;div class="row g-3"&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Stroke Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-calendar"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-ui-kits"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-bookmark"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-to-do"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-table"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-animation"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Fill Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-calender"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-ui-kits"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-bookmark"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-to-do"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-table"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-animation"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Feather Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="gitlab"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="twitter"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="youtube"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="thumbs-up"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="instagram"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="github"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Ico Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-hotel-boy-alt"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-boy"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-girl"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-business-man"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-man-in-glasses"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-business-man-alt-1"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Fontawesome Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt; 
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-regular fa-sun"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-linux"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-stack-overflow"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-windows"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-reddit-alien"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-dropbox"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |         &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |  &lt;/div&gt;
+                            |&lt;/div&gt;
+                .col-12
+                  .card
+                    .card-header
+                      h5 Pulse Double Border Animations
+                      p.f-m-light.mt-1
+                        | You can use the 
+                        code main-animate , border-pulse-wrapper ,
+                        |  and 
+                        code pulse-wrapper
+                        |  classes for the double border pulse animation.
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            i.fa-solid.fa-gear.fa-spin
+                          li
+                            i.view-html.fa-solid.fa-code
+                          li
+                            i.icofont.icofont-maximize.full-card
+                          li
+                            i.icofont.icofont-minus.minimize-card
+                          li
+                            i.icofont.icofont-refresh.reload-card
+                          li
+                            i.icofont.icofont-error.close-card
+                    .card-body.pulse-wrapper.main-animate.border-pulse-wrapper
+                      .row.g-3
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Stroke Icons
+                            div.common-flex 
+                              a(href="#!")  
+                                svg.stroke-icon
+                                    use(href='../assets/svg/icon-sprite.svg#stroke-calendar')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-ui-kits')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-bookmark')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-to-do')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-table')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-animation')
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Fill Icons     
+                            div.common-flex 
+                              a(href="#!")  
+                                svg.fill-icon
+                                    use(href='../assets/svg/icon-sprite.svg#fill-calender')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-ui-kits')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-bookmark')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-to-do')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-table')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-animation')
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Feather Icons   
+                            div.common-flex 
+                              a(href="#!")  
+                                i(data-feather='gitlab')
+                              a(href="#!")  
+                                i(data-feather='twitter')
+                              a(href="#!")  
+                                i(data-feather='youtube')
+                              a(href="#!")  
+                                i(data-feather='thumbs-up')
+                              a(href="#!")  
+                                i(data-feather='instagram')
+                              a(href="#!")  
+                                i(data-feather='github')
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Ico Icons    
+                            div.common-flex 
+                              a(href="#!")  
+                                i.icofont.icofont-hotel-boy-alt
+                              a(href="#!")  
+                                i.icofont.icofont-boy
+                              a(href="#!")  
+                                i.icofont.icofont-girl
+                              a(href="#!")  
+                                i.icofont.icofont-business-man
+                              a(href="#!")  
+                                i.icofont.icofont-man-in-glasses
+                              a(href="#!")  
+                                i.icofont.icofont-business-man-alt-1
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Fontawesome Icons    
+                            div.common-flex 
+                              a(href="#!")  
+                                i.fa-regular.fa-sun
+                              a(href="#!")  
+                                i.fa-brands.fa-linux
+                              a(href="#!")  
+                                i.fa-brands.fa-stack-overflow
+                              a(href="#!")  
+                                i.fa-brands.fa-windows
+                              a(href="#!")  
+                                i.fa-brands.fa-reddit-alien
+                              a(href="#!")  
+                                i.fa-brands.fa-dropbox
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#double_border_animation', title='Copy')
+                          i.icofont.icofont-copy-alt
+                        pre.custom-scrollbar
+                          code.language-html#double_border_animation
+                            |&lt;div class="card-body pulse-wrapper main-animate border-pulse-wrapper"&gt;
+                            |  &lt;div class="row g-3"&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Stroke Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-calendar"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-ui-kits"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-bookmark"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-to-do"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-table"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-animation"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Fill Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-calender"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-ui-kits"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-bookmark"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-to-do"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-table"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-animation"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Feather Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="gitlab"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="twitter"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="youtube"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="thumbs-up"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="instagram"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="github"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Ico Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-hotel-boy-alt"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-boy"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-girl"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-business-man"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-man-in-glasses"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-business-man-alt-1"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Fontawesome Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-regular fa-sun"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-linux"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-stack-overflow"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-windows"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-reddit-alien"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-dropbox"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |  &lt;/div&gt;
+                            |&lt;/div&gt;
+                .col-12
+                  .card
+                    .card-header
+                      h5 Pulse Rhombus Animations
+                      p.f-m-light.mt-1
+                        | You can use the 
+                        code main-animate , pulse-rhombus
+                        |  and 
+                        code pulse-wrapper
+                        |  classes for the clippath shaped pulse animation.
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            i.fa-solid.fa-gear.fa-spin
+                          li
+                            i.view-html.fa-solid.fa-code
+                          li
+                            i.icofont.icofont-maximize.full-card
+                          li
+                            i.icofont.icofont-minus.minimize-card
+                          li
+                            i.icofont.icofont-refresh.reload-card
+                          li
+                            i.icofont.icofont-error.close-card
+                    .card-body.pulse-wrapper.main-animate.pulse-rhombus
+                      .row.g-3
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Stroke Icons
+                            div.common-flex 
+                              a(href="#!")  
+                                svg.stroke-icon
+                                    use(href='../assets/svg/icon-sprite.svg#stroke-calendar')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-ui-kits')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-bookmark')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-to-do')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-table')
+                              a(href="#!")  
+                                svg.stroke-icon
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-animation')
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Fill Icons 
+                            div.common-flex 
+                              a(href="#!")  
+                                svg.fill-icon
+                                    use(href='../assets/svg/icon-sprite.svg#fill-calender')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-ui-kits')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-bookmark')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-to-do')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-table')
+                              a(href="#!")  
+                                svg.fill-icon
+                                  use(href='../assets/svg/icon-sprite.svg#fill-animation')
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Feather Icons
+                            div.common-flex 
+                              a(href="#!")  
+                                i(data-feather='gitlab')
+                              a(href="#!")  
+                                i(data-feather='twitter')
+                              a(href="#!")  
+                                i(data-feather='youtube')
+                              a(href="#!")  
+                                i(data-feather='thumbs-up')
+                              a(href="#!")  
+                                i(data-feather='instagram')
+                              a(href="#!")  
+                                i(data-feather='github')
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Ico Icons 
+                            div.common-flex 
+                              a(href="#!")  
+                                i.icofont.icofont-hotel-boy-alt
+                              a(href="#!")  
+                                i.icofont.icofont-boy
+                              a(href="#!")  
+                                i.icofont.icofont-girl
+                              a(href="#!")  
+                                i.icofont.icofont-business-man
+                              a(href="#!")  
+                                i.icofont.icofont-man-in-glasses
+                              a(href="#!")  
+                                i.icofont.icofont-business-man-alt-1
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Fontawesome Icons 
+                            div.common-flex 
+                              a(href="#!")  
+                                i.fa-regular.fa-sun
+                              a(href="#!")  
+                                i.fa-brands.fa-linux
+                              a(href="#!")  
+                                i.fa-brands.fa-stack-overflow
+                              a(href="#!")  
+                                i.fa-brands.fa-windows
+                              a(href="#!")  
+                                i.fa-brands.fa-reddit-alien
+                              a(href="#!")  
+                                i.fa-brands.fa-dropbox
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#rhombus_animation', title='Copy')
+                          i.icofont.icofont-copy-alt
+                        pre.custom-scrollbar
+                          code.language-html#rhombus_animation
+                            |&lt;div class="card-body pulse-wrapper main-animate pulse-rhombus"&gt;
+                            |  &lt;div class="row g-3"&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Stroke Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-calendar"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-ui-kits"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-bookmark"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-to-do"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-table"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="stroke-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-animation"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Fill Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-calender"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-ui-kits"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-bookmark"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-to-do"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-table"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt; 
+                            |            &lt;svg class="fill-icon"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-animation"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Feather Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="gitlab"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="twitter"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="youtube"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="thumbs-up"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="instagram"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i data-feather="github"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Ico Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-hotel-boy-alt"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-boy"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-girl"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-business-man"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-man-in-glasses"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="icofont icofont-business-man-alt-1"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Fontawesome Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-regular fa-sun"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-linux"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-stack-overflow"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-windows"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-reddit-alien"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a href="#!"&gt;
+                            |            &lt;i class="fa-brands fa-dropbox"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |  &lt;/div&gt;
+                            |&lt;/div&gt;
+                .col-12
+                  .card
+                    .card-header
+                      h5 Pulse Colored Animations
+                      p.f-m-light.mt-1
+                        | You can use the 
+                        code main-animate , pulse-rabbet ,
+                        |  and 
+                        code pulse-wrapper
+                        |  classes for the colored SVG pulse animation.
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            i.fa-solid.fa-gear.fa-spin
+                          li
+                            i.view-html.fa-solid.fa-code
+                          li
+                            i.icofont.icofont-maximize.full-card
+                          li
+                            i.icofont.icofont-minus.minimize-card
+                          li
+                            i.icofont.icofont-refresh.reload-card
+                          li
+                            i.icofont.icofont-error.close-card
+                    .card-body.pulse-wrapper.main-animate.pulse-rabbet
+                      .row.g-3
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Stroke Icons
+                            div.common-flex 
+                              a(href="#!").bg-light-primary  
+                                svg.stroke-primary
+                                    use(href='../assets/svg/icon-sprite.svg#stroke-calendar')
+                              a(href="#!").bg-light-primary  
+                                svg.stroke-primary
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-ui-kits')
+                              a(href="#!").bg-light-primary  
+                                svg.stroke-primary
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-bookmark')
+                              a(href="#!").bg-light-primary  
+                                svg.stroke-primary
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-to-do')
+                              a(href="#!").bg-light-primary  
+                                svg.stroke-primary
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-table')
+                              a(href="#!").bg-light-primary  
+                                svg.stroke-primary
+                                  use(href='../assets/svg/icon-sprite.svg#stroke-animation')
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Fill Icons 
+                            div.common-flex 
+                              a(href="#!").bg-light-secondary  
+                                svg.fill-secondary
+                                    use(href='../assets/svg/icon-sprite.svg#fill-calender')
+                              a(href="#!").bg-light-secondary  
+                                svg.fill-secondary
+                                  use(href='../assets/svg/icon-sprite.svg#fill-ui-kits')
+                              a(href="#!").bg-light-secondary  
+                                svg.fill-secondary
+                                  use(href='../assets/svg/icon-sprite.svg#fill-bookmark')
+                              a(href="#!").bg-light-secondary  
+                                svg.fill-secondary
+                                  use(href='../assets/svg/icon-sprite.svg#fill-to-do')
+                              a(href="#!").bg-light-secondary  
+                                svg.fill-secondary
+                                  use(href='../assets/svg/icon-sprite.svg#fill-table')
+                              a(href="#!").bg-light-secondary  
+                                svg.fill-secondary
+                                  use(href='../assets/svg/icon-sprite.svg#fill-animation')
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Feather Icons 
+                            div.common-flex 
+                              a(href="#!").bg-light-success  
+                                i.stroke-success(data-feather='gitlab')
+                              a(href="#!").bg-light-success  
+                                i.stroke-success(data-feather='twitter')
+                              a(href="#!").bg-light-success  
+                                i.stroke-success(data-feather='youtube')
+                              a(href="#!").bg-light-success  
+                                i.stroke-success(data-feather='thumbs-up')
+                              a(href="#!").bg-light-success  
+                                i.stroke-success(data-feather='instagram')
+                              a(href="#!").bg-light-success  
+                                i.stroke-success(data-feather='github')
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Ico Icons 
+                            div.common-flex 
+                              a(href="#!").bg-light-warning  
+                                i.txt-warning.icofont.icofont-hotel-boy-alt
+                              a(href="#!").bg-light-warning  
+                                i.txt-warning.icofont.icofont-boy
+                              a(href="#!").bg-light-warning  
+                                i.txt-warning.icofont.icofont-girl
+                              a(href="#!").bg-light-warning  
+                                i.txt-warning.icofont.icofont-business-man
+                              a(href="#!").bg-light-warning  
+                                i.txt-warning.icofont.icofont-man-in-glasses
+                              a(href="#!").bg-light-warning  
+                                i.txt-warning.icofont.icofont-business-man-alt-1
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.border.rounded-3
+                            h6.sub-title.fw-bold Fontawesome Icons   
+                            div.common-flex 
+                              a(href="#!").bg-light-info  
+                                i.fa-regular.fa-sun.txt-info
+                              a(href="#!").bg-light-info  
+                                i.fa-brands.fa-linux.txt-info
+                              a(href="#!").bg-light-info  
+                                i.fa-brands.fa-stack-overflow.txt-info
+                              a(href="#!").bg-light-info  
+                                i.fa-brands.fa-windows.txt-info
+                              a(href="#!").bg-light-info  
+                                i.fa-brands.fa-reddit-alien.txt-info
+                              a(href="#!").bg-light-info  
+                                i.fa-brands.fa-dropbox.txt-info
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#pulse_color_animation', title='Copy')
+                          i.icofont.icofont-copy-alt
+                        pre.custom-scrollbar
+                          code.language-html#pulse_color_animation
+                            |&lt;div class="card-body pulse-wrapper main-animate pulse-rabbet"&gt;
+                            |  &lt;div class="row g-3"&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Stroke Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a class="bg-light-primary" href="#!"&gt; 
+                            |            &lt;svg class="stroke-primary"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-calendar"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-primary" href="#!"&gt; 
+                            |            &lt;svg class="stroke-primary"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-ui-kits"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-primary" href="#!"&gt; 
+                            |            &lt;svg class="stroke-primary"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-bookmark"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-primary" href="#!"&gt; 
+                            |            &lt;svg class="stroke-primary"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-to-do"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-primary" href="#!"&gt; 
+                            |            &lt;svg class="stroke-primary"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-table"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-primary" href="#!"&gt; 
+                            |            &lt;svg class="stroke-primary"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#stroke-animation"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Fill Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a class="bg-light-secondary" href="#!"&gt; 
+                            |            &lt;svg class="fill-secondary"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-calender"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-secondary" href="#!"&gt; 
+                            |            &lt;svg class="fill-secondary"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-ui-kits"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-secondary" href="#!"&gt; 
+                            |            &lt;svg class="fill-secondary"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-bookmark"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-secondary" href="#!"&gt; 
+                            |            &lt;svg class="fill-secondary"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-to-do"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-secondary" href="#!"&gt; 
+                            |            &lt;svg class="fill-secondary"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-table"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-secondary" href="#!"&gt; 
+                            |            &lt;svg class="fill-secondary"&gt;
+                            |              &lt;use href="../assets/svg/icon-sprite.svg#fill-animation"&gt;&lt;/use&gt;
+                            |            &lt;/svg&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Feather Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a class="bg-light-success" href="#!"&gt;
+                            |            &lt;i class="stroke-success" data-feather="gitlab"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-success" href="#!"&gt;
+                            |            &lt;i class="stroke-success" data-feather="twitter"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-success" href="#!"&gt;
+                            |            &lt;i class="stroke-success" data-feather="youtube"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-success" href="#!"&gt;
+                            |            &lt;i class="stroke-success" data-feather="thumbs-up"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-success" href="#!"&gt;
+                            |            &lt;i class="stroke-success" data-feather="instagram"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-success" href="#!"&gt;
+                            |            &lt;i class="stroke-success" data-feather="github"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Ico Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a class="bg-light-warning" href="#!"&gt;
+                            |            &lt;i class="txt-warning icofont icofont-hotel-boy-alt"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-warning" href="#!"&gt;
+                            |            &lt;i class="txt-warning icofont icofont-boy"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-warning" href="#!"&gt;
+                            |            &lt;i class="txt-warning icofont icofont-girl"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-warning" href="#!"&gt;
+                            |            &lt;i class="txt-warning icofont icofont-business-man"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-warning" href="#!"&gt;
+                            |            &lt;i class="txt-warning icofont icofont-man-in-glasses"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-warning" href="#!"&gt;
+                            |            &lt;i class="txt-warning icofont icofont-business-man-alt-1"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |    &lt;div class="col-md-6 col-xxl-4"&gt;
+                            |      &lt;div class="card-wrapper border rounded-3"&gt;
+                            |        &lt;h6 class="sub-title fw-bold"&gt;Fontawesome Icons&lt;/h6&gt;
+                            |        &lt;div class="common-flex"&gt;
+                            |          &lt;a class="bg-light-info" href="#!"&gt;
+                            |             &lt;i class="fa-regular fa-sun txt-info"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-info" href="#!"&gt;
+                            |             &lt;i class="fa-brands fa-linux txt-info"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-info" href="#!"&gt;
+                            |             &lt;i class="fa-brands fa-stack-overflow txt-info"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-info" href="#!"&gt;
+                            |             &lt;i class="fa-brands fa-windows txt-info"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-info" href="#!"&gt;
+                            |             &lt;i class="fa-brands fa-reddit-alien txt-info"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |          &lt;a class="bg-light-info" href="#!"&gt;
+                            |             &lt;i class="fa-brands fa-dropbox txt-info"&gt;&lt;/i&gt;
+                            |          &lt;/a&gt;
+                            |        &lt;/div&gt;
+                            |      &lt;/div&gt;
+                            |    &lt;/div&gt;
+                            |  &lt;/div&gt;
+                            |&lt;/div&gt;                
+                .col-12
+                  .card
+                    .card-header
+                      h5 Heart-beat Animations
+                      p.f-m-light.mt-1
+                        | You can use the 
+                        code main-animate
+                        |  and 
+                        code heartbeat-wrapper
+                        |  classes for the colored SVG pulse animation.
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            i.fa-solid.fa-gear.fa-spin
+                          li
+                            i.view-html.fa-solid.fa-code
+                          li
+                            i.icofont.icofont-maximize.full-card
+                          li
+                            i.icofont.icofont-minus.minimize-card
+                          li
+                            i.icofont.icofont-refresh.reload-card
+                          li
+                            i.icofont.icofont-error.close-card
+                    .card-body.heartbeat-wrapper.main-animate
+                      div.common-flex 
+                          a(href="#!")  
+                            i.icon-heart-broken
+                          a(href="#!")  
+                            i(data-feather='heart')
+                          a(href="#!")  
+                            i.fa-solid.fa-heart
+                          a(href="#!")  
+                            i.icofont.icofont-heart-beat
+                          a(href="#!")  
+                            i.icon-heart
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#heart_beat_animation', title='Copy')
+                          i.icofont.icofont-copy-alt
+                        pre.custom-scrollbar
+                          code.language-html#heart_beat_animation
+                            |&lt;div class="card-body heartbeat-wrapper main-animate"&gt;
+                            |  &lt;div class="common-flex"&gt;
+                            |    &lt;a href="#!"&gt;
+                            |      &lt;i class="icon-heart-broken"&gt;&lt;/i&gt;
+                            |    &lt;/a&gt;
+                            |    &lt;a href="#!"&gt;
+                            |      &lt;i data-feather="heart"&gt;&lt;/i&gt;
+                            |    &lt;/a&gt;
+                            |    &lt;a href="#!"&gt;
+                            |      &lt;i class="fa fa-heart"&gt;&lt;/i&gt;
+                            |    &lt;/a&gt;
+                            |    &lt;a href="#!"&gt;
+                            |      &lt;i class="icofont icofont-heart-beat"&gt;&lt;/i&gt;
+                            |    &lt;/a&gt;
+                            |    &lt;a href="#!"&gt;
+                            |      &lt;i class="icon-heart"&gt;&lt;/i&gt;
+                            |    &lt;/a&gt;
+                            |  &lt;/div&gt;
+                            |&lt;/div&gt;
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

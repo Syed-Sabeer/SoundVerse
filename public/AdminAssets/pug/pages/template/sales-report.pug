@@ -1,0 +1,160 @@
+- var page_Title = 'Sales';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var bs_select             = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var datatable_extension   = true;
+- var validation_modal      = true;
+- var flatpickr             = true;
+- var moment_picker         = true;
+- var custom_flatpickr      = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Sales
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Reports
+                    li.breadcrumb-item.active Sales
+          // Container-fluid starts
+          .container-fluid.sale-report-wrapper
+            .row 
+                .col-12 
+                    .card 
+                        .card-body.px-0.pt-0
+                            .top-body
+                                .row.common-f-start.g-sm-3.g-2
+                                    .col-auto
+                                        label.form-label Select Dates
+                                    .col-auto
+                                        #reportrange.range-dropdown
+                                            span
+                            .sale-report
+                                .recent-table.table-responsive.custom-scrollbar
+                                    table#sale-report-table.table
+                                        thead 
+                                            tr 
+                                                th
+                                                th 
+                                                    span.c-o-light.f-w-600 Order Month
+                                                th 
+                                                    span.c-o-light.f-w-600 Total Sales
+                                                th 
+                                                    span.c-o-light.f-w-600 Average Order Value
+                                                th 
+                                                    span.c-o-light.f-w-600 Total Orders
+                                                th 
+                                                    span.c-o-light.f-w-600 Growth Percentage
+                                        tbody 
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td January
+                                                td 20
+                                                td 10
+                                                td 200
+                                                td 60%
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td February
+                                                td 100
+                                                td 20
+                                                td 300
+                                                td 60%
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td March
+                                                td 40
+                                                td 200
+                                                td 400
+                                                td 50%
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td April
+                                                td 30
+                                                td 400
+                                                td 800
+                                                td 40%
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td May
+                                                td 100
+                                                td 50
+                                                td 500
+                                                td 80%
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td June
+                                                td 400
+                                                td 40
+                                                td 800
+                                                td 70%
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td July
+                                                td 250
+                                                td 45
+                                                td 260
+                                                td 50%
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td August
+                                                td 120
+                                                td 20
+                                                td 460
+                                                td 80%
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td September
+                                                td 190
+                                                td 60
+                                                td 560
+                                                td 95%
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td October
+                                                td 474
+                                                td 75
+                                                td 800
+                                                td 80%
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td November
+                                                td 120
+                                                td 45
+                                                td 100
+                                                td 75%
+                                            tr.product-removes.inbox-data
+                                                td
+                                                td December
+                                                td 150
+                                                td 28
+                                                td 200
+                                                td 90%
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

@@ -1,0 +1,21 @@
+- var page_Title = 'Error 500';
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/taptop
+        // page-wrapper Start
+        #pageWrapper.page-wrapper.compact-wrapper
+          // error-500 start
+          .error-wrapper
+            .container
+              svg 
+                use(href='../assets/svg/icon-sprite.svg#error-500')
+              .col-md-8.offset-md-2
+                h3 Server Error
+                p.sub-content
+                  | The server couldn't finish processing your request due to an error.
+              div
+                a.btn.btn-primary.btn-lg(href='index.html') BACK TO HOME PAGE
+          // error-500 end
+        include ../../components/footer-files

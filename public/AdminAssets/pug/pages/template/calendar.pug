@@ -1,0 +1,123 @@
+- var page_Title = 'Calendar';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var flatpickr             = true;
+- var custom_flatpickr      = true;
+- var calendar              = true;
+- var select2_options       = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Calender
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item.active Calender
+          // Container-fluid starts
+          .container-fluid.calendar-basic
+            .card
+              .card-body
+                #wrap.row
+                  .col-xxl-3.box-col-12
+                    .md-sidebar.mb-3
+                      a.btn.btn-primary.md-sidebar-toggle(href='#!') calendar filter
+                      .md-sidebar-aside.job-left-aside.custom-scrollbar
+                        #external-events
+                          button.btn.btn-primary.w-100.mb-4(type='button', data-bs-toggle='modal', data-bs-target='#DraggableEvent') 
+                            i.fa-solid.fa-plus.me-2
+                            | Create Event
+                          h6 Draggable Events
+                          #external-events-list
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa-solid.fa-cake-candles.me-2
+                                | Birthday Party
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa-solid.fa-plane.me-2
+                                | Tour & Picnic
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa-solid.fa-file.me-2
+                                | Reporting Schedule
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa-solid.fa-utensils.me-2
+                                | Lunch & Break
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa-solid.fa-flag-checkered.me-2
+                                | Innovation Hackathon
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa-solid.fa-dumbbell.me-2
+                                | Fitness Bootcamp
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa-solid.fa-ribbon.me-2
+                                | Company Anniversary Celebration
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa-solid.fa-person-chalkboard.me-2
+                                | Client Presentation
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa-solid.fa-users.me-2
+                                | Group Projects
+                          p
+                            input#drop-remove.checkbox_animated(type='checkbox')
+                            label.mb-0(for='drop-remove') Remove after drop
+                  .col-xxl-9.box-col-12
+                    #calendar-container.calendar-default
+                      #calendar
+                      //- Create Event Modal 
+                      #DraggableEvent.modal.fade(tabindex='-1', role='dialog', aria-labelledby='DraggableEvent', aria-hidden='true')
+                        .modal-dialog.modal-lg.modal-dialog-centered
+                          .modal-content.create-event
+                              .modal-header
+                                h5.mb-0 Create Events
+                                button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+                              .modal-body.custom-input
+                                form.row.g-3
+                                  .col-md-12
+                                    label.form-label(for='eventName') Event Name
+                                    input#eventName.form-control(type='text' placeholder="Enter event name" required='')
+                                  .col-md-12
+                                    label.form-label(for='eventDetails') Event Details
+                                    textarea#eventDetails.form-control(placeholder='Enter your event details' rows="3")
+                                  .col-md-12
+                                    label.form-label(for='datetime-localEvent') Event Date
+                                    input#datetime-localEvent.form-control(type='date' value="2024-04-10")
+                                  .col-sm-6
+                                    label.form-label Start Time 
+                                    input#time-picker1.form-control(type='time' value="05:30")
+                                  .col-sm-6 
+                                    label.form-label End Time 
+                                    input#time-picker2.form-control(type='time' value="08:45")
+                              .modal-footer
+                                button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Cancel
+                                button.btn.btn-primary(type='button') Create Event
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

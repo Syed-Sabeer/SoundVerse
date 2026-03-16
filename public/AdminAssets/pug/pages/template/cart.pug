@@ -1,0 +1,249 @@
+- var page_Title = 'Cart';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var tooltip               = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var trash                 = true;
+- var touchspin_2           = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Cart
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Ecommerce
+                    li.breadcrumb-item.active Cart
+
+          // Container-fluid starts
+          .container-fluid.common-cart
+            .row
+              .col-xl-9.xl-100.box-col-8
+                .card
+                  .card-body.shopping-cart-table
+                    .recent-table.table-responsive.custom-scrollbar
+                      table#cart-table.table
+                        thead 
+                          tr 
+                            th
+                            th(data-orderable='false') 
+                              span.c-o-light.f-w-600 Shopping Cart 
+                                span.badge.badge-dark.rounded-circle 4
+                            th(data-orderable='false') 
+                              span.c-o-light.f-w-600 
+                            th(data-orderable='false') 
+                              span.c-o-light.f-w-600 
+                            th(data-orderable='false') 
+                              span.c-o-light.f-w-600
+                            th(data-orderable='false') 
+                              span.c-o-light.f-w-600 Clear All
+                                svg
+                                  use(href="../assets/svg/icon-sprite.svg#trash1")
+                        tbody 
+                          tr.inbox-data
+                            td
+                            td 
+                              .product-names
+                                .light-product-box
+                                  img.img-fluid(src="../assets/images/dashboard-8/shop-categories/headphone.png", alt="headphone")
+                                ul
+                                  li 
+                                    h6 Headphones
+                                  li
+                                    p Boat Rockerz
+                                    span.common-dot
+                                    span Colour:
+                                      span  Gray
+                            td
+                              .cart-price
+                                h5 &#36;85.00
+                                del.c-o-light &#36;100.00
+                            td 
+                              .touchspin-wrapper 
+                                button.decrement-touchspin.btn-touchspin.touchspin-primary
+                                  i.fa-solid.fa-minus 
+                                input.input-touchspin.spin-outline-primary(type='number' value='1' min='1' max='50')
+                                button.increment-touchspin.btn-touchspin.touchspin-primary
+                                  i.fa-solid.fa-plus
+                            td 
+                              h4.txt-primary &#36;85.00
+                            td 
+                              .product-action
+                                a.square-white(href="list-wish.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Wishlist') 
+                                  svg     
+                                    use(href="../assets/svg/icon-sprite.svg#fill-wishlist")
+                                a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete') 
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                          tr.inbox-data
+                            td
+                            td 
+                              .product-names
+                                .light-product-box
+                                  img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/24.png", alt="watch")
+                                ul
+                                  li 
+                                    h6 Smart Watch
+                                  li
+                                    p Fastrack
+                                    span.common-dot
+                                    span Colour:
+                                      span  Brown
+                            td
+                              .cart-price
+                                h5 &#36;140.00
+                                del.c-o-light &#36;200.00
+                            td 
+                              .touchspin-wrapper 
+                                button.decrement-touchspin.btn-touchspin.touchspin-primary
+                                  i.fa-solid.fa-minus 
+                                input.input-touchspin.spin-outline-primary(type='number' value='2' min='1' max='50')
+                                button.increment-touchspin.btn-touchspin.touchspin-primary
+                                  i.fa-solid.fa-plus
+                            td 
+                              h4.txt-primary &#36;280.00
+                            td 
+                              .product-action
+                                a.square-white(href="list-wish.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Wishlist') 
+                                  svg     
+                                    use(href="../assets/svg/icon-sprite.svg#fill-wishlist")
+                                a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete') 
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")
+                          tr.inbox-data
+                            td
+                            td 
+                              .product-names
+                                .light-product-box
+                                  img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/14.png", alt="shoes")
+                                ul
+                                  li 
+                                    h6 Men's Shoes
+                                  li
+                                    p Sneaker
+                                    span.common-dot
+                                    span Colour:
+                                      span Yellow
+                            td
+                              .cart-price
+                                h5 &#36;150.00
+                                del.c-o-light &#36;180.00
+                            td 
+                              .touchspin-wrapper 
+                                button.decrement-touchspin.btn-touchspin.touchspin-primary
+                                  i.fa-solid.fa-minus 
+                                input.input-touchspin.spin-outline-primary(type='number' value='3' min='1' max='50')
+                                button.increment-touchspin.btn-touchspin.touchspin-primary
+                                  i.fa-solid.fa-plus
+                            td 
+                              h4.txt-primary &#36;450.00
+                            td 
+                              .product-action
+                                a.square-white(href="list-wish.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Wishlist') 
+                                  svg     
+                                    use(href="../assets/svg/icon-sprite.svg#fill-wishlist")
+                                a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete') 
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")  
+                          tr.inbox-data
+                            td
+                            td 
+                              .product-names
+                                .light-product-box
+                                  img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/16.png", alt="purse")
+                                ul
+                                  li 
+                                    h6 Handbag
+                                  li
+                                    p Fendi
+                                    span.common-dot
+                                    span Colour:
+                                      span Pink
+                            td
+                              .cart-price
+                                h5 &#36;250.00
+                                del.c-o-light &#36;300.00
+                            td 
+                              .touchspin-wrapper 
+                                button.decrement-touchspin.btn-touchspin.touchspin-primary
+                                  i.fa-solid.fa-minus 
+                                input.input-touchspin.spin-outline-primary(type='number' value='2' min='1' max='50')
+                                button.increment-touchspin.btn-touchspin.touchspin-primary
+                                  i.fa-solid.fa-plus
+                            td 
+                              h4.txt-primary &#36;500.00
+                            td 
+                              .product-action
+                                a.square-white(href="list-wish.html" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Wishlist') 
+                                  svg     
+                                    use(href="../assets/svg/icon-sprite.svg#fill-wishlist")
+                                a.square-white.trash-3(href="#!" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Delete') 
+                                  svg
+                                    use(href="../assets/svg/icon-sprite.svg#trash1")    
+              .col-xl-3.xl-100.box-col-4e
+                .row 
+                  .col-12.order-xl-0.order-1.order-xxl-2
+                    .card 
+                      .card-header
+                        .header-top
+                          h5 Summary
+                      .card-body 
+                        ul.cart-summary
+                          li 
+                            h6 Subtotal 
+                            span $1315.00
+                          li 
+                            h6 Coupon Discount
+                            span (-) 0.00
+                          li 
+                            h6 Shipping
+                            span.txt-primary Free
+                      ul.product-total
+                        li 
+                          h4 Total
+                          h4 $1315.00
+                        li
+                          ul.cart-buttons
+                            li
+                              a(href="checkout.html").btn.btn-primary Proceed to Checkout
+                            li 
+                              a(href="product-grid.html").btn.btn-hover-effect
+                                span
+                                  i.fa-solid.fa-caret-left.fa-lg
+                                | Return to Shopping                        
+                  .col-12.order-0.order-xxl-1 
+                    .card 
+                      .card-body 
+                          .coupon-cart
+                            span.pb-1 Have a Coupon&quest;
+                            .input-group
+                              input.form-control(type='text' placeholder="Enter Coupon Code Here..." aria-label="Recipient's username" aria-describedby='button-addon2')
+                              button#button-addon2.btn.btn-primary(type='button') Apply
+
+                  // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

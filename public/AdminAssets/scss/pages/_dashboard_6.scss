@@ -1,0 +1,975 @@
+/**=====================
+   3.14 Dashboard_6 CSS Start
+==========================**/
+.trending-card {
+     background: url(../images/dashboard-6/bg-1.png);
+     background-size: cover;
+     background-repeat: no-repeat;
+
+     .card-header {
+          background: transparent;
+     }
+
+     .activity-card {
+          .appointment-table {
+               table {
+                    tr {
+                         td {
+                              &:nth-child(2) {
+                                   min-width: 90px;
+                              }
+
+                              &:last-child {
+                                   min-width: 95px;
+                              }
+                         }
+
+                    }
+               }
+          }
+     }
+}
+
+@keyframes dot-animation {
+     0% {
+          transform: scale(1);
+     }
+
+     50% {
+          transform: scale(0.5) translateX(-10px);
+     }
+
+     100% {
+          transform: scale(1);
+     }
+}
+
+@keyframes dot-animation1 {
+     0% {
+          transform: scale(1);
+     }
+
+     50% {
+          transform: scale(1.4) translateX(-10px);
+     }
+
+     100% {
+          transform: scale(1);
+     }
+}
+
+.explore-card {
+     background: url(../images/dashboard-6/bg-2.png);
+     background-size: cover;
+     background-repeat: no-repeat;
+
+     @media (max-width: 575px) {
+          background-color: rgba($white, 0.5);
+          background-blend-mode: overlay;
+     }
+
+     .row {
+          @media (max-width: 1199.98px) {
+               width: 53%;
+
+               [dir="rtl"] & {
+                    margin-right: auto;
+               }
+          }
+
+          @media (max-width: 991.98px) {
+               width: 50%;
+          }
+
+          @media (max-width: 767.98px) {
+               width: 60%;
+          }
+
+          @media (max-width: 575.98px) {
+               width: 100%;
+          }
+
+          .custom-rs-12 {
+               [dir="rtl"] & {
+                    margin-right: auto;
+               }
+          }
+     }
+
+     .group-btn {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+
+          @media (max-width:1220px) {
+               gap: 8px;
+          }
+
+          .btn {
+               padding-top: 0.6rem;
+               padding-bottom: 0.6rem;
+
+               @media (max-width: 575.98px) {
+                    padding-top: 6px;
+                    padding-bottom: 6px;
+               }
+          }
+     }
+
+     .decore {
+          @media (max-width:1199.98px) {
+               display: none;
+          }
+
+          li {
+               position: absolute;
+          }
+
+          .dot-gradient {
+               width: 22px;
+               height: 22px;
+               background: linear-gradient(#e3e3ef, rgba($primary-color, 0.3));
+               border-radius: 100%;
+
+               &.dot-1 {
+                    right: -18px;
+                    top: 0;
+                    animation: dot-animation 5s ease infinite;
+
+                    @media (max-width:1660px) {
+                         right: 45px;
+                         top: 24px;
+                    }
+
+                    @media (max-width:1365px) {
+                         right: 28px;
+                    }
+
+                    @media (max-width:1354px) {
+                         top: 40px;
+                    }
+               }
+
+               &.dot-2 {
+                    width: 12px;
+                    height: 12px;
+                    animation: dot-animation1 5s ease infinite;
+                    right: -40%;
+                    top: 19%;
+
+                    @media (max-width: 1660px) and (min-width:1516px) {
+                         right: 22%;
+                         top: 60%;
+                    }
+
+                    @media (max-width: 1515px) {
+                         right: 20%;
+                         top: 66%;
+                    }
+
+                    @media (max-width: 1231px) {
+                         right: 0%;
+                    }
+               }
+          }
+     }
+}
+
+.total-balance {
+     background: url(../images/dashboard-6/bg-3.png);
+     background-size: cover;
+     background-repeat: no-repeat;
+
+     .btn {
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+     }
+
+     .card-header {
+          background: transparent;
+
+          p {
+               width: 226px;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               -webkit-line-clamp: 1;
+               display: -webkit-box;
+          }
+     }
+
+     .card-body {
+          .common-f-start {
+               margin-bottom: 8px;
+               gap: 22px;
+
+               @media (max-width:1380px) {
+                    margin-bottom: 22px;
+               }
+
+               .d-flex {
+                    &:nth-of-type(2) {
+                         border-left: 1px solid var(--recent-dashed-border);
+                         padding-left: 22px;
+                    }
+               }
+
+               [class*='bg-light-'] {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    display: grid;
+                    place-items: center;
+
+                    i {
+                         font-size: 12px;
+                         transform: rotate(45deg);
+                    }
+               }
+          }
+     }
+}
+
+.income-chart-wrapper {
+     margin-bottom: -10px;
+
+     .apexcharts-tooltip {
+          &.apexcharts-theme-light {
+
+               .apexcharts-tooltip-title,
+               .apexcharts-tooltip-goals-groupm,
+               .apexcharts-tooltip-z-group {
+                    display: none;
+               }
+
+               .apexcharts-tooltip-series-group.apexcharts-active,
+               .apexcharts-tooltip-series-group:last-child {
+                    padding-bottom: 0;
+               }
+          }
+     }
+}
+
+.sale-status-table {
+     .table {
+          > :not(:last-child)> :last-child>* {
+               border-bottom: none !important;
+          }
+     }
+
+     table {
+          border-collapse: separate;
+          border-spacing: 0 10px;
+
+          tr,
+          td,
+          th {
+               border: none;
+          }
+
+          thead {
+               th {
+                    padding-bottom: 0;
+               }
+          }
+
+          tbody {
+               tr {
+                    box-shadow: 0px 6px 10px rgba(70, 60, 175, 0.05);
+                    border-radius: 5px;
+
+                    td {
+                         a {
+                              color: var(--body-font-color);
+                              font-weight: 500;
+                              display: block;
+                         }
+                    }
+               }
+          }
+
+          th,
+          td {
+               &:last-child {
+                    @media (max-width: 1660px) and (min-width: 1400px) {
+                         display: none;
+                    }
+
+                    @media (max-width: 575px) {
+                         display: none;
+                    }
+               }
+
+               &:nth-child(2) {
+                    @media (max-width: 1660px) and (min-width: 1400px) {
+                         max-width: 50px;
+                         padding: 0 8px;
+                    }
+               }
+          }
+     }
+}
+
+.arrow-round {
+
+     .swiper-button-next,
+     .swiper-button-prev {
+          top: 42px;
+          z-index: 1;
+          width: 29px;
+          height: 21px;
+          background: var(--white);
+          box-shadow: 0px 4px 3px rgba(115, 102, 255, 0.1);
+          border-radius: 30px;
+
+          &::after {
+               font-size: 10px;
+               color: var(--theme-default);
+          }
+
+          @media (max-width: 991px) {
+               top: 42px;
+          }
+     }
+
+     .swiper-button-next {
+          right: 30px;
+
+          [dir="rtl"] & {
+               right: unset;
+               left: 30px;
+          }
+     }
+
+     .swiper-button-prev {
+          left: unset;
+          right: 70px;
+
+          [dir="rtl"] & {
+               right: unset;
+               left: 70px;
+          }
+     }
+}
+
+.product-card {
+     .product-image {
+          >img {
+               width: 100%;
+               border-radius: 4px;
+               height: 6.875rem;
+               object-fit: cover;
+          }
+
+          .author-img {
+               text-align: right;
+               display: block;
+               margin-top: -20px;
+               margin-right: 6px;
+          }
+     }
+
+     .product-nft-content {
+          margin-top: 5px;
+
+          ul {
+               display: flex;
+               justify-content: space-between;
+
+               li {
+                    width: 100%;
+
+                    +li {
+                         text-align: right;
+                         border-left: 1px dashed var(--recent-dashed-border);
+                    }
+               }
+          }
+
+          .btn {
+               padding: 0.5rem 0;
+          }
+     }
+}
+
+.artist-chart-wrap {
+     >div {
+          margin-left: -15px;
+          margin-right: -10px;
+     }
+
+     .apexcharts-tooltip {
+
+          .apexcharts-tooltip-z-group,
+          .apexcharts-tooltip-goals-group,
+          .apexcharts-tooltip-text-y-label {
+               display: none;
+          }
+
+          .apexcharts-tooltip-series-group.apexcharts-active,
+          .apexcharts-tooltip-series-group:last-child {
+               padding-bottom: 0;
+          }
+     }
+}
+
+.statistic-chart-wrap {
+     margin-left: -20px;
+     margin-bottom: -25px;
+
+     .apexcharts-tooltip {
+
+          .apexcharts-tooltip-z-group,
+          .apexcharts-tooltip-goals-group,
+          .apexcharts-tooltip-text-y-label {
+               display: none;
+          }
+     }
+}
+
+.statistics-card {
+     .d-flex {
+          li {
+               +li {
+                    padding-left: 15px;
+                    margin-left: 15px;
+                    border-left: 1px dashed var(--recent-dashed-border);
+
+                    [dir="rtl"] & {
+                         padding-left: unset;
+                         margin-left: unset;
+                         padding-right: 15px;
+                         margin-right: 15px;
+                         border-left: unset;
+                         border-right: 1px dashed var(--recent-dashed-border);
+                    }
+               }
+          }
+     }
+}
+
+.upgrade-plan {
+     &.mobile-app-card {
+          .card-header {
+               p {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: -webkit-box !important;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    white-space: normal;
+
+                    @media (max-width:1693px) and (min-width: 1400px) {
+                         -webkit-line-clamp: 2;
+                    }
+
+                    @media (max-width:1224px) {
+                         -webkit-line-clamp: 2;
+                    }
+               }
+
+               @media (max-width:1693px) and (min-width:1500px) {
+                    width: 66%;
+               }
+
+               @media (max-width:1499px) and (min-width:1423px) {
+                    width: 70%;
+               }
+
+               @media (max-width:1422px) {
+                    width: 74%;
+               }
+          }
+
+          .card-body {
+               @media (max-width:1499px) {
+                    margin-top: 0;
+               }
+
+               img {
+                    margin-top: -130px;
+                    margin-bottom: 20px;
+                    width: 144px;
+                    height: 150px;
+
+                    @media (max-width:1555px) and (min-width:1500px) {
+                         margin-top: -150px;
+                         width: 136px;
+                    }
+
+                    @media (max-width:1499px) and (min-width:1423px) {
+                         margin-top: -170px;
+                         width: 114px;
+                         height: 118px;
+                    }
+
+                    @media (max-width:1422px) {
+                         margin-top: -116px;
+                         width: 96px;
+                         height: 100px;
+                    }
+
+                    @media (max-width: 1199.98px) {
+                         margin-top: -128px;
+                    }
+               }
+          }
+     }
+}
+
+.category-box {
+     img {
+          border-radius: 8px;
+          width: 100%;
+     }
+
+     h6 {
+          display: block;
+          padding: 10px;
+          width: calc(100% - 50px);
+          margin: 0 auto;
+          color: var(--body-font-color);
+          text-align: center;
+          background: var(--white);
+          margin-top: -20px;
+          position: relative;
+          border-radius: 5px;
+
+          @media (max-width:1705px) and (min-width:1636px) {
+               width: calc(100% - 40px);
+          }
+
+          @media (max-width:1635px) and (min-width:1566px) {
+               width: calc(100% - 30px);
+          }
+
+          @media (max-width:1565px) and (min-width:1530px) {
+               width: calc(100% - 20px);
+          }
+
+          @media (max-width:1426px) {
+               width: calc(100% - 30px);
+          }
+     }
+}
+
+.artist-table {
+     button {
+          span {
+               color: var(--theme-default);
+          }
+
+          svg {
+               width: 15px;
+               height: 15px;
+               vertical-align: text-bottom;
+          }
+
+          &:hover {
+               span {
+                    color: $white;
+               }
+          }
+     }
+
+     .appointment-table.customer-table {
+          table {
+               tr {
+                    td {
+                         .medal-img {
+                              min-width: 30px;
+                         }
+
+                         &:last-child {
+                              @media (max-width: 1795px) {
+                                   min-width: 90px;
+                              }
+                         }
+                    }
+               }
+          }
+     }
+
+}
+
+.nft-table {
+     &.recent-table {
+          div.dt-container {
+               .dt-layout-row {
+                    .dt-layout-cell {
+                         .dt-search {
+                              @media (max-width:991px) {
+                                   position: relative;
+                                   top: 4px;
+                                   left: 20px;
+                                   margin-bottom: 20px;
+                              }
+                         }
+                    }
+               }
+          }
+
+          table {
+               tr {
+
+                    th,
+                    td {
+                         min-width: auto;
+
+                         &:first-child {
+                              padding-left: 20px;
+                         }
+
+                         &:last-child {
+                              padding-right: 20px;
+                         }
+
+                         @media (max-width:992px) {
+                              &:nth-child(2) {
+                                   min-width: 162px;
+                              }
+
+                              &:nth-child(4) {
+                                   min-width: 68px;
+                              }
+                         }
+                    }
+               }
+          }
+
+          svg {
+               width: 18px;
+               height: 18px;
+          }
+
+          .product-content {
+               .order-image {
+                    background: transparent;
+                    position: relative;
+
+                    .mark-img {
+                         position: absolute;
+                         right: 0;
+                         bottom: 2px;
+                    }
+               }
+          }
+     }
+}
+
+.activity-table {
+     .status-success {
+          min-width: 6px;
+          height: 6px;
+          border-radius: 100%;
+          background: $success-color;
+     }
+
+     .img-content-box {
+          min-width: 108px;
+     }
+
+     .appointment-table {
+          table {
+               tr {
+                    td {
+                         &:last-child {
+                              @media (max-width: 1772px) {
+                                   min-width: 72px;
+                              }
+                         }
+                    }
+               }
+          }
+     }
+}
+
+.explore-wrap {
+     @media (max-width: 1199.98px) {
+          order: -1;
+     }
+}
+
+.live-auction-wrapper {
+     .product-nft-content {
+          .common-flex {
+               gap: 8px;
+
+               .btn {
+                    width: 100%;
+               }
+
+               svg {
+                    width: 18px;
+                    height: 18px;
+                    fill: var(--theme-default);
+               }
+
+               .timer {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 4px;
+               }
+
+               span {
+                    span {
+                         color: var(--theme-default);
+                    }
+               }
+
+               .common-align {
+                    gap: 4px;
+               }
+          }
+
+          img {
+               height: 16px;
+          }
+
+          .btn {
+               padding: 6px 26px;
+
+               &:hover {
+                    svg {
+                         fill: $white;
+                    }
+
+                    span {
+                         span {
+                              color: $white;
+                         }
+                    }
+               }
+          }
+     }
+}
+
+.art-creator-table {
+     &.recent-table {
+          div.dt-container {
+               .dt-layout-row {
+                    .dt-layout-cell {
+                         .dt-search {
+                              @media (max-width:1459px) {
+                                   display: none;
+                              }
+                         }
+                    }
+               }
+          }
+
+          table {
+
+               thead,
+               tbody {
+                    tr {
+
+                         th,
+                         td {
+                              min-width: auto;
+
+                              &:first-child {
+                                   padding-left: 20px;
+                              }
+
+                              &:last-child {
+                                   padding-right: 20px;
+                              }
+
+                              @media (max-width:1551px) and (min-width:1400px) {
+                                   &:last-child {
+                                        display: none;
+                                   }
+
+                                   &:nth-child(2) {
+                                        padding-right: 20px;
+                                   }
+                              }
+
+                              @media (max-width:1395px) and (min-width:1400px) {
+                                   &:nth-child(2) {
+                                        min-width: 80px;
+                                   }
+                              }
+
+                              .img-content-box {
+                                   a {
+                                        color: var(--body-font-color);
+                                   }
+
+                                   a,
+                                   p {
+                                        @media (max-width:1719px) {
+                                             text-overflow: ellipsis;
+                                             overflow: hidden;
+                                             white-space: nowrap;
+                                             width: 92px;
+                                             display: block;
+                                        }
+
+                                        @media (max-width:1608px) and (min-width:1552px) {
+                                             width: 74px;
+                                        }
+
+                                        @media (max-width:1551px) {
+                                             width: 100%;
+                                        }
+                                   }
+                              }
+
+                              img {
+                                   height: 38px;
+                              }
+
+                              @media (max-width:1074px) {
+                                   &:first-child {
+                                        min-width: 200px;
+                                   }
+
+                                   &:nth-child(2),
+                                   &:last-child {
+                                        min-width: 85px;
+                                   }
+                              }
+                         }
+                    }
+               }
+
+               &.artwork-table {
+
+                    thead,
+                    tbody {
+                         tr {
+
+                              th,
+                              td {
+                                   @media (max-width:1249px) and (min-width:1200px) {
+                                        &:last-child {
+                                             display: none;
+                                        }
+
+                                        &:nth-child(2) {
+                                             padding-right: 20px;
+                                        }
+                                   }
+
+                                   @media (max-width:1074px) {
+                                        &:first-child {
+                                             min-width: 200px;
+                                        }
+
+                                        &:nth-child(2),
+                                        &:last-child {
+                                             min-width: 85px;
+                                        }
+                                   }
+                              }
+                         }
+                    }
+               }
+          }
+     }
+}
+
+.nft-collection {
+     position: relative;
+     overflow: hidden;
+
+     .swiper-container {
+          width: 100%;
+          height: 300px;
+          margin-left: auto;
+          margin-right: auto;
+          cursor: pointer;
+
+          img {
+               height: 130px;
+               width: 100%;
+               object-fit: cover;
+
+               @media (max-width:575px) and (min-width:401px) {
+                    height: 95px;
+               }
+
+               @media (max-width:400px) {
+                    height: 75px;
+               }
+          }
+     }
+
+     .swiper-slide {
+          background-size: cover;
+          background-position: center;
+     }
+
+     .gallery-top {
+          height: 100%;
+          width: 100%;
+          margin-top: 14px;
+     }
+
+     .gallery-thumbs {
+          height: 20%;
+     }
+
+     .gallery-thumbs .swiper-slide {
+          height: 100%;
+          opacity: 0.3;
+     }
+
+     .gallery-thumbs {
+          .swiper-slide-thumb-active {
+               opacity: 1;
+          }
+     }
+
+     .swiper-button-next,
+     .swiper-button-prev {
+          display: none;
+     }
+
+     .nft-user-info {
+          margin-top: 35px;
+
+          @media (max-width:1399px) {
+               margin-top: 18px;
+          }
+
+          img {
+               width: auto;
+               height: auto;
+          }
+
+          .user-desc {
+               display: flex;
+               justify-content: flex-start;
+               align-items: center;
+               gap: 3px;
+               color: rgba($badge-light-color, 0.8);
+               flex-wrap: wrap;
+
+               i {
+                    font-size: 6px;
+               }
+          }
+     }
+}
+
+.dashboard-6 {
+     .income-wrap {
+          .card-header {
+               .dropdown {
+                    .dropdown-toggle {
+                         &:active {
+                              background-color: rgba(115, 102, 255, 0.08) !important;
+                              color: var(--theme-default);
+                         }
+                    }
+               }
+          }
+     }
+}
+
+/**=====================
+  3.14 Dashboard_6 CSS end
+==========================**/

@@ -1,0 +1,130 @@
+- var page_Title = 'Add User';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Add User
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Users
+                    li.breadcrumb-item.active  Add User
+          // Container-fluid starts
+          .container-fluid
+            .edit-profile
+              .row
+                .col-xl-4
+                  .card
+                    .card-header
+                      h5.card-title My Profile
+                      .card-options
+                        a.card-options-collapse(href='#', data-bs-toggle='card-collapse')
+                          i.fe.fe-chevron-up
+                        a.card-options-remove(href='#', data-bs-toggle='card-remove')
+                          i.fe.fe-x
+                    .card-body
+                      form.custom-input
+                        .row.mb-2
+                          .profile-title
+                            .d-flex                         
+                              img.img-70.rounded-circle(alt='', src='../assets/images/user/7.jpg')
+                              .flex-grow-1
+                                h5.mb-1 WILLIAM C. JENNINGS
+                                p DESIGNER
+                        .mb-3
+                          h6.form-label Bio
+                          textarea.form-control(rows='5' placeholder="On the other hand, we denounce with righteous indignation")
+                        .mb-3
+                          label.form-label Email Address
+                          input.form-control(type="email" placeholder='your-email@domain.com')
+                        .mb-3
+                          label.form-label Password
+                          input.form-control(type='password', value='password')
+                        .mb-3
+                          label.form-label Website
+                          input.form-control(type="url" placeholder='https://themeforest.net/user/pixelstrap/portfolio')
+                        .form-footer
+                          button.btn.btn-primary.btn-block Save
+                .col-xl-8
+                  form.card
+                    .card-header
+                      h5.card-title Edit Profile
+                      .card-options
+                        a.card-options-collapse(href='#', data-bs-toggle='card-collapse')
+                          i.fe.fe-chevron-up
+                        a.card-options-remove(href='#', data-bs-toggle='card-remove')
+                          i.fe.fe-x
+                    .card-body
+                      .row.custom-input
+                        .col-xxl-5.box-col-12
+                          .mb-3
+                            label(for="companyName").form-label Company
+                            input#companyName.form-control(type='text', placeholder='Company')
+                        .col-sm-6.col-xxl-3.box-col-6
+                          .mb-3
+                            label(for="customUsername").form-label Username
+                            input#customUsername.form-control(type='text', placeholder='Username')
+                        .col-sm-6.col-xxl-4.box-col-6
+                          .mb-3
+                            label(for="customAddress").form-label Email Address
+                            input#customAddress.form-control(type='email', placeholder='Email')
+                        .col-sm-6.col-md-6
+                          .mb-3
+                            label(for="customFirstName").form-label First Name
+                            input#customFirstName.form-control(type='text', placeholder='Company')
+                        .col-sm-6.col-md-6
+                          .mb-3
+                            label(for="customLastName").form-label Last Name
+                            input#customLastName.form-control(type='text', placeholder='Last name')
+                        .col-md-12
+                          .mb-3
+                            label(for="customAddress").form-label Address
+                            textarea#customAddress.form-control(type='text', rows="2.5" placeholder='Home address')
+                        .col-sm-6.col-xxl-4.box-col-6
+                          .mb-3
+                            label(for="customCity").form-label City
+                            input#customCity.form-control(type='text', placeholder='City')
+                        .col-sm-6.col-xxl-3.box-col-6
+                          .mb-3
+                            label(for="customPostalCode").form-label Postal Code
+                            input#customPostalCode.form-control(type='number', placeholder='Postal code')
+                        .col-xxl-5.box-col-12
+                          .mb-3
+                            label(for="customCountry").form-label Country
+                            select#customCountry.form-control.btn-square
+                              option(value='0') --Select--
+                              option(value='1') Germany
+                              option(value='2') Canada
+                              option(value='3') Usa
+                              option(value='4') Aus
+                        .col-md-12
+                          div
+                            label(for="aboutMeDesc").form-label About Me
+                            textarea#aboutMeDesc.form-control(rows='4', placeholder='Enter about your description')
+                    .card-footer.text-end
+                      button.btn.btn-primary(type='submit') Update Profile
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

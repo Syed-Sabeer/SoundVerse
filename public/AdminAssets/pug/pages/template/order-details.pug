@@ -1,0 +1,208 @@
+- var page_Title = 'Order Details';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Order Details
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Ecommerce
+                    li.breadcrumb-item.active  Order Details
+          // Container-fluid starts
+          .container-fluid
+            .row
+                .col-xxl-9.col-xl-8.box-col-8e
+                    .row 
+                        .col-12 
+                            .card
+                                .card-header
+                                    h5 Order Status
+                                .card-body.track-order-details
+                                    h6#order-status-timeline
+                                        .status-bar.progress.step-three
+                                        .main-status-line
+                                            ul
+                                                li
+                                                    .order-process.active
+                                                        span 1
+                                                    h6 Order Received
+                                                li
+                                                    .order-process.active
+                                                        span 2
+                                                    h6 Processing
+                                                li
+                                                    .order-process.active
+                                                        span 3
+                                                    h6 Order Packed
+                                                li
+                                                    .order-process
+                                                        span 4
+                                                    h6 Shipped
+                                                li
+                                                    .order-process
+                                                        span 5
+                                                    h6 Delivered
+                        .col-12 
+                            .card
+                                .card-header.card-no-border
+                                    .header-top 
+                                        h5 Order Number: #1801
+                                .card-body.order-details-product.pt-0
+                                    .table-responsive.custom-scrollbar
+                                        table.table
+                                            thead
+                                                tr
+                                                    th(scope='col') Image
+                                                    th(scope='col') Product
+                                                    th(scope='col') Price
+                                                    th(scope='col') Qty
+                                                    th(scope='col') Subtotal
+                                            tbody
+                                                tr
+                                                    td
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-8/shop-categories/headphone.png", alt="headphone")
+                                                    td 
+                                                        ul
+                                                            li 
+                                                                h6 
+                                                                    a(href="product-details.html") Lightweight Headphones
+                                                            li
+                                                                p Boat Rockerz
+                                                                span.common-dot
+                                                                span Colour:
+                                                                    span  Gray
+                                                    td $85.00
+                                                    td 1
+                                                    td $85.00
+                                                tr
+                                                    td
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/24.png", alt="watch")
+                                                    td 
+                                                        ul
+                                                            li 
+                                                                h6 
+                                                                    a(href="product-details.html") Smart Watch
+                                                            li
+                                                                p Fastrack
+                                                                span.common-dot
+                                                                span Colour:
+                                                                    span  Brown
+                                                    td $140.00
+                                                    td 1
+                                                    td $140.00
+                                                tr
+                                                    td
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/16.png", alt="purse")
+                                                    td 
+                                                        ul
+                                                            li 
+                                                                h6 
+                                                                    a(href="product-details.html") Leather Handbag
+                                                            li
+                                                                p Fendi
+                                                                span.common-dot
+                                                                span Colour:
+                                                                    span Pink
+                                                    td $250.00
+                                                    td 1
+                                                    td $250.00
+                                                tr
+                                                    td
+                                                        .light-product-box
+                                                            img.img-fluid(src="../assets/images/dashboard-2/order/sub-product/14.png", alt="shoes")
+                                                    td
+                                                        ul
+                                                            li 
+                                                                h6 
+                                                                    a(href="product-details.html") Men's Shoes
+                                                            li
+                                                                p Sneaker
+                                                                span.common-dot
+                                                                span Colour:
+                                                                    span Yellow
+                                                    td $150.00
+                                                    td 2
+                                                    td $300.00
+                .col-xxl-3.col-xl-4.box-col-4 
+                    .row 
+                        .col-12 
+                            .card
+                                .card-header.card-no-border
+                                    .header-top.summary-header
+                                        h5 Summary
+                                        .card-header-right-icon
+                                            a(href="invoice-2.html" target="_blank").btn.btn-primary
+                                                i.fa-regular.fa-file-lines.pe-2.f-14
+                                                | Invoice
+                                .card-body.pt-0
+                                    ul.tracking-total 
+                                        li 
+                                            h6 Subtotal 
+                                            span  $775.00
+                                        li 
+                                            h6 Coupon Discount
+                                            span (-)0.00
+                                        li 
+                                            h6 Shipping 
+                                            span.txt-primary Free
+                                        li 
+                                            h6 Total
+                                            span $775.00
+                        .col-12 
+                            .card 
+                                .card-header.card-no-border
+                                    .header-top 
+                                        h5 Customer Details
+                                .card-body.pt-0
+                                    ul.customer-details 
+                                        li 
+                                            h6 Name 
+                                            span Lucy Fisher
+                                        li 
+                                            h6 Email Address:
+                                            span lucy.fisher@example.com
+                                        li 
+                                            h6 Billing Address:
+                                            span 12B, Pine Valley Road, Seattle, Washington, United States 98101
+                                        li 
+                                            h6 Shipping Address:
+                                            span 12B, Pine Valley Road, Seattle, Washington, United States 98101
+                                        li 
+                                            h6 Delivery Slot:
+                                            span Standard Delivery&verbar;Approx 5 to 7 Days
+                                        li 
+                                            h6 Payment Mode:
+                                            span COD
+
+
+                        .col-12 
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

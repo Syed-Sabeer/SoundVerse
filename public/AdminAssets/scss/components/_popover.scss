@@ -1,0 +1,65 @@
+/**=====================
+  2.22 Popover CSS Start
+==========================**/
+// popover
+.popover {
+  background-color: $white;
+  border: none;
+  -webkit-box-shadow: 0 0 20px rgba($primary-color, 0.1);
+  box-shadow: 0 0 20px rgba($primary-color, 0.1);
+
+  .popover-header {
+    background-color: $theme-medium-color;
+    color: $primary-color;
+    border-bottom: none;
+  }
+
+  .popover-body {
+    color: rgba(43, 43, 43, 0.7);
+  }
+}
+
+.popover-main {
+  .btn-showcase {
+    a {
+      color: $white;
+    }
+
+    button {
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.svg-tooltip {
+  .common-flex {
+    >div {
+      width: calc(40px + (50 - 40) * ((100vw - 320px) / (1920 - 320)));
+      height: calc(40px + (50 - 40) * ((100vw - 320px) / (1920 - 320)));
+      @include pixelstrap-flex(flex, center, center);
+      border-radius: 10px;
+      border: 1px solid;
+
+      i {
+        font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+      }
+
+      &:hover {
+        i {
+          stroke: var(--white) !important;
+        }
+      }
+    }
+
+    svg {
+      width: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+      height: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+    }
+  }
+}
+
+/**=====================
+  2.22 Popover CSS Ends
+==========================**/

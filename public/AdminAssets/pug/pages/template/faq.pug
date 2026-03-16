@@ -1,0 +1,496 @@
+- var page_Title = 'FAQ';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | FAQ
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Pages
+                    li.breadcrumb-item.active FAQ
+          // Container-fluid starts
+          .container-fluid
+            .faq-wrap
+              .row
+                .col-xl-4.box-col-6
+                  .card.bg-primary
+                    .card-body
+                      .d-flex.faq-widgets
+                        .flex-grow-1
+                          h5 Articles
+                          p
+                            | The usefulness and usability of a website, not its aesthetic design, define its success or failure. User-centric design has become the norm for effective and financially motivated web design since the visitor to the website is the only one who clicks the mouse and thus determines everything. After all, a feature might as well not exist if people can't utilise it.
+                        i(data-feather='file-text')
+                .col-xl-4.col-sm-6.box-col-6
+                  .card.bg-primary
+                    .card-body
+                      .d-flex.faq-widgets
+                        .flex-grow-1
+                          h5 Knowledgebase
+                          p
+                            | A knowledge base acts as a central repository for knowledge, data, and information pertaining to a certain subject or thing. Its main goal is to make it easier for consumers to obtain information quickly and conveniently so they can solve problems, find solutions, and make wise decisions.
+                        i(data-feather='book-open')
+                .col-xl-4.col-sm-6.box-col-12
+                  .card.bg-primary
+                    .card-body
+                      .d-flex.faq-widgets
+                        .flex-grow-1
+                          h5 Support
+                          p
+                            | Email, chat, forums, and a social media interface (and monitoring) are all part of real-time online assistance, which helps in reacting to public complaints and comments. Taking care of returns or repairs may fall under this.
+                        i(data-feather='aperture')
+                .col-lg-12
+                  .header-faq
+                    h5 Quick Questions are Answered
+                  #accordionoc.row.default-according.style-1.faq-accordion
+                    .col-xl-8.xl-60.col-lg-6.col-md-7
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon', aria-expanded='false', aria-controls='collapseicon')
+                              i(data-feather='help-circle')
+                              |  Integrating wordPress with your website?
+                        #collapseicon.collapse(aria-labelledby='collapseicon', data-bs-parent='#accordionoc')
+                          .card-body
+                            | A excellent method to add dynamic content, make site management simple, and access the extensive ecosystem of WordPress plugins and themes is by integrating WordPress with your website.
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon2', aria-expanded='false', aria-controls='collapseicon2')
+                              i(data-feather='help-circle')
+                              |  WordPress site maintenance ?
+                        #collapseicon2.collapse(data-bs-parent='#accordionoc')
+                          .card-body
+                            | Background photos give a website an aesthetically pleasing and engaging backdrop. There are several applications for these photos.
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon3', aria-expanded='false', aria-controls='collapseicon2')
+                              i(data-feather='help-circle')
+                              | Meta tags in wordPress ?
+                        #collapseicon3.collapse(data-bs-parent='#accordionoc')
+                          .card-body
+                            | The World Wide online Consortium (W3C), a global organisation, supports online development. The public, organisation members, a full-time staff, and invited international experts work together to develop Web Standards.
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon4', aria-expanded='false', aria-controls='collapseicon2')
+                              i(data-feather='help-circle')
+                              | WordPress in your language ?
+                        #collapseicon4.collapse(data-bs-parent='#accordionoc')
+                          .card-body
+                            | Cascading Style Sheets, or CSS, is a language for creating style sheets. In essence, it regulates and supervises how information should be presented in speech, writing, visual media, and other forms of media. You may modify the text's colour, font, spacing between paragraphs, size, and order with CSS.
+                      .faq-title
+                        h6 Intellectual Property
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon5', aria-expanded='false')
+                              i(data-feather='help-circle')
+                              | How to ticket work as web designer?
+                        #collapseicon5.collapse(aria-labelledby='collapseicon5', data-bs-parent='#accordionoc')
+                          .card-body
+                            | Create an account on the chosen ticketing platform and set up your workspace. Customize it according to your projects and team, if applicable. Set permissions and access levels for team members and clients, if necessary.
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon7', aria-expanded='false', aria-controls='collapseicon2')
+                              i(data-feather='help-circle')
+                              | What are WordPress Plugins?
+                        #collapseicon7.collapse(data-bs-parent='#accordionoc')
+                          .card-body
+                            | Individual pieces of software called WordPress plugins let you extend the functionality of your website. You may install each of these pieces of software on your WordPress website.
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon8', aria-expanded='false', aria-controls='collapseicon2')
+                              i(data-feather='help-circle')
+                              | How many tables are there by default in WordPress?
+                        #collapseicon8.collapse(data-bs-parent='#accordionoc')
+                          .card-body
+                            | Tables are the equivalent of shelves in WordPress databases. WordPress websites come with 12 tables by default. Each table can only contain specific types of data. 
+                      .faq-title
+                        h6 Selling And Buying
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon9', aria-expanded='false')
+                              i(data-feather='help-circle')
+                              |  What exactly does a talented UX designer do?
+                        #collapseicon9.collapse(aria-labelledby='collapseicon9', data-bs-parent='#accordionoc')
+                          .card-body
+                            | While there is no right or incorrect response, a professional designer should be well-versed in UX and be able to provide a complete end-to-end UX design process.
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon10', aria-expanded='false', aria-controls='collapseicon2')
+                              i(data-feather='help-circle')
+                              | Can you explain why widgets don't appear in the sidebar?
+                        #collapseicon10.collapse(data-bs-parent='#accordionoc')
+                          .card-body
+                            | Users must first make sure that the themes they are using support the widget before adding it. It's conceivable that the issue is brought on by a lack of functionality.
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon11', aria-expanded='false', aria-controls='collapseicon2')
+                              i(data-feather='help-circle')
+                              | Sell me on the benefits of UX design investment?
+                        #collapseicon11.collapse(data-bs-parent='#accordionoc')
+                          .card-body
+                            | In addition to improving user experience, UX-driven product design is a wise commercial decision. 
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon12', aria-expanded='false', aria-controls='collapseicon2')
+                              i(data-feather='help-circle')
+                              | What is source code?
+                        #collapseicon12.collapse(data-bs-parent='#accordionoc')
+                          .card-body
+                            | The core of a computer programme is called the source code, which is produced by a programmer and frequently takes the form of functions, descriptions, definitions, calls, procedures, and other operational declarations.
+                      .faq-title
+                        h6 User Accounts
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon13', aria-expanded='false')
+                              i(data-feather='help-circle')
+                              | Integrating wordPress with your website ?
+                        #collapseicon13.collapse(aria-labelledby='collapseicon13', data-bs-parent='#accordionoc')
+                          .card-body
+                            | The string may be turned into a character array, which you can iterate through from beginning to finish. The characters can be added to a string builder to create the reversed string.
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon14', aria-expanded='false', aria-controls='collapseicon2')
+                              i(data-feather='help-circle')
+                              | WordPress site maintenance ?
+                        #collapseicon14.collapse(data-bs-parent='#accordionoc')
+                          .card-body
+                            | This particular activity, which is the question, may demonstrate your proficiency with using Java code to carry out a task.
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon16', aria-expanded='false', aria-controls='collapseicon2')
+                              i(data-feather='help-circle')
+                              |  WordPress in your language ?
+                        #collapseicon16.collapse(data-bs-parent='#accordionoc')
+                          .card-body
+                            | Another unique Java coding activity that the interviewer could use to gauge your Java expertise.
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon17', aria-expanded='false', aria-controls='collapseicon2')
+                              i(data-feather='help-circle')
+                              |   Validating a website ?
+                        #collapseicon17.collapse(data-bs-parent='#accordionoc')
+                          .card-body
+                            | The planning, structuring, and labelling of content in a thorough, logical, and long-lasting manner is referred to as information architecture (IA). It allows for the obvious and intelligible organising and classification of material, enabling visitors to quickly discover what they're looking for.
+                      .card
+                        .card-header
+                          h5
+                            button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon18', aria-expanded='false', aria-controls='collapseicon2')
+                              i(data-feather='help-circle')
+                              | Meta tags in wordPress ?
+                        #collapseicon18.collapse(data-bs-parent='#accordionoc')
+                          .card-body
+                            | A declaration of the document type, known as DOCTYPE, is required at the start of every HTML or XHTML document; this declaration is frequently the first line of code.
+                    .col-xl-4.xl-40.col-lg-6.col-md-5
+                      .row
+                        .col-lg-12
+                          .card.card-mb-faq.xs-mt-search
+                            .card-header.faq-header.pb-0
+                              h5 Search articles
+                              i(data-feather='help-circle')
+                            .card-body.faq-body
+                              .faq-form
+                                input.form-control(type='text', placeholder='Search..')
+                                i.search-icon(data-feather='search')
+                        .col-lg-12
+                          .card.card-mb-faq
+                            .card-header.faq-header.pb-0
+                              h5 Navigation
+                              i(data-feather='settings')
+                            .card-body.faq-body
+                              .navigation-btn
+                                a.btn.btn-primary(href='#!')
+                                  i.m-r-10(data-feather='message-square')
+                                  | Ask Question
+                              .navigation-option
+                                ul
+                                  li
+                                    a(href='#!')
+                                      i(data-feather='edit')
+                                      | Tutorials
+                                  li
+                                    a(href='#!')
+                                      i(data-feather='globe')
+                                      | Help center
+                                  li
+                                    a(href='#!')
+                                      i(data-feather='book-open')
+                                      | Knowledgebase
+                                  li
+                                    a(href='#!')
+                                      i(data-feather='file-text')
+                                      | Articles
+                                    span.badge.badge-primary.rounded-pill.pull-right 42
+                                  li
+                                    a(href='#!')
+                                      i(data-feather='youtube')
+                                      | Video Tutorials
+                                    span.badge.badge-primary.rounded-pill.pull-right 648
+                                  li
+                                    a(href='#!')
+                                      i(data-feather='message-circle')
+                                      | Ask our community
+                                  li
+                                    a(href='#!')
+                                      i(data-feather='mail')
+                                      | Contact us
+                                hr
+                                ul
+                                  li
+                                    a(href='#!')
+                                      i(data-feather='message-circle')
+                                      | Ask our community
+                                  li
+                                    a(href='#!')
+                                      i(data-feather='mail')
+                                      | Contact us
+                        .col-lg-12
+                          .card
+                            .card-header.faq-header.pb-0
+                              h5.d-inline-block Latest Updates
+                              span.pull-right.d-inline-block See All
+                            .card-body.faq-body
+                              .d-flex.updates-faq-main
+                                .updates-faq
+                                  i.font-primary(data-feather='rotate-cw')
+                                .flex-grow-1.updates-bottom-time
+                                  p
+                                    a(href='#!') David Linner 
+                                    | requested money back for a double debit card charge
+                                  p 10 minutes ago
+                              .d-flex.updates-faq-main
+                                .updates-faq
+                                  i.font-primary(data-feather='dollar-sign')
+                                .flex-grow-1.updates-bottom-time
+                                  p All sellers have received monthly payouts
+                                  p 2 hours ago
+                              .d-flex.updates-faq-main
+                                .updates-faq
+                                  i.font-primary(data-feather='link')
+                                .flex-grow-1.updates-bottom-time
+                                  p
+                                    | User Christopher 
+                                    a(href='#!') Wallace
+                                    |  is on hold and awaiting for staff reply
+                                  p 45 minutes ago
+                              .d-flex.updates-faq-main
+                                .updates-faq
+                                  i.font-primary(data-feather='check')
+                                .flex-grow-1.updates-bottom-time
+                                  p
+                                    | Ticket #43683 has been closed by 
+                                    a(href='#!') Victoria Wilson
+                                  p Dec 7, 11:48
+                .col-lg-12
+                  .header-faq
+                    h5.mb-0 Featured Tutorials
+                  .row
+                    .col-xxl-3.col-md-6.box-col-6
+                      .card.features-faq.product-box
+                        .faq-image.product-img
+                          img.img-fluid(src='../assets/images/faq/1.jpg', alt='')
+                          .product-hover
+                            ul
+                              li
+                                i.icon-link
+                              li
+                                i.icon-import
+                        .card-body
+                          h6.pb-1 Web Design
+                          p.c-light
+                            | Setting aside time once every three months to refresh your portfolio is a fantastic idea. Even if you are not submitting any new work, you could still need to provide more context or alter anything based on your continuing learnings and objectives. Compared to months or years later, it is far simpler to update when the information is still fresh in your mind.
+                        .card-footer
+                          span Dec 15, 2024
+                          span.pull-right
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                    .col-xxl-3.col-md-6.box-col-6
+                      .card.features-faq.product-box
+                        .faq-image.product-img
+                          img.img-fluid(src='../assets/images/faq/2.jpg', alt='')
+                          .product-hover
+                            ul
+                              li
+                                i.icon-link
+                              li
+                                i.icon-import
+                        .card-body
+                          h6.pb-1 Web Development
+                          p.c-light
+                            | To display HTML and CSS components on different web browsers, such as Chrome, Safari, and previous versions of Opera, CSS3 uses the Webkit rendering engine. It offers the essential features for generating online content and guaranteeing consistency across many platforms.
+                        .card-footer
+                          span Dec 15, 2024
+                          span.pull-right
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-regular.fa-star.font-warning
+                    .col-xxl-3.col-md-6.box-col-6
+                      .card.features-faq.product-box
+                        .faq-image.product-img
+                          img.img-fluid(src='../assets/images/faq/3.jpg', alt='')
+                          .product-hover
+                            ul
+                              li
+                                i.icon-link
+                              li
+                                i.icon-import
+                        .card-body
+                          h6.pb-1 UI Design
+                          p.c-light
+                            | Seniority does have a significant role in how much influence a UI specialist has at this first stage of the design process. Senior UI designers may take the initiative in coming up with suggestions for which visual components will work best, whereas an entry-level UI designer is more likely to be focused on storyboards, sitemaps, and process flows and not have much influence on the site's appearance.
+                        .card-footer
+                          span Dec 15, 2024
+                          span.pull-right
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                    .col-xxl-3.col-md-6.box-col-6
+                      .card.features-faq.product-box
+                        .faq-image.product-img
+                          img.img-fluid(src='../assets/images/faq/4.jpg', alt='')
+                          .product-hover
+                            ul
+                              li
+                                i.icon-link
+                              li
+                                i.icon-import
+                        .card-body
+                          h6.pb-1 UX Design
+                          p.c-light
+                            | Information architecture is a discipline that, among other things, organises, arranges, and structures the content of a website or app. Information architects determine how to organise something's components in a way that makes sense.
+                        .card-footer
+                          span Dec 15, 2024
+                          span.pull-right
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star.font-warning
+                            i.fa-solid.fa-star-half-stroke.font-warning
+                .col-lg-12
+                  .header-faq
+                    h5 Latest Articles and Videos
+                  .row.faq-wrapper
+                    .col-xl-4.col-md-6
+                      .row
+                        .col-sm-12
+                          .card
+                            .card-body
+                              .d-flex
+                                i.m-r-20(data-feather='codepen')
+                                .flex-grow-1
+                                  h6.pb-2 How to Programming Consistency.
+                                  p.c-light You must always maintain consistency as a web developer. Over time, consistency produces superior results. 
+                        .col-sm-12
+                          .card
+                            .card-body
+                              .d-flex
+                                i.m-r-20(data-feather='codepen')
+                                .flex-grow-1
+                                  h6.pb-2 Explaining Modern CSS To A Dinosaur
+                                  p.c-light Peter Jang, the author of the very first essay on our list, has created another masterpiece, but this time, he has addressed CSS, another important aspect of web development.
+                        .col-sm-12
+                          .card
+                            .card-body
+                              .d-flex
+                                i.m-r-20(data-feather='codepen')
+                                .flex-grow-1
+                                  h6.pb-2 Make Fewer Designs to Become a Better Designer.
+                                  p.c-light Designers can experience feelings of fraudulence or lack of originality. It seems like everyone else is working harder or just generally doing a better job than you are. 
+                    .col-xl-4.col-md-6
+                      .row
+                        .col-sm-12
+                          .card
+                            .card-body
+                              .d-flex
+                                i.m-r-20(data-feather='file-text')
+                                .flex-grow-1
+                                  h6.pb-2 What?! Why Should I Design Less?
+                                  p.c-light You can view all of the stunning and remarkable things that other designers have produced by taking a peek around. You then examine your work.
+                        .col-sm-12
+                          .card
+                            .card-body
+                              .d-flex
+                                i.m-r-20(data-feather='file-text')
+                                .flex-grow-1
+                                  h6.pb-2 Use a GUI Framework as a Requirement
+                                  p.c-light  Do not, under any circumstances, code your website in simple HTML. Frameworks and widget libraries are widely available.
+                        .col-sm-12
+                          .card
+                            .card-body
+                              .d-flex
+                                i.m-r-20(data-feather='file-text')
+                                .flex-grow-1
+                                  h6.pb-2 What?! Why Should I Design Less?
+                                  p.c-light Information architecture is a discipline that, among other things, organises, arranges, and structures the content of a website or app. Information architects determine how to organise something's components in a way that makes sense.
+                    .col-xl-4
+                      .row
+                        .col-xl-12.col-md-6
+                          .card
+                            .card-body
+                              .d-flex
+                                i.m-r-20(data-feather='youtube')
+                                .flex-grow-1
+                                  h6.pb-2 Continuous Learning
+                                  p.c-light To improve their craft and advance in the industry, web designers frequently attend courses, participate in design groups, and work on their own professional development.
+                        .col-xl-12.col-md-6
+                          .card
+                            .card-body
+                              .d-flex
+                                i.m-r-20(data-feather='youtube')
+                                .flex-grow-1
+                                  h6.pb-2 Design Expertise
+                                  p.c-light For websites to be aesthetically pleasing, web designers must have excellent graphic design, typography, colour theory, and layout abilities
+                        .col-xl-12
+                          .card
+                            .card-body
+                              .d-flex
+                                i.m-r-20(data-feather='youtube')
+                                .flex-grow-1
+                                  h6.pb-2 Use Vertical Input Forms that are Clearly Organized.
+                                  p.c-light Use only one column in an input form if possible. A separate row should exist for each input field.
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

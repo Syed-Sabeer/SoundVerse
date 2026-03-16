@@ -1,0 +1,454 @@
+- var page_Title = 'Switch';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var height_equal          = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Switch
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Form Widgets
+                    li.breadcrumb-item.active Switch
+          // Container-fluid starts                    
+          .container-fluid
+            .row
+              .col-md-12
+                .card
+                  .card-header
+                    h5 Custom Switch
+                    p.f-m-light.mt-1 
+                      | A switch has the markup of a custom checkbox but uses the 
+                      code form-switch 
+                      | class to render a toggle switch.
+                  .card-body
+                    .row.g-3
+                      .col-md-4.col-sm-6
+                        .card-wrapper.border.rounded-3
+                          .form-check-size
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-primary.check-size(type='checkbox' role='switch' checked='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-secondary.check-size(type='checkbox' role='switch' checked='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-success.check-size(type='checkbox' role='switch' checked='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-danger.check-size(type='checkbox' role='switch' checked='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-warning.check-size(type='checkbox' role='switch' checked='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-info.check-size(type='checkbox' role='switch' checked='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-dark.check-size(type='checkbox' role='switch' checked='')
+                      .col-md-4.col-sm-6
+                        .card-wrapper.border.rounded-3.radius-none
+                          .form-check-size.default-square
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-primary.check-size(type='checkbox' role='switch' checked='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-secondary.check-size(type='checkbox' role='switch' checked='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-success.check-size(type='checkbox' role='switch' checked='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-danger.check-size(type='checkbox' role='switch' checked='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-warning.check-size(type='checkbox' role='switch' checked='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-info.check-size(type='checkbox' role='switch' checked='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-dark.check-size(type='checkbox' role='switch' checked='')
+                      .col-md-4
+                        .card-wrapper.border.rounded-3.common-flex
+                          .form-check-size
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-primary.check-size(type='checkbox' role='switch' checked='' disabled='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-secondary.check-size(type='checkbox' role='switch' checked='' disabled='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-success.check-size(type='checkbox' role='switch' checked='' disabled='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-danger.check-size(type='checkbox' role='switch' checked='' disabled='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-warning.check-size(type='checkbox' role='switch' checked='' disabled='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-info.check-size(type='checkbox' role='switch' checked='' disabled='')
+                            .form-check.form-switch.form-check-inline
+                              input.form-check-input.switch-dark.check-size(type='checkbox' role='switch' checked='' disabled='')
+              .col-xl-4.col-sm-6
+                .card.height-equal
+                  .card-header
+                    h5 Icons Switch
+                    p.f-m-light.mt-1 
+                      | For defined icons switches, use 
+                      code  switch-state
+                      |   and
+                      code   icon-state
+                      |.
+                  .card-body.common-flex.flex-column.switch-wrapper
+                    .d-flex
+                      .text-end.icon-state
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-primary
+                      label.col-form-label.m-l-10 Primary Switch
+                    .d-flex
+                      .text-end.icon-state
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-secondary
+                      label.col-form-label.m-l-10 Secondary Switch
+                    .d-flex
+                      .text-end.icon-state
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-success
+                      label.col-form-label.m-l-10 Success Switch
+                    .d-flex
+                      .text-end.icon-state
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-danger
+                      label.col-form-label.m-l-10 Danger Switch
+                    .d-flex
+                      .text-end.icon-state
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-warning
+                      label.col-form-label.m-l-10 Warning Switch
+                    .d-flex
+                      .text-end.icon-state
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-info
+                      label.col-form-label.m-l-10 Info Switch
+                    .d-flex
+                      .text-end.icon-state
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-dark
+                      label.col-form-label.m-l-10 Dark Switch
+              .col-xl-4.col-sm-6
+                .card.height-equal
+                  .card-header
+                    h5 Uncheck Switch
+                    p.f-m-light.mt-1 
+                      | Use  
+                      code switch-state
+                      |  class to create uncheck switches. 
+                  .card-body.common-flex.flex-column.switch-wrapper
+                    .d-flex
+                      .text-end
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-primary 
+                      label.col-form-label.m-l-10 Unchecked Primary Switch
+                    .d-flex
+                      .text-end
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-secondary
+                      label.col-form-label.m-l-10 Unchecked Secondary Switch
+                    .d-flex
+                      .text-end
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-success
+                      label.col-form-label.m-l-10 Unchecked Success Switch
+                    .d-flex
+                      .text-end
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-danger
+                      label.col-form-label.m-l-10 Unchecked Danger Switch
+                    .d-flex
+                      .text-end
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-warning
+                      label.col-form-label.m-l-10 Unchecked Warning Switch
+                    .d-flex
+                      .text-end
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-info
+                      label.col-form-label.m-l-10 Unchecked Info Switch
+                    .d-flex
+                      .text-end
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-dark
+                      label.col-form-label.m-l-10 Unchecked Dark Switch
+              .col-xl-4 
+                .card.height-equal
+                  .card-header
+                    h5 Borders with Icons
+                    p.f-m-light.mt-1 
+                      | Use 
+                      code switch-outline 
+                      | and 
+                      code icon-state
+                      |  class to create outline with icons. 
+                  .card-body.common-flex.flex-column.switch-wrapper
+                    .d-flex
+                      .text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-primary
+                      label.col-form-label.m-l-10 Bordered Primary Switch
+                    .d-flex
+                      .text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-secondary
+                      label.col-form-label.m-l-10 Bordered Secondary Switch
+                    .d-flex
+                      .text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-success
+                      label.col-form-label.m-l-10 Bordered Success Switch
+                    .d-flex
+                      .text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-danger
+                      label.col-form-label.m-l-10 Bordered Danger Switch
+                    .d-flex
+                      .text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-warning
+                      label.col-form-label.m-l-10 Bordered Warning Switch
+                    .d-flex
+                      .text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-info
+                      label.col-form-label.m-l-10 Bordered Info Switch
+                    .d-flex
+                      .text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox', checked='')
+                          span.switch-state.bg-dark
+                      label.col-form-label.m-l-10 Bordered Dark Switch
+              .col-md-6
+                .card
+                  .card-header
+                    h5 Disabled Outline Switch
+                    p.f-m-light.mt-1 
+                      | Use 
+                      code switch-outline 
+                      |  class to create outline. 
+                  .card-body.common-flex
+                    .d-flex
+                      .flex-grow-1.text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox')
+                          span.switch-state.bg-primary
+                    .d-flex
+                      .flex-grow-1.text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox')
+                          span.switch-state.bg-secondary
+                    .d-flex
+                      .flex-grow-1.text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox')
+                          span.switch-state.bg-success
+                    .d-flex
+                      .flex-grow-1.text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox')
+                          span.switch-state.bg-danger
+                    .d-flex
+                      .flex-grow-1.text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox')
+                          span.switch-state.bg-warning
+                    .d-flex
+                      .flex-grow-1.text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox')
+                          span.switch-state.bg-info
+                    .d-flex
+                      .flex-grow-1.text-end.icon-state.switch-outline
+                        label.switch.mb-0
+                          input(type='checkbox')
+                          span.switch-state.bg-dark
+              .col-md-6
+                .card
+                  .card-header
+                    h5 Variation of Switches
+                    p.f-m-light.mt-1 
+                      | Use 
+                      code tgl-skewed/tgl-flip
+                      |  class to create variations. 
+                  .card-body
+                      ul.tg-list.common-flex
+                        li.tg-list-item
+                          input#cb3.tgl.tgl-skewed(type = "checkbox")
+                          label.tgl-btn(data-tg-off = "OFF", data-tg-on = "ON", for = "cb3")
+                        li 
+                          p  Skewed
+                        li.tg-list-item
+                          input#cb5.tgl.tgl-flip(type = "checkbox")
+                          label.tgl-btn(data-tg-off = "Nope", data-tg-on = "Yeah!", for = "cb5")
+                        li 
+                          p Flip
+                        li.tg-list-item
+                          .d-flex
+                            .flex-grow-1.text-end.icon-state
+                              label.switch.mb-0.square-checked
+                                input(type='checkbox', checked='')
+                                span.switch-state.bg-warning.rounded-2
+                        li 
+                          p Checked
+                        li.tg-list-item
+                          .d-flex
+                            .flex-grow-1.text-end
+                              label.switch.square-checked.mb-0
+                                input(type='checkbox', checked='')
+                                span.switch-state.bg-success.rounded-2
+                        li 
+                          p Flat
+              .col-md-12
+                .card
+                  .card-header
+                    h5 Switch Sizing
+                    p.f-m-light.mt-1 
+                      | Use 
+                      code switch-sm
+                      |  and 
+                      code switch-lg 
+                      | class to create switch sizing.
+                  .card-body.common-flex.switch-wrapper
+                    .d-flex
+                        label.col-form-label.m-r-10 Small Size
+                        .flex-grow-1.text-end.switch-sm
+                          label.switch
+                            input(type='checkbox', checked='')
+                            span.switch-state
+                    .d-flex
+                      label.col-form-label.m-r-10 Small Size Unchecked
+                      .flex-grow-1.text-end.switch-sm
+                        label.switch
+                          input(type='checkbox')
+                          span.switch-state 
+                    .d-flex
+                      label.col-form-label.m-r-10 Normal Size
+                      .flex-grow-1.text-end
+                        label.switch
+                          input(type='checkbox', checked='')
+                          span.switch-state
+                    .d-flex
+                      label.col-form-label.m-r-10 Normal Unchecked
+                      .flex-grow-1.text-end
+                        label.switch
+                          input(type='checkbox')
+                          span.switch-state    
+                    .d-flex
+                      label.col-form-label.m-r-10 Disabled State
+                      .flex-grow-1.text-end
+                        label.switch
+                          input(type='checkbox', disabled='')
+                          span.switch-state
+                    .d-flex
+                        label.col-form-label.m-r-10 Large Size
+                        .flex-grow-1.text-end.switch-lg
+                          label.switch
+                            input(type='checkbox', checked='')
+                            span.switch-state.large-switch
+                    .d-flex
+                      label.col-form-label.m-r-10 Large Unchecked
+                      .flex-grow-1.text-end.switch-lg
+                        label.switch
+                          input(type='checkbox')
+                          span.switch-state.large-switch
+                    .d-flex
+                      label.col-form-label.m-r-10 Disabled
+                      .flex-grow-1.text-end.switch-lg
+                        label.switch
+                          input(type='checkbox' disabled='')
+                          span.switch-state.large-switch
+              .col-md-12
+                .card
+                  .card-header
+                    h5 Switch with Icons
+                    p.f-m-light.mt-1 
+                      | Use 
+                      code icon-state
+                      |  class to visible icons in switches.
+                  .card-body.common-flex.switch-wrapper
+                    .d-flex
+                        label.col-form-label.m-r-10 Small Size
+                        .flex-grow-1.text-end.switch-sm.icon-state
+                          label.switch
+                            input(type='checkbox', checked='')
+                            span.switch-state
+                    .d-flex
+                      label.col-form-label.m-r-10 Small Size Unchecked
+                      .flex-grow-1.text-end.switch-sm.icon-state
+                        label.switch
+                          input(type='checkbox')
+                          span.switch-state
+                    .d-flex
+                        label.col-form-label.m-r-10 Normal Size
+                        .flex-grow-1.text-end.icon-state
+                          label.switch
+                            input(type='checkbox', checked='')
+                            span.switch-state
+                    .d-flex
+                      label.col-form-label.m-r-10 Normal Unchecked
+                      .flex-grow-1.text-end.icon-state
+                        label.switch
+                          input(type='checkbox')
+                          span.switch-state
+                    .d-flex
+                      label.col-form-label.m-r-10 Disabled With Icon
+                      .flex-grow-1.text-end.icon-state
+                        label.switch
+                          input(type='checkbox', disabled='')
+                          span.switch-state
+                    .d-flex
+                        label.col-form-label.m-r-10 Large Size
+                        .flex-grow-1.text-end.switch-lg.icon-state
+                          label.switch
+                            input(type='checkbox', checked='')
+                            span.switch-state
+                    .d-flex
+                      label.col-form-label.m-r-10 Large Unchecked
+                      .flex-grow-1.text-end.switch-lg.icon-state
+                        label.switch
+                          input(type='checkbox')
+                          span.switch-state
+                    .d-flex
+                      label.col-form-label.m-r-10 Disabled
+                      .flex-grow-1.text-end.switch-lg.icon-state
+                        label.switch
+                          input(type='checkbox' disabled='')
+                          span.switch-state
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files   

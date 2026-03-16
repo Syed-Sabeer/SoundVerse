@@ -1,0 +1,480 @@
+- var page_Title = 'Companies';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+- var height_equal          = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Companies
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item  Jobs
+                    li.breadcrumb-item.active Companies
+          // Container-fluid starts
+          .container-fluid.main-companies
+            .row
+              .col-xl-3.xl-4.box-col-12
+                .md-sidebar 
+                  a.btn.btn-primary.email-aside-toggle.md-sidebar-toggle Filters
+                  .md-sidebar-aside.job-sidebar.custom-scrollbar
+                    .card 
+                      .card-header
+                        h5 Filters
+                      .card-body.filter-companies 
+                        #accordionExample.accordion
+                          .accordion-item
+                            h2.accordion-header
+                              button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne')
+                                | Industry
+                                i.svg-color(data-feather='chevron-down')
+                            #collapseOne.accordion-collapse.collapse.show
+                              .accordion-body
+                                .product-filter
+                                  .checkbox-animated.mt-0
+                                    .form-check
+                                      input#chk-ani.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      label.form-check-label(for='chk-ani')
+                                        span Media & Entertainment
+                                        span.number (04)
+                                    .form-check
+                                      input#chk-ani1.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      label.form-check-label(for='chk-ani1')
+                                        span Chemical Industry
+                                        span.number (01)
+                                    .form-check
+                                      input#chk-ani2.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      label.form-check-label(for='chk-ani2')
+                                        span Civil Industry
+                                        span.number (01)
+                                    .form-check
+                                      input#chk-ani3.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      label.form-check-label(for='chk-ani3')
+                                        span IT Consulting & Services
+                                        span.number (35)
+                                    .form-check
+                                      input#chk-ani4.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      label.form-check-label(for='chk-ani4')
+                                        span Healthcare Technology
+                                        span.number (10)
+                                    .form-check
+                                      input#chk-ani5.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      label.form-check-label(for='chk-ani5')
+                                        span Manufacturing Industry
+                                        span.number (25)
+
+                          .accordion-item
+                            h2.accordion-header
+                              button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo')
+                                | Company List
+                                i.svg-color(data-feather='chevron-down')
+                            #collapseTwo.accordion-collapse.collapse.show
+                              .accordion-body
+                                .product-filter
+                                  .checkbox-animated.mt-0
+                                    label.d-block(for='chk-ani6')
+                                      input#chk-ani6.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      | Wonder Finds
+                                    label.d-block(for='chk-ani7')
+                                      input#chk-ani7.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      | Kilback
+                                    label.d-block(for='chk-ani8')
+                                      input#chk-ani8.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      | Gadget Grove
+                                    label.d-block(for='chk-ani9')
+                                      input#chk-ani9.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      | Liehook
+                                    label.d-block(for='chk-ani10')
+                                      input#chk-ani10.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      | Appzea
+                                    label.d-block(for='chk-ani11')
+                                      input#chk-ani11.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      | Cliinch
+                          .accordion-item
+                            h2.accordion-header
+                              button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree')
+                                | Rating
+                                i.svg-color(data-feather='chevron-down')
+                            #collapseThree.accordion-collapse.collapse.show
+                              .accordion-body
+                                .product-filter 
+                                  .checkbox-animated.mt-0.product-rate
+                                    .form-check
+                                      input#chk-ani12.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      label.form-check-label(for='chk-ani12')
+                                        span.common-flex
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-solid.fa-star.fill
+                                        span.number (5 Star)
+                                    .form-check
+                                      input#chk-ani13.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      label.form-check-label(for='chk-ani13')
+                                        span.common-flex
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-regular.fa-star.fill
+                                        span.number (4 Star)
+                                    .form-check
+                                      input#chk-ani14.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      label.form-check-label(for='chk-ani14')
+                                        span.common-flex
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-regular.fa-star.fill
+                                          i.fa-regular.fa-star.fill
+                                        span.number (3 Star)
+                                    .form-check
+                                      input#chk-ani15.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      label.form-check-label(for='chk-ani15')
+                                        span.common-flex
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-regular.fa-star.fill
+                                          i.fa-regular.fa-star.fill
+                                          i.fa-regular.fa-star.fill
+                                        span.number (2 Star)
+                                    .form-check
+                                      input#chk-ani16.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      label.form-check-label(for='chk-ani16')
+                                        span.common-flex
+                                          i.fa-solid.fa-star.fill
+                                          i.fa-regular.fa-star.fill
+                                          i.fa-regular.fa-star.fill
+                                          i.fa-regular.fa-star.fill
+                                          i.fa-regular.fa-star.fill
+                                        span.number (1 Star)
+                          .accordion-item
+                            h2.accordion-header
+                              button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#collapseFour' aria-expanded='false' aria-controls='collapseFour')
+                                | Employee Range
+                                i.svg-color(data-feather='chevron-down')
+                            #collapseFour.accordion-collapse.collapse
+                              .accordion-body
+                                .product-filter
+                                  .checkbox-animated.mt-0
+                                    label.d-block(for='chk-ani17')
+                                      input#chk-ani17.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      | 0-50 Employees
+                                    label.d-block(for='chk-ani18')
+                                      input#chk-ani18.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      | 51-200 Employees
+                                    label.d-block(for='chk-ani19')
+                                      input#chk-ani19.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      | 201-500 Employees
+                                    label.d-block(for='chk-ani20')
+                                      input#chk-ani20.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      | 501-1000 Employees
+                                    label.d-block(for='chk-ani21')
+                                      input#chk-ani21.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      | 1000-5000 Employees
+                                    label.d-block(for='chk-ani22')
+                                      input#chk-ani22.checkbox_animated(type='checkbox', data-original-title='', title='')
+                                      | 5001-10000 Employees
+              .col-xl-9.xl-66.box-col-12
+                .row 
+                  .col-xxl-3.xl-50.col-md-4.col-sm-6.box-col-4
+                    .card.height-equal
+                      .card-body
+                        .company-box
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#logo-8')
+                          .company-name
+                            h6 Appzea
+                            .main-star-rating
+                              .common-flex.star-box.justify-content-center
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star
+                            p.mb-2.c-o-light 45.6K+ Reviews
+                            .company-category.bg-light-primary.txt-primary
+                              i.fa-solid.fa-tag.fa-flip-horizontal
+                              span E-commerce
+                            .company-desc
+                              p Empowering businesses through innovative data analytics
+                            a(href="job-list-view.html").btn.btn-primary.btn-hover-effect Jobs Posted 
+                              span (03)
+                  .col-xxl-3.xl-50.col-md-4.col-sm-6.box-col-4
+                    .card.height-equal
+                      .card-body
+                        .company-box
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#logo-4')
+                          .company-name
+                            h6 Liourt
+                            .main-star-rating
+                              .common-flex.star-box.justify-content-center
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                            p.mb-2.c-o-light 500+ Reviews
+                            .company-category.bg-light-primary.txt-primary
+                              i.fa-solid.fa-tag.fa-flip-horizontal
+                              span Development
+                            .company-desc
+                              p Wide range of technology-driven solutions for different sectors
+                            a(href="job-list-view.html").btn.btn-primary.btn-hover-effect Jobs Posted 
+                              span (10)
+                  .col-xxl-3.xl-50.col-md-4.col-sm-6.box-col-4
+                    .card.height-equal
+                      .card-body
+                        .company-box
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#logo-15')
+                          .company-name
+                            h6 Doloh
+                            .main-star-rating
+                              .common-flex.star-box.justify-content-center
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star
+                            p.mb-2.c-o-light 1000+ Reviews
+                            .company-category.bg-light-primary.txt-primary
+                              i.fa-solid.fa-tag.fa-flip-horizontal
+                              span Medical
+                            .company-desc
+                              p Focused on innovation, quality, and delivering values
+                            a(href="job-list-view.html").btn.btn-primary.btn-hover-effect Jobs Posted 
+                              span (08)
+                  .col-xxl-3.xl-50.col-md-4.col-sm-6.box-col-4
+                    .card.height-equal
+                      .card-body
+                        .company-box
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#logo-5')
+                          .company-name
+                            h6 Cliinch
+                            .main-star-rating
+                              .common-flex.star-box.justify-content-center
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                            p.mb-2.c-o-light 50.4K+ Reviews
+                            .company-category.bg-light-primary.txt-primary
+                              i.fa-solid.fa-tag.fa-flip-horizontal
+                              span Management
+                            .company-desc
+                              p Providing outstanding tech services and solutions
+                            a(href="job-list-view.html").btn.btn-primary.btn-hover-effect Jobs Posted 
+                              span (02)
+                  .col-xxl-3.xl-50.col-md-4.col-sm-6.box-col-4
+                    .card.height-equal
+                      .card-body
+                        .company-box
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#logo-12')
+                          .company-name
+                            h6 Holoxo
+                            .main-star-rating
+                              .common-flex.star-box.justify-content-center
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                            p.mb-2.c-o-light 14.1K+ Reviews
+                            .company-category.bg-light-primary.txt-primary
+                              i.fa-solid.fa-tag.fa-flip-horizontal
+                              span E-commerce
+                            .company-desc
+                              p Offering cutting-edge tech services and softwares
+                            a(href="job-list-view.html").btn.btn-primary.btn-hover-effect Jobs Posted 
+                              span (05)
+                  .col-xxl-3.xl-50.col-md-4.col-sm-6.box-col-4
+                    .card.height-equal
+                      .card-body
+                        .company-box
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#logo-7')
+                          .company-name
+                            h6 Liify
+                            .main-star-rating
+                              .common-flex.star-box.justify-content-center
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                            p.mb-2.c-o-light 200+ Reviews
+                            .company-category.bg-light-primary.txt-primary
+                              i.fa-solid.fa-tag.fa-flip-horizontal
+                              span Management
+                            .company-desc
+                              p Worldwide services for digital transformation
+                            a(href="job-list-view.html").btn.btn-primary.btn-hover-effect Jobs Posted 
+                              span (09)
+                  .col-xxl-3.xl-50.col-md-4.col-sm-6.box-col-4
+                    .card.height-equal
+                      .card-body
+                        .company-box
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#logo-10')
+                          .company-name
+                            h6 Jews
+                            .main-star-rating
+                              .common-flex.star-box.justify-content-center
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star
+                            p.mb-2.c-o-light 1.5K+ Reviews
+                            .company-category.bg-light-primary.txt-primary
+                              i.fa-solid.fa-tag.fa-flip-horizontal
+                              span Medical
+                            .company-desc
+                              p Digital solutions for a range of global businesses
+                            a(href="job-list-view.html").btn.btn-primary.btn-hover-effect Jobs Posted 
+                              span (14)
+                  .col-xxl-3.xl-50.col-md-4.col-sm-6.box-col-4
+                    .card.height-equal
+                      .card-body
+                        .company-box
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#logo-9')
+                          .company-name
+                            h6 Appish
+                            .main-star-rating
+                              .common-flex.star-box.justify-content-center
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                            p.mb-2.c-o-light 3.5K+ Reviews
+                            .company-category.bg-light-primary.txt-primary
+                              i.fa-solid.fa-tag.fa-flip-horizontal
+                              span Development
+                            .company-desc
+                              p High-end software and technology services
+                            a(href="job-list-view.html").btn.btn-primary.btn-hover-effect Jobs Posted 
+                              span (04)
+                  .col-xxl-3.xl-50.col-md-4.col-sm-6.box-col-4
+                    .card.height-equal
+                      .card-body
+                        .company-box
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#logo-6')
+                          .company-name
+                            h6 Liehook
+                            .main-star-rating
+                              .common-flex.star-box.justify-content-center
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                            p.mb-2.c-o-light 45.5K+ Reviews
+                            .company-category.bg-light-primary.txt-primary
+                              i.fa-solid.fa-tag.fa-flip-horizontal
+                              span Development
+                            .company-desc
+                              p Software and digital solutions for a range of global businesses
+                            a(href="job-list-view.html").btn.btn-primary.btn-hover-effect Jobs Posted 
+                              span (01)
+                  .col-xxl-3.xl-50.col-md-4.col-sm-6.box-col-4
+                    .card.height-equal
+                      .card-body
+                        .company-box
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#logo-2')
+                          .company-name
+                            h6 Wonder Finds
+                            .main-star-rating
+                              .common-flex.star-box.justify-content-center
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                            p.mb-2.c-o-light 4.2K+ Reviews
+                            .company-category.bg-light-primary.txt-primary
+                              i.fa-solid.fa-tag.fa-flip-horizontal
+                              span Management
+                            .company-desc
+                              p Cutting-edge technological services on a global scale
+                            a(href="job-list-view.html").btn.btn-primary.btn-hover-effect Jobs Posted 
+                              span (08)
+                  .col-xxl-3.xl-50.col-md-4.col-sm-6.box-col-4
+                    .card.height-equal
+                      .card-body
+                        .company-box
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#logo-1')
+                          .company-name
+                            h6 Gadget Grove
+                            .main-star-rating
+                              .common-flex.star-box.justify-content-center
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star
+                            p.mb-2.c-o-light 200+ Reviews
+                            .company-category.bg-light-primary.txt-primary
+                              i.fa-solid.fa-tag.fa-flip-horizontal
+                              span E-commerce
+                            .company-desc
+                              p Leading provider of digital services and software
+                            a(href="job-list-view.html").btn.btn-primary.btn-hover-effect Jobs Posted 
+                              span (06)
+                  .col-xxl-3.xl-50.col-md-4.col-sm-6.box-col-4
+                    .card.height-equal
+                      .card-body
+                        .company-box
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#logo-3')
+                          .company-name
+                            h6 Kilback
+                            .main-star-rating
+                              .common-flex.star-box.justify-content-center
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star.active
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                            p.mb-2.c-o-light 32.5K+ Reviews
+                            .company-category.bg-light-primary.txt-primary
+                              i.fa-solid.fa-tag.fa-flip-horizontal
+                              span Medical
+                            .company-desc
+                              p Cutting-edge solutions to international markets
+                            a(href="job-list-view.html").btn.btn-primary.btn-hover-effect Jobs Posted 
+                              span (03)
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

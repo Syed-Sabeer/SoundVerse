@@ -1,0 +1,168 @@
+/**=====================
+    3.60 Wishlist CSS start
+==========================**/
+
+.wishlist-box {
+	background-color: var(--light-background);
+	transition: all .3s ease-in-out;
+	overflow: hidden;
+
+	>div {
+		@include pixelstrap-flex(flex, flex-start, center);
+		gap: calc(22px + (35 - 22) * ((100vw - 1400px) / (1920 - 1400)));
+		padding-inline: calc(8px + (18 - 8) * ((100vw - 1400px) / (1920 - 1400)));
+
+		@media (max-width:1199px) and (min-width:841px) {
+			padding-inline: 18px;
+			gap: 35px;
+		}
+
+		@media (max-width:840px) {
+			padding-inline: 6px;
+			gap: 22px;
+		}
+
+		@media (max-width:767px) {
+			padding-inline: 0;
+			display: block;
+		}
+	}
+
+	.wishlist-image {
+		img {
+			height: calc(70px + (90 - 70) * ((100vw - 1400px) / (1920 - 1400)));
+			max-width: calc(70px + (90 - 70) * ((100vw - 1400px) / (1920 - 1400)));
+			object-fit: contain;
+			transition: all .3s ease-in-out;
+
+			@media (max-width:1199px) and (min-width:841px) {
+				height: 90px;
+				max-width: 90px;
+			}
+
+			@media (max-width:840px) and (min-width:768px) {
+				height: 65px;
+				max-width: 65px;
+			}
+
+			@media (max-width:767px) {
+				width: 100%;
+				max-width: unset;
+				height: 90px;
+				margin-bottom: 22px;
+			}
+
+			@media (max-width:575px) {
+				margin-bottom: 10px;
+			}
+
+			@media (max-width:370px) {
+				height: 70px;
+			}
+		}
+
+		.wishlist-close-btn {
+			position: absolute;
+			top: 20px;
+			left: -20px;
+			width: 100%;
+			@include pixelstrap-flex(flex, flex-end, center);
+
+			[dir="rtl"] & {
+				left: unset;
+				right: -20px;
+			}
+
+			.btn {
+				background-color: var(--white);
+				border-radius: 50%;
+				box-shadow: 0 3px 3px rgba(37, 37, 37, .20) !important;
+				display: flex;
+				padding: 5px 8px;
+
+				&:active {
+					border-color: $transparent-color;
+					box-shadow: 0 3px 3px rgba(37, 37, 37, .20);
+				}
+
+				@media (max-width:840px) {
+					padding: 3px 6px;
+
+					i {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+
+	.wishlist-footer {
+		.brand-name {
+			margin-bottom: 10px;
+			color: $badge-light-color;
+
+			@media (max-width:767px) {
+				margin-bottom: 1px;
+			}
+		}
+
+		.btn {
+
+			&:active,
+			&:focus-visible {
+				color: $white;
+			}
+
+			&.disabled {
+				color: $white;
+				border-color: $transparent-color;
+			}
+
+			@media (max-width:767px) {
+				width: 100%;
+			}
+		}
+
+		.price {
+			color: var(--theme-default);
+			padding: 6px 0 22px 0;
+
+			@media (max-width:767px) {
+				padding: 6px 0 11px 0;
+			}
+
+			del {
+				color: $badge-light-color;
+				font-weight: 400;
+				padding-left: 2px;
+				font-size: 14px;
+
+				[dir="rtl"] & {
+					padding-left: unset;
+					padding-right: 2px;
+				}
+			}
+		}
+
+		h6 {
+			@include multi-line-ellipsis(2, auto, vertical, hidden);
+
+			&:hover {
+				color: var(--theme-default);
+			}
+		}
+	}
+
+	&:hover {
+		.wishlist-image {
+			img {
+				transform: scale(1.1);
+				transition: all .3s ease-in-out;
+			}
+		}
+	}
+}
+
+/**=====================
+    3.60 Wishlist CSS Ends
+==========================**/

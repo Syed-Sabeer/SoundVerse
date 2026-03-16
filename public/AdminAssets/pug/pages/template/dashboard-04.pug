@@ -1,0 +1,1126 @@
+- var page_Title = 'Crypto Dashboard';
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var apex                  = true;
+- var select_dt             = true;
+- var datatable             = true;
+- var page_datatable        = true;
+- var dashboard_4           = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var counter               = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper StartMy Currencies
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6
+                  h3
+                    | Crypto
+                .col-sm-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Dashboard
+                    li.breadcrumb-item.active Crypto
+          // Container-fluid starts
+          .container-fluid.dashboard-4
+            .row 
+              .col-xxl-3.col-xl-4.box-col-4
+                .row 
+                  .col-xl-12.col-sm-6
+                    .card.crypto-main-card
+                      .card-body 
+                        .deposit-wrap 
+                          div 
+                            h5 Cryptocurrency just got even better.
+                            p Digital asset built upon a dispersed network.
+                            button.btn.btn-white.f-w-500 Deposit Now
+                          img(src="../assets/images/dashboard-4/crypto.png", alt="crypto")
+                  .col-xl-12.col-sm-6
+                    .card.widget-hover
+                      .card-body.radial-progress-card 
+                        div 
+                          h6.mb-0 Average Sales Per Day
+                          .sale-details 
+                            h5.font-primary.mb-0.counter(data-target='45908') 0
+                            span.f-12.f-light.f-w-500
+                              i(data-feather="arrow-up")
+                              | +5.7%
+                          p.f-light Customers benefits offerings
+                        .radial-chart-wrap 
+                          #radial-chart 
+                  .col-xl-12.col-sm-6
+                    .card.widget-hover
+                      .card-body.radial-progress-card 
+                        div 
+                          h6.mb-0 Average Profit Per Day
+                          .sale-details 
+                            h5.font-secondary.mb-0 89.6%
+                            span.f-12.f-light.f-w-500
+                              i(data-feather="arrow-up")
+                              | +2.7%
+                          p.f-light An investment or business
+                        .radial-chart-wrap 
+                          #radial-chart2
+                  .col-xl-12.col-sm-6
+                    .card.widget-hover 
+                      .card-body.radial-progress-card 
+                        div 
+                          h6.mb-0 Average Visits Per Day
+                          .sale-details 
+                            h5.font-success.mb-0 
+                              span.counter(data-target='80') 0
+                              | k
+                            span.f-12.f-light.f-w-500
+                              i(data-feather="arrow-up")
+                              | +1.5%
+                          p.f-light Measure in a variety of situations
+                        .radial-chart-wrap 
+                          #radial-chart3
+                  .col-sm-12 
+                    .card.transaction-card
+                      .card-header.card-no-border
+                        .header-top 
+                          h5 Transactions
+                          ul#myTab.nav.nav-tabs.custom-tab(role='tablist')
+                            li.nav-item(role='presentation')
+                              button#all-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#all' type='button' role='tab' aria-controls='all' aria-selected='true') All
+                            li.nav-item(role='presentation')
+                              button#buy-tab.nav-link(data-bs-toggle='tab' data-bs-target='#buy' type='button' role='tab' aria-controls='buy' aria-selected='false') Buy
+                            li.nav-item(role='presentation')
+                              button#sell-tab.nav-link(data-bs-toggle='tab' data-bs-target='#sell' type='button' role='tab' aria-controls='sell' aria-selected='false') Sell
+                      .card-body.pt-0.px-0
+                        #myTabContent.tab-content
+                          #all.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='all-tab')
+                            .table-responsive.recent-table.transaction-table.custom-scrollbar
+                              table.table
+                                thead 
+                                  tr
+                                    th Currency
+                                    th Value
+                                    th Price
+                                tbody 
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-success.me-2(data-feather="trending-up")
+                                        div 
+                                          h6.f-14.mb-0 Buy BTC
+                                          span.f-light 14 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.018
+                                    td 
+                                      span.f-light.f-w-500 $236.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-danger.me-2(data-feather="trending-down")
+                                        div 
+                                          h6.f-14.mb-0 Sell ETH
+                                          span.f-light 25 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.089
+                                    td 
+                                      span.f-light.f-w-500 $116.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-success.me-2(data-feather="trending-up")
+                                        div 
+                                          h6.f-14.mb-0 Buy LTC
+                                          span.f-light 28 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.018
+                                    td 
+                                      span.f-light.f-w-500 $236.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-success.me-2(data-feather="trending-up")
+                                        div 
+                                          h6.f-14.mb-0 Buy LTC
+                                          span.f-light 05 Apr
+                                    td 
+                                      span.f-light.f-w-500 0.089
+                                    td 
+                                      span.f-light.f-w-500 $29.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-danger.me-2(data-feather="trending-down")
+                                        div 
+                                          h6.f-14.mb-0 Sell BTC
+                                          span.f-light 16 Apr
+                                    td 
+                                      span.f-light.f-w-500 0.012
+                                    td 
+                                      span.f-light.f-w-500 $236.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-danger.me-2(data-feather="trending-down")
+                                        div 
+                                          h6.f-14.mb-0 Sell ETH
+                                          span.f-light 25 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.089
+                                    td 
+                                      span.f-light.f-w-500 $116.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-success.me-2(data-feather="trending-up")
+                                        div 
+                                          h6.f-14.mb-0 Buy LTC
+                                          span.f-light 28 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.018
+                                    td 
+                                      span.f-light.f-w-500 $236.89
+                          #buy.tab-pane.fade(role='tabpanel' aria-labelledby='buy-tab') 
+                            .table-responsive.recent-table.transaction-table
+                              table.table
+                                thead 
+                                  tr
+                                    th Currency
+                                    th Value
+                                    th Price
+                                tbody 
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-success.me-2(data-feather="trending-up")
+                                        div 
+                                          h6.f-14.mb-0 Buy LTC
+                                          span.f-light 30 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.010
+                                    td 
+                                      span.f-light.f-w-500 $105.00
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-danger.me-2(data-feather="trending-down")
+                                        div 
+                                          h6.f-14.mb-0 Buy ETH
+                                          span.f-light 05 Apr
+                                    td 
+                                      span.f-light.f-w-500 0.075
+                                    td 
+                                      span.f-light.f-w-500 $120.74
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-success.me-2(data-feather="trending-up")
+                                        div 
+                                          h6.f-14.mb-0 Buy BTC
+                                          span.f-light 14 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.018
+                                    td 
+                                      span.f-light.f-w-500 $236.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-success.me-2(data-feather="trending-up")
+                                        div 
+                                          h6.f-14.mb-0 Buy LTC
+                                          span.f-light 05 Apr
+                                    td 
+                                      span.f-light.f-w-500 0.089
+                                    td 
+                                      span.f-light.f-w-500 $29.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-success.me-2(data-feather="trending-up")
+                                        div 
+                                          h6.f-14.mb-0 Buy LTC
+                                          span.f-light 30 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.010
+                                    td 
+                                      span.f-light.f-w-500 $105.00
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-danger.me-2(data-feather="trending-down")
+                                        div 
+                                          h6.f-14.mb-0 Buy ETH
+                                          span.f-light 05 Apr
+                                    td 
+                                      span.f-light.f-w-500 0.075
+                                    td 
+                                      span.f-light.f-w-500 $120.74
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-success.me-2(data-feather="trending-up")
+                                        div 
+                                          h6.f-14.mb-0 Buy BTC
+                                          span.f-light 14 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.018
+                                    td 
+                                      span.f-light.f-w-500 $236.89
+                          #sell.tab-pane.fade(role='tabpanel' aria-labelledby='sell-tab')
+                            .table-responsive.recent-table.transaction-table
+                              table.table
+                                thead 
+                                  tr
+                                    th Currency
+                                    th Value
+                                    th Price
+                                tbody 
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-danger.me-2(data-feather="trending-down")
+                                        div 
+                                          h6.f-14.mb-0 Sell BTC
+                                          span.f-light 14 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.018
+                                    td 
+                                      span.f-light.f-w-500 $236.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-danger.me-2(data-feather="trending-down")
+                                        div 
+                                          h6.f-14.mb-0 Sell ETH
+                                          span.f-light 25 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.089
+                                    td 
+                                      span.f-light.f-w-500 $116.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-success.me-2(data-feather="trending-up")
+                                        div 
+                                          h6.f-14.mb-0 Sell LTC
+                                          span.f-light 28 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.018
+                                    td 
+                                      span.f-light.f-w-500 $236.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-success.me-2(data-feather="trending-up")
+                                        div 
+                                          h6.f-14.mb-0 Sell LTC
+                                          span.f-light 05 Apr
+                                    td 
+                                      span.f-light.f-w-500 0.089
+                                    td 
+                                      span.f-light.f-w-500 $29.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-danger.me-2(data-feather="trending-down")
+                                        div 
+                                          h6.f-14.mb-0 Sell BTC
+                                          span.f-light 16 Apr
+                                    td 
+                                      span.f-light.f-w-500 0.012
+                                    td 
+                                      span.f-light.f-w-500 $236.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-danger.me-2(data-feather="trending-down")
+                                        div 
+                                          h6.f-14.mb-0 Sell ETH
+                                          span.f-light 25 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.089
+                                    td 
+                                      span.f-light.f-w-500 $116.89
+                                  tr 
+                                    td 
+                                      .d-flex 
+                                        i.font-success.me-2(data-feather="trending-up")
+                                        div 
+                                          h6.f-14.mb-0 Sell LTC
+                                          span.f-light 28 Mar
+                                    td 
+                                      span.f-light.f-w-500 0.018
+                                    td 
+                                      span.f-light.f-w-500 $236.89
+              .col-xxl-6.col-xl-8.box-col-8e
+                .row 
+                  .col-sm-4 
+                    .currency-widget.warning
+                      .d-flex
+                        .currency-icon-widget 
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#beta')
+                        div 
+                          h6 Bitcoin 
+                            span.f-light BTC
+                      .card 
+                        .card-body.d-flex
+                          .currency-chart-wrap
+                            #currency-chart 
+                          .bg-light-warning.text-center 
+                            h5.mb-0
+                              | $
+                              span.counter(data-target='2143') 0
+                            span.f-12.f-w-500.font-warning
+                              i.me-1(data-feather="trending-up")
+                              | +50%
+                  .col-sm-4 
+                    .currency-widget.primary
+                      .d-flex
+                        .currency-icon-widget 
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#eth')
+                        div 
+                          h6 Ethereum 
+                            span.f-light ETC
+                      .card 
+                        .card-body.d-flex
+                          .currency-chart-wrap
+                            #currency-chart2
+                          .bg-light-primary.text-center 
+                            h5.mb-0 
+                              | $
+                              span.counter(data-target='7450') 0
+                            span.f-12.f-w-500.font-primary
+                              i.me-1(data-feather="trending-up") 
+                              | +35%
+                  .col-sm-4 
+                    .currency-widget.success
+                      .d-flex
+                        .currency-icon-widget 
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#ltc')
+                        div 
+                          h6 Leave Travel 
+                            span.f-light LTC
+                      .card 
+                        .card-body.d-flex
+                          .currency-chart-wrap
+                            #currency-chart3
+                          .bg-light-success.text-center 
+                            h5.mb-0 
+                              | $
+                              span.counter(data-target='2198') 0
+                            span.f-12.f-w-500.font-success
+                              i.me-1(data-feather="trending-up") 
+                              | +73%
+                  .col-xl-12 
+                    .card.market-card 
+                      .card-header.card-no-border
+                        .header-top
+                          h5 Market Graph
+                          .card-header-right-icon
+                            .dropdown.icon-dropdown
+                              button#marketGraph.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='marketGraph')
+                                a.dropdown-item(href='#') 1H
+                                a.dropdown-item(href='#') 1D
+                                a.dropdown-item(href='#') 1W
+                                a.dropdown-item(href='#') 1M
+                                a.dropdown-item(href='#') 1Y
+                      .card-body.pt-0
+                        .row.m-0.overall-card
+                          .col-xxl-8.col-xl-7.col-md-8.col-sm-7.p-0.box-col-7.col-ed-7                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                            .market-chart-container
+                              #market-chart
+                          .col-xxl-4.col-xl-5.col-md-4.col-sm-5.p-0.box-col-5.col-ed-5
+                            .row.g-sm-3.g-2
+                              .col-md-12
+                                .light-card.balance-card.align-items-center
+                                  h6.f-w-400.f-14.mb-0 Coinmarketcap
+                                  .ms-auto.text-end
+                                    span.badge.badge-light-success.rounded-pill +11.67%
+                              .col-md-12
+                                .light-card.balance-card.align-items-center
+                                  h6.f-w-400.f-14.mb-0 Binance
+                                  .ms-auto.text-end
+                                    span.badge.badge-light-success.rounded-pill +10.67%
+                              .col-md-12
+                                .light-card.balance-card.align-items-center
+                                  h6.f-w-400.f-14.mb-0 Coinbase
+                                  .ms-auto.text-end
+                                    span.badge.badge-light-secondary.rounded-pill -11.67%
+                              .col-md-12
+                                .light-card.balance-card.align-items-center
+                                  h6.f-w-400.f-14.mb-0 Yobit
+                                  .ms-auto.text-end
+                                    span.badge.badge-light-success.rounded-pill +13.67%
+                              .col-md-12
+                                button.btn.btn-outline-dark.w-100(type="button") See All Balance
+                  .col-xl-12
+                    .card 
+                      .card-header.card-no-border
+                        .header-top 
+                          h5 My Currencies
+                      .card-body.px-0.pt-0
+                        .recent-table.table-responsive.currency-table.custom-scrollbar 
+                          table.table#currency-data-table 
+                            thead 
+                              tr 
+                                th Coin Name
+                                th Price
+                                th 24h Change
+                                th Total Balance
+                                th Total Coin
+                                th Action
+                            tbody 
+                              tr 
+                                td
+                                  div.d-flex.align-items-center.gap-2
+                                    .currency-icon.warning
+                                      svg
+                                        use(href='../assets/svg/icon-sprite.svg#beta')
+                                    div 
+                                      h6.f-14.mb-0.f-w-400 Bitcoin
+                                td $13,098.09
+                                td
+                                  .change-currency.font-success 
+                                    i.me-1(data-feather="trending-up")
+                                    | 5.90
+                                td $74,871.470
+                                td 1.09634721
+                                td 
+                                  button.btn.button-primary Trade
+                              tr 
+                                td
+                                  div.d-flex.align-items-center.gap-2
+                                    .currency-icon.success
+                                      svg
+                                        use(href='../assets/svg/icon-sprite.svg#ltc')
+                                    div 
+                                      h6.f-14.mb-0.f-w-400 Litecoin
+                                td $11,098.04
+                                td
+                                  .change-currency.font-secondary
+                                    i.me-1(data-feather="trending-down")
+                                    | 2.90
+                                td $87,897.098
+                                td 1.09675432
+                                td 
+                                  button.btn.button-primary Trade
+                              tr 
+                                td
+                                  div.d-flex.align-items-center.gap-2
+                                    .currency-icon.primary
+                                      svg
+                                        use(href='../assets/svg/icon-sprite.svg#eth')
+                                    div 
+                                      h6.f-14.mb-0.f-w-400 Eathereum
+                                td $45,198.09
+                                td
+                                  .change-currency.font-success
+                                    i.me-1(data-feather="trending-up")
+                                    | 0.12
+                                td $45,178.010
+                                td 1.41557127
+                                td 
+                                  button.btn.button-primary Trade
+                              tr 
+                                td
+                                  div.d-flex.align-items-center.gap-2
+                                    .currency-icon.secondary
+                                      svg
+                                        use(href='../assets/svg/icon-sprite.svg#bin')
+                                    div 
+                                      h6.f-14.mb-0.f-w-400 Binance
+                                td $35,098.34
+                                td
+                                  .change-currency.font-success
+                                    i.me-1(data-feather="trending-up")
+                                    | 3.56
+                                td $64,100.066
+                                td 1.78142254
+                                td 
+                                  button.btn.badge-light-primary Trade
+                              tr 
+                                td
+                                  div.d-flex.align-items-center.gap-2
+                                    .currency-icon.dark-green
+                                      svg
+                                        use(href='../assets/svg/icon-sprite.svg#te')
+                                    div 
+                                      h6.f-14.mb-0.f-w-400 Tether
+                                td $56,898.91
+                                td
+                                  .change-currency.font-success
+                                    i.me-1(data-feather="trending-down")
+                                    | 1.23
+                                td $61,574.218
+                                td 1.574215
+                                td 
+                                  button.btn.button-primary Trade
+                              tr 
+                                td
+                                  div.d-flex.align-items-center.gap-2
+                                    .currency-icon.dark-green
+                                      svg
+                                        use(href='../assets/svg/icon-sprite.svg#chainlink')
+                                    div 
+                                      h6.f-14.mb-0.f-w-400 Chainlink
+                                td $62,098.09
+                                td
+                                  .change-currency.font-success
+                                    i.me-1(data-feather="trending-up")
+                                    | 1.85
+                                td $87,897.098
+                                td 1.09675432
+                                td 
+                                  button.btn.button-primary Trade
+                              tr 
+                                td
+                                  div.d-flex.align-items-center.gap-2
+                                    .currency-icon.primary
+                                      svg
+                                        use(href='../assets/svg/icon-sprite.svg#solana')
+                                    div 
+                                      h6.f-14.mb-0.f-w-400 Solana
+                                td $17,045.03
+                                td
+                                  .change-currency.font-success 
+                                    i.me-1(data-feather="trending-up")
+                                    | 6.54
+                                td $25,457.354
+                                td 1.09634721
+                                td 
+                                  button.btn.button-primary Trade
+                              tr 
+                                td
+                                  div.d-flex.align-items-center.gap-2
+                                    .currency-icon.primary
+                                      svg
+                                        use(href='../assets/svg/icon-sprite.svg#cardano')
+                                    div 
+                                      h6.f-14.mb-0.f-w-400 Cardano
+                                td $25,045.04
+                                td
+                                  .change-currency.font-secondary
+                                    i.me-1(data-feather="trending-down")
+                                    | 2.90
+                                td $92,897.098
+                                td 1.06895425
+                                td 
+                                  button.btn.button-primary Trade
+                  .col-sm-6 
+                    .card 
+                      .card-header.card-no-border
+                        .header-top.gap-1
+                          h5 Buy Coins
+                          .dropdown.icon-dropdown
+                            button#buydropdown.btn.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                              i.icon-more-alt
+                            .dropdown-menu.dropdown-menu-end(aria-labelledby='buydropdown')
+                              a.dropdown-item(href='#') Weekly
+                              a.dropdown-item(href='#') Monthly
+                              a.dropdown-item(href='#') Yearly
+                      .card-body.pt-0 
+                        form.theme-form.crypto-form
+                          .mb-xxl-4.mb-3
+                            label.form-label.f-light.mt-1(for='money') Enter your Money
+                            .position-relative
+                              input#money.form-control(type='number' placeholder="100")
+                              select.form-select.crypto-select.warning
+                                option USD
+                                option BTC
+                                option LTC
+                                option ETH
+                          .mb-xxl-4.mb-3
+                            label.form-label.f-light.mt-1(for='coin') Enter Coins Converted to
+                            .position-relative
+                              input#coin.form-control(type='number' placeholder="0.0043")
+                              select.form-select.crypto-select.primary
+                                option BTC
+                                option USD
+                                option LTC
+                                option ETH
+                          button.btn.btn-primary.btn-hover-effect.w-100(type="button") Buy Coins
+                  .col-sm-6 
+                    .card 
+                      .card-header.card-no-border
+                        .header-top.gap-1
+                          h5 Sell Coins
+                          .dropdown.icon-dropdown
+                            button#selldropdown.btn.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                              i.icon-more-alt
+                            .dropdown-menu.dropdown-menu-end(aria-labelledby='selldropdown')
+                              a.dropdown-item(href='#') Weekly
+                              a.dropdown-item(href='#') Monthly
+                              a.dropdown-item(href='#') Yearly
+                      .card-body.pt-0 
+                        form.theme-form.crypto-form
+                          .mb-xxl-4.mb-3
+                            label.form-label.f-light.mt-1(for='crypto-coin') Enter Crypto Coins
+                            .position-relative
+                              input#crypto-coin.form-control(type='number' placeholder="100")
+                              select.form-select.crypto-select.warning
+                                option USD
+                                option BTC
+                                option LTC
+                                option ETH
+                          .mb-xxl-4.mb-3
+                            label.form-label.f-light.mt-1(for='bitcoin') Enter Money Converted to
+                            .position-relative
+                              input#bitcoin.form-control(type='number' placeholder="0.0043")
+                              select.form-select.crypto-select.primary
+                                option LTC
+                                option USD
+                                option BTC
+                                option ETH
+                          button.btn.btn-primary.btn-hover-effect.w-100(type="button") Sell Coins
+              .col-xxl-3.box-col-12
+                .row.box-order
+                  .col-xxl-12.col-sm-6.box-col-6
+                    .card.balance-box
+                      .card-body
+                        .balance-profile
+                          .balance-img
+                            img(src="../assets/images/dashboard-4/user.png", alt="user vector")
+                            a(href="user-profile.html").edit-icon
+                              svg
+                                use(href='../assets/svg/icon-sprite.svg#pencil')
+                          span.f-light.d-block Your Balance
+                          h5.mt-1
+                            | $
+                            span.counter(data-target='76898790') 0
+                          ul 
+                            li
+                              .balance-item.danger 
+                                .balance-icon-wrap  
+                                  .balance-icon
+                                    i(data-feather="arrow-down-right")
+                                div 
+                                  span.f-12.f-light Investment  
+                                  h5 78.8K
+                                  span.badge.badge-light-danger.rounded-pill -11.67%
+                            li
+                              .balance-item.success
+                                .balance-icon-wrap  
+                                  .balance-icon
+                                    i(data-feather="arrow-up-right")
+                                div 
+                                  span.f-12.f-light Returns
+                                  h5 19.7K
+                                  span.badge.badge-light-success.rounded-pill +10.67%
+                  .col-xxl-12.order-xxl-0.order-1
+                    .card.portfolio-card 
+                      .card-header.card-no-border
+                        .header-top
+                          h5.m-0 My Portfolio
+                          .card-header-right-icon
+                            .dropdown
+                              button#portfolioButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                | BTC
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='portfolioButton')
+                                a.dropdown-item(href='#') ETH
+                                a.dropdown-item(href='#') USD
+                                a.dropdown-item(href='#') LTC
+                      .card-body
+                        .row 
+                          .col-xxl-12.col-xl-7.col-sm-6.box-col-6
+                            .portfolio-chart-container 
+                              #portfolio-chart 
+                          .col-xxl-12.col-xl-5.col-sm-6.box-col-6 
+                            .portfolio-table.recent-table.table-responsive 
+                              table.table 
+                                tr 
+                                  td 
+                                    div.d-flex.align-items-center.gap-2
+                                      .currency-icon.warning
+                                        svg
+                                          use(href='../assets/svg/icon-sprite.svg#beta')
+                                      div 
+                                        h6.f-14.mb-1 Bitcoin
+                                        div.d-flex.align-items-center.gap-1
+                                          span.status.bg-success
+                                          span.f-light BTC
+                                  td.text-end 
+                                    h6.f-14.f-w-400.mb-1 BTC 0.543
+                                    span.font-success $14,987.13
+                                tr 
+                                  td 
+                                    div.d-flex.align-items-center.gap-2
+                                      .currency-icon.success
+                                        svg
+                                          use(href='../assets/svg/icon-sprite.svg#ltc')
+                                      div 
+                                        h6.f-14.mb-1 Ethereum
+                                        div.d-flex.align-items-center.gap-1
+                                          span.status.bg-danger
+                                          span.f-light ETH
+                                  td.text-end 
+                                    h6.f-14.f-w-400.mb-1 ETC 1.673
+                                    span.font-danger $49,987.13
+                                tr 
+                                  td 
+                                    div.d-flex.align-items-center.gap-2
+                                      .currency-icon.primary
+                                        svg
+                                          use(href='../assets/svg/icon-sprite.svg#eth')
+                                      div 
+                                        h6.f-14.mb-1 Litecoin
+                                        div.d-flex.align-items-center.gap-1
+                                          span.status.bg-success
+                                          span.f-light LTC
+                                  td.text-end 
+                                    h6.f-14.f-w-400.mb-1 LTC 1.643
+                                    span.font-success $35,571.25
+                                tr 
+                                  td 
+                                    div.d-flex.align-items-center.gap-2
+                                      .currency-icon.light-blue
+                                        svg
+                                          use(href='../assets/svg/icon-sprite.svg#dash')
+                                      div 
+                                        h6.f-14.mb-1 Dash
+                                        div.d-flex.align-items-center.gap-1
+                                          span.status.bg-success
+                                          span.f-light DSH
+                                  td.text-end 
+                                    h6.f-14.f-w-400.mb-1 DSH 1.810
+                                    span.font-success $17,047.30
+                  .col-xxl-12.col-sm-6.box-col-6
+                    .card 
+                      .card-header.card-no-border
+                        .header-top
+                          h5.m-0 Activities
+                          .card-header-right-icon
+                            .dropdown.icon-dropdown
+                              button#activitiesButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='activitiesButton')
+                                a.dropdown-item(href='#') Weekly
+                                a.dropdown-item(href='#') Yearly
+                                a.dropdown-item(href='#') Monthly
+                      .card-body.pt-0.activity-card 
+                        .appointment-table.customer-table.table-responsive
+                          table.table.table-bordernone
+                            tbody
+                              tr
+                                td
+                                  img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/3.jpg',alt='user')
+                                td.img-content-box
+                                  a(href="user-profile.html").d-block.f-w-500 Anna K.
+                                  span.f-light To : 07...12bb
+                                td.text-end 
+                                  span.font-success +0.3BNB
+                                  span.d-block.f-light 02.01.24
+                              tr
+                                td
+                                  img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/12.jpg',alt='user')
+                                td.img-content-box
+                                  a(href="user-profile.html").d-block.f-w-500 Guy H.
+                                  span.f-light To : 09...12ac
+                                td.text-end 
+                                  span.font-success +0.3BNB
+                                  span.d-block.f-light 12.02.24
+                              tr
+                                td
+                                  img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/10.jpg',alt='user')
+                                td.img-content-box
+                                  a(href="user-profile.html").d-block.f-w-500 Jenny W.
+                                  span.f-light To : 01...12ab
+                                td.text-end 
+                                  span.font-danger -0.1BNB
+                                  span.d-block.f-light 22.02.24
+                              tr
+                                td
+                                  img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/11.jpg',alt='user')
+                                td.img-content-box
+                                  a(href="user-profile.html").d-block.f-w-500 Jacob B.
+                                  span.f-light To : 01...12nf
+                                td.text-end 
+                                  span.font-success +0.3BNB
+                                  span.d-block.f-light 29.02.24
+                              tr
+                                td
+                                  img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/13.jpg',alt='user')
+                                td.img-content-box
+                                  a(href="user-profile.html").d-block.f-w-500 Esther H.
+                                  span.f-light To : 07...12bd
+                                td.text-end 
+                                  span.font-danger -0.2BNB
+                                  span.d-block.f-light 02.03.24
+                              tr
+                                td
+                                  img.img-fluid.img-40.rounded-circle.me-2(src='../assets/images/dashboard/user/5.jpg',alt='user')
+                                td.img-content-box
+                                  a(href="user-profile.html").d-block.f-w-500 Leslie A.
+                                  span.f-light To : 03...12se
+                                td.text-end 
+                                  span.font-success +0.3BNB
+                                  span.d-block.f-light 23.04.24
+              .col-md-6
+                .card 
+                  .card-header.card-no-border
+                    .header-top 
+                      h5 Average Sale Prices
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#customerButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='customerButton')
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') Tomorrow
+                            a.dropdown-item(href='#!') Yesterday
+                  .card-body.pt-0.px-0
+                    .recent-table.table-responsive.currency-table.average-sale.custom-scrollbar 
+                      table.table#average-sale 
+                        thead 
+                          tr 
+                            th Cryptocurrency
+                            th USD
+                            th ETH
+                            th BTC
+                            th Price Change(%)
+                        tbody 
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-warning
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#beta')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Bitcoin
+                            td $50,000
+                            td 2.0
+                            td 50.0
+                            td +2%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-success
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#ltc')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Litecoin
+                            td $64,540
+                            td 1.053415
+                            td 0.526
+                            td -1%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-primary
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#eth')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Ethereum
+                            td $92,310
+                            td 0.00154
+                            td 0.00563
+                            td +0.5%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-secondary
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#bin')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Binance
+                            td $20,952
+                            td 0.0006
+                            td 0.951200
+                            td +0.5%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-warning
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#te1')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Tether
+                            td $45,000
+                            td 0.546
+                            td 50.0
+                            td +5%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-success
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#dash')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Dash
+                            td $85,547
+                            td 1.254634
+                            td 0.14578
+                            td +8%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-primary
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#cardano')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Cardano
+                            td $45,310
+                            td 0.00578
+                            td 0.00654
+                            td +0.2%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-secondary
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#solana')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Solana
+                            td $68,548
+                            td 0.0005
+                            td 0.658910
+                            td +0.9%
+              .col-md-6
+                .card 
+                  .card-header.card-no-border
+                    .header-top 
+                      h5 Top Performers
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#customerButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='customerButton')
+                            a.dropdown-item(href='#!') Today
+                            a.dropdown-item(href='#!') Tomorrow
+                            a.dropdown-item(href='#!') Yesterday
+                  .card-body.pt-0.px-0
+                    .recent-table.table-responsive.currency-table.performer-table.custom-scrollbar
+                      table.table#performer-table
+                        thead 
+                          tr 
+                            th Cryptocurrency
+                            th Total Market Cap
+                            th USD
+                            th BTC
+                            th ETH
+                            th Change (24h)
+                        tbody 
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-warning
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#beta')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Bitcoin
+                            td $1,204,510
+                            td $54,500
+                            td 2.0
+                            td 65
+                            td +60%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-success
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#ripple')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Ripple
+                            td $9,420,159
+                            td $3,5100
+                            td 0.54
+                            td 3.5
+                            td -20%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-primary
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#eth')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Ethereum
+                            td $8,943,349
+                            td $9,9510
+                            td 0.54001
+                            td 0.5480
+                            td +50%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-success
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#dash')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Dash
+                            td $7,218,940
+                            td $8,5420
+                            td 0.008
+                            td 0.841
+                            td -18%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-warning
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#te1')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Tether
+                            td $2,305,451
+                            td $55,400
+                            td 3.0
+                            td 66
+                            td +66%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-success
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#solana')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Solana
+                            td $5,450,478
+                            td $5,5542
+                            td 0.55
+                            td 4.6
+                            td -25%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-primary
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#cardano')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Cardano
+                            td $6,356,457
+                            td $5,9687
+                            td 0.65557
+                            td 0.4578
+                            td +65%
+                          tr 
+                            td
+                              div.d-flex.align-items-center.gap-2
+                                .currency-icon.bg-secondary
+                                  svg
+                                    use(href='../assets/svg/icon-sprite.svg#bin')
+                                div 
+                                  h6.f-14.mb-0.f-w-400 Binance
+                            td $5,218,940
+                            td $3,5420
+                            td 0.067
+                            td 0.831
+                            td -3%         
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files
