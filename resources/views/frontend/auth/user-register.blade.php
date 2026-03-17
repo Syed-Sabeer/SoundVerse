@@ -85,6 +85,29 @@
     text-decoration: none;
 }
 
+.legal-links-box {
+    background: linear-gradient(135deg, rgba(136, 84, 208, 0.12), rgba(44, 20, 92, 0.16));
+    border: 1px solid rgba(136, 84, 208, 0.28);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.legal-links-box p {
+    margin: 0 0 8px;
+    font-size: 13px;
+    color: #67558d;
+    font-weight: 600;
+}
+
+.legal-links-box a {
+    display: block;
+    font-size: 13px;
+    color: #7c3aed;
+    word-break: break-all;
+    line-height: 1.5;
+}
+
 .checkbox-group a:hover {
     text-decoration: underline;
 }
@@ -172,7 +195,14 @@
 
                 <div class="checkbox-group">
                     <input type="checkbox" id="terms" name="terms" value="1" required>
-                    <label for="terms">I have read and agree to SingWithMe's <a href="#">terms of service</a></label>
+                    <label for="terms">I have read and agree to SingWithMe's <a href="{{ route('terms-conditions') }}" target="_blank">terms and conditions</a>, <a href="{{ route('privacy-policy') }}" target="_blank">privacy policy</a>, and <a href="{{ route('legal-compliance-framework') }}" target="_blank">legal compliance framework</a>.</label>
+                </div>
+
+                <div class="legal-links-box">
+                    <p>Legal links:</p>
+                    <a href="{{ route('terms-conditions') }}" target="_blank">{{ url('/terms-conditions') }}</a>
+                    <a href="{{ route('legal-compliance-framework') }}" target="_blank">{{ url('/legal-compliance-framework') }}</a>
+                    <a href="{{ route('privacy-policy') }}" target="_blank">{{ url('/privacy-policy') }}</a>
                 </div>
 
                 <button type="submit" class="sign_up_btn">Register</button>

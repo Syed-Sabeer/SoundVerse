@@ -347,6 +347,16 @@ Route::get('privacy-policy', function () {
     return view('frontend.privacy-policy');
 })->name('privacy-policy');
 
+// legal and compliance framework page
+Route::get('legal-compliance-framework', function () {
+    return view('frontend.legal-compliance-framework');
+})->name('legal-compliance-framework');
+
+// terms and conditions page
+Route::get('terms-conditions', function () {
+    return view('frontend.terms-conditions');
+})->name('terms-conditions');
+
 // payout-history page
 Route::get('payout-history', function () {
     return view('frontend.payout-history');

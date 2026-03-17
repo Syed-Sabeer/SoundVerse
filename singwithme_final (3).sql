@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 16, 2026 at 07:50 AM
+-- Generation Time: Mar 17, 2026 at 08:42 AM
 -- Server version: 10.6.23-MariaDB
 -- PHP Version: 8.1.33
 
@@ -115,6 +115,27 @@ CREATE TABLE `ad_revenue_shares` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `app_links`
+--
+
+CREATE TABLE `app_links` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `play_store_link` text DEFAULT NULL,
+  `app_store_link` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `app_links`
+--
+
+INSERT INTO `app_links` (`id`, `play_store_link`, `app_store_link`, `created_at`, `updated_at`) VALUES
+(1, 'https://play.google.com/store/apps/details?id=com.spotify.music&hl=en', 'https://apps.apple.com/us/app/spotify-music-and-podcasts/id324684580', '2026-03-17 06:48:09', '2026-03-17 06:48:09');
 
 -- --------------------------------------------------------
 
@@ -691,6 +712,33 @@ CREATE TABLE `brand_partnerships` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `certified_creator_requests`
+--
+
+CREATE TABLE `certified_creator_requests` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `artist_id` bigint(20) UNSIGNED NOT NULL,
+  `reason` text NOT NULL,
+  `kyc_document_path` varchar(255) NOT NULL,
+  `supporting_document_path` varchar(255) DEFAULT NULL,
+  `status` enum('pending','approved','rejected') NOT NULL DEFAULT 'pending',
+  `admin_notes` text DEFAULT NULL,
+  `reviewed_by` bigint(20) UNSIGNED DEFAULT NULL,
+  `reviewed_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `certified_creator_requests`
+--
+
+INSERT INTO `certified_creator_requests` (`id`, `artist_id`, `reason`, `kyc_document_path`, `supporting_document_path`, `status`, `admin_notes`, `reviewed_by`, `reviewed_at`, `created_at`, `updated_at`) VALUES
+(1, 33, 'This is a test message, This is a test message, This is a test message, This is a test message, This is a test message, This is a test message,', 'certified_creator_requests/kyc/CVi2JuSOCl5gxkxZ7nCfFO0rfsDIkSZ2ND4Q8VS0.pdf', NULL, 'approved', 'you are approved', 1, '2026-03-17 05:23:05', '2026-03-17 05:22:28', '2026-03-17 05:23:05');
 
 -- --------------------------------------------------------
 
@@ -2067,37 +2115,39 @@ CREATE TABLE `notifications` (
 
 INSERT INTO `notifications` (`id`, `user_id`, `message`, `type`, `notification_type`, `title`, `action_url`, `metadata`, `read_at`, `sent_at`, `delivered_at`, `is_read`, `created_at`, `updated_at`) VALUES
 (1, 30, 'Lars Watson subscribed to your artist profile.', 'subscription', 'in_app', 'New Subscriber', NULL, NULL, NULL, NULL, NULL, 0, '2026-01-14 07:18:28', '2026-01-14 07:18:28'),
-(2, 33, 'Lars Watson subscribed to your artist profile.', 'subscription', 'in_app', 'New Subscriber', NULL, NULL, NULL, NULL, NULL, 0, '2026-01-14 09:52:21', '2026-01-14 09:52:21'),
+(2, 33, 'Lars Watson subscribed to your artist profile.', 'subscription', 'in_app', 'New Subscriber', NULL, NULL, '2026-03-17 06:57:02', NULL, NULL, 1, '2026-01-14 09:52:21', '2026-03-17 06:57:02'),
 (3, 32, 'Test Artist uploaded a new song: Test Music 2', 'system', 'in_app', 'New Song Uploaded', NULL, NULL, NULL, NULL, NULL, 0, '2026-01-14 09:52:58', '2026-01-14 09:52:58'),
-(4, 33, 'Your payout request of $51.00 has been submitted and is pending admin approval. You will be notified once it\'s processed.', 'payment', 'in_app', 'Payout Request Submitted', NULL, NULL, NULL, NULL, NULL, 0, '2026-01-15 12:20:37', '2026-01-15 12:20:37'),
-(5, 33, 'Your payout request of $51.00 has been approved and is being processed.', 'payment', 'in_app', 'Payout Approved', NULL, NULL, NULL, NULL, NULL, 0, '2026-01-15 12:28:16', '2026-01-15 12:28:16'),
-(6, 33, 'Your payout of $51.00 has been completed and sent to your bank_transfer account.', 'payment', 'in_app', 'Payout Completed', NULL, NULL, NULL, NULL, NULL, 0, '2026-01-15 12:28:26', '2026-01-15 12:28:26'),
+(4, 33, 'Your payout request of $51.00 has been submitted and is pending admin approval. You will be notified once it\'s processed.', 'payment', 'in_app', 'Payout Request Submitted', NULL, NULL, '2026-03-17 06:57:02', NULL, NULL, 1, '2026-01-15 12:20:37', '2026-03-17 06:57:02'),
+(5, 33, 'Your payout request of $51.00 has been approved and is being processed.', 'payment', 'in_app', 'Payout Approved', NULL, NULL, '2026-03-17 06:57:02', NULL, NULL, 1, '2026-01-15 12:28:16', '2026-03-17 06:57:02'),
+(6, 33, 'Your payout of $51.00 has been completed and sent to your bank_transfer account.', 'payment', 'in_app', 'Payout Completed', NULL, NULL, '2026-03-17 06:57:02', NULL, NULL, 1, '2026-01-15 12:28:26', '2026-03-17 06:57:02'),
 (7, 32, 'Test Artist uploaded a new song: Test 2', 'system', 'in_app', 'New Song Uploaded', NULL, NULL, NULL, NULL, NULL, 0, '2026-01-15 12:40:47', '2026-01-15 12:40:47'),
 (8, 32, 'Test Artist uploaded a new song: final', 'system', 'in_app', 'New Song Uploaded', NULL, NULL, NULL, NULL, NULL, 0, '2026-01-15 12:43:21', '2026-01-15 12:43:21'),
 (9, 32, 'Test Artist uploaded new artwork.', 'system', 'in_app', 'New Artwork Uploaded', NULL, NULL, NULL, NULL, NULL, 0, '2026-01-16 00:57:42', '2026-01-16 00:57:42'),
-(10, 33, 'Test User subscribed to your artist profile.', 'subscription', 'in_app', 'New Subscriber', NULL, NULL, NULL, NULL, NULL, 0, '2026-01-16 01:21:33', '2026-01-16 01:21:33'),
-(11, 1, 'New tip received: £5 from Test User to Test Artist. Please process and send to artist.', 'payment', 'in_app', 'New Tip Received', NULL, NULL, NULL, NULL, NULL, 0, '2026-01-16 01:46:29', '2026-01-16 01:46:29'),
-(12, 33, 'You received a tip of £5.00 from Test User!', 'payment', 'in_app', 'Tip Received', NULL, NULL, NULL, NULL, NULL, 0, '2026-01-16 02:19:08', '2026-01-16 02:19:08'),
-(13, 33, 'Test User subscribed to your artist profile.', 'subscription', 'in_app', 'New Subscriber', NULL, NULL, NULL, '2026-01-16 02:56:45', NULL, 0, '2026-01-16 02:56:45', '2026-01-16 02:56:45'),
+(10, 33, 'Test User subscribed to your artist profile.', 'subscription', 'in_app', 'New Subscriber', NULL, NULL, '2026-03-17 06:57:02', NULL, NULL, 1, '2026-01-16 01:21:33', '2026-03-17 06:57:02'),
+(11, 1, 'New tip received: £5 from Test User to Test Artist. Please process and send to artist.', 'payment', 'in_app', 'New Tip Received', NULL, NULL, '2026-03-17 05:21:22', NULL, NULL, 1, '2026-01-16 01:46:29', '2026-03-17 05:21:22'),
+(12, 33, 'You received a tip of £5.00 from Test User!', 'payment', 'in_app', 'Tip Received', NULL, NULL, '2026-03-17 06:57:02', NULL, NULL, 1, '2026-01-16 02:19:08', '2026-03-17 06:57:02'),
+(13, 33, 'Test User subscribed to your artist profile.', 'subscription', 'in_app', 'New Subscriber', NULL, NULL, '2026-03-17 06:57:02', '2026-01-16 02:56:45', NULL, 1, '2026-01-16 02:56:45', '2026-03-17 06:57:02'),
 (14, 32, 'Test Artist uploaded a new song: long song', 'system', 'in_app', 'New Song Uploaded', NULL, NULL, NULL, '2026-01-16 02:58:49', NULL, 0, '2026-01-16 02:58:49', '2026-01-16 02:58:49'),
 (16, 33, 'Royalty calculation completed for January 2026. You earned $4,000.00 from 1 streams. Amount added to your wallet.', 'payment', 'in_app', 'Royalty Calculated', NULL, NULL, '2026-01-16 03:08:38', '2026-01-16 03:01:20', NULL, 1, '2026-01-16 03:01:20', '2026-01-16 03:08:38'),
-(17, 33, 'Test User subscribed to your artist profile.', 'subscription', 'in_app', 'New Subscriber', NULL, NULL, NULL, '2026-01-16 03:08:23', NULL, 0, '2026-01-16 03:08:23', '2026-01-16 03:08:23'),
-(18, 33, 'Royalty calculation completed for January 2026. You earned $1,200.00 from 1 streams. Amount added to your wallet.', 'payment', 'in_app', 'Royalty Calculated', NULL, NULL, NULL, '2026-01-16 03:22:33', NULL, 0, '2026-01-16 03:22:33', '2026-01-16 03:22:33'),
+(17, 33, 'Test User subscribed to your artist profile.', 'subscription', 'in_app', 'New Subscriber', NULL, NULL, '2026-03-17 06:57:02', '2026-01-16 03:08:23', NULL, 1, '2026-01-16 03:08:23', '2026-03-17 06:57:02'),
+(18, 33, 'Royalty calculation completed for January 2026. You earned $1,200.00 from 1 streams. Amount added to your wallet.', 'payment', 'in_app', 'Royalty Calculated', NULL, NULL, '2026-03-17 06:57:02', '2026-01-16 03:22:33', NULL, 1, '2026-01-16 03:22:33', '2026-03-17 06:57:02'),
 (19, 28, 'Royalty calculation completed for January 2026. You earned $1,200.00 from 1 streams. Amount added to your wallet.', 'payment', 'in_app', 'Royalty Calculated', NULL, NULL, NULL, '2026-01-16 03:22:34', NULL, 0, '2026-01-16 03:22:34', '2026-01-16 03:22:34'),
 (20, 32, 'Test Artist uploaded a new song: test', 'system', 'in_app', 'New Song Uploaded', NULL, NULL, NULL, '2026-01-16 09:02:13', NULL, 0, '2026-01-16 09:02:13', '2026-01-16 09:02:13'),
-(22, 33, 'Your payout request of $214.00 has been submitted and is pending admin approval. You will be notified once it\'s processed.', 'payment', 'in_app', 'Payout Request Submitted', NULL, NULL, NULL, '2026-01-18 23:51:46', NULL, 0, '2026-01-18 23:51:46', '2026-01-18 23:51:46'),
+(22, 33, 'Your payout request of $214.00 has been submitted and is pending admin approval. You will be notified once it\'s processed.', 'payment', 'in_app', 'Payout Request Submitted', NULL, NULL, '2026-03-17 06:57:02', '2026-01-18 23:51:46', NULL, 1, '2026-01-18 23:51:46', '2026-03-17 06:57:02'),
 (23, 32, 'Test Artist uploaded a new song: Test with ISRC', 'system', 'in_app', 'New Song Uploaded', NULL, NULL, NULL, '2026-01-18 23:52:57', NULL, 0, '2026-01-18 23:52:57', '2026-01-18 23:52:57'),
 (25, 28, 'Royalty calculation completed for January 2026. You earned $200.00 from 1 streams. Amount added to your wallet.', 'payment', 'in_app', 'Royalty Calculated', NULL, NULL, NULL, '2026-01-19 00:23:00', NULL, 0, '2026-01-19 00:23:00', '2026-01-19 00:23:00'),
-(26, 33, 'Royalty calculation completed for January 2026. You earned $600.00 from 2 streams. Amount added to your wallet.', 'payment', 'in_app', 'Royalty Calculated', NULL, NULL, NULL, '2026-01-19 00:23:01', NULL, 0, '2026-01-19 00:23:01', '2026-01-19 00:23:01'),
-(27, 33, 'Your payout request of $214.00 has been approved and is being processed.', 'payment', 'in_app', 'Payout Approved', NULL, NULL, NULL, '2026-01-19 00:23:49', NULL, 0, '2026-01-19 00:23:49', '2026-01-19 00:23:49'),
-(28, 33, 'Your payout of $214.00 has been completed and sent to your bank_transfer account.', 'payment', 'in_app', 'Payout Completed', NULL, NULL, NULL, '2026-01-19 00:23:58', NULL, 0, '2026-01-19 00:23:58', '2026-01-19 00:23:58'),
+(26, 33, 'Royalty calculation completed for January 2026. You earned $600.00 from 2 streams. Amount added to your wallet.', 'payment', 'in_app', 'Royalty Calculated', NULL, NULL, '2026-03-17 06:57:02', '2026-01-19 00:23:01', NULL, 1, '2026-01-19 00:23:01', '2026-03-17 06:57:02'),
+(27, 33, 'Your payout request of $214.00 has been approved and is being processed.', 'payment', 'in_app', 'Payout Approved', NULL, NULL, '2026-03-17 06:57:02', '2026-01-19 00:23:49', NULL, 1, '2026-01-19 00:23:49', '2026-03-17 06:57:02'),
+(28, 33, 'Your payout of $214.00 has been completed and sent to your bank_transfer account.', 'payment', 'in_app', 'Payout Completed', NULL, NULL, '2026-03-17 06:57:02', '2026-01-19 00:23:58', NULL, 1, '2026-01-19 00:23:58', '2026-03-17 06:57:02'),
 (29, 36, 'Test User subscribed to your artist profile.', 'subscription', 'in_app', 'New Subscriber', NULL, NULL, NULL, '2026-01-19 03:56:07', NULL, 0, '2026-01-19 03:56:07', '2026-01-19 03:56:07'),
 (30, 36, 'You received a tip of £50 from Test User! Message: Love your songs', 'payment', 'in_app', 'Tip Received', 'https://singwithmerecords.co.uk/artist/artisit-portal', '{\"tip_id\":2,\"user_id\":34,\"amount\":50,\"user_message\":\"Love your songs\"}', NULL, '2026-01-19 03:56:52', NULL, 0, '2026-01-19 03:56:52', '2026-01-19 03:56:52'),
 (32, 36, 'razin subscribed to your artist profile.', 'subscription', 'in_app', 'New Subscriber', NULL, NULL, NULL, '2026-01-19 11:26:33', NULL, 0, '2026-01-19 11:26:33', '2026-01-19 11:26:33'),
 (33, 33, 'You received a tip of £7 from Jacky!', 'payment', 'in_app', 'Tip Received', 'https://singwithmerecords.co.uk/artist/artisit-portal', '{\"tip_id\":3,\"user_id\":44,\"amount\":7,\"user_message\":null}', '2026-03-16 05:12:10', '2026-03-16 05:09:35', NULL, 1, '2026-03-16 05:09:35', '2026-03-16 05:12:10'),
 (34, 44, 'Your tip of £7 to Edward Munoz has been sent successfully! The artist has been notified.', 'payment', 'in_app', 'Tip Sent Successfully', 'https://singwithmerecords.co.uk/tip-artist?artist=33', '{\"tip_id\":3,\"artist_id\":33,\"amount\":7}', NULL, '2026-03-16 05:09:37', NULL, 0, '2026-03-16 05:09:37', '2026-03-16 05:09:37'),
-(35, 33, 'You received a tip of £5 from Jacky!', 'payment', 'in_app', 'Tip Received', 'https://singwithmerecords.co.uk/artist/artisit-portal', '{\"tip_id\":4,\"user_id\":44,\"amount\":5,\"user_message\":null}', NULL, '2026-03-16 05:13:33', NULL, 0, '2026-03-16 05:13:33', '2026-03-16 05:13:33'),
-(36, 44, 'Your tip of £5 to Edward Munoz has been sent successfully! The artist has been notified.', 'payment', 'in_app', 'Tip Sent Successfully', 'https://singwithmerecords.co.uk/tip-artist?artist=33', '{\"tip_id\":4,\"artist_id\":33,\"amount\":5}', NULL, '2026-03-16 05:13:34', NULL, 0, '2026-03-16 05:13:34', '2026-03-16 05:13:34');
+(35, 33, 'You received a tip of £5 from Jacky!', 'payment', 'in_app', 'Tip Received', 'https://singwithmerecords.co.uk/artist/artisit-portal', '{\"tip_id\":4,\"user_id\":44,\"amount\":5,\"user_message\":null}', '2026-03-17 06:57:02', '2026-03-16 05:13:33', NULL, 1, '2026-03-16 05:13:33', '2026-03-17 06:57:02'),
+(36, 44, 'Your tip of £5 to Edward Munoz has been sent successfully! The artist has been notified.', 'payment', 'in_app', 'Tip Sent Successfully', 'https://singwithmerecords.co.uk/tip-artist?artist=33', '{\"tip_id\":4,\"artist_id\":33,\"amount\":5}', NULL, '2026-03-16 05:13:34', NULL, 0, '2026-03-16 05:13:34', '2026-03-16 05:13:34'),
+(37, 1, 'New Certified Creator request submitted by Edward Munoz.', 'system', 'in_app', 'Certified Creator Request', 'https://singwithmerecords.co.uk/admin/certified-creator-requests/1', '{\"request_id\":1,\"artist_id\":33}', '2026-03-17 06:55:27', '2026-03-17 05:22:28', NULL, 1, '2026-03-17 05:22:28', '2026-03-17 06:55:27'),
+(38, 33, 'Your Certified Creator request has been approved.', 'system', 'in_app', 'Certified Creator Approved', 'https://singwithmerecords.co.uk/artist/artisit-portal', '{\"request_id\":1}', '2026-03-17 06:57:02', '2026-03-17 05:23:05', NULL, 1, '2026-03-17 05:23:05', '2026-03-17 06:57:02');
 
 -- --------------------------------------------------------
 
@@ -2953,6 +3003,7 @@ CREATE TABLE `users` (
   `provider` varchar(255) DEFAULT NULL,
   `provider_id` varchar(255) DEFAULT NULL,
   `is_artist` int(11) DEFAULT NULL,
+  `is_certified_creator` tinyint(1) NOT NULL DEFAULT 0,
   `is_featured` tinyint(1) NOT NULL DEFAULT 0,
   `usersubscription_id` bigint(20) UNSIGNED DEFAULT NULL,
   `usersubscription_date` timestamp NULL DEFAULT NULL,
@@ -2969,48 +3020,48 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `username`, `email_verified_at`, `password`, `remember_token`, `is_active`, `provider`, `provider_id`, `is_artist`, `is_featured`, `usersubscription_id`, `usersubscription_date`, `usersubscription_duration`, `referral_code`, `payment_method`, `payment_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Admin', 'admin@gmail.com', 'admin', NULL, '$2y$10$c8POulTn6abF.sdRjG8tX.N9y/TVSFwlRI4dhms/YYpXRye2owEbO', 'zToFXpsCTVEQS5UHYXnSl94mbiLfSJ5o9Ft52m5RegKhabSXhuwCsZecSf5i', 'active', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-08-27 09:52:17', '2025-10-01 10:24:47', NULL),
-(2, 'John Doe', 'individual@example.com', 'john_individual', NULL, '$2y$10$uwEnpe1LmjMB1aqchZ6YrOueYy2heB0rGURHehAWXb4/YtT.2zo9C', NULL, 'active', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-08-27 09:52:18', '2025-08-27 09:52:18', NULL),
-(3, 'ACME Corp', 'company@example.com', 'acme_company', NULL, '$2y$10$EK6KMHf1EmcIrTYb7oDwiut/V0mYu8YKKlZ8sKRPwLUr11biStNBu', NULL, 'active', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-08-27 09:52:18', '2025-08-27 09:52:18', NULL),
-(5, 'Buckminster Warren', 'vygohosin@mailinator.com', 'buckminsterwarren1831', NULL, '$2y$10$mnGYziD2LCRTLKbERWyNL.Mcg6s2UnQgB2.JJ0n5Zz8wFjp3em1sy', NULL, 'active', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-08 09:33:07', '2025-09-08 09:33:07', NULL),
-(7, 'Edward Munoz', 'finalgamers67@gmail.com', 'edwardmunoz7162', NULL, '$2y$10$f52iHMUIkjvHyqs/wQXB9..qKnQE95wtBS2Db.ImAhZUXszQug7PO', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-23 11:16:36', '2026-01-18 13:00:46', NULL),
-(8, 'sghdgg', 'user1234@gmail.com', 'sghdgg7497', NULL, '$2y$10$mopooYOFFFCVwagIxYe7N.ohN/7CN1xzNN5CSAoAk/v9Ye3BcEzfW', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-01 05:57:18', '2025-10-01 05:57:18', NULL),
-(9, 'Test User', 'test@example.com', 'testuser', '2025-10-01 06:03:10', '$2y$10$OAUFvWOMe3QLhxo93kjH6uSbN6KtHU3uHYDaqPYEfFzoxGOX5Ryk.', NULL, 'active', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-01 06:03:10', '2025-10-01 06:03:10', NULL),
-(11, 'dfsfdf', 'user12345@gmail.com', 'dfsfdf5973', NULL, '$2y$10$XjmN08QEG8hf1sr6KLXqmuCJ8QF0uEV4FocmyYf3xdYQjEvMgMqfu', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-02 03:50:36', '2025-10-02 03:50:36', NULL),
-(12, 'bhjnhjh', 'adfgmin@gmail.com', 'bhjnhjh5319', NULL, '$2y$10$LblfF5jUvmVFJxZ5onQA9e6l5PBYrewYlhDJif06FoY5rd47cna.S', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-11-19 04:44:51', '2025-11-19 04:44:51', NULL),
-(13, 'TestArtist', 'testartist@gmail.com', 'testartist8428', NULL, '$2y$10$NBiXCymN2M3w5DGhOjEnluKqDaB8puMLMsfTWRJ1d6/muSzAhcw7S', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-11-24 04:21:19', '2025-11-24 04:21:19', NULL),
-(14, 'Rachel Marks', 'kogyh@mailinator.com', 'rachelmarks8477', NULL, '$2y$10$.mZj7dM7uNmxy6h54f/qbeAAJITmXM8dlbeoTGD3oHxa.qfiW3P8O', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-02 08:31:05', '2025-12-02 08:31:05', NULL),
-(15, 'Keith Dixon', 'paveqitam@mailinator.com', 'keithdixon7543', NULL, '$2y$10$5.Inpnjs8u5u36TOl6lPe.xU2dxdk1bu1pWU6nPreCmRicdAovNF2', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-02 08:37:53', '2025-12-02 08:37:53', NULL),
-(16, 'Mona Bass', 'bawejotu@mailinator.com', 'monabass7846', NULL, '$2y$10$jXaww9giIl0BSyH8c4qC8.cQig79YKDSfo0yGjrFV24PBiTpPBT1W', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-02 09:06:08', '2025-12-02 09:06:08', NULL),
-(17, 'Test User', 'testingartist@gmail.com', 'testuser1767', NULL, '$2y$10$o.c3ZXSVHJW.fs8bNCnvSOXEsyUCduRc62BNhkWtrdEiASeAK5eqa', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-02 09:07:29', '2025-12-02 09:07:29', NULL),
-(18, 'Remedios Vance', 'vokygoqa@mailinator.com', 'remediosvance9539', NULL, '$2y$10$CDOa0hokSlrAC6g7IFX10e8Z3UBkreIxXI/OZsjcl.WBp6LHCLyUS', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-06 07:59:24', '2025-12-06 07:59:24', NULL),
-(19, 'Malachi Ray', 'zimejylo@mailinator.com', 'malachiray3224', NULL, '$2y$10$gWn6Tjd3doGoE00DTI1QtuivyUNRU.LF2ECFI4aoH9hY3hVgm4vg.', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-08 05:03:19', '2025-12-08 05:03:19', NULL),
-(20, 'user1', 'alex.marketing.gab@gmail.com', 'user11424', NULL, '$2y$10$8kGz2bFQ4Mmz3U6MMaT0cOMGD8s.HSfSUPvIAJNS493HyrP5LTYM.', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-17 09:06:18', '2025-12-17 09:06:18', NULL),
-(21, 'razin', 'raziy.dev@gmail.com', 'razin5333', NULL, '$2y$10$tN5q9yW9IR/q6eZOgvDZtORHSNovWoPcORuBtX7Vu9BWnn1KkeIyq', 'w850yfgFmIZO8Hms8yPQ2Ytz4hYGeKVcemPkub3U3Ozja6BlEFsxZqnpeN6l', 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-20 08:45:56', '2025-12-20 08:45:56', NULL),
-(22, 'Eden Harmon', 'jobuxovu@mailinator.com', 'edenharmon5302', NULL, '$2y$10$pVU2nvtODEJQZiihpEAh3.YuFLEidqE6o2jdZjgYL5Ik1GbyC7ICu', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-23 06:36:45', '2025-12-23 06:36:45', NULL),
-(23, 'Olivia Deniz', 'oliviadenizthevisionbrands@gmail.com', 'oliviadeniz4110', NULL, '$2y$10$1c6qxZBRnZTdqFjWmdsI0./d6HVRV/QGOpsHJpsu2c30BU8vxy6xW', NULL, 'active', NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-07 11:41:51', '2026-01-14 09:44:33', NULL),
-(24, 'Fredericka Ayala', 'kafijyvupu@mailinator.com', 'frederickaayala1809', NULL, '$2y$10$r5TrVi9vCQ6lGjBw5ywy8uCT9.IlRh62MLdHdqZ531KNUE4G6BoXO', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-08 05:41:36', '2026-01-08 05:41:36', NULL),
-(25, 'Candace Holman', 'dozyma@mailinator.com', 'candaceholman3735', NULL, '$2y$10$fcECZpKV1N/hOFRSehJIxuImTDmx1KFeBZXtDdcYAuiXy4Jw.DxV6', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-08 08:21:33', '2026-01-08 08:21:33', NULL),
-(26, 'test user', 'testuser@gmadddil.com', 'testuser9915', NULL, '$2y$10$jEkHDPjw.KbvWosOgGtyLum9H3TzQEWePFUacIIvyawHSh8776Ryq', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-08 10:09:42', '2026-01-08 10:09:42', NULL),
-(27, 'Illana Hebert', 'fodutesuzo@mailinator.com', 'illanahebert5860', NULL, '$2y$10$jQcvEJLOlIT0CSl9XE5rcuAbgEQVnvUMvtoVX31cpy41Y2VydhOtK', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-11 11:12:58', '2026-01-11 11:12:58', NULL),
-(28, 'Indigo Lynch', 'roxox@mailinator.com', 'indigolynch2393', NULL, '$2y$10$phMdm6VdvDZWBNkG0M2Ty.Ow6WMR.ezmJSIGOko9/BsO57EG5/I9m', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-12 07:34:20', '2026-01-12 07:34:20', NULL),
-(29, 'Kylynn Rasmussen', 'ryzizy@mailinator.com', 'kylynnrasmussen1996', NULL, '$2y$10$pbAzExZWdCicfeMSv7dAMe0k0AszcC5quLY4s5hnnQaCf81eUy2uW', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-13 10:47:21', '2026-01-13 10:47:21', NULL),
-(30, 'test', 'test124@gmai.com', 'test2864', NULL, '$2y$10$3RyPkZFcXRHSkMR3bvh5HuiuWSxdH7/JoWVgD95g9Ubiu9wfocgkK', NULL, 'active', NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-13 11:39:39', '2026-01-14 09:44:30', NULL),
-(31, 'Sybil Morin', 'boka@mailinator.com', 'sybilmorin1079', NULL, '$2y$10$nnbs2QjXwNMZ7NmoYRuQF.3m3JMIwGV/ow8fiqB3xoZFtuPB7OBLW', NULL, 'active', NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-14 06:24:52', '2026-01-14 09:44:37', NULL),
-(32, 'Lars Watson', 'deboned@mailinator.com', 'larswatson4334', NULL, '$2y$10$1wXth5H4MyRyrZ4mMnhII.epY5kCseTReDvmsG2e4moTyWb6suuSW', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-14 07:12:05', '2026-01-14 07:12:05', NULL),
-(33, 'Edward Munoz', 'testartist123@gmail.com', 'testartist6667', NULL, '$2y$10$DvhnlZpTuhTkO.e.PMLK.Od.BF/VsDrwN5MHGWGcwtO69W07OKNem', NULL, 'active', NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-14 07:19:32', '2026-01-14 09:44:27', NULL),
-(34, 'Test User', 'testuser@gmail.com', 'testuser6594', NULL, '$2y$10$qmecyuZumZsIXHYc7GcQbuv7YN7Rgsvz/VIuTjkxIQss37t6T2Jum', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-15 05:35:48', '2026-01-15 05:35:48', NULL),
-(35, 'tst', 'testuser222@gmail.com', 'tst4519', NULL, '$2y$10$5G4EYAhusahyyNYcfWbY5.Ou5vo/zmfwB.KWxfNEXBSfJbAPnDyBu', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-16 09:24:17', '2026-01-16 09:24:17', NULL),
-(36, 'Artist 123', 'artist123@outlook.com', 'artist1237099', NULL, '$2y$10$CKxqJkSYNnK/mljBR9uYZeulEAYi.V9SaWShiz8YGuZws16vtnWY6', NULL, 'active', NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-18 23:45:16', '2026-01-19 00:14:37', NULL),
-(37, 'Nero Keller', 'defehyl@mailinator.com', 'nerokeller5969', NULL, '$2y$10$qQil7.TIGzm9bcB5KShBTeMVzxoYz8RqnZHHtr0p/eYj3rTdfDGZi', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-28 05:00:43', '2026-01-28 05:00:43', NULL),
-(38, 'test', 'tetsttttttt22@gmail.com', 'test5080', NULL, '$2y$10$.CDQmn4sq0gw5mVBQsDgPudE9c0JCs9ifLRbuAbbYFDoJd7dNZkjS', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-28 05:02:02', '2026-01-28 05:02:02', NULL),
-(39, 'testtt@gmail.com', 'testetddjtt@gmail.com', 'testtt@gmail.com8655', NULL, '$2y$10$tVxpLmueYhH3PZgDCpPgvuzri0Tj2TiCQLWJD1uLROXEMCmy0zT/W', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-28 05:06:22', '2026-01-28 05:06:22', NULL),
-(40, 'Edward Munoz', 'edward123@gmail.com', 'edwardmunoz2558', NULL, '$2y$10$DW7QjpLDJlg8EJtiDtFC/.CBSAr4WtxNAG7F814vCotj8F9rjutX.', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-29 04:32:02', '2026-01-29 04:32:02', NULL),
-(41, 'Sopoline Craig', 'vyqymek@mailinator.com', 'sopolinecraig9090', NULL, '$2y$10$vE39dGt1bHuN73W1fjDj/OcdlBzOtgydL0IJzKArtl56Glp7Wn9DK', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-03-13 05:09:41', '2026-03-13 05:09:41', NULL),
-(42, 'Salvador Sellers', 'bevaz@mailinator.com', 'salvadorsellers6454', NULL, '$2y$10$hfKU5XhwYhanKH5zFVHluuC1zuztDj.zdVMnQWLy1f27bwTudV67.', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-03-13 05:36:31', '2026-03-13 05:36:31', NULL),
-(43, 'Jonathon Majors', 'john121@gmail.com', 'jonathonmajors9721', NULL, '$2y$10$r1KTTWRjw2.iNgxj7p16f.Im6o37bmk9c9uVVzALC4PHbVjFF9rbO', NULL, 'active', NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-03-13 06:23:46', '2026-03-13 06:23:46', NULL),
-(44, 'Jacky', 'jacky@gmail.com', 'jacky3219', NULL, '$2y$10$OWHbylXL/E6fuZuJ6UFJqearCnxfQqhAYY0oBYlOgedsH4vQ6GB52', NULL, 'active', NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-03-16 05:04:09', '2026-03-16 05:04:09', NULL);
+INSERT INTO `users` (`id`, `name`, `email`, `username`, `email_verified_at`, `password`, `remember_token`, `is_active`, `provider`, `provider_id`, `is_artist`, `is_certified_creator`, `is_featured`, `usersubscription_id`, `usersubscription_date`, `usersubscription_duration`, `referral_code`, `payment_method`, `payment_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Admin', 'admin@gmail.com', 'admin', NULL, '$2y$10$c8POulTn6abF.sdRjG8tX.N9y/TVSFwlRI4dhms/YYpXRye2owEbO', '6jg9u3iO5st7ho8OXpKnAYTjfNBJ30FaUXEzZq2Op7Na7WSveidMd25DwYvE', 'active', NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-08-27 09:52:17', '2025-10-01 10:24:47', NULL),
+(2, 'John Doe', 'individual@example.com', 'john_individual', NULL, '$2y$10$uwEnpe1LmjMB1aqchZ6YrOueYy2heB0rGURHehAWXb4/YtT.2zo9C', NULL, 'active', NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-08-27 09:52:18', '2025-08-27 09:52:18', NULL),
+(3, 'ACME Corp', 'company@example.com', 'acme_company', NULL, '$2y$10$EK6KMHf1EmcIrTYb7oDwiut/V0mYu8YKKlZ8sKRPwLUr11biStNBu', NULL, 'active', NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-08-27 09:52:18', '2025-08-27 09:52:18', NULL),
+(5, 'Buckminster Warren', 'vygohosin@mailinator.com', 'buckminsterwarren1831', NULL, '$2y$10$mnGYziD2LCRTLKbERWyNL.Mcg6s2UnQgB2.JJ0n5Zz8wFjp3em1sy', NULL, 'active', NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-08 09:33:07', '2025-09-08 09:33:07', NULL),
+(7, 'Edward Munoz', 'finalgamers67@gmail.com', 'edwardmunoz7162', NULL, '$2y$10$f52iHMUIkjvHyqs/wQXB9..qKnQE95wtBS2Db.ImAhZUXszQug7PO', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-09-23 11:16:36', '2026-01-18 13:00:46', NULL),
+(8, 'sghdgg', 'user1234@gmail.com', 'sghdgg7497', NULL, '$2y$10$mopooYOFFFCVwagIxYe7N.ohN/7CN1xzNN5CSAoAk/v9Ye3BcEzfW', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-01 05:57:18', '2025-10-01 05:57:18', NULL),
+(9, 'Test User', 'test@example.com', 'testuser', '2025-10-01 06:03:10', '$2y$10$OAUFvWOMe3QLhxo93kjH6uSbN6KtHU3uHYDaqPYEfFzoxGOX5Ryk.', NULL, 'active', NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-01 06:03:10', '2025-10-01 06:03:10', NULL),
+(11, 'dfsfdf', 'user12345@gmail.com', 'dfsfdf5973', NULL, '$2y$10$XjmN08QEG8hf1sr6KLXqmuCJ8QF0uEV4FocmyYf3xdYQjEvMgMqfu', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-02 03:50:36', '2025-10-02 03:50:36', NULL),
+(12, 'bhjnhjh', 'adfgmin@gmail.com', 'bhjnhjh5319', NULL, '$2y$10$LblfF5jUvmVFJxZ5onQA9e6l5PBYrewYlhDJif06FoY5rd47cna.S', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-11-19 04:44:51', '2025-11-19 04:44:51', NULL),
+(13, 'TestArtist', 'testartist@gmail.com', 'testartist8428', NULL, '$2y$10$NBiXCymN2M3w5DGhOjEnluKqDaB8puMLMsfTWRJ1d6/muSzAhcw7S', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-11-24 04:21:19', '2025-11-24 04:21:19', NULL),
+(14, 'Rachel Marks', 'kogyh@mailinator.com', 'rachelmarks8477', NULL, '$2y$10$.mZj7dM7uNmxy6h54f/qbeAAJITmXM8dlbeoTGD3oHxa.qfiW3P8O', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-02 08:31:05', '2025-12-02 08:31:05', NULL),
+(15, 'Keith Dixon', 'paveqitam@mailinator.com', 'keithdixon7543', NULL, '$2y$10$5.Inpnjs8u5u36TOl6lPe.xU2dxdk1bu1pWU6nPreCmRicdAovNF2', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-02 08:37:53', '2025-12-02 08:37:53', NULL),
+(16, 'Mona Bass', 'bawejotu@mailinator.com', 'monabass7846', NULL, '$2y$10$jXaww9giIl0BSyH8c4qC8.cQig79YKDSfo0yGjrFV24PBiTpPBT1W', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-02 09:06:08', '2025-12-02 09:06:08', NULL),
+(17, 'Test User', 'testingartist@gmail.com', 'testuser1767', NULL, '$2y$10$o.c3ZXSVHJW.fs8bNCnvSOXEsyUCduRc62BNhkWtrdEiASeAK5eqa', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-02 09:07:29', '2025-12-02 09:07:29', NULL),
+(18, 'Remedios Vance', 'vokygoqa@mailinator.com', 'remediosvance9539', NULL, '$2y$10$CDOa0hokSlrAC6g7IFX10e8Z3UBkreIxXI/OZsjcl.WBp6LHCLyUS', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-06 07:59:24', '2025-12-06 07:59:24', NULL),
+(19, 'Malachi Ray', 'zimejylo@mailinator.com', 'malachiray3224', NULL, '$2y$10$gWn6Tjd3doGoE00DTI1QtuivyUNRU.LF2ECFI4aoH9hY3hVgm4vg.', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-08 05:03:19', '2025-12-08 05:03:19', NULL),
+(20, 'user1', 'alex.marketing.gab@gmail.com', 'user11424', NULL, '$2y$10$8kGz2bFQ4Mmz3U6MMaT0cOMGD8s.HSfSUPvIAJNS493HyrP5LTYM.', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-17 09:06:18', '2025-12-17 09:06:18', NULL),
+(21, 'razin', 'raziy.dev@gmail.com', 'razin5333', NULL, '$2y$10$tN5q9yW9IR/q6eZOgvDZtORHSNovWoPcORuBtX7Vu9BWnn1KkeIyq', 'w850yfgFmIZO8Hms8yPQ2Ytz4hYGeKVcemPkub3U3Ozja6BlEFsxZqnpeN6l', 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-20 08:45:56', '2025-12-20 08:45:56', NULL),
+(22, 'Eden Harmon', 'jobuxovu@mailinator.com', 'edenharmon5302', NULL, '$2y$10$pVU2nvtODEJQZiihpEAh3.YuFLEidqE6o2jdZjgYL5Ik1GbyC7ICu', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-23 06:36:45', '2025-12-23 06:36:45', NULL),
+(23, 'Olivia Deniz', 'oliviadenizthevisionbrands@gmail.com', 'oliviadeniz4110', NULL, '$2y$10$1c6qxZBRnZTdqFjWmdsI0./d6HVRV/QGOpsHJpsu2c30BU8vxy6xW', NULL, 'active', NULL, NULL, 1, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-07 11:41:51', '2026-01-14 09:44:33', NULL),
+(24, 'Fredericka Ayala', 'kafijyvupu@mailinator.com', 'frederickaayala1809', NULL, '$2y$10$r5TrVi9vCQ6lGjBw5ywy8uCT9.IlRh62MLdHdqZ531KNUE4G6BoXO', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-08 05:41:36', '2026-01-08 05:41:36', NULL),
+(25, 'Candace Holman', 'dozyma@mailinator.com', 'candaceholman3735', NULL, '$2y$10$fcECZpKV1N/hOFRSehJIxuImTDmx1KFeBZXtDdcYAuiXy4Jw.DxV6', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-08 08:21:33', '2026-01-08 08:21:33', NULL),
+(26, 'test user', 'testuser@gmadddil.com', 'testuser9915', NULL, '$2y$10$jEkHDPjw.KbvWosOgGtyLum9H3TzQEWePFUacIIvyawHSh8776Ryq', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-08 10:09:42', '2026-01-08 10:09:42', NULL),
+(27, 'Illana Hebert', 'fodutesuzo@mailinator.com', 'illanahebert5860', NULL, '$2y$10$jQcvEJLOlIT0CSl9XE5rcuAbgEQVnvUMvtoVX31cpy41Y2VydhOtK', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-11 11:12:58', '2026-01-11 11:12:58', NULL),
+(28, 'Indigo Lynch', 'roxox@mailinator.com', 'indigolynch2393', NULL, '$2y$10$phMdm6VdvDZWBNkG0M2Ty.Ow6WMR.ezmJSIGOko9/BsO57EG5/I9m', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-12 07:34:20', '2026-01-12 07:34:20', NULL),
+(29, 'Kylynn Rasmussen', 'ryzizy@mailinator.com', 'kylynnrasmussen1996', NULL, '$2y$10$pbAzExZWdCicfeMSv7dAMe0k0AszcC5quLY4s5hnnQaCf81eUy2uW', NULL, 'active', NULL, NULL, 1, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-13 10:47:21', '2026-01-13 10:47:21', NULL),
+(30, 'test', 'test124@gmai.com', 'test2864', NULL, '$2y$10$3RyPkZFcXRHSkMR3bvh5HuiuWSxdH7/JoWVgD95g9Ubiu9wfocgkK', NULL, 'active', NULL, NULL, 1, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-13 11:39:39', '2026-01-14 09:44:30', NULL),
+(31, 'Sybil Morin', 'boka@mailinator.com', 'sybilmorin1079', NULL, '$2y$10$nnbs2QjXwNMZ7NmoYRuQF.3m3JMIwGV/ow8fiqB3xoZFtuPB7OBLW', NULL, 'active', NULL, NULL, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-14 06:24:52', '2026-01-14 09:44:37', NULL),
+(32, 'Lars Watson', 'deboned@mailinator.com', 'larswatson4334', NULL, '$2y$10$1wXth5H4MyRyrZ4mMnhII.epY5kCseTReDvmsG2e4moTyWb6suuSW', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-14 07:12:05', '2026-01-14 07:12:05', NULL),
+(33, 'Edward Munoz', 'testartist123@gmail.com', 'testartist6667', NULL, '$2y$10$DvhnlZpTuhTkO.e.PMLK.Od.BF/VsDrwN5MHGWGcwtO69W07OKNem', NULL, 'active', NULL, NULL, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-14 07:19:32', '2026-03-17 05:23:05', NULL),
+(34, 'Test User', 'testuser@gmail.com', 'testuser6594', NULL, '$2y$10$qmecyuZumZsIXHYc7GcQbuv7YN7Rgsvz/VIuTjkxIQss37t6T2Jum', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-15 05:35:48', '2026-01-15 05:35:48', NULL),
+(35, 'tst', 'testuser222@gmail.com', 'tst4519', NULL, '$2y$10$5G4EYAhusahyyNYcfWbY5.Ou5vo/zmfwB.KWxfNEXBSfJbAPnDyBu', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-16 09:24:17', '2026-01-16 09:24:17', NULL),
+(36, 'Artist 123', 'artist123@outlook.com', 'artist1237099', NULL, '$2y$10$CKxqJkSYNnK/mljBR9uYZeulEAYi.V9SaWShiz8YGuZws16vtnWY6', NULL, 'active', NULL, NULL, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-18 23:45:16', '2026-01-19 00:14:37', NULL),
+(37, 'Nero Keller', 'defehyl@mailinator.com', 'nerokeller5969', NULL, '$2y$10$qQil7.TIGzm9bcB5KShBTeMVzxoYz8RqnZHHtr0p/eYj3rTdfDGZi', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-28 05:00:43', '2026-01-28 05:00:43', NULL),
+(38, 'test', 'tetsttttttt22@gmail.com', 'test5080', NULL, '$2y$10$.CDQmn4sq0gw5mVBQsDgPudE9c0JCs9ifLRbuAbbYFDoJd7dNZkjS', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-28 05:02:02', '2026-01-28 05:02:02', NULL),
+(39, 'testtt@gmail.com', 'testetddjtt@gmail.com', 'testtt@gmail.com8655', NULL, '$2y$10$tVxpLmueYhH3PZgDCpPgvuzri0Tj2TiCQLWJD1uLROXEMCmy0zT/W', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-28 05:06:22', '2026-01-28 05:06:22', NULL),
+(40, 'Edward Munoz', 'edward123@gmail.com', 'edwardmunoz2558', NULL, '$2y$10$DW7QjpLDJlg8EJtiDtFC/.CBSAr4WtxNAG7F814vCotj8F9rjutX.', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-29 04:32:02', '2026-01-29 04:32:02', NULL),
+(41, 'Sopoline Craig', 'vyqymek@mailinator.com', 'sopolinecraig9090', NULL, '$2y$10$vE39dGt1bHuN73W1fjDj/OcdlBzOtgydL0IJzKArtl56Glp7Wn9DK', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-03-13 05:09:41', '2026-03-13 05:09:41', NULL),
+(42, 'Salvador Sellers', 'bevaz@mailinator.com', 'salvadorsellers6454', NULL, '$2y$10$hfKU5XhwYhanKH5zFVHluuC1zuztDj.zdVMnQWLy1f27bwTudV67.', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-03-13 05:36:31', '2026-03-13 05:36:31', NULL),
+(43, 'Jonathon Majors', 'john121@gmail.com', 'jonathonmajors9721', NULL, '$2y$10$r1KTTWRjw2.iNgxj7p16f.Im6o37bmk9c9uVVzALC4PHbVjFF9rbO', NULL, 'active', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-03-13 06:23:46', '2026-03-13 06:23:46', NULL),
+(44, 'Jacky', 'jacky@gmail.com', 'jacky3219', NULL, '$2y$10$OWHbylXL/E6fuZuJ6UFJqearCnxfQqhAYY0oBYlOgedsH4vQ6GB52', NULL, 'active', NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2026-03-16 05:04:09', '2026-03-16 05:04:09', NULL);
 
 -- --------------------------------------------------------
 
@@ -3286,6 +3337,12 @@ ALTER TABLE `ad_revenue_shares`
   ADD KEY `fk_ad_revenue_shares_ad` (`ad_id`);
 
 --
+-- Indexes for table `app_links`
+--
+ALTER TABLE `app_links`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `artist_agreements`
 --
 ALTER TABLE `artist_agreements`
@@ -3460,6 +3517,16 @@ ALTER TABLE `brand_partnerships`
   ADD KEY `idx_status` (`status`),
   ADD KEY `idx_partnership_type` (`partnership_type`),
   ADD KEY `fk_brand_partnerships_created_by` (`created_by`);
+
+--
+-- Indexes for table `certified_creator_requests`
+--
+ALTER TABLE `certified_creator_requests`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_certified_creator_requests_artist_id` (`artist_id`),
+  ADD KEY `idx_certified_creator_requests_status` (`status`),
+  ADD KEY `idx_certified_creator_requests_artist_status` (`artist_id`,`status`),
+  ADD KEY `fk_ccr_reviewer` (`reviewed_by`);
 
 --
 -- Indexes for table `chat_messages`
@@ -4134,6 +4201,12 @@ ALTER TABLE `ad_revenue_shares`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `app_links`
+--
+ALTER TABLE `app_links`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `artist_agreements`
 --
 ALTER TABLE `artist_agreements`
@@ -4258,6 +4331,12 @@ ALTER TABLE `brand_collaborations`
 --
 ALTER TABLE `brand_partnerships`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `certified_creator_requests`
+--
+ALTER TABLE `certified_creator_requests`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `chat_messages`
@@ -4485,7 +4564,7 @@ ALTER TABLE `new_newsletters`
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `notification_logs`
@@ -4865,6 +4944,13 @@ ALTER TABLE `brand_collaborations`
 --
 ALTER TABLE `brand_partnerships`
   ADD CONSTRAINT `fk_brand_partnerships_created_by` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `certified_creator_requests`
+--
+ALTER TABLE `certified_creator_requests`
+  ADD CONSTRAINT `fk_ccr_artist` FOREIGN KEY (`artist_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_ccr_reviewer` FOREIGN KEY (`reviewed_by`) REFERENCES `users` (`id`) ON DELETE SET NULL;
 
 --
 -- Constraints for table `collaboration_requests`

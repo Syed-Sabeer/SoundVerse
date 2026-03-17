@@ -55,6 +55,11 @@
                                     <img src="{{asset('FrontendAssets/images/singWithMe/logo-trans.png')}}" alt="" width="100px">
                                 </a>
                             </div>
+                            <div class="mt-3">
+                                <a href="{{ route('terms-conditions') }}" title="Terms and Conditions" style="color: #bca5ff; font-size: 13px; margin-right: 14px;">Terms & Conditions</a>
+                                <a href="{{ route('privacy-policy') }}" title="Privacy Policy" style="color: #bca5ff; font-size: 13px; margin-right: 14px;">Privacy Policy</a>
+                                <a href="{{ route('legal-compliance-framework') }}" title="Legal And Compliance Framework" style="color: #bca5ff; font-size: 13px;">Legal & Compliance</a>
+                            </div>
                         </div>
                         <div class="col-lg-6 text-right ">  
                             <span class="copyright-text ">Copyright © 2026 - SingWithMe | Powered By  <a
