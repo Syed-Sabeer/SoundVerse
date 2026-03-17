@@ -4110,7 +4110,7 @@ a .payout-btn {
         </div>
 
         <script src="https://js.stripe.com/v3/"></script>
-        <script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID', 'YOUR_CLIENT_ID') }}&currency=GBP"></script>
+        <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=GBP"></script>
         <script src="https://pay.google.com/gp/p/js/pay.js"></script>
         <?php
             $artistSquareApplicationId = env('SQUARE_APPLICATION_ID', '');
@@ -4334,38 +4334,54 @@ a .payout-btn {
         window.showArtistPortalPayPalForm = function() {
             const paypalForm = document.getElementById('artist-portal-paypal-payment-button');
             paypalForm.style.display = 'block';
+            const paypalContainer = document.getElementById('artist-portal-paypal-button-container');
 
-            if (!window.artistPortalPaypalButtons && typeof paypal !== 'undefined') {
-                const planPriceEl = document.getElementById('selectedArtistPortalPlanPrice');
-                const planPriceText = planPriceEl.textContent.replace('£', '').replace('Free', '0');
-                const planPrice = parseFloat(planPriceText) || 0;
-
-                window.artistPortalPaypalButtons = paypal.Buttons({
-                    createOrder: function(data, actions) {
-                        return actions.order.create({
-                            purchase_units: [{
-                                amount: {
-                                    value: planPrice.toString()
-                                }
-                            }]
-                        });
-                    },
-                    onApprove: function(data, actions) {
-                        return actions.order.capture().then(function(details) {
-                            window.processArtistPortalPaymentWithMethod('paypal', details.id);
-                        });
-                    },
-                    onError: function(err) {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'PayPal Error',
-                            text: 'PayPal payment failed: ' + err.message
-                        });
-                    }
-                });
-
-                window.artistPortalPaypalButtons.render('#artist-portal-paypal-button-container');
+            if (!paypalContainer) {
+                return;
             }
+
+            if (typeof paypal === 'undefined') {
+                paypalContainer.innerHTML = '<p style="color:#ef4444;text-align:center;">PayPal failed to load. Please check PAYPAL_CLIENT_ID and try again.</p>';
+                return;
+            }
+
+            // Always recreate buttons so the latest selected plan amount is used.
+            paypalContainer.innerHTML = '';
+            window.artistPortalPaypalButtons = null;
+
+            const planPriceEl = document.getElementById('selectedArtistPortalPlanPrice');
+            const planPriceText = planPriceEl.textContent.replace('£', '').replace('Free', '0');
+            const planPrice = parseFloat(planPriceText) || 0;
+
+            window.artistPortalPaypalButtons = paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: planPrice.toString()
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        window.processArtistPortalPaymentWithMethod('paypal', details.id);
+                    });
+                },
+                onError: function(err) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'PayPal Error',
+                        text: 'PayPal payment failed: ' + err.message
+                    });
+                }
+            });
+
+            window.artistPortalPaypalButtons.render('#artist-portal-paypal-button-container')
+                .catch(function(err) {
+                    paypalContainer.innerHTML = '<p style="color:#ef4444;text-align:center;">Unable to render PayPal button. Please verify PAYPAL_CLIENT_ID.</p>';
+                    console.error('PayPal render error:', err);
+                });
         };
 
         window.showArtistPortalGooglePayForm = function() {
