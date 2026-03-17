@@ -81,6 +81,7 @@
                       <li><a class="lan-4" href="{{route('admin.about.index')}}">About Page</a></li>
                       <li><a class="lan-4" href="{{route('admin.royalty.cms')}}">Royalty Collection Page</a></li>
                       <li><a class="lan-4" href="{{route('admin.cms.shareyourmusic.index')}}">Share Your Music Page</a></li>
+                      <li><a class="lan-4" href="{{route('admin.app-links.index')}}">App Links</a></li>
 
 
 

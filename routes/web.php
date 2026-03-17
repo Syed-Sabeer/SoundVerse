@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\AdminNewsletterController;
 use App\Http\Controllers\Admin\AdminNewsbarController;
 use App\Http\Controllers\Admin\AdminSettingController;
 use App\Http\Controllers\Admin\AdminWebsiteController;
+use App\Http\Controllers\Admin\AdminAppLinkController;
 use App\Http\Controllers\Admin\AdminRingController;
 use App\Http\Controllers\Admin\AdminContactController;
 use App\Http\Controllers\Admin\AdminNewsletterSubmissionController;
@@ -43,6 +44,7 @@ use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\FeatureController;
+use App\Http\Controllers\Frontend\QRController;
 use App\Http\Controllers\Frontend\PricingController;
 use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Frontend\ContactController;
@@ -68,7 +70,7 @@ use Pusher\Pusher;
 Route::post('/chat/send', [ChatController::class, 'sendMessage']);
 Route::get('/chat/history', [ChatController::class, 'getChatHistory']);
 
-
+Route::get('/app-download', [QRController::class, 'download']);
 Route::get('/storage-link', function () {
     try {
         $link = public_path('storage');
@@ -692,6 +694,10 @@ Route::delete('service/artistsubscription/{id}', [AdminServiceArtistSubscription
     Route::put('about/update', [AdminAboutController::class, 'update'])->name('about.update');
     Route::put('website/sections/update', [AdminWebsiteController::class, 'updateAllSections'])->name('website.sections.update');
     Route::put('contact/sections/update', [AdminContactPageController::class, 'updateContact'])->name('contact.update');
+
+    // App Links CMS
+    Route::get('app-links', [AdminAppLinkController::class, 'index'])->name('app-links.index');
+    Route::put('app-links/update', [AdminAppLinkController::class, 'update'])->name('app-links.update');
 
     Route::put('royalty/update', [AdminWebsiteController::class, 'updateRoyaltyCms'])->name('royalty.update');
 

@@ -12,7 +12,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        // Send subscription expiry reminder emails daily at 9:00 AM
+        // Notifies users/artists whose plan expires in exactly 3 days
+        $schedule->command('subscriptions:send-expiry-reminders --days=3')
+             ->dailyAt('09:00')
+             ->withoutOverlapping()
+             ->runInBackground()
+             ->appendOutputTo(storage_path('logs/subscription-expiry-reminders.log'));
     }
 
     /**

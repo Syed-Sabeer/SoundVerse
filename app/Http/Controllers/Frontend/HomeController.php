@@ -28,6 +28,7 @@ public function index()
 
         $about_details = AboutSection::first();
         $hero_details = HomeHeroSection::first();
+        $appLink = \App\Models\AppLink::first();
         $live_videos = LiveVideo::where('visibility', 1)->latest()->take(10)->get();
         $blogs = Blog::where('visibility', 1)->latest()->get();
         $recent_artists = User::where('is_artist', true)
@@ -47,7 +48,7 @@ public function index()
         if ($user) {
             $hasEarlyAccess = $user->hasUserFeature('exclusive_content');
         }
-        
+
         // Get Certified Creator artist IDs for early access filtering
         $certifiedCreatorIds = [];
         if ($hasEarlyAccess) {
@@ -60,7 +61,7 @@ public function index()
                 ->pluck('id')
                 ->toArray();
         }
-        
+
         $featured_tracks = \App\Models\ArtistMusic::with('user')
             ->where('is_featured', true)
             ->when(!$hasEarlyAccess, function($query) use ($certifiedCreatorIds) {
@@ -93,7 +94,8 @@ public function index()
             'featured_artists',
             'featured_tracks',
             'latest_artworks',
-            'userFeatures'
+            'userFeatures',
+            'appLink'
         ));
 }
 
