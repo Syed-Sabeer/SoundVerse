@@ -36,6 +36,7 @@ class User  extends Authenticatable implements MustVerifyEmail
         'provider',
         'provider_id',
         'is_artist',
+        'is_certified_creator',
         'is_featured',
         'usersubscription_id',
         'usersubscription_date',
@@ -64,6 +65,7 @@ class User  extends Authenticatable implements MustVerifyEmail
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'is_artist' => 'boolean',
+            'is_certified_creator' => 'boolean',
             'is_active' => 'boolean',
             'is_featured' => 'boolean',
         ];
@@ -167,13 +169,22 @@ class User  extends Authenticatable implements MustVerifyEmail
         if (!$this->is_artist) {
             return false;
         }
-        
+
+        if ((bool) ($this->is_certified_creator ?? false)) {
+            return true;
+        }
+
         $subscription = $this->activeArtistSubscription;
         if (!$subscription || !$subscription->subscriptionPlan) {
             return false;
         }
-        
+
         return (bool) $subscription->subscriptionPlan->is_certified_badge;
+    }
+
+    public function certifiedCreatorRequests()
+    {
+        return $this->hasMany(CertifiedCreatorRequest::class, 'artist_id');
     }
 
     /**
@@ -182,23 +193,23 @@ class User  extends Authenticatable implements MustVerifyEmail
     public function hasArtistFeature($feature)
     {
         $subscription = $this->activeArtistSubscription;
-        
+
         if (!$subscription || !$subscription->subscriptionPlan) {
             return false;
         }
-        
+
         $plan = $subscription->subscriptionPlan;
-        
+
         // Features that should always be accessible (as per user request)
         $alwaysAccessible = [
             'profile_customization',
             'royalty_tracking'
         ];
-        
+
         if (in_array($feature, $alwaysAccessible)) {
             return true;
         }
-        
+
         // Map feature names to plan attributes
         $featureMap = [
             'unlimited_uploads' => 'is_unlimited_uploads',
@@ -213,11 +224,11 @@ class User  extends Authenticatable implements MustVerifyEmail
             'advanced_analytics' => 'is_advanced_analytics',
             'showcase_invitations' => 'is_showcase_invitations',
         ];
-        
+
         if (isset($featureMap[$feature])) {
             return (bool) $plan->{$featureMap[$feature]};
         }
-        
+
         return false;
     }
 
@@ -248,13 +259,13 @@ class User  extends Authenticatable implements MustVerifyEmail
             ->with('subscriptionPlan')
             ->latest('usersubscription_date')
             ->get();
-        
+
         foreach ($subscriptions as $subscription) {
             if ($subscription->isActive()) {
                 return $subscription;
             }
         }
-        
+
         return null;
     }
 
@@ -264,14 +275,14 @@ class User  extends Authenticatable implements MustVerifyEmail
     public function hasUserFeature($feature)
     {
         $subscription = $this->activeUserSubscription;
-        
+
         if (!$subscription || !$subscription->subscriptionPlan) {
             // Free plan - check default features
             return $this->hasFreeFeature($feature);
         }
-        
+
         $plan = $subscription->subscriptionPlan;
-        
+
         // Map feature names to plan attributes
         $featureMap = [
             'ad_free' => 'is_ads',
@@ -284,11 +295,11 @@ class User  extends Authenticatable implements MustVerifyEmail
             'supporter_badge' => 'is_supporter_badge',
             'trending_access' => 'is_trending_access',
         ];
-        
+
         if (isset($featureMap[$feature])) {
             return (bool) $plan->{$featureMap[$feature]};
         }
-        
+
         return false;
     }
 
@@ -301,7 +312,7 @@ class User  extends Authenticatable implements MustVerifyEmail
         $freeFeatures = [
             'trending_access' => true, // Access trending & featured creators
         ];
-        
+
         return $freeFeatures[$feature] ?? false;
     }
 
@@ -311,17 +322,17 @@ class User  extends Authenticatable implements MustVerifyEmail
     public function getPlaylistLimit()
     {
         $subscription = $this->activeUserSubscription;
-        
+
         if (!$subscription || !$subscription->subscriptionPlan) {
             return 3; // Free plan: 3 playlists
         }
-        
+
         $plan = $subscription->subscriptionPlan;
-        
+
         if ($plan->is_unlimitedplaylist) {
             return null; // Unlimited
         }
-        
+
         return $plan->playlist_limit ?? 3;
     }
 
@@ -331,17 +342,17 @@ class User  extends Authenticatable implements MustVerifyEmail
     public function getOfflineDownloadLimit()
     {
         $subscription = $this->activeUserSubscription;
-        
+
         if (!$subscription || !$subscription->subscriptionPlan) {
             return 0; // Free plan: no offline downloads
         }
-        
+
         $plan = $subscription->subscriptionPlan;
-        
+
         if (!$plan->is_offline) {
             return 0;
         }
-        
+
         // If offline_download_limit is null, it means unlimited
         return $plan->offline_download_limit ?? null;
     }
@@ -352,11 +363,11 @@ class User  extends Authenticatable implements MustVerifyEmail
     public function canCreatePlaylist()
     {
         $limit = $this->getPlaylistLimit();
-        
+
         if ($limit === null) {
             return true; // Unlimited
         }
-        
+
         $currentCount = $this->playlists()->distinct('playlist_name')->count('playlist_name');
         return $currentCount < $limit;
     }
@@ -367,11 +378,11 @@ class User  extends Authenticatable implements MustVerifyEmail
     public function getCurrentSubscriptionPlanName()
     {
         $subscription = $this->activeUserSubscription;
-        
+
         if (!$subscription || !$subscription->subscriptionPlan) {
             return 'Free Listener';
         }
-        
+
         return $subscription->subscriptionPlan->title ?? 'Free Listener';
     }
 
@@ -383,20 +394,20 @@ class User  extends Authenticatable implements MustVerifyEmail
         if (!$this->is_artist) {
             return 0;
         }
-        
+
         $subscription = $this->activeArtistSubscription;
-        
+
         if (!$subscription || !$subscription->subscriptionPlan) {
             // Free plan: 3 songs per month
             return 3;
         }
-        
+
         $plan = $subscription->subscriptionPlan;
-        
+
         if ($plan->is_unlimited_uploads) {
             return null; // Unlimited
         }
-        
+
         return $plan->songs_per_month ?? 3;
     }
 
@@ -408,19 +419,19 @@ class User  extends Authenticatable implements MustVerifyEmail
         if (!$this->is_artist) {
             return false;
         }
-        
+
         $limit = $this->getSongUploadLimit();
-        
+
         if ($limit === null) {
             return true; // Unlimited
         }
-        
+
         $currentMonthStart = now()->startOfMonth();
         $currentMonthEnd = now()->endOfMonth();
         $uploadsThisMonth = \App\Models\ArtistMusic::where('driver_id', $this->id)
             ->whereBetween('created_at', [$currentMonthStart, $currentMonthEnd])
             ->count();
-        
+
         return $uploadsThisMonth < $limit;
     }
 
@@ -432,13 +443,13 @@ class User  extends Authenticatable implements MustVerifyEmail
         if (!$this->is_artist) {
             return 'Not an Artist';
         }
-        
+
         $subscription = $this->activeArtistSubscription;
-        
+
         if (!$subscription || !$subscription->subscriptionPlan) {
             return 'Starter Artist';
         }
-        
+
         return $subscription->subscriptionPlan->plan_name ?? 'Starter Artist';
     }
 

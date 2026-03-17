@@ -54,7 +54,7 @@
                       </svg><span class="lan-3">CMS Crud</span></a>
                     <ul class="sidebar-submenu">
                       <li><a class="lan-4" href="{{route('admin.faq.index')}}">FAQs</a></li>
-                    
+
                     <!--  <li><a class="lan-5" href="{{route('admin.newsletter.index')}}">Newsletter</a></li> -->
                       <li><a class="lan-5" href="{{route('admin.newsbar.index')}}">Newsbar</a></li>
                       <li><a class="lan-5" href="{{route('admin.ads.index')}}">Ads</a></li>
@@ -87,7 +87,7 @@
                     </ul>
                   </li>
                      <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i>
-                
+
                     <a class="sidebar-link sidebar-title" href="#">
                       <svg class="stroke-icon">
                         <use href="{{asset('AdminAssets/svg/icon-sprite.svg#stroke-knowledgebase')}}"></use>
@@ -106,7 +106,7 @@
                   </li>
 
                   <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i>
-                
+
                     <a class="sidebar-link sidebar-title" href="#">
                       <svg class="stroke-icon">
                         <use href="{{asset('AdminAssets/svg/icon-sprite.svg#stroke-chat')}}"></use>
@@ -135,7 +135,7 @@
                         <use href="{{asset('AdminAssets/svg/icon-sprite.svg#fill-knowledgebase')}}"></use>
                       </svg><span class="lan-3">Orders</span></a>
                     <ul class="sidebar-submenu"> --}}
-                      
+
 
 
 
@@ -143,7 +143,7 @@
                   </li>  --}}
 
                   <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i>
-                
+
                 <a class="sidebar-link sidebar-title" href="#">
                   <svg class="stroke-icon">
                     <use href="{{asset('AdminAssets/svg/icon-sprite.svg#stroke-knowledgebase')}}"></use>
@@ -158,7 +158,7 @@
                   <li><a class="lan-4" href="{{route('admin.service.artworkphoto.index')}}">Artwork Photo</a></li>
                   <li><a class="lan-4" href="{{route('admin.service.artistsubscription.index')}}">Artist Subscription</a></li>
                 </ul>
-              </li>                 
+              </li>
 
               <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i>
                 <a class="sidebar-link sidebar-title" href="#">
@@ -171,6 +171,7 @@
                 <ul class="sidebar-submenu">
                   <li><a class="lan-4" href="{{route('admin.subscription.index')}}">User Subscription Plans</a></li>
                   <li><a class="lan-4" href="{{route('admin.artist-subscription-plans.index')}}">Artist Subscription Plans</a></li>
+                  <li><a class="lan-4" href="{{route('admin.certified-creator-requests.index')}}">Certified Creator Requests</a></li>
                   <li><a class="lan-4" href="{{route('admin.songs.index')}}">Tracks</a></li>
                   <li><a class="lan-4" href="{{route('admin.artist.index')}}">Artists</a></li>
                   <li><a class="lan-4" href="{{route('admin.customer.index')}}">Customers</a></li>
@@ -202,7 +203,7 @@
                 <ul class="sidebar-submenu">
                   <li><a class="lan-4" href="{{route('admin.tips.index')}}">All Tips</a></li>
                 </ul>
-              </li>                 
+              </li>
 
                 </ul>
               </div>

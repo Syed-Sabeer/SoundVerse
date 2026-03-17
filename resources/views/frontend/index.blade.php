@@ -694,7 +694,7 @@
         </div>
 
         <div class="creators-grid">
-           @forelse($featured_artists->take(3) as $artist)
+           @forelse($featured_artists->where('is_certified_creator', 1)->take(3) as $artist)
                 @php
                     $profile = $artist->profile;
                     $avatar = $profile && $profile->picture
@@ -718,15 +718,20 @@
                                 <span>{{ $followers }} Followers</span>
                                 <span>{{ $listeners }} Monthly Listeners</span>
                             </div>
-                            <span class="genre-tag">Featured</span>
+                            <span class="genre-tag">✓ Certified</span>
                         </div>
                     </div>
                 </a>
             @empty
                 <div class="col-12 text-center py-5">
-                    <p class="text-muted">No certified artists selected yet. Set certified artists from the admin panel.</p>
+                    <p class="text-muted">No certified creators yet. Artists can apply through their portal.</p>
                 </div>
             @endforelse
+        </div>
+
+        <!-- View All Certified Creators Button -->
+        <div class="cta text-center mt-5">
+            <a href="{{ route('certified-creators') }}" class="sec-btn" title="View all certified creators">View All Certified Creators</a>
         </div>
     </section>
 
@@ -1085,7 +1090,7 @@
 
 
              @include('partials.frontend.contact')
-             
+
 @include('partials.frontend.newsletter')
 
 @endsection

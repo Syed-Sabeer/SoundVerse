@@ -178,7 +178,7 @@ Route::middleware(['artist'])->group(function () {
     Route::post('artist/royalty/payout-request', [\App\Http\Controllers\Artist\ArtistRoyaltyController::class, 'requestPayout'])->name('artist.royalty.request-payout');
     Route::get('artist/royalty/transactions', [\App\Http\Controllers\Artist\ArtistRoyaltyController::class, 'transactionHistory'])->name('artist.royalty.transactions');
     Route::get('artist/royalty/export/csv', [\App\Http\Controllers\Artist\ArtistRoyaltyController::class, 'exportEarningsCSV'])->name('artist.royalty.export.csv');
-    
+
     // Artist Payment Details
     Route::post('artist/payment-details/save', [\App\Http\Controllers\Artist\ArtistPaymentDetailsController::class, 'save'])->name('artist.payment-details.save');
     Route::get('artist/payment-details', [\App\Http\Controllers\Artist\ArtistPaymentDetailsController::class, 'index'])->name('artist.payment-details');
@@ -220,6 +220,10 @@ Route::middleware(['artist'])->group(function () {
     Route::get('artist/profile-settings', [\App\Http\Controllers\Artist\ArtistProfileController::class, 'edit'])->name('artist.profile.edit');
     Route::post('artist/profile-settings', [\App\Http\Controllers\Artist\ArtistProfileController::class, 'update'])->name('artist.profile.update');
     Route::post('artist/collaborations/{id}/reject', [\App\Http\Controllers\Artist\TrackCollaborationController::class, 'rejectCollaboration'])->name('artist.collaborations.reject');
+
+    // Certified Creator Request
+    Route::post('artist/certified-creator/apply', [\App\Http\Controllers\Artist\CertifiedCreatorRequestController::class, 'store'])
+        ->name('artist.certified-creator.apply');
 });
 
 // Location Form Route
@@ -296,11 +300,11 @@ Route::get('featured-artist', function () {
                 // Default image
                 $profileImage = asset('FrontendAssets/images/default-artist.jpg');
             }
-            
+
             // Get total listeners from their songs
             $totalListeners = \App\Models\ArtistMusic::where('driver_id', $artist->id)
                 ->sum('listeners');
-            
+
             // Determine status badge based on subscriber count
             $status = 'New';
             if ($artist->subscriber_count >= 1000) {
@@ -310,12 +314,12 @@ Route::get('featured-artist', function () {
             } elseif ($artist->subscriber_count >= 100) {
                 $status = 'Rising';
             }
-            
+
             // Check if artist is featured
             if ($artist->is_featured) {
                 $status = 'Featured';
             }
-            
+
             return [
                 'id' => $artist->id,
                 'name' => $artist->name ?? $artist->username ?? 'Unknown Artist',
@@ -327,7 +331,7 @@ Route::get('featured-artist', function () {
                 'is_featured' => (bool) $artist->is_featured,
             ];
         });
-    
+
     return view('frontend.featured-artist', compact('artists'));
 })->name('featured-artist');
 
@@ -349,7 +353,7 @@ Route::get('payout-history', function () {
 // all-artwork page
 Route::get('all-artwork', function () {
     $artworkPhotos = [];
-    
+
     // If user is authenticated and is an artist, show their artwork only
     if (auth()->check() && auth()->user()->is_artist) {
         $artworkPhotos = \App\Models\ArtworkPhoto::where('driver_id', auth()->id())
@@ -361,7 +365,7 @@ Route::get('all-artwork', function () {
             ->latest('created_at')
             ->get();
     }
-    
+
     return view('frontend.all-artwork', compact('artworkPhotos'));
 })->name('all-artwork');
 
@@ -393,6 +397,10 @@ Route::get('allblogs', function () {
 Route::get('artist-profile', [ArtistController::class, 'publicProfile'])
     ->middleware('auth')
     ->name('artist-profile');
+
+// Certified creators listing page
+Route::get('certified-creators', [ArtistController::class, 'certifiedCreators'])
+    ->name('certified-creators');
 
 // allartist detail page
 Route::get('allartist', function () {
@@ -776,6 +784,16 @@ Route::delete('contacts/{id}', [AdminContactController::class, 'destroy'])->name
     Route::get('collaborations/distributions', [\App\Http\Controllers\Admin\AdminCollaborationRevenueController::class, 'distributions'])->name('collaborations.distributions');
     Route::post('collaborations/calculate-revenue', [\App\Http\Controllers\Admin\AdminCollaborationRevenueController::class, 'calculateRevenue'])->name('collaborations.calculate-revenue');
     Route::post('collaborations/mark-paid', [\App\Http\Controllers\Admin\AdminCollaborationRevenueController::class, 'markPaid'])->name('collaborations.mark-paid');
+
+    // Certified Creator Requests
+    Route::get('certified-creator-requests', [\App\Http\Controllers\Admin\AdminCertifiedCreatorRequestController::class, 'index'])
+        ->name('certified-creator-requests.index');
+    Route::get('certified-creator-requests/{id}', [\App\Http\Controllers\Admin\AdminCertifiedCreatorRequestController::class, 'show'])
+        ->name('certified-creator-requests.show');
+    Route::post('certified-creator-requests/{id}/approve', [\App\Http\Controllers\Admin\AdminCertifiedCreatorRequestController::class, 'approve'])
+        ->name('certified-creator-requests.approve');
+    Route::post('certified-creator-requests/{id}/reject', [\App\Http\Controllers\Admin\AdminCertifiedCreatorRequestController::class, 'reject'])
+        ->name('certified-creator-requests.reject');
 
 });
 

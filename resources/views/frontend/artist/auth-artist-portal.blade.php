@@ -2207,6 +2207,93 @@ a .payout-btn {
         </section>
         @endif
 
+        <!-- Certified Creator Application Section -->
+        @if(auth()->check() && auth()->user()->is_artist)
+        <section class="section py-4">
+            <div class="container">
+                <div style="background: #120b28; border: 1px solid rgba(183, 148, 246, 0.35); border-radius: 16px; padding: 25px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; margin-bottom: 20px;">
+                        <h3 style="color: #f2e9ff; font-size: 1.4rem; margin: 0; font-weight: 700;">
+                            <i class="fas fa-shield-check" style="color: #b794f6; margin-right: 8px;"></i>
+                            Apply As Certified Creator
+                        </h3>
+
+                        @if(auth()->user()->is_certified_creator)
+                            <span style="display: inline-block; background: linear-gradient(135deg, #10b981, #059669); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 7px 14px; border-radius: 999px;">
+                                ✓ You are a Certified Creator
+                            </span>
+                        @elseif(isset($certifiedCreatorRequest) && $certifiedCreatorRequest)
+                            @if($certifiedCreatorRequest->status === 'pending')
+                                <span style="display: inline-block; background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 7px 14px; border-radius: 999px;">
+                                    Pending Admin Review
+                                </span>
+                            @elseif($certifiedCreatorRequest->status === 'approved')
+                                <span style="display: inline-block; background: linear-gradient(135deg, #10b981, #059669); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 7px 14px; border-radius: 999px;">
+                                    Approved
+                                </span>
+                            @else
+                                <span style="display: inline-block; background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 7px 14px; border-radius: 999px;">
+                                    Rejected - You Can Reapply
+                                </span>
+                            @endif
+                        @endif
+                    </div>
+
+                    <p style="color: #c7b7df; margin-bottom: 20px;">
+                        Submit your KYC and supporting documents with a short reason. Admin will review and approve your request.
+                    </p>
+
+                    @if(isset($certifiedCreatorRequest) && $certifiedCreatorRequest && $certifiedCreatorRequest->status === 'rejected' && $certifiedCreatorRequest->admin_notes)
+                        <div style="background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.35); border-radius: 10px; padding: 12px 15px; color: #ffd3d3; margin-bottom: 18px;">
+                            <strong>Admin Notes:</strong> {{ $certifiedCreatorRequest->admin_notes }}
+                        </div>
+                    @endif
+
+                    <form action="{{ route('artist.certified-creator.apply') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label style="color: #e8dcff; font-weight: 600; margin-bottom: 8px; display: block;">KYC Document <span style="color: #fca5a5;">*</span></label>
+                                <input type="file" name="kyc_document" accept=".pdf,.jpg,.jpeg,.png" required
+                                    style="width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(183,148,246,0.35); border-radius: 10px; color: #fff; padding: 12px;">
+                                @error('kyc_document')
+                                    <small style="color: #fca5a5;">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-6">
+                                <label style="color: #e8dcff; font-weight: 600; margin-bottom: 8px; display: block;">Supporting Document</label>
+                                <input type="file" name="supporting_document" accept=".pdf,.jpg,.jpeg,.png"
+                                    style="width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(183,148,246,0.35); border-radius: 10px; color: #fff; padding: 12px;">
+                                @error('supporting_document')
+                                    <small style="color: #fca5a5;">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <div class="col-12">
+                                <label style="color: #e8dcff; font-weight: 600; margin-bottom: 8px; display: block;">Reason For Applying <span style="color: #fca5a5;">*</span></label>
+                                <textarea name="reason" rows="4" required placeholder="Tell admin why you should be approved as a Certified Creator..."
+                                    style="width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(183,148,246,0.35); border-radius: 10px; color: #fff; padding: 12px;">{{ old('reason') }}</textarea>
+                                @error('reason')
+                                    <small style="color: #fca5a5;">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit"
+                                    {{ (isset($certifiedCreatorRequest) && $certifiedCreatorRequest && $certifiedCreatorRequest->status === 'pending') ? 'disabled' : '' }}
+                                    style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: #fff; border: none; border-radius: 10px; padding: 12px 22px; font-weight: 700; {{ (isset($certifiedCreatorRequest) && $certifiedCreatorRequest && $certifiedCreatorRequest->status === 'pending') ? 'opacity: 0.6; cursor: not-allowed;' : '' }}">
+                                    Submit Certified Creator Request
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        @endif
+
         <!-- Artist Subscription Plans Section -->
         <section class="artist-subscription-plans-section py-5">
             <div class="container">

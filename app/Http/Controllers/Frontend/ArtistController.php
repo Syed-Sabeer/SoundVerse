@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Faq;
 use App\Models\ArtworkPhoto;
 use App\Models\ArtistMusic;
+use App\Models\CertifiedCreatorRequest;
 use App\Models\User;
 use App\Models\UserSubscriptionPlan;
 use Illuminate\Http\Request;
@@ -65,10 +66,14 @@ class ArtistController extends Controller
         $hasUnlimitedUploads = false;
         $songsPerMonth = null;
         $artistSubscriptionFeatures = [];
+        $certifiedCreatorRequest = null;
         
         if (Auth::check() && Auth::user()->is_artist) {
             $user = Auth::user();
             $currentArtistSubscription = $user->activeArtistSubscription;
+            $certifiedCreatorRequest = CertifiedCreatorRequest::where('artist_id', $user->id)
+                ->latest()
+                ->first();
             if ($currentArtistSubscription && $currentArtistSubscription->subscriptionPlan) {
                 $currentArtistPlan = $currentArtistSubscription->subscriptionPlan;
                 $hasUnlimitedUploads = (bool) $currentArtistPlan->is_unlimited_uploads;
@@ -265,7 +270,8 @@ class ArtistController extends Controller
             'paymentDetails',
             'payoutHistory',
             'recentTips',
-            'artistSubscriptionFeatures'
+            'artistSubscriptionFeatures',
+            'certifiedCreatorRequest'
         ));
     }
 
@@ -345,4 +351,25 @@ class ArtistController extends Controller
     }
 
 
+    public function certifiedCreators(Request $request)
+    {
+        try {
+            // Get all artists with is_certified_creator = 1, paginated
+            $certified_artists = User::where('is_certified_creator', 1)
+                ->where('is_artist', 1)
+                ->with('profile')
+                ->paginate(12); // 12 per page for grid layout
+
+            return view('frontend.certified-creators', compact('certified_artists'));
+        } catch (\Exception $e) {
+            Log::error('Error loading certified creators', [
+                'error' => $e->getMessage(),
+                'trace' => $e->getTraceAsString(),
+            ]);
+
+            abort(500);
+        }
+    }
+
 }
+

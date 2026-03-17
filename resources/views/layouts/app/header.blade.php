@@ -1,4 +1,133 @@
 <!-- Page Header Start-->
+<style>
+  .admin-notification-wrap {
+    position: relative;
+  }
+  .admin-notification-bell {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #e6e6ef;
+    background: #ffffff;
+  }
+  .admin-notification-bell .badge-dot {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    background: #ef4444;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+  }
+  .admin-quick-notifications {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    width: 360px;
+    max-height: 420px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #ececf6;
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(21, 11, 45, 0.18);
+    z-index: 1000;
+    display: none;
+  }
+  .admin-quick-notifications.active {
+    display: block;
+  }
+  .admin-qn-header {
+    padding: 12px 14px;
+    border-bottom: 1px solid #efeff7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .admin-qn-list {
+    max-height: 290px;
+    overflow-y: auto;
+  }
+  .admin-qn-item {
+    border-bottom: 1px solid #f3f3fa;
+    padding: 10px 12px;
+    cursor: pointer;
+  }
+  .admin-qn-item:last-child {
+    border-bottom: none;
+  }
+  .admin-qn-item.unread {
+    background: #f8f6ff;
+  }
+  .admin-qn-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #2b2e43;
+  }
+  .admin-qn-message {
+    font-size: 12px;
+    color: #676b83;
+    margin-bottom: 3px;
+  }
+  .admin-qn-time {
+    font-size: 11px;
+    color: #8d92ab;
+  }
+  .admin-qn-footer {
+    padding: 10px 12px;
+    border-top: 1px solid #efeff7;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .admin-full-notification-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 12, 38, 0.65);
+    z-index: 1060;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+  }
+  .admin-full-notification-modal.active {
+    display: flex;
+  }
+  .admin-full-notification-content {
+    width: 100%;
+    max-width: 760px;
+    max-height: 86vh;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .admin-full-notification-head {
+    padding: 14px 16px;
+    border-bottom: 1px solid #efeff7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .admin-full-notification-list {
+    padding: 10px 14px 16px;
+    overflow-y: auto;
+  }
+</style>
+
       <div class="page-header">
         <div class="header-wrapper row m-0">
           <form class="form-inline search-full col" action="#" method="get">
@@ -103,6 +232,26 @@
                   <svg>
                     <use href="{{asset('AdminAssets/svg/icon-sprite.svg#moon')}}"></use>
                   </svg>
+                </div>
+              </li>
+              <li class="admin-notification-wrap">
+                <button type="button" class="admin-notification-bell" id="adminNotificationBell" aria-label="Admin notifications">
+                  <svg style="width:18px;height:18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                  </svg>
+                  <span class="badge-dot" id="adminNotificationBadge">0</span>
+                </button>
+
+                <div class="admin-quick-notifications" id="adminQuickNotifications">
+                  <div class="admin-qn-header">
+                    <strong>Notifications</strong>
+                    <small id="adminHeaderBadge">0 New</small>
+                  </div>
+                  <div class="admin-qn-list" id="adminQuickNotificationList"></div>
+                  <div class="admin-qn-footer">
+                    <button type="button" class="btn btn-sm btn-primary" id="adminViewAllNotifications">View All</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" id="adminMarkAllRead">Mark all read</button>
+                  </div>
                 </div>
               </li>
               {{-- <li class="cart-nav onhover-dropdown">
@@ -221,7 +370,7 @@
             </ul>
           </div>
           <script class="result-template" type="text/x-handlebars-template">
-            <div class="ProfileCard u-cf">                        
+            <div class="ProfileCard u-cf">
             <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
             <div class="ProfileCard-details">
             <div class="ProfileCard-realName">name</div>
@@ -231,4 +380,209 @@
           <script class="empty-template" type="text/x-handlebars-template"><div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
         </div>
       </div>
+
+      <div class="admin-full-notification-modal" id="adminFullNotificationModal">
+        <div class="admin-full-notification-content">
+          <div class="admin-full-notification-head">
+            <h5 class="mb-0">All Notifications</h5>
+            <button type="button" class="btn btn-sm btn-light" id="adminCloseNotificationModal">Close</button>
+          </div>
+          <div class="admin-full-notification-list" id="adminFullNotificationList"></div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const csrfToken = '{{ csrf_token() }}';
+          const bell = document.getElementById('adminNotificationBell');
+          const quick = document.getElementById('adminQuickNotifications');
+          const quickList = document.getElementById('adminQuickNotificationList');
+          const fullModal = document.getElementById('adminFullNotificationModal');
+          const fullList = document.getElementById('adminFullNotificationList');
+          const badge = document.getElementById('adminNotificationBadge');
+          const headerBadge = document.getElementById('adminHeaderBadge');
+          const viewAllButton = document.getElementById('adminViewAllNotifications');
+          const markAllButton = document.getElementById('adminMarkAllRead');
+          const closeModalButton = document.getElementById('adminCloseNotificationModal');
+
+          if (!bell || !quick || !quickList || !fullModal || !fullList || !badge || !headerBadge) {
+            return;
+          }
+
+          let notifications = [];
+
+          function escapeHtml(input) {
+            return String(input || '')
+              .replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;')
+              .replace(/'/g, '&#039;');
+          }
+
+          function updateBadge() {
+            const unreadCount = notifications.filter(item => item.unread).length;
+            badge.textContent = unreadCount;
+            badge.style.display = unreadCount > 0 ? 'flex' : 'none';
+            headerBadge.textContent = unreadCount + ' New';
+          }
+
+          function renderQuick() {
+            const items = notifications.slice(0, 5);
+            if (!items.length) {
+              quickList.innerHTML = '<div class="p-3 text-muted">No notifications yet.</div>';
+              return;
+            }
+
+            quickList.innerHTML = items.map(item => {
+              const title = escapeHtml(item.title || 'Notification');
+              const message = escapeHtml(item.message || '');
+              const createdAt = item.created_at ? new Date(item.created_at).toLocaleString() : '';
+              return '<div class="admin-qn-item ' + (item.unread ? 'unread' : '') + '" data-id="' + item.id + '" data-url="' + escapeHtml(item.action_url || '') + '">' +
+                '<div class="admin-qn-title">' + title + '</div>' +
+                '<div class="admin-qn-message">' + message + '</div>' +
+                '<div class="admin-qn-time">' + createdAt + '</div>' +
+              '</div>';
+            }).join('');
+          }
+
+          function renderFull() {
+            if (!notifications.length) {
+              fullList.innerHTML = '<div class="p-3 text-muted">No notifications yet.</div>';
+              return;
+            }
+
+            fullList.innerHTML = notifications.map(item => {
+              const title = escapeHtml(item.title || 'Notification');
+              const message = escapeHtml(item.message || '');
+              const createdAt = item.created_at ? new Date(item.created_at).toLocaleString() : '';
+              return '<div class="admin-qn-item ' + (item.unread ? 'unread' : '') + '" data-id="' + item.id + '" data-url="' + escapeHtml(item.action_url || '') + '">' +
+                '<div class="admin-qn-title">' + title + '</div>' +
+                '<div class="admin-qn-message">' + message + '</div>' +
+                '<div class="admin-qn-time">' + createdAt + '</div>' +
+              '</div>';
+            }).join('');
+          }
+
+          async function loadNotifications() {
+            try {
+              const response = await fetch('/api/notifications', { headers: { Accept: 'application/json' } });
+              if (!response.ok) return;
+              const payload = await response.json();
+              if (!payload.success || !Array.isArray(payload.notifications)) return;
+
+              notifications = payload.notifications.map(item => ({
+                id: item.id,
+                title: item.title,
+                message: item.message,
+                action_url: item.action_url,
+                created_at: item.created_at,
+                unread: !item.read_at && !item.is_read,
+              }));
+
+              updateBadge();
+              renderQuick();
+              renderFull();
+            } catch (error) {
+              // fail silently
+            }
+          }
+
+          async function markAsRead(id) {
+            const target = notifications.find(item => item.id === id);
+            if (!target || !target.unread) return;
+
+            target.unread = false;
+            updateBadge();
+            renderQuick();
+            renderFull();
+
+            try {
+              await fetch('/api/notifications/' + id + '/read', {
+                method: 'POST',
+                headers: {
+                  'X-CSRF-TOKEN': csrfToken,
+                  Accept: 'application/json'
+                }
+              });
+            } catch (error) {
+              // fail silently
+            }
+          }
+
+          async function markAllAsRead() {
+            notifications = notifications.map(item => ({ ...item, unread: false }));
+            updateBadge();
+            renderQuick();
+            renderFull();
+
+            try {
+              await fetch('/api/notifications/read-all', {
+                method: 'POST',
+                headers: {
+                  'X-CSRF-TOKEN': csrfToken,
+                  Accept: 'application/json'
+                }
+              });
+            } catch (error) {
+              // fail silently
+            }
+          }
+
+          function openFullModal() {
+            fullModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+          }
+
+          function closeFullModal() {
+            fullModal.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+
+          bell.addEventListener('click', function () {
+            quick.classList.toggle('active');
+          });
+
+          viewAllButton.addEventListener('click', function () {
+            quick.classList.remove('active');
+            openFullModal();
+          });
+
+          closeModalButton.addEventListener('click', closeFullModal);
+
+          markAllButton.addEventListener('click', function () {
+            markAllAsRead();
+          });
+
+          function handleNotificationClick(event) {
+            const item = event.target.closest('.admin-qn-item');
+            if (!item) return;
+
+            const id = Number(item.getAttribute('data-id'));
+            const actionUrl = item.getAttribute('data-url');
+            markAsRead(id);
+
+            if (actionUrl) {
+              window.location.href = actionUrl;
+            }
+          }
+
+          quickList.addEventListener('click', handleNotificationClick);
+          fullList.addEventListener('click', handleNotificationClick);
+
+          document.addEventListener('click', function (event) {
+            if (!quick.contains(event.target) && !bell.contains(event.target)) {
+              quick.classList.remove('active');
+            }
+          });
+
+          fullModal.addEventListener('click', function (event) {
+            if (event.target === fullModal) {
+              closeFullModal();
+            }
+          });
+
+          loadNotifications();
+        })();
+      </script>
       <!-- Page Header Ends -->
