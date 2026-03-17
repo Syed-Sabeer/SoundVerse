@@ -1080,7 +1080,13 @@
                             </a>
                             </div>
                             <div>
-                                {!! QrCode::size(300)->generate(url('/app-download')) !!}
+                                <img
+                                    src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data={{ urlencode(url('/app-download')) }}"
+                                    alt="App Download QR Code"
+                                    width="300"
+                                    height="300"
+                                    loading="lazy"
+                                >
                                 {{-- <img src="{{ asset('FrontendAssets/images/singWithMe/QR_code.png') }}" alt="QR Code"> --}}
                             </div>
                         </div>
