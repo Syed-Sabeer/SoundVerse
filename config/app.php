@@ -54,8 +54,8 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://singwithmerecords.co.uk'),
-    'asset_url' => env('ASSET_URL', 'https://singwithmerecords.co.uk/public'),
+    'url' => env('APP_URL', 'http://localhost/MS/SingWithMe'),
+    'asset_url' => env('ASSET_URL', 'http://localhost/MS/SingWithMe/public'),
 
     /*
     |--------------------------------------------------------------------------

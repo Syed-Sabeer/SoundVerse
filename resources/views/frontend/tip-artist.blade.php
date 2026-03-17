@@ -423,6 +423,25 @@
     margin-bottom: 8px;
 }
 
+.artistTip_sec .payment-method-icon.google-pay-icon {
+    width: 84px;
+    height: 54px;
+    margin: 0 auto 8px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.artistTip_sec .payment-method-icon.google-pay-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
 /* Payment Forms */
 .artistTip_sec .payment-form {
     display: none;
@@ -786,7 +805,9 @@
                     <div>PayPal</div>
                 </div>
                 <div class="payment-method" data-method="google-pay" onclick="selectTipPaymentMethod(this, 'google-pay')">
-                    <div class="payment-method-icon">📱</div>
+                    <div class="payment-method-icon google-pay-icon">
+                        <img src="{{ asset('FrontendAssets/images/gpay.svg') }}" alt="Google Pay">
+                    </div>
                     <div>Google Pay</div>
                 </div>
                 <div class="payment-method" data-method="apple-pay" onclick="selectTipPaymentMethod(this, 'apple-pay')">
@@ -852,7 +873,7 @@
 {{--@include('partials.frontend.newsletter')--}}
 
 <script src="https://js.stripe.com/v3/"></script>
-<script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID', '') }}&currency=GBP"></script>
+<script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID', 'sb') }}&currency=GBP"></script>
 <script src="https://pay.google.com/gp/p/js/pay.js"></script>
 <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
 
@@ -922,6 +943,11 @@
                 }
             }).render('#paypal-payment-button');
             tipPaypalButtons = true;
+        } else if (typeof paypal === 'undefined') {
+            const container = document.getElementById('paypal-payment-button');
+            if (container) {
+                container.innerHTML = '<p style="color:#f5576c;text-align:center;">PayPal failed to load. Please check PAYPAL_CLIENT_ID or try again.</p>';
+            }
         }
     }
 

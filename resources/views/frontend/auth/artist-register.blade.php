@@ -189,12 +189,12 @@
                             <label for="terms">I have read and agree to SingWithMe's <a href="{{ route('terms-conditions') }}" target="_blank">terms and conditions</a>, <a href="{{ route('privacy-policy') }}" target="_blank">privacy policy</a>, and <a href="{{ route('legal-compliance-framework') }}" target="_blank">legal compliance framework</a>.</label>
                         </div>
 
-                        <div class="legal-links-box">
+                        {{-- <div class="legal-links-box">
                             <p>Legal links:</p>
                             <a href="{{ route('terms-conditions') }}" target="_blank">{{ url('/terms-conditions') }}</a>
                             <a href="{{ route('legal-compliance-framework') }}" target="_blank">{{ url('/legal-compliance-framework') }}</a>
                             <a href="{{ route('privacy-policy') }}" target="_blank">{{ url('/privacy-policy') }}</a>
-                        </div>
+                        </div> --}}
 
                         <button type="submit" class="sign_up_btn">Register as Artist</button>
                     </form>

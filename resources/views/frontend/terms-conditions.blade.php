@@ -4,114 +4,142 @@
 <style>
     .player-controls { display: none !important; }
 
-    .legal-page {
-        background: radial-gradient(circle at top right, rgba(151, 71, 255, 0.15), transparent 40%),
-                    radial-gradient(circle at bottom left, rgba(44, 17, 92, 0.55), transparent 45%),
-                    #0f0822;
-        color: #f3efff;
-        padding: 72px 0;
+    #legalDoc,
+    #legalDoc * {
+        box-sizing: border-box;
+        visibility: visible !important;
+        opacity: 1 !important;
+        text-shadow: none !important;
     }
 
-    .legal-page .container {
-        max-width: 1140px;
+    #legalDoc {
+        position: relative;
+        z-index: 20;
+        background: radial-gradient(circle at top right, rgba(133, 75, 222, 0.18), transparent 45%), #120826 !important;
+        padding: 45px 0 70px;
     }
 
-    .legal-hero {
-        background: linear-gradient(135deg, rgba(132, 73, 255, 0.23), rgba(42, 17, 86, 0.92));
-        border: 1px solid rgba(187, 146, 255, 0.25);
-        border-radius: 18px;
-        padding: 32px 28px;
-        margin-bottom: 24px;
+    #legalDoc .doc-wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 16px;
     }
 
-    .legal-hero h1 {
-        font-size: 2rem;
-        color: #fff;
-        margin-bottom: 6px;
-    }
-
-    .legal-hero p {
-        margin: 0;
-        color: #d8cbff;
-        font-size: 0.96rem;
-    }
-
-    .legal-block {
-        background: rgba(23, 8, 52, 0.88);
-        border: 1px solid rgba(187, 146, 255, 0.18);
-        border-radius: 16px;
-        padding: 22px 24px;
-        margin-bottom: 16px;
-    }
-
-    .legal-block h2 {
-        font-size: 1.2rem;
-        color: #fff;
+    #legalDoc .doc-header,
+    #legalDoc .doc-section {
+        background: #1b1033 !important;
+        border: 1px solid rgba(170, 128, 241, 0.35) !important;
+        border-radius: 12px;
+        padding: 20px;
         margin-bottom: 12px;
-        font-weight: 700;
     }
 
-    .legal-block h3 {
-        font-size: 1rem;
-        color: #d9c2ff;
-        margin-top: 14px;
-        margin-bottom: 10px;
+    #legalDoc .doc-header {
+        border-left: 5px solid #8b5cf6 !important;
+        margin-bottom: 15px;
     }
 
-    .legal-block p,
-    .legal-block li {
-        color: #ddd2fb;
-        line-height: 1.75;
-        font-size: 0.97rem;
+    #legalDoc h1,
+    #legalDoc h2,
+    #legalDoc h3,
+    #legalDoc p,
+    #legalDoc li,
+    #legalDoc a,
+    #legalDoc span,
+    #legalDoc strong {
+        font-family: Arial, sans-serif !important;
+        color: #efe9ff !important;
     }
 
-    .legal-block ul,
-    .legal-block ol {
-        margin: 0;
-        padding-left: 18px;
+    #legalDoc h1 {
+        margin: 0 0 8px;
+        font-size: 30px !important;
+        line-height: 1.25 !important;
+        font-weight: 700 !important;
     }
 
-    .legal-links {
-        margin-top: 24px;
+    #legalDoc h2 {
+        margin: 0 0 8px;
+        font-size: 21px !important;
+        line-height: 1.35 !important;
+        font-weight: 700 !important;
+    }
+
+    #legalDoc h3 {
+        margin: 12px 0 8px;
+        font-size: 17px !important;
+        line-height: 1.4 !important;
+        font-weight: 700 !important;
+        color: #cdb3ff !important;
+    }
+
+    #legalDoc p,
+    #legalDoc li {
+        margin: 0 0 9px;
+        font-size: 16px !important;
+        line-height: 1.85 !important;
+    }
+
+    #legalDoc ul,
+    #legalDoc ol {
+        margin: 0 0 10px;
+        padding-left: 24px;
+    }
+
+    #legalDoc ul { list-style: disc !important; }
+    #legalDoc ol { list-style: decimal !important; }
+    #legalDoc li { display: list-item !important; }
+
+    #legalDoc .links {
+        margin-top: 16px;
         display: flex;
-        gap: 12px;
         flex-wrap: wrap;
+        gap: 10px;
     }
 
-    .legal-links a {
-        background: rgba(122, 70, 206, 0.3);
-        border: 1px solid rgba(187, 146, 255, 0.3);
-        color: #efddff;
-        border-radius: 999px;
-        padding: 8px 14px;
-        font-size: 0.9rem;
+    #legalDoc .links a {
         text-decoration: none;
+        background: #7c3aed !important;
+        border: 1px solid #7c3aed !important;
+        color: #ffffff !important;
+        border-radius: 999px;
+        padding: 9px 14px;
+        font-size: 14px !important;
+        font-weight: 700 !important;
     }
 
-    @media (max-width: 991px) {
-        .legal-page { padding: 46px 0; }
-        .legal-hero h1 { font-size: 1.5rem; }
+    #legalDoc .links a:hover {
+        background: #9d6dff !important;
+        border-color: #9d6dff !important;
+    }
+
+    @media (max-width: 768px) {
+        #legalDoc h1 { font-size: 24px !important; }
+        #legalDoc h2 { font-size: 19px !important; }
+        #legalDoc p,
+        #legalDoc li { font-size: 15px !important; }
     }
 </style>
 @endsection
 
 @section('content')
-<section class="legal-page">
-    <div class="container">
-        <div class="legal-hero">
+<section id="legalDoc">
+    <div class="doc-wrap">
+
+        <div class="doc-header">
             <h1>TERMS & CONDITIONS</h1>
-            <p>SingWithMe Records Ltd</p>
-            <p>Effective Date: 3/17/2026</p>
+            <p><strong>SingWithMe Records Ltd</strong></p>
+            <p>Effective Date: 17 March 2026</p>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>1. Introduction</h2>
             <p>Welcome to SingWithMe Records Ltd ("Company", "we", "our", "us").</p>
             <p>SingWithMe Records Ltd is a digital platform designed to enable artists, songwriters, musicians, and creators to upload, share, and promote their music and related content globally.</p>
             <p>By accessing or using this platform, you agree to be legally bound by these Terms & Conditions. If you do not agree, you must not use the platform.</p>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>2. Eligibility</h2>
             <p>You must:</p>
             <ul>
@@ -125,7 +153,7 @@
             </ul>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>3. User Accounts</h2>
             <ul>
                 <li>You are responsible for maintaining the confidentiality of your account</li>
@@ -135,7 +163,7 @@
             </ul>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>4. User Content</h2>
             <h3>4.1 Ownership</h3>
             <p>You retain full ownership of the content you upload, including:</p>
@@ -156,7 +184,7 @@
             </ul>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>5. AI-Generated Content Policy</h2>
             <p>SingWithMe Records Ltd is a platform created to support and promote original music by artists, songwriters, and creators worldwide.</p>
             <p>While the platform is primarily intended for original, human-created works, users are not prohibited from uploading music or content that has been generated or assisted by artificial intelligence ("AI Content").</p>
@@ -170,7 +198,7 @@
             </ol>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>6. Prohibited Content & Use</h2>
             <p>You agree NOT to upload or distribute content that:</p>
             <ul>
@@ -182,7 +210,7 @@
             </ul>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>7. Copyright & Intellectual Property</h2>
             <ul>
                 <li>You must own or have rights to all uploaded content</li>
@@ -192,7 +220,7 @@
             </ul>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>8. Payments & Royalties</h2>
             <ul>
                 <li>The platform does not guarantee earnings or royalties</li>
@@ -201,7 +229,7 @@
             </ul>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>9. Content Moderation</h2>
             <p>We reserve the right to:</p>
             <ul>
@@ -212,13 +240,13 @@
             <p>This may occur without prior notice if policies are violated.</p>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>10. Data Protection & Privacy</h2>
             <p>Your data is handled in accordance with our Privacy Policy.</p>
             <p>We implement reasonable measures to protect your data, but we cannot guarantee absolute security.</p>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>11. Third-Party Services</h2>
             <p>The platform may include links or integrations with third-party services.</p>
             <p>We are not responsible for:</p>
@@ -229,7 +257,7 @@
             </ul>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>12. Limitation of Liability</h2>
             <p>To the fullest extent permitted by law:</p>
             <p>SingWithMe Records Ltd shall not be liable for:</p>
@@ -242,7 +270,7 @@
             <p>Use of the platform is at your own risk.</p>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>13. Indemnification</h2>
             <p>You agree to indemnify and hold harmless SingWithMe Records Ltd from any claims, damages, or legal disputes arising from:</p>
             <ul>
@@ -252,7 +280,7 @@
             </ul>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>14. Termination</h2>
             <p>We may suspend or terminate your account:</p>
             <ul>
@@ -263,27 +291,27 @@
             <p>You may stop using the platform at any time.</p>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>15. Changes to Terms</h2>
             <p>We reserve the right to update these Terms at any time.</p>
             <p>Continued use of the platform constitutes acceptance of updated Terms.</p>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>16. Governing Law</h2>
-            <p>These Terms shall be governed by and interpreted in accordance with the laws of:</p>
-            <p> United Kingdom</p>
+            <p>These Terms shall be governed by and interpreted in accordance with the laws of the United Kingdom.</p>
         </div>
 
-        <div class="legal-block">
+        <div class="doc-section">
             <h2>17. Contact Information</h2>
-            <p>SingWithMe Records Ltd<br>info@singwithmerecords.co.uk<br></p>
+            <p>SingWithMe Records Ltd<br>info@singwithmerecords.co.uk</p>
         </div>
 
-        <div class="legal-links">
+        <div class="links">
             <a href="{{ route('privacy-policy') }}">Privacy Policy</a>
             <a href="{{ route('legal-compliance-framework') }}">Legal & Compliance</a>
         </div>
+
     </div>
 </section>
 @endsection

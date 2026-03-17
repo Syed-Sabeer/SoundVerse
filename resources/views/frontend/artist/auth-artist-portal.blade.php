@@ -277,8 +277,18 @@
 }
 
 .artist-subscription-popup .payment-icon.google-pay {
-    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
-    color: white;
+    background: #ffffff;
+    width: 84px;
+    height: 54px;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+.artist-subscription-popup .payment-icon.google-pay img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .artist-subscription-popup .payment-icon.apple-pay {
@@ -3998,7 +4008,9 @@ a .payout-btn {
                             </div>
 
                             <div class="payment-method" onclick="selectArtistPortalPaymentMethod(this, 'google-pay')">
-                                <div class="payment-icon google-pay">G</div>
+                                <div class="payment-icon google-pay">
+                                    <img src="{{ asset('FrontendAssets/images/gpay.svg') }}" alt="Google Pay">
+                                </div>
                                 <div class="payment-info">
                                     <h3>Google Pay</h3>
                                     <p>Quick and secure payment via Stripe</p>
