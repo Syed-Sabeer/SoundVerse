@@ -727,7 +727,7 @@ Software Engineer | Full-Stack Developer
 
 GitHub: https://github.com/Syed-Sabeer
 Portfolio: Add your portfolio link here
-LinkedIn: Add your LinkedIn link here
+LinkedIn: https://www.linkedin.com/in/syed-sabeer-faisal/
 
 ---
 
