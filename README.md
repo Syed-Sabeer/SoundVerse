@@ -12,8 +12,6 @@ The platform also includes a dedicated artist portal for uploading music, managi
 SoundVerse Deployment Link:
 http://soundverse.deveoninc.com/
 
-> Note: The SoundVerse deployment link will be updated after final deployment.
-
 ---
 
 ## Project Overview
