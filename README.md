@@ -8,8 +8,6 @@ The platform also includes a dedicated artist portal for uploading music, managi
 
 ## Live Demo
 
-Current Project Reference:
-https://singwithmerecords.co.uk/
 
 SoundVerse Deployment Link:
 http://soundverse.deveoninc.com/
